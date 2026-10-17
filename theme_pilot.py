@@ -50,7 +50,7 @@ KEYWORD_BUCKETS = [
     ("Power / Grid / Electrical", ["ELECTRIC","POWER","ENERGY CORP","UTILITIES","EATON","HUBBELL","GRID"]),
     ("Cooling / Building Systems", ["AIR CONDITION","CLIMATE","CARRIER","TRANE","JOHNSON CTLS","BUILDING SYSTEM"]),
     ("Cloud / Enterprise Software", ["SOFTWARE","SALESFORCE","SERVICENOW","WORKDAY","ORACLE","ADOBE"]),
-    ("Cybersecurity", ["SECURITY","CYBER"]),
+    ("Cybersecurity", ["CYBER"]),
     ("Payments / Fintech", ["PAYMENT","PAYPAL","MASTERCARD","VISA","FINTECH"]),
     ("Biotech / Pharma", ["PHARMA","THERAPEUT","BIOPHARMA","BIOTECH","BIOSCI"]),
     ("Medical Devices / Tools", ["MEDICAL","SURGICAL","DIAGNOSTIC","LABORATOR"]),
