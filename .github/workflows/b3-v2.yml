@@ -1,0 +1,65 @@
+name: Run B3 v2 strict semantic discovery
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "b3_semantic_v2.py"
+      - ".github/workflows/b3-v2.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install networkx scipy pandas_market_calendars scikit-learn beautifulsoup4
+      - name: Run strict blind B3 v2 discovery
+        run: python b3_semantic_v2.py
+      - name: Validate frozen no-return outputs
+        run: |
+          python - <<'PY'
+          import json, pandas as pd, re
+          p=pd.read_csv("results/b3v2_picks_frozen.csv")
+          c=pd.read_csv("results/b3v2_cluster_scores.csv")
+          d=pd.read_csv("results/b3v2_document_audit.csv")
+          m=json.load(open("results/b3v2_methodology.json"))
+          assert m["forward_returns_used"] is False
+          assert len(p)>=30, len(p)
+          assert len(c)>=40, len(c)
+          assert len(d)>=100, len(d)
+          cols=" ".join(list(p.columns)+list(c.columns)+list(d.columns)).lower()
+          assert "forward_return" not in cols
+          assert not any(x.startswith("return_") for x in p.columns)
+          invest=p[p.decision.eq("INVEST")]
+          assert len(invest)>=5, len(invest)
+          # strict semantics: no amendments; every usable document must be a full 10-K/20-F
+          ud=d[d.usable_text.eq(True)]
+          assert ud.form.isin(["10-K","20-F"]).all()
+          # obvious filing-boilerplate labels should not dominate automatic terms
+          bad=re.compile(r"\b(gaap|table contents|december 31|registrant|securities)\b",re.I)
+          bad_rows=sum(bool(bad.search(str(x))) for x in invest.auto_terms.fillna(""))
+          assert bad_rows <= max(1, int(0.10*len(invest))), (bad_rows,len(invest))
+          print("quarters",len(p),"invest",len(invest),"clusters",len(c),"docs",len(d),"usable docs",int(d.usable_text.sum()))
+          print(invest[["quarter","cluster_id","auto_terms","selected_tickers"]].to_string(index=False))
+          PY
+      - name: Commit B3 v2 frozen selections
+        run: |
+          git config user.name "13f-b3v2-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add results/b3v2_*.csv results/b3v2_methodology.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Freeze B3 v2 strict semantic selections before returns"
+            git pull --rebase origin main
+            git push
+          fi
