@@ -25,7 +25,8 @@ FLOORS = [float(x) for x in os.getenv(
 
 EQUITY_BAD = re.compile(
     r"(NOTE|BOND|DEBT|PRFD|PREFERRED|PFD|WARRANT|UNIT|RIGHT|CVT|CONVERTIBLE|"
-    r"ETF|ETN|INDEX|FUND|TRUST ETF|MUTUAL)", re.I
+    r"ETF|ETN|INDEX|MUTUAL|ISHARES|VANGUARD|SPDR|PROSHARES|KRANESHARES|"
+    r"GLOBAL X|FIDELITY COVINGTON|LISTED FD|INVESCO.*TRUST|WISDOMTREE)", re.I
 )
 TICKER_OK = re.compile(r"^[A-Z][A-Z0-9.\-]{0,9}$")
 
@@ -99,16 +100,20 @@ def build_db(paths):
       CREATE TABLE holdings AS
       SELECT
         accession,
+        CAST(cusip AS VARCHAR) AS cusip,
         UPPER(TRIM(CAST(resolvedTicker AS VARCHAR))) AS ticker,
         issuerName,
         titleOfClass,
+        UPPER(TRIM(CAST(sharesType AS VARCHAR))) AS shares_type,
         CAST(sharesAmount AS DOUBLE) AS shares,
         CAST(value AS DOUBLE) AS value_usd,
         putCall
       FROM read_parquet({sql_list(paths['institutional_holdings'])}, union_by_name=true)
       WHERE sharesAmount IS NOT NULL
         AND CAST(sharesAmount AS DOUBLE) >= 0
+        AND CAST(value AS DOUBLE) > 0
         AND putCall IS NULL
+        AND UPPER(TRIM(CAST(sharesType AS VARCHAR)))='SH'
         AND resolvedTicker IS NOT NULL
     """)
     db.execute("CREATE INDEX IF NOT EXISTS filings_period ON filings(period)")
@@ -172,7 +177,8 @@ def aggregate_quarter(db, q: date):
               AND cik IN (SELECT cik FROM matched_mgrs)
           )
           SELECT
-            h.ticker,
+            h.cusip,
+            MAX(h.ticker) ticker,
             MAX(h.issuerName) issuer,
             MAX(h.titleOfClass) AS class_name,
             SUM(h.shares) shares,
@@ -180,7 +186,7 @@ def aggregate_quarter(db, q: date):
             COUNT(DISTINCT f.cik) holders
           FROM f JOIN holdings h USING(accession)
           WHERE f.rn=1
-          GROUP BY h.ticker
+          GROUP BY h.cusip
         """, [period, asof]).df()
         return clean_equity(x)
 
@@ -192,7 +198,8 @@ def aggregate_quarter(db, q: date):
         "shares":"prev_shares","value_usd":"prev_value","holders":"prev_holders",
         "issuer":"prev_issuer","class_name":"prev_class"
     })
-    m = cur.merge(prv, on="ticker", how="outer")
+    m = cur.merge(prv, on="cusip", how="outer", suffixes=("", "_prev"))
+    m["ticker"] = m["ticker"].fillna(m.get("ticker_prev"))
     for c in ["cur_shares","prev_shares","cur_value","prev_value","cur_holders","prev_holders"]:
         m[c] = m[c].fillna(0.0)
     m["issuer"] = m["cur_issuer"].fillna(m["prev_issuer"])
@@ -333,7 +340,7 @@ def main():
         for method, row in wins.items():
             rec = {
               "quarter": qlabel(q), "period_end": q.isoformat(),
-              "method": method, "ticker": row.ticker, "issuer": row.issuer,
+              "method": method, "ticker": row.ticker, "cusip": row.cusip, "issuer": row.issuer,
               "abs_share_change": float(row.abs_change),
               "pct_share_change": float(row["pct_change"]) if np.isfinite(float(row["pct_change"])) else np.nan,
               "split_factor": float(row.split_factor),
@@ -352,7 +359,7 @@ def main():
     headline = allw[allw.method.isin(["Absolute","Percentage",primary_floor_label])].copy()
     headline["method"] = headline["method"].replace({primary_floor_label:"Percentage+floor"})
     headline = headline[[
-      "quarter","method","ticker","issuer","entry_date","exit_date",
+      "quarter","method","ticker","cusip","issuer","entry_date","exit_date",
       "return_90d","spy_return_90d","spy_excess_return",
       "abs_share_change","pct_share_change","split_factor","matched_managers"
     ]]
