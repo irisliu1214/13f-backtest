@@ -19,6 +19,6 @@
   "fund_filter": "SEC company_tickers_mf.json plus issuer/class regex filters plus annual SEC Closed-End Fund Information registrant-name matching; applied before leader ranking and signals",
   "cef_2021_bridge": "SEC CEF catalog has 2021 XML only; 2021 exclusion uses conservative union of 2020 and 2022 annual CEF registrant-name sets",
   "historical_price_fallback": "rank up to candidate_depth by signal, then take first five with usable historical Yahoo price data; no return-based ranking",
-  "generated_at_utc": "2026-10-17T08:56:05.432909Z",
+  "generated_at_utc": "2026-10-17T09:12:39.013211Z",
   "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
 }
