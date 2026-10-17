@@ -1,7 +1,7 @@
 quarter,top_themes,tickers,complete_top5,portfolio_return_90d,spy_return_90d,spy_excess_return
-2016Q1,Banks / Capital Markets | Networking / Connectivity | Power / Grid / Electrical,GCBC | FCCY | DBP | HIVE | LITE,False,,,
+2016Q1,Banks / Capital Markets | Networking / Connectivity | Semiconductors / Compute,GCBC | FCCY | HIVE | LITE | AOSL,False,,,
 2016Q2,Banks / Capital Markets | Biotech / Pharma | Real Estate,SPGI | ATNM | GLPI | VYGR | INBK,False,,,
-2016Q3,Biotech / Pharma | Banks / Capital Markets | Power / Grid / Electrical,HOPE | ABEO | DBB | HONE | CRBP,False,,,
+2016Q3,Biotech / Pharma | Banks / Capital Markets | Networking / Connectivity,HOPE | ABEO | HONE | CRBP | CRNT,False,,,
 2016Q4,Materials / Mining | Biotech / Pharma | Banks / Capital Markets,ARNC | ACRS | GCBC | SBPH | PLBC,False,,,
 2017Q1,Biotech / Pharma | Oil / Gas / Services | Banks / Capital Markets,FTI | MEIP | FCCY | AUPH | BCBP,False,,,
 2017Q2,Power / Grid / Electrical | Oil / Gas / Services | Banks / Capital Markets,VST | NGG | CJ | PBCRY | KEG,False,,,
