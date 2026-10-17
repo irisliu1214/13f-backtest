@@ -18,10 +18,9 @@ RESULTS.mkdir(exist_ok=True)
 
 START_YEAR = int(os.getenv("START_YEAR", "2016"))
 END_YEAR = int(os.getenv("END_YEAR", "2026"))
-PRIMARY_FLOOR_SHARES = float(os.getenv("PRIMARY_FLOOR_SHARES", "1000000"))
-FLOORS = [float(x) for x in os.getenv(
-    "FLOOR_GRID", "100000,500000,1000000,5000000,10000000,25000000,50000000,100000000"
-).split(",")]
+PRIMARY_FLOOR_MANAGERS = int(os.getenv("PRIMARY_FLOOR_MANAGERS", "5"))
+LEADER_TOP_N = int(os.getenv("LEADER_TOP_N", "50"))
+PORTFOLIO_SIZE = int(os.getenv("PORTFOLIO_SIZE", "5"))
 
 EQUITY_BAD = re.compile(
     r"(NOTE|BOND|DEBT|PRFD|PREFERRED|PFD|WARRANT|UNIT|RIGHT|CVT|CONVERTIBLE|"
@@ -206,42 +205,57 @@ def aggregate_quarter(db, q: date):
     m["issuer"] = m["cur_issuer"].fillna(m["prev_issuer"])
     m["class_name"] = m["cur_class"].fillna(m["prev_class"])
 
-    # Infer forward split factors from both inverse implied-price movement and share-count jump.
-    # This catches the large distortions that otherwise dominate an absolute-share ranking.
-    prev_px = np.where(m.prev_shares > 0, m.prev_value / m.prev_shares, np.nan)
-    cur_px  = np.where(m.cur_shares > 0, m.cur_value / m.cur_shares, np.nan)
-    px_ratio = prev_px / cur_px
-    sh_ratio = np.where(m.prev_shares > 0, m.cur_shares / m.prev_shares, np.nan)
-    candidates = np.array([1.25,4/3,1.5,2,3,4,5,10,20,40], dtype=float)
-    factors = np.ones(len(m))
-    for i in range(len(m)):
-        if not np.isfinite(px_ratio[i]) or not np.isfinite(sh_ratio[i]): continue
-        errs = np.abs(np.log(px_ratio[i] / candidates)) + np.abs(np.log(sh_ratio[i] / candidates))
-        f = candidates[np.argmin(errs)]
-        if 0.60 <= px_ratio[i]/f <= 1.55 and 0.60 <= sh_ratio[i]/f <= 1.55:
-            factors[i] = f
-    m["split_factor"] = factors
-    m["prev_shares_adj"] = m.prev_shares * m.split_factor
-    m["abs_change"] = m.cur_shares - m.prev_shares_adj
-    m["pct_change"] = np.where(m.prev_shares_adj > 0, m.abs_change / m.prev_shares_adj, np.nan)
+    # Signals are defined ONLY on institution counts among matched managers.
+    # Absolute = current holders - prior holders.
+    # Percentage = Absolute / prior holders (new positions with prior_holders=0 are excluded from Percentage).
+    m["holder_abs_change"] = m.cur_holders - m.prev_holders
+    m["holder_pct_change"] = np.where(
+        m.prev_holders > 0,
+        m.holder_abs_change / m.prev_holders,
+        np.nan
+    )
+
+    # Point-in-time leader definition used for the opportunistic universe.
+    # Top N current-quarter common equities by aggregate 13F market value are "leaders".
+    m["leader_rank"] = m.cur_value.where(m.cur_value > 0).rank(method="min", ascending=False)
+    m["is_leader"] = m["leader_rank"].le(LEADER_TOP_N).fillna(False)
+
     m["quarter"] = qlabel(q)
     m["period_end"] = q.isoformat()
     m["filing_cutoff"] = cutoff.isoformat()
     return m, {"matched_managers": int(len(managers)), "securities": int(len(m))}
 
-def choose_winners(metrics):
-    pos = metrics[metrics.abs_change > 0].copy()
-    winners = {}
-    if pos.empty: return winners
-    winners["Absolute"] = pos.sort_values(["abs_change","pct_change"], ascending=False).iloc[0]
-    pct = pos[np.isfinite(pd.to_numeric(pos["pct_change"], errors="coerce"))]
-    if not pct.empty:
-        winners["Percentage"] = pct.sort_values(["pct_change","abs_change"], ascending=False).iloc[0]
-    for f in FLOORS:
-        z = pct[pct.abs_change >= f]
-        if not z.empty:
-            winners[f"Percentage+floor:{int(f)}"] = z.sort_values(["pct_change","abs_change"], ascending=False).iloc[0]
-    return winners
+def rank_candidates(metrics, method, exclude_leaders=False):
+    x = metrics[metrics.holder_abs_change > 0].copy()
+    if exclude_leaders:
+        x = x[~x.is_leader]
+    if x.empty:
+        return x
+
+    if method == "Absolute":
+        x = x.sort_values(
+            ["holder_abs_change", "holder_pct_change", "cur_holders"],
+            ascending=[False, False, False]
+        )
+    elif method == "Percentage":
+        x = x[np.isfinite(pd.to_numeric(x["holder_pct_change"], errors="coerce"))]
+        x = x.sort_values(
+            ["holder_pct_change", "holder_abs_change", "cur_holders"],
+            ascending=[False, False, False]
+        )
+    elif method == "Percentage+floor":
+        x = x[
+            np.isfinite(pd.to_numeric(x["holder_pct_change"], errors="coerce"))
+            & (x.holder_abs_change >= PRIMARY_FLOOR_MANAGERS)
+        ]
+        x = x.sort_values(
+            ["holder_pct_change", "holder_abs_change", "cur_holders"],
+            ascending=[False, False, False]
+        )
+    else:
+        raise ValueError(method)
+
+    return x.drop_duplicates(subset=["ticker"]).head(PORTFOLIO_SIZE).copy()
 
 def next_price_date(idx, target, max_gap_days=7):
     target = pd.Timestamp(target)
@@ -310,21 +324,52 @@ def add_returns(rows):
         r.update(entry_date=entry.date().isoformat(), exit_date=exitd.date().isoformat(),
                  return_90d=ret, spy_return_90d=sret, spy_excess_return=ret-sret)
 
-def summary(df):
-    rows=[]
-    for method,g in df.groupby("method"):
-        z=g.dropna(subset=["return_90d"])
-        if z.empty: continue
+def build_quarterly_portfolio(constituents):
+    rows = []
+    if constituents.empty:
+        return pd.DataFrame()
+    keys = ["quarter", "period_end", "universe", "method"]
+    for key, grp in constituents.groupby(keys, sort=True):
+        grp = grp.sort_values("portfolio_rank")
+        valid = grp.dropna(subset=["return_90d"])
+        complete = len(grp) == PORTFOLIO_SIZE and len(valid) == PORTFOLIO_SIZE
         rows.append({
-          "method":method, "quarters":len(z),
-          "avg_90d_return":z.return_90d.mean(),
-          "median_90d_return":z.return_90d.median(),
-          "positive_rate":(z.return_90d>0).mean(),
-          "avg_spy_excess":z.spy_excess_return.mean(),
-          "median_spy_excess":z.spy_excess_return.median(),
-          "spy_outperformance_rate":(z.spy_excess_return>0).mean(),
-          "compounded_return":float(np.prod(1+z.return_90d)-1),
-          "compounded_spy":float(np.prod(1+z.spy_return_90d)-1),
+            "quarter": key[0],
+            "period_end": key[1],
+            "universe": key[2],
+            "method": key[3],
+            "n_selected": int(len(grp)),
+            "n_with_returns": int(len(valid)),
+            "complete_top5": bool(complete),
+            "tickers": "|".join(grp.ticker.astype(str).tolist()),
+            "entry_date": valid.entry_date.mode().iloc[0] if not valid.empty and not valid.entry_date.mode().empty else None,
+            "exit_date": valid.exit_date.mode().iloc[0] if not valid.empty and not valid.exit_date.mode().empty else None,
+            "portfolio_return_90d": float(valid.return_90d.mean()) if complete else np.nan,
+            "spy_return_90d": float(valid.spy_return_90d.mean()) if complete else np.nan,
+            "spy_excess_return": float(valid.spy_excess_return.mean()) if complete else np.nan,
+        })
+    return pd.DataFrame(rows)
+
+def portfolio_summary(portfolios):
+    rows = []
+    if portfolios.empty:
+        return pd.DataFrame()
+    for (universe, method), grp in portfolios.groupby(["universe", "method"], sort=True):
+        z = grp.dropna(subset=["portfolio_return_90d"])
+        if z.empty:
+            continue
+        rows.append({
+            "universe": universe,
+            "method": method,
+            "complete_quarters": int(len(z)),
+            "avg_90d_return": float(z.portfolio_return_90d.mean()),
+            "median_90d_return": float(z.portfolio_return_90d.median()),
+            "positive_rate": float((z.portfolio_return_90d > 0).mean()),
+            "avg_spy_excess": float(z.spy_excess_return.mean()),
+            "median_spy_excess": float(z.spy_excess_return.median()),
+            "spy_outperformance_rate": float((z.spy_excess_return > 0).mean()),
+            "compounded_return": float(np.prod(1 + z.portfolio_return_90d) - 1),
+            "compounded_spy": float(np.prod(1 + z.spy_return_90d) - 1),
         })
     return pd.DataFrame(rows)
 
@@ -334,65 +379,78 @@ def main():
     paths = cache_dataset_files(snap)
     db = build_db(paths)
 
-    winner_rows=[]
-    quality=[]
-    metric_winners=[]
+    constituent_rows = []
+    quality = []
+    methods = ["Absolute", "Percentage", "Percentage+floor"]
+    universes = [
+        ("AllStocks", False),
+        ("OpportunisticExLeaders", True),
+    ]
+
     for q in quarter_ends(START_YEAR, END_YEAR):
         print("processing", qlabel(q))
         m, meta = aggregate_quarter(db, q)
-        quality.append({"quarter":qlabel(q),"period_end":q.isoformat(),**meta})
-        if m.empty: continue
-        wins = choose_winners(m)
-        for method, row in wins.items():
-            rec = {
-              "quarter": qlabel(q), "period_end": q.isoformat(),
-              "method": method, "ticker": row.ticker, "cusip": row.cusip, "issuer": row.issuer,
-              "abs_share_change": float(row.abs_change),
-              "pct_share_change": float(row["pct_change"]) if np.isfinite(float(row["pct_change"])) else np.nan,
-              "split_factor": float(row.split_factor),
-              "current_shares": float(row.cur_shares),
-              "prior_shares_adjusted": float(row.prev_shares_adj),
-              "matched_managers": meta["matched_managers"]
-            }
-            winner_rows.append(rec)
+        quality.append({"quarter": qlabel(q), "period_end": q.isoformat(), **meta})
+        if m.empty:
+            continue
 
-    add_returns(winner_rows)
-    allw = pd.DataFrame(winner_rows)
-    allw.to_csv(RESULTS/"all_method_winners.csv", index=False)
+        for universe, exclude_leaders in universes:
+            for method in methods:
+                picks = rank_candidates(m, method, exclude_leaders=exclude_leaders)
+                for rank, (_, row) in enumerate(picks.iterrows(), 1):
+                    constituent_rows.append({
+                        "quarter": qlabel(q),
+                        "period_end": q.isoformat(),
+                        "universe": universe,
+                        "method": method,
+                        "portfolio_rank": rank,
+                        "weight": 1.0 / PORTFOLIO_SIZE,
+                        "ticker": row.ticker,
+                        "cusip": row.cusip,
+                        "issuer": row.issuer,
+                        "is_leader": bool(row.is_leader),
+                        "leader_rank": float(row.leader_rank) if pd.notna(row.leader_rank) else np.nan,
+                        "current_holders": float(row.cur_holders),
+                        "prior_holders": float(row.prev_holders),
+                        "holder_abs_change": float(row.holder_abs_change),
+                        "holder_pct_change": float(row.holder_pct_change) if pd.notna(row.holder_pct_change) else np.nan,
+                        "current_value_usd": float(row.cur_value),
+                        "current_shares": float(row.cur_shares),
+                        "matched_managers": meta["matched_managers"],
+                    })
 
-    # Requested headline table.
-    primary_floor_label = f"Percentage+floor:{int(PRIMARY_FLOOR_SHARES)}"
-    headline = allw[allw.method.isin(["Absolute","Percentage",primary_floor_label])].copy()
-    headline["method"] = headline["method"].replace({primary_floor_label:"Percentage+floor"})
-    headline = headline[[
-      "quarter","method","ticker","cusip","issuer","entry_date","exit_date",
-      "return_90d","spy_return_90d","spy_excess_return",
-      "abs_share_change","pct_share_change","split_factor","matched_managers"
-    ]]
-    headline.to_csv(RESULTS/"quarterly_backtest.csv", index=False)
+    add_returns(constituent_rows)
+    constituents = pd.DataFrame(constituent_rows)
+    constituents.to_csv(RESULTS / "top5_constituents.csv", index=False)
 
-    sens = allw[allw.method.str.startswith("Percentage+floor:", na=False)].copy()
-    sens["floor_shares"] = sens.method.str.split(":").str[1].astype(float)
-    sens.to_csv(RESULTS/"floor_sensitivity.csv", index=False)
+    portfolios = build_quarterly_portfolio(constituents)
+    portfolios.to_csv(RESULTS / "top5_quarterly_portfolios.csv", index=False)
 
-    summ = summary(headline)
-    summ.to_csv(RESULTS/"method_summary.csv", index=False)
-    floor_summ = summary(sens.rename(columns={"method":"method"}))
-    floor_summ.to_csv(RESULTS/"floor_method_summary.csv", index=False)
-    pd.DataFrame(quality).to_csv(RESULTS/"data_quality.csv", index=False)
+    summ = portfolio_summary(portfolios)
+    summ.to_csv(RESULTS / "top5_method_summary.csv", index=False)
+    pd.DataFrame(quality).to_csv(RESULTS / "data_quality.csv", index=False)
 
     meta = {
-      "dataset": DATASET,
-      "dataset_snapshot_generated_at": snap.get("generatedAt"),
-      "start_year": START_YEAR, "end_year": END_YEAR,
-      "primary_floor_shares": PRIMARY_FLOOR_SHARES,
-      "floor_grid": FLOORS,
-      "generated_at_utc": datetime.utcnow().isoformat()+"Z",
-      "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
+        "dataset": DATASET,
+        "dataset_snapshot_generated_at": snap.get("generatedAt"),
+        "start_year": START_YEAR,
+        "end_year": END_YEAR,
+        "portfolio_size": PORTFOLIO_SIZE,
+        "weighting": "equal_weight_20pct_each_when_top5_complete",
+        "absolute_definition": "current matched 13F holder count minus prior-quarter matched 13F holder count",
+        "percentage_definition": "holder_abs_change divided by prior-quarter matched holder count; zero-base/new positions excluded",
+        "percentage_floor_definition": f"Percentage ranking with holder_abs_change >= {PRIMARY_FLOOR_MANAGERS}",
+        "leader_definition": f"top {LEADER_TOP_N} current-quarter common equities by aggregate 13F market value, point-in-time at filing cutoff",
+        "universes": ["AllStocks", "OpportunisticExLeaders"],
+        "entry_rule": "first trading day after the 45-day 13F filing cutoff",
+        "holding_period": "90 calendar days, exit first trading day on/after day 90",
+        "generated_at_utc": datetime.utcnow().isoformat() + "Z",
+        "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
     }
-    (RESULTS/"run_metadata.json").write_text(json.dumps(meta, indent=2))
-    print("\nHEADLINE")
-    print(headline.to_string(index=False))
+    (RESULTS / "top5_run_metadata.json").write_text(json.dumps(meta, indent=2))
+
+    print("\nTOP5 PORTFOLIOS")
+    print(portfolios.to_string(index=False))
     print("\nSUMMARY")
     print(summ.to_string(index=False))
 
