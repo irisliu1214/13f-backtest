@@ -1,0 +1,35 @@
+name: Run 13F theme pilot
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "theme_pilot.py"
+      - ".github/workflows/theme-pilot.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  theme-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install pandas numpy
+      - name: Run theme pilot
+        run: python theme_pilot.py
+      - name: Commit theme pilot outputs
+        run: |
+          git config user.name "13f-theme-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add results/theme_*.csv results/theme_*.json results/quant_theme_*.csv results/quant_theme_*.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Add 13F theme pilot results"
+            git push
+          fi
