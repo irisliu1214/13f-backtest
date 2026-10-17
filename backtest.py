@@ -21,6 +21,7 @@ END_YEAR = int(os.getenv("END_YEAR", "2026"))
 PRIMARY_FLOOR_MANAGERS = int(os.getenv("PRIMARY_FLOOR_MANAGERS", "5"))
 LEADER_TOP_N = int(os.getenv("LEADER_TOP_N", "50"))
 PORTFOLIO_SIZE = int(os.getenv("PORTFOLIO_SIZE", "5"))
+CANDIDATE_DEPTH = int(os.getenv("CANDIDATE_DEPTH", "20"))
 
 EQUITY_BAD = re.compile(
     r"(NOTE|BOND|DEBT|PRFD|PREFERRED|PFD|WARRANT|UNIT|RIGHT|CVT|CONVERTIBLE|"
@@ -145,7 +146,13 @@ def clean_equity(df):
     if df.empty: return df
     text = (df["issuer"].fillna("") + " " + df["class_name"].fillna(""))
     good = ~text.str.contains(EQUITY_BAD)
-    good &= ~text.str.contains(r"(FUND|PORTFOLIO|BETABUILDERS|ISHARES|VANGUARD|SPDR|PROSHARES|ETF|INDEX|ETN|KRANESHARES|GLOBAL X)", case=False, regex=True)
+    good &= ~text.str.contains(
+        r"(FUND|PORTFOLIO|BETABUILDERS|ISHARES|VANGUARD|SPDR|PROSHARES|ETF|INDEX|ETN|"
+        r"KRANESHARES|GLOBAL X|SCHWAB|FIRST TRUST|DIREXION|VANECK|VAN ECK|ALPS|PIMCO|"
+        r"INVESCO|WISDOMTREE|SELECT SECTOR|EXCHANGE TRADED|NASDAQ[- ]?100|S&P 500|MSCI|"
+        r"RUSSELL|UNIT SER|ETF SHS|ETF TR|CLOSED[- ]END|CLOSED END)",
+        case=False, regex=True
+    )
     good &= df["ticker"].fillna("").str.match(TICKER_OK)
     return df.loc[good].copy()
 
@@ -255,7 +262,7 @@ def rank_candidates(metrics, method, exclude_leaders=False):
     else:
         raise ValueError(method)
 
-    return x.drop_duplicates(subset=["ticker"]).head(PORTFOLIO_SIZE).copy()
+    return x.drop_duplicates(subset=["ticker"]).head(CANDIDATE_DEPTH).copy()
 
 def next_price_date(idx, target, max_gap_days=7):
     target = pd.Timestamp(target)
@@ -324,6 +331,38 @@ def add_returns(rows):
         r.update(entry_date=entry.date().isoformat(), exit_date=exitd.date().isoformat(),
                  return_90d=ret, spy_return_90d=sret, spy_excess_return=ret-sret)
 
+def select_top5_from_candidates(candidates):
+    """Select the first five signal-ranked names with usable historical price data.
+
+    This is a data-availability fallback, not an additional alpha signal. For quarters
+    whose 90-day window has fully elapsed, a usable return is required; for the still-
+    open latest quarter, only an entry price is required.
+    """
+    if candidates.empty:
+        return pd.DataFrame()
+
+    selected = []
+    keys = ["quarter", "period_end", "universe", "method"]
+    for key, grp in candidates.groupby(keys, sort=True):
+        grp = grp.sort_values("signal_rank").copy()
+        q = datetime.strptime(key[1], "%Y-%m-%d").date()
+        target_entry = cutoff_for(q) + timedelta(days=1)
+        mature = (target_entry + timedelta(days=90)) <= date.today()
+
+        eligible = grp[grp.entry_date.notna()].copy()
+        if mature:
+            eligible = eligible[eligible.return_90d.notna()].copy()
+
+        picks = eligible.head(PORTFOLIO_SIZE).copy()
+        if picks.empty:
+            continue
+        picks["portfolio_rank"] = np.arange(1, len(picks) + 1)
+        picks["weight"] = 1.0 / PORTFOLIO_SIZE
+        selected.append(picks)
+
+    return pd.concat(selected, ignore_index=True) if selected else pd.DataFrame()
+
+
 def build_quarterly_portfolio(constituents):
     rows = []
     if constituents.empty:
@@ -379,7 +418,7 @@ def main():
     paths = cache_dataset_files(snap)
     db = build_db(paths)
 
-    constituent_rows = []
+    candidate_rows = []
     quality = []
     methods = ["Absolute", "Percentage", "Percentage+floor"]
     universes = [
@@ -396,15 +435,14 @@ def main():
 
         for universe, exclude_leaders in universes:
             for method in methods:
-                picks = rank_candidates(m, method, exclude_leaders=exclude_leaders)
-                for rank, (_, row) in enumerate(picks.iterrows(), 1):
-                    constituent_rows.append({
+                candidates = rank_candidates(m, method, exclude_leaders=exclude_leaders)
+                for signal_rank, (_, row) in enumerate(candidates.iterrows(), 1):
+                    candidate_rows.append({
                         "quarter": qlabel(q),
                         "period_end": q.isoformat(),
                         "universe": universe,
                         "method": method,
-                        "portfolio_rank": rank,
-                        "weight": 1.0 / PORTFOLIO_SIZE,
+                        "signal_rank": signal_rank,
                         "ticker": row.ticker,
                         "cusip": row.cusip,
                         "issuer": row.issuer,
@@ -419,8 +457,11 @@ def main():
                         "matched_managers": meta["matched_managers"],
                     })
 
-    add_returns(constituent_rows)
-    constituents = pd.DataFrame(constituent_rows)
+    add_returns(candidate_rows)
+    candidate_df = pd.DataFrame(candidate_rows)
+    candidate_df.to_csv(RESULTS / "top5_candidate_pool.csv", index=False)
+
+    constituents = select_top5_from_candidates(candidate_df)
     constituents.to_csv(RESULTS / "top5_constituents.csv", index=False)
 
     portfolios = build_quarterly_portfolio(constituents)
@@ -436,6 +477,7 @@ def main():
         "start_year": START_YEAR,
         "end_year": END_YEAR,
         "portfolio_size": PORTFOLIO_SIZE,
+        "candidate_depth": CANDIDATE_DEPTH,
         "weighting": "equal_weight_20pct_each_when_top5_complete",
         "absolute_definition": "current matched 13F holder count minus prior-quarter matched 13F holder count",
         "percentage_definition": "holder_abs_change divided by prior-quarter matched holder count; zero-base/new positions excluded",
@@ -444,6 +486,7 @@ def main():
         "universes": ["AllStocks", "OpportunisticExLeaders"],
         "entry_rule": "first trading day after the 45-day 13F filing cutoff",
         "holding_period": "90 calendar days, exit first trading day on/after day 90",
+        "historical_price_fallback": "rank up to candidate_depth by signal, then take first five with usable historical Yahoo price data; no return-based ranking",
         "generated_at_utc": datetime.utcnow().isoformat() + "Z",
         "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
     }
