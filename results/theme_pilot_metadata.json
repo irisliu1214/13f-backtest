@@ -1,0 +1,8 @@
+{
+  "source": "results/accumulation_candidate_pool.csv",
+  "information_firewall": "theme_blind_packets.csv excludes all forward-return fields; forward returns are stored separately",
+  "quant_method": "fixed industry taxonomy + rank consensus + breadth + method coverage + holder-growth percentile + quarter-over-quarter acceleration",
+  "theme_score_formula": "0.45 mean_consensus + 0.25 breadth + 0.20 method_coverage + 0.10 holder_strength + 0.15 acceleration",
+  "portfolio_rule": "top 3 themes; choose up to 5 stocks, favor non-leaders, max 2 per theme; equal-weight evaluation",
+  "residual_hindsight_risk": "taxonomy is authored today; broad industry labels are intended to minimize but cannot fully eliminate retrospective classification bias"
+}
