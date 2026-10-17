@@ -6,6 +6,7 @@ from datetime import date, datetime, timedelta
 import requests
 import duckdb
 import pandas as pd
+from pandas.tseries.holiday import USFederalHolidayCalendar
 import numpy as np
 import yfinance as yf
 
@@ -342,20 +343,30 @@ def build_db(paths):
     db.execute("CREATE INDEX IF NOT EXISTS holdings_accession ON holdings(accession)")
     return db
 
+def _sec_holidays_for_years(start_year, end_year):
+    cal = USFederalHolidayCalendar()
+    idx = cal.holidays(start=f"{start_year}-01-01", end=f"{end_year}-12-31")
+    return set(pd.Timestamp(x).date() for x in idx)
+
+_SEC_HOLIDAYS = _sec_holidays_for_years(max(2014, START_YEAR - 2), END_YEAR + 2)
+
+def cutoff_for(q: date) -> date:
+    # Form 13F is due 45 calendar days after quarter-end. If day 45 falls on a
+    # weekend or federal holiday, the filing deadline rolls to the next business day.
+    # The portfolio may only enter after that full filing day has elapsed.
+    d = q + timedelta(days=45)
+    while d.weekday() >= 5 or d in _SEC_HOLIDAYS:
+        d += timedelta(days=1)
+    return d
+
 def quarter_ends(start_year, end_year):
     out = []
     for y in range(start_year, end_year + 1):
         for m, d in [(3,31),(6,30),(9,30),(12,31)]:
             q = date(y,m,d)
-            # Do not evaluate a quarter before its full statutory 13F cutoff has arrived.
-            if q <= date.today() and (q + timedelta(days=45)) <= date.today():
+            if q <= date.today() and cutoff_for(q) <= date.today():
                 out.append(q)
     return out
-
-def cutoff_for(q: date) -> date:
-    # Statutory 13F deadline is 45 days after quarter end. Using one fixed cutoff
-    # avoids cherry-picking early filers and eliminates period-end look-ahead.
-    return q + timedelta(days=45)
 
 def prev_quarter(q: date) -> date:
     if q.month == 3: return date(q.year-1,12,31)
@@ -937,7 +948,7 @@ def main():
         "composite_definition": "equal-weight mean of cross-sectional z-scores for absolute holder increase, institutional ownership increase proxy, and buyer ratio; each input winsorized at 1st/99th percentile before z-scoring",
         "leader_definition": f"top {LEADER_TOP_N} current-quarter common equities by aggregate 13F market value, point-in-time at filing cutoff",
         "universes": ["AllStocks", "OpportunisticExLeaders"],
-        "entry_rule": "first trading day after the 45-day 13F filing cutoff",
+        "entry_rule": "first trading day after the legal 13F deadline: quarter-end + 45 calendar days, rolled forward for weekend/federal holiday",
         "holding_period": "90 calendar days, exit first trading day on/after day 90",
         "fund_filter": "SEC company_tickers_mf.json plus annual SEC Investment Company Series/Class ticker lists plus issuer/class regex filters plus annual SEC Closed-End Fund Information registrant-name matching; applied before leader ranking and signals",
         "historical_price_rule": "strict signal ranks 1-5 only; no ex-post substitution for missing historical prices; workflow fails rather than publishing a biased summary",
