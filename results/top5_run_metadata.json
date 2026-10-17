@@ -4,6 +4,7 @@
   "start_year": 2016,
   "end_year": 2026,
   "portfolio_size": 5,
+  "candidate_depth": 20,
   "weighting": "equal_weight_20pct_each_when_top5_complete",
   "absolute_definition": "current matched 13F holder count minus prior-quarter matched 13F holder count",
   "percentage_definition": "holder_abs_change divided by prior-quarter matched holder count; zero-base/new positions excluded",
@@ -15,6 +16,7 @@
   ],
   "entry_rule": "first trading day after the 45-day 13F filing cutoff",
   "holding_period": "90 calendar days, exit first trading day on/after day 90",
-  "generated_at_utc": "2026-10-17T08:18:59.829722Z",
+  "historical_price_fallback": "rank up to candidate_depth by signal, then take first five with usable historical Yahoo price data; no return-based ranking",
+  "generated_at_utc": "2026-10-17T08:27:41.768744Z",
   "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
 }
