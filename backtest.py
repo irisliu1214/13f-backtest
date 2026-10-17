@@ -29,6 +29,52 @@ EQUITY_BAD = re.compile(
     r"GLOBAL X|FIDELITY COVINGTON|LISTED FD|INVESCO.*TRUST|WISDOMTREE)", re.I
 )
 TICKER_OK = re.compile(r"^[A-Z][A-Z0-9.\-]{0,9}$")
+SEC_FUND_TICKERS = set()
+
+def load_sec_fund_tickers():
+    """Load SEC's official mutual-fund/ETF class ticker file once per run."""
+    url = "https://www.sec.gov/files/company_tickers_mf.json"
+    headers = {
+        "User-Agent": "13f-backtest research contact@example.com",
+        "Accept-Encoding": "gzip, deflate",
+    }
+    try:
+        r = requests.get(url, headers=headers, timeout=60)
+        r.raise_for_status()
+        obj = r.json()
+    except Exception as exc:
+        print("WARNING: SEC fund ticker list unavailable:", exc)
+        return set()
+
+    symbols = set()
+
+    # Common SEC table shape: {"fields":[...], "data":[[...], ...]}
+    if isinstance(obj, dict) and isinstance(obj.get("fields"), list) and isinstance(obj.get("data"), list):
+        fields = [str(x).lower() for x in obj["fields"]]
+        idxs = [i for i, name in enumerate(fields) if "ticker" in name or "symbol" in name]
+        for row in obj["data"]:
+            if isinstance(row, list):
+                for i in idxs:
+                    if i < len(row) and isinstance(row[i], str) and row[i].strip():
+                        symbols.add(row[i].strip().upper())
+
+    # Also support dict/object shapes.
+    def walk(x):
+        if isinstance(x, dict):
+            for k, v in x.items():
+                kl = str(k).lower()
+                if ("ticker" in kl or "symbol" in kl) and isinstance(v, str) and v.strip():
+                    symbols.add(v.strip().upper())
+                else:
+                    walk(v)
+        elif isinstance(x, list):
+            for v in x:
+                walk(v)
+
+    walk(obj)
+    print("SEC registered fund tickers loaded:", len(symbols))
+    return symbols
+
 
 def download(url: str, out: Path):
     if out.exists() and out.stat().st_size > 0:
@@ -154,6 +200,8 @@ def clean_equity(df):
         case=False, regex=True
     )
     good &= df["ticker"].fillna("").str.match(TICKER_OK)
+    if SEC_FUND_TICKERS:
+        good &= ~df["ticker"].fillna("").str.upper().isin(SEC_FUND_TICKERS)
     return df.loc[good].copy()
 
 def aggregate_quarter(db, q: date):
@@ -413,6 +461,8 @@ def portfolio_summary(portfolios):
     return pd.DataFrame(rows)
 
 def main():
+    global SEC_FUND_TICKERS
+    SEC_FUND_TICKERS = load_sec_fund_tickers()
     snap = load_snapshot()
     print("snapshot generated:", snap.get("generatedAt"))
     paths = cache_dataset_files(snap)
@@ -486,6 +536,7 @@ def main():
         "universes": ["AllStocks", "OpportunisticExLeaders"],
         "entry_rule": "first trading day after the 45-day 13F filing cutoff",
         "holding_period": "90 calendar days, exit first trading day on/after day 90",
+        "fund_filter": "SEC company_tickers_mf.json plus issuer/class regex filters; applied before leader ranking and signals",
         "historical_price_fallback": "rank up to candidate_depth by signal, then take first five with usable historical Yahoo price data; no return-based ranking",
         "generated_at_utc": datetime.utcnow().isoformat() + "Z",
         "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
