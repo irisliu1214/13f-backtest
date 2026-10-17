@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os, re, json, math, time, shutil, hashlib
+import os, re, json, math, time, shutil, hashlib, io
 from pathlib import Path
 from datetime import date, datetime, timedelta
 
@@ -30,7 +30,8 @@ EQUITY_BAD = re.compile(
 )
 TICKER_OK = re.compile(r"^[A-Z][A-Z0-9.\-]{0,9}$")
 SEC_FUND_TICKERS = set()
-KNOWN_CEF_TICKERS = {"BWG","AOD","RMM","BSTZ","TYG","NFJ","BKT"}
+SEC_CEF_NAMES_BY_YEAR = {}
+KNOWN_CEF_TICKERS = {"BWG","AOD","AWP","JRI","RMM","BSTZ","TYG","NFJ","BKT"}
 
 def load_sec_fund_tickers():
     """Load SEC's official mutual-fund/ETF class ticker file once per run."""
@@ -75,6 +76,98 @@ def load_sec_fund_tickers():
     walk(obj)
     print("SEC registered fund tickers loaded:", len(symbols))
     return symbols
+
+
+_CEF_ABBREV = {
+    "FD":"FUND", "FDS":"FUNDS", "TR":"TRUST", "DIVD":"DIVIDEND",
+    "INM":"INCOME", "OPRT":"OPPORTUNITIES", "OPP":"OPPORTUNITY",
+    "GLBAL":"GLOBAL", "GBL":"GLOBAL", "PPTYS":"PROPERTIES", "PPTY":"PROPERTY",
+    "INFRA":"INFRASTRUCTURE", "MUN":"MUNICIPAL", "DUR":"DURATION",
+    "SCI":"SCIENCE", "TECH":"TECHNOLOGY", "GR":"GROWTH",
+}
+_CEF_DROP = {"INC","INCORPORATED","CORP","CORPORATION","CO","COMPANY","LTD","LIMITED",
+             "PLC","LLC","LP","NEW","COM","COMMON","SH","SHS","CLASS","CL","ORD","ORDINARY"}
+
+def _cef_tokens(name):
+    x = str(name or "").upper().replace("&", " AND ")
+    raw = re.findall(r"[A-Z0-9]+", x)
+    out = []
+    for t in raw:
+        t = _CEF_ABBREV.get(t, t)
+        if t in {"AND", "THE"} or t in _CEF_DROP:
+            continue
+        out.append(t)
+    return set(out)
+
+def _is_cef_name(issuer, year):
+    """Conservative token match against SEC's annual active closed-end-fund registrant names."""
+    if not issuer or not SEC_CEF_NAMES_BY_YEAR:
+        return False
+    itoks = _cef_tokens(issuer)
+    if len(itoks) < 2:
+        return False
+    names = SEC_CEF_NAMES_BY_YEAR.get(int(year), set())
+    for ntoks in names:
+        if not ntoks:
+            continue
+        inter = len(itoks & ntoks)
+        smaller = min(len(itoks), len(ntoks))
+        # Exact/subset matches, or strong abbreviation-tolerant matches with >=3 informative tokens.
+        if itoks == ntoks or (smaller >= 3 and inter == smaller) or (smaller >= 4 and inter / smaller >= 0.75 and inter >= 3):
+            return True
+    return False
+
+def load_sec_cef_names_by_year():
+    """Load annual SEC Closed-End Fund Information registrant names.
+
+    The SEC publishes yearly active CEF registrant files. 2021 is XML-only in the
+    catalog, so use the union of 2020 and 2022 as a conservative 2021 bridge.
+    """
+    base = "https://www.sec.gov/files/investment/data/other/closed-end-fund-information/"
+    urls = {
+        2016: base + "closed-end_investment_company.csv",
+        2017: base + "closed-end_investment_company_2017.csv",
+        2018: base + "closed-end_investment_company_2018.csv",
+        2019: base + "closed-end_investment_company_2019.csv",
+        2020: base + "closed-end_investment_company_2020.csv",
+        2022: base + "closed-end_investment_company_2022.csv",
+        2023: base + "closed-end_investment_company_2023.csv",
+        2024: base + "closed-end-investment-company-2024.csv",
+        2025: base + "closed-end-investment-company-2025.csv",
+        2026: base + "closed-end-investment-company-2026.csv",
+    }
+    headers = {
+        "User-Agent": "13f-backtest research contact@example.com",
+        "Accept-Encoding": "gzip, deflate",
+    }
+    ans = {}
+    for year, url in urls.items():
+        names = set()
+        try:
+            r = requests.get(url, headers=headers, timeout=60)
+            r.raise_for_status()
+            try:
+                df = pd.read_csv(io.BytesIO(r.content))
+            except Exception:
+                df = pd.read_csv(io.BytesIO(r.content), encoding="latin1")
+            name_cols = [c for c in df.columns if "name" in str(c).lower() and "registrant" in str(c).lower()]
+            if not name_cols:
+                name_cols = [c for c in df.columns if "name" in str(c).lower()]
+            if name_cols:
+                for v in df[name_cols[0]].dropna().astype(str):
+                    toks = frozenset(_cef_tokens(v))
+                    if len(toks) >= 2:
+                        names.add(toks)
+        except Exception as exc:
+            print(f"WARNING: SEC CEF list unavailable for {year}:", exc)
+        ans[year] = names
+        print(f"SEC CEF names loaded {year}: {len(names)}")
+
+    # 2021 has XML but no CSV in the current SEC catalog. The adjacent-year union
+    # is conservative for exclusion and avoids treating a CEF as an operating stock.
+    ans[2021] = set(ans.get(2020, set())) | set(ans.get(2022, set()))
+    print("SEC CEF names loaded 2021 (2020/2022 union):", len(ans[2021]))
+    return ans
 
 
 def download(url: str, out: Path):
@@ -189,7 +282,7 @@ def prev_quarter(q: date) -> date:
 
 def qlabel(q): return f"{q.year}Q{(q.month-1)//3+1}"
 
-def clean_equity(df):
+def clean_equity(df, year=None):
     if df.empty: return df
     text = (df["issuer"].fillna("") + " " + df["class_name"].fillna(""))
     good = ~text.str.contains(EQUITY_BAD)
@@ -205,6 +298,9 @@ def clean_equity(df):
     if SEC_FUND_TICKERS:
         good &= ~tickers_upper.isin(SEC_FUND_TICKERS)
     good &= ~tickers_upper.isin(KNOWN_CEF_TICKERS)
+    if year is not None and SEC_CEF_NAMES_BY_YEAR:
+        cef_mask = df["issuer"].fillna("").map(lambda x: _is_cef_name(x, int(year)))
+        good &= ~cef_mask
     return df.loc[good].copy()
 
 def aggregate_quarter(db, q: date):
@@ -246,7 +342,7 @@ def aggregate_quarter(db, q: date):
           WHERE f.rn=1
           GROUP BY h.cusip
         """, [period, asof]).df()
-        return clean_equity(x)
+        return clean_equity(x, year=period.year)
 
     cur = one(q, cutoff).rename(columns={
         "shares":"cur_shares","value_usd":"cur_value","holders":"cur_holders",
@@ -464,8 +560,9 @@ def portfolio_summary(portfolios):
     return pd.DataFrame(rows)
 
 def main():
-    global SEC_FUND_TICKERS
+    global SEC_FUND_TICKERS, SEC_CEF_NAMES_BY_YEAR
     SEC_FUND_TICKERS = load_sec_fund_tickers()
+    SEC_CEF_NAMES_BY_YEAR = load_sec_cef_names_by_year()
     snap = load_snapshot()
     print("snapshot generated:", snap.get("generatedAt"))
     paths = cache_dataset_files(snap)
@@ -539,7 +636,8 @@ def main():
         "universes": ["AllStocks", "OpportunisticExLeaders"],
         "entry_rule": "first trading day after the 45-day 13F filing cutoff",
         "holding_period": "90 calendar days, exit first trading day on/after day 90",
-        "fund_filter": "SEC company_tickers_mf.json plus issuer/class regex filters and identified closed-end-fund tickers; applied before leader ranking and signals",
+        "fund_filter": "SEC company_tickers_mf.json plus issuer/class regex filters plus annual SEC Closed-End Fund Information registrant-name matching; applied before leader ranking and signals",
+        "cef_2021_bridge": "SEC CEF catalog has 2021 XML only; 2021 exclusion uses conservative union of 2020 and 2022 annual CEF registrant-name sets",
         "historical_price_fallback": "rank up to candidate_depth by signal, then take first five with usable historical Yahoo price data; no return-based ranking",
         "generated_at_utc": datetime.utcnow().isoformat() + "Z",
         "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
