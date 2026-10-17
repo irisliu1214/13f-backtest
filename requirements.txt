@@ -1,0 +1,6 @@
+duckdb>=1.1.0
+pandas>=2.2.0
+numpy>=1.26.0
+requests>=2.31.0
+yfinance>=0.2.50
+pyarrow>=17.0.0
