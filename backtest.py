@@ -146,6 +146,7 @@ def clean_equity(df):
     if df.empty: return df
     text = (df["issuer"].fillna("") + " " + df["class_name"].fillna(""))
     good = ~text.str.contains(EQUITY_BAD)
+    good &= ~text.str.contains(r"(FUND|PORTFOLIO|BETABUILDERS|ISHARES|VANGUARD|SPDR|PROSHARES|ETF|INDEX|ETN|KRANESHARES|GLOBAL X)", case=False, regex=True)
     good &= df["ticker"].fillna("").str.match(TICKER_OK)
     return df.loc[good].copy()
 
@@ -178,9 +179,9 @@ def aggregate_quarter(db, q: date):
           )
           SELECT
             h.cusip,
-            MAX(h.ticker) ticker,
-            MAX(h.issuerName) issuer,
-            MAX(h.titleOfClass) AS class_name,
+            MODE(h.ticker) ticker,
+            MODE(h.issuerName) issuer,
+            MODE(h.titleOfClass) AS class_name,
             SUM(h.shares) shares,
             SUM(h.value_usd) value_usd,
             COUNT(DISTINCT f.cik) holders
@@ -242,10 +243,15 @@ def choose_winners(metrics):
             winners[f"Percentage+floor:{int(f)}"] = z.sort_values(["pct_change","abs_change"], ascending=False).iloc[0]
     return winners
 
-def next_price_date(idx, target):
+def next_price_date(idx, target, max_gap_days=7):
     target = pd.Timestamp(target)
     p = idx.searchsorted(target)
-    return None if p >= len(idx) else idx[p]
+    if p >= len(idx):
+        return None
+    found = idx[p]
+    if (found.tz_localize(None) if getattr(found, "tzinfo", None) else found) - target > pd.Timedelta(days=max_gap_days):
+        return None
+    return found
 
 def download_prices(tickers):
     tickers = sorted(set(tickers) | {"SPY"})
@@ -371,6 +377,8 @@ def main():
 
     summ = summary(headline)
     summ.to_csv(RESULTS/"method_summary.csv", index=False)
+    floor_summ = summary(sens.rename(columns={"method":"method"}))
+    floor_summ.to_csv(RESULTS/"floor_method_summary.csv", index=False)
     pd.DataFrame(quality).to_csv(RESULTS/"data_quality.csv", index=False)
 
     meta = {
