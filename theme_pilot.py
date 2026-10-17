@@ -82,6 +82,18 @@ def rank_strength(rank):
 
 def main():
     df = pd.read_csv(SRC)
+
+    # Residual pooled-investment vehicles can survive upstream stock filters because
+    # some historical 13F issuer names/tickers are ambiguous. They are not operating
+    # companies and would create fake industry clusters, so exclude them here too.
+    pooled = df["issuer"].fillna("").str.contains(
+        r"(NUVEEN|POWERSHS|POWERSHARES|ISHARES|SPDR|VANGUARD|ETF|ETN|"
+        r"MUNICIPAL INCOME|MUNCP INCOME|COMMODITY TR|CLOSED[- ]?END|"
+        r"BLACKROCK.*FUND|PIMCO.*FUND|FIRST TR.*FUND)",
+        case=False, regex=True
+    )
+    df = df.loc[~pooled].copy()
+
     # Theme discovery uses the whole market; opportunistic selection later excludes leaders.
     allu = df[df["universe"].eq("AllStocks")].copy()
     allu["rank_strength"] = allu["signal_rank"].map(rank_strength)
