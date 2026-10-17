@@ -1,0 +1,19 @@
+{
+  "dataset": "austin-starks/sec-ownership-disclosures",
+  "dataset_snapshot_generated_at": "2026-10-16T19:30:23.978Z",
+  "start_year": 2016,
+  "end_year": 2026,
+  "primary_floor_shares": 1000000.0,
+  "floor_grid": [
+    100000.0,
+    500000.0,
+    1000000.0,
+    5000000.0,
+    10000000.0,
+    25000000.0,
+    50000000.0,
+    100000000.0
+  ],
+  "generated_at_utc": "2026-10-17T07:54:21.516363Z",
+  "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
+}
