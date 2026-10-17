@@ -50,6 +50,9 @@ UA = {
 SEC_TICKERS = "https://www.sec.gov/files/company_tickers.json"
 SEC_SUB = "https://data.sec.gov/submissions/CIK{cik:010d}.json"
 SEC_ARCH = "https://www.sec.gov/Archives/edgar/data/{cik}/{acc_no}/{primary}"
+SUBMISSION_CACHE = {}
+OLD_SUBMISSION_CACHE = {}
+FILING_CACHE = {}
 
 BAD_ISSUER = re.compile(
     r"(NUVEEN|POWERSHS|POWERSHARES|ISHARES|SPDR|VANGUARD|ETF|ETN|"
@@ -127,11 +130,19 @@ def filing_rows_from_submission(obj):
     return out
 
 def choose_filing(cik, cutoff):
-    url=SEC_SUB.format(cik=cik)
-    r=requests.get(url,headers=UA,timeout=60)
-    if r.status_code!=200:
-        return None
-    obj=r.json()
+    cache_key=(int(cik),cutoff.isoformat())
+    if cache_key in FILING_CACHE:
+        return FILING_CACHE[cache_key]
+    if int(cik) in SUBMISSION_CACHE:
+        obj=SUBMISSION_CACHE[int(cik)]
+    else:
+        url=SEC_SUB.format(cik=cik)
+        r=requests.get(url,headers=UA,timeout=30)
+        if r.status_code!=200:
+            FILING_CACHE[cache_key]=None
+            return None
+        obj=r.json()
+        SUBMISSION_CACHE[int(cik)]=obj
     rows=filing_rows_from_submission(obj)
     forms={"10-K","10-K/A","20-F","20-F/A","40-F"}
     candidates=[x for x in rows if x.get("form") in forms and x.get("filingDate") and x["filingDate"]<=cutoff.isoformat()]
@@ -139,15 +150,22 @@ def choose_filing(cik, cutoff):
         for f in obj.get("filings",{}).get("files",[])[:4]:
             name=f.get("name")
             if not name: continue
-            rr=requests.get("https://data.sec.gov/submissions/"+name,headers=UA,timeout=60)
-            if rr.status_code!=200: continue
-            rows2=filing_rows_from_submission({"filings":{"recent":rr.json()}})
+            old_key=(int(cik),name)
+            if old_key in OLD_SUBMISSION_CACHE:
+                old_obj=OLD_SUBMISSION_CACHE[old_key]
+            else:
+                rr=requests.get("https://data.sec.gov/submissions/"+name,headers=UA,timeout=30)
+                if rr.status_code!=200: continue
+                old_obj=rr.json(); OLD_SUBMISSION_CACHE[old_key]=old_obj
+            rows2=filing_rows_from_submission({"filings":{"recent":old_obj}})
             candidates.extend([x for x in rows2 if x.get("form") in forms and x.get("filingDate") and x["filingDate"]<=cutoff.isoformat()])
             time.sleep(0.11)
     if not candidates:
+        FILING_CACHE[cache_key]=None
         return None
     candidates=sorted(candidates,key=lambda x:(x["filingDate"],x["accessionNumber"]),reverse=True)
-    return candidates[0]
+    FILING_CACHE[cache_key]=candidates[0]
+    return FILING_CACHE[cache_key]
 
 def clean_html_text(html):
     soup=BeautifulSoup(html,"html.parser")
