@@ -31,6 +31,7 @@ EQUITY_BAD = re.compile(
 )
 TICKER_OK = re.compile(r"^[A-Z][A-Z0-9.\-]{0,9}$")
 SEC_FUND_TICKERS = set()
+SEC_FUND_TICKERS_BY_YEAR = {}
 SEC_CEF_NAMES_BY_YEAR = {}
 KNOWN_CEF_TICKERS = {"BWG","AOD","AWP","JRI","RMM","BSTZ","TYG","NFJ","BKT","CEF","PSLV","PHYS","SIVR","SLV","GLD","GBTC","FBTC","URNM"}
 
@@ -77,6 +78,71 @@ def load_sec_fund_tickers():
     walk(obj)
     print("SEC registered fund tickers loaded:", len(symbols))
     return symbols
+
+
+def load_sec_annual_fund_tickers():
+    """Load annual SEC Investment Company Series/Class ticker lists.
+
+    The current company_tickers_mf.json is useful for active funds, but a historical
+    backtest also needs delisted/historical investment-company tickers. This loader
+    uses the SEC's annual Series/Class reports so old ETFs and mutual-fund share
+    classes do not leak into the stock universe.
+    """
+    urls = {
+        2015: "https://www.sec.gov/files/investment/data/other/investment-company-series-and-class-information/investment_company_series_class_2015.csv",
+        2016: "https://www.sec.gov/files/investment/data/other/investment-company-series-and-class-information/investment_company_series_class.csv",
+        2017: "https://www.sec.gov/files/investment/data/other/investment-company-series-and-class-information/investment_company_series_class_2017.csv",
+        2018: "https://www.sec.gov/files/investment/data/other/investment-company-series-and-class-information/investment_company_series_class_2018.csv",
+        2019: "https://www.sec.gov/files/investment/data/other/investment-company-series-and-class-information/investment_company_series_class_2019.csv",
+        2020: "https://www.sec.gov/files/investment/data/other/investment-company-series-and-class-information/investment_company_series_class_2020.csv",
+        2021: "https://www.sec.gov/files/investment/data/other/investment-company-series-and-class-information/investment_company_series_class_2021.csv",
+        2022: "https://www.sec.gov/files/investment/data/other/investment-company-series-and-class-information/investment_company_series_class_2022.csv",
+        2023: "https://www.sec.gov/files/investment/data/other/investment-company-series-class-information/investment_company_series_class_2023.csv",
+        2024: "https://www.sec.gov/files/investment/data/other/investment-company-series-and-class-information/investment-company-series-class-2024.csv",
+        2025: "https://www.sec.gov/files/investment/data/other/investment-company-series-class-information/investment-company-series-class-2025.csv",
+        2026: "https://www.sec.gov/files/investment/data/other/investment-company-series-class-information/investment-company-series-class-2026.csv",
+    }
+    headers = {
+        "User-Agent": "13f-backtest research contact@example.com",
+        "Accept-Encoding": "gzip, deflate",
+    }
+    out = {}
+    for year, url in urls.items():
+        symbols = set()
+        try:
+            r = requests.get(url, headers=headers, timeout=90)
+            r.raise_for_status()
+            try:
+                df = pd.read_csv(io.BytesIO(r.content), low_memory=False, on_bad_lines="skip")
+            except Exception:
+                df = pd.read_csv(io.BytesIO(r.content), encoding="latin1", low_memory=False, on_bad_lines="skip")
+            ticker_cols = [col for col in df.columns if "ticker" in str(col).lower()]
+            for col in ticker_cols:
+                for v in df[col].dropna().astype(str):
+                    t = v.strip().upper()
+                    if TICKER_OK.match(t):
+                        symbols.add(t)
+        except Exception as exc:
+            print(f"WARNING: SEC annual fund ticker list unavailable for {year}:", exc)
+        out[year] = symbols
+        print(f"SEC annual fund tickers loaded {year}: {len(symbols)}")
+
+    # A failed annual download must not silently create an unfiltered year.
+    years = sorted(urls)
+    for year in years:
+        if out.get(year):
+            continue
+        neighbor_sets = []
+        for d in (1, 2):
+            for y2 in (year - d, year + d):
+                if out.get(y2):
+                    neighbor_sets.append(out[y2])
+            if neighbor_sets:
+                break
+        if neighbor_sets:
+            out[year] = set().union(*neighbor_sets)
+            print(f"SEC annual fund tickers fallback {year}: {len(out[year])}")
+    return out
 
 
 _CEF_ABBREV = {
@@ -126,6 +192,7 @@ def load_sec_cef_names_by_year():
     """
     base = "https://www.sec.gov/files/investment/data/other/closed-end-fund-information/"
     urls = {
+        2015: base + "closed-end_investment_company_2015.csv",
         2016: base + "closed-end_investment_company.csv",
         2017: base + "closed-end_investment_company_2017.csv",
         2018: base + "closed-end_investment_company_2018.csv",
@@ -164,10 +231,24 @@ def load_sec_cef_names_by_year():
         ans[year] = names
         print(f"SEC CEF names loaded {year}: {len(names)}")
 
-    # 2021 has XML but no CSV in the current SEC catalog. The adjacent-year union
-    # is conservative for exclusion and avoids treating a CEF as an operating stock.
+    # 2021 has XML but no CSV in the current SEC catalog. Also protect against
+    # transient SEC download/parse failures in any annual file (2017 was observed
+    # to load as zero in a prior run) by using the nearest available annual set.
     ans[2021] = set(ans.get(2020, set())) | set(ans.get(2022, set()))
-    print("SEC CEF names loaded 2021 (2020/2022 union):", len(ans[2021]))
+    for year in range(max(2015, START_YEAR - 1), END_YEAR + 1):
+        if ans.get(year):
+            continue
+        neighbor_sets = []
+        for d in (1, 2):
+            for y2 in (year - d, year + d):
+                if ans.get(y2):
+                    neighbor_sets.append(ans[y2])
+            if neighbor_sets:
+                break
+        if neighbor_sets:
+            ans[year] = set().union(*neighbor_sets)
+            print(f"SEC CEF names fallback {year}: {len(ans[year])}")
+    print("SEC CEF names loaded 2021 (adjacent-year bridge):", len(ans.get(2021, set())))
     return ans
 
 
@@ -299,6 +380,8 @@ def clean_equity(df, year=None):
     tickers_upper = df["ticker"].fillna("").str.upper()
     if SEC_FUND_TICKERS:
         good &= ~tickers_upper.isin(SEC_FUND_TICKERS)
+    if year is not None and SEC_FUND_TICKERS_BY_YEAR:
+        good &= ~tickers_upper.isin(SEC_FUND_TICKERS_BY_YEAR.get(int(year), set()))
     good &= ~tickers_upper.isin(KNOWN_CEF_TICKERS)
     if year is not None and SEC_CEF_NAMES_BY_YEAR:
         cef_mask = df["issuer"].fillna("").map(lambda x: _is_cef_name(x, int(year)))
@@ -486,7 +569,11 @@ def aggregate_quarter(db, q: date):
     return m, {"matched_managers": int(len(managers)), "securities": int(len(m))}
 
 def rank_candidates(metrics, method, exclude_leaders=False):
-    x = metrics.copy()
+    # A quarter-over-quarter accumulation signal requires a real prior-quarter
+    # position base. Zero-base/new-CUSIP securities are excluded rather than
+    # treating a corporate action, spin-off, merger CUSIP change, or IPO as
+    # automatic "holder growth".
+    x = metrics[metrics.prev_holders > 0].copy()
     if exclude_leaders:
         x = x[~x.is_leader]
     if x.empty:
@@ -524,7 +611,11 @@ def rank_candidates(metrics, method, exclude_leaders=False):
     else:
         raise ValueError(method)
 
-    return x.drop_duplicates(subset=["ticker"]).head(CANDIDATE_DEPTH).copy()
+    # Do not allocate two portfolio slots to two share classes of the same issuer.
+    # Keep the higher-ranked class and then enforce unique ticker + issuer.
+    x = x.drop_duplicates(subset=["ticker"])
+    x = x.drop_duplicates(subset=["issuer"])
+    return x.head(CANDIDATE_DEPTH).copy()
 
 def next_price_date(idx, target, max_gap_days=7):
     target = pd.Timestamp(target)
@@ -536,9 +627,14 @@ def next_price_date(idx, target, max_gap_days=7):
         return None
     return found
 
+def _yahoo_symbol(ticker):
+    # Yahoo uses dash notation for US share classes (e.g. BRK-A rather than BRK.A).
+    return str(ticker).replace(".", "-")
+
+
 def download_prices(tickers):
-    # Preserve caller priority rather than alphabetically sorting thousands of symbols.
-    # This lets the highest-ranked candidates get priced first if Yahoo throttles later.
+    # Only strict signal Top-5 names are passed here. Preserve priority and avoid
+    # downloading the full candidate pool, which previously triggered Yahoo 429s.
     ordered = []
     seen = set()
     for t in ["SPY"] + list(tickers):
@@ -550,11 +646,12 @@ def download_prices(tickers):
     end = (date.today() + timedelta(days=5)).isoformat()
     all_frames = {}
 
-    def ingest(raw, chunk):
+    def ingest(raw, originals):
         if raw is None or raw.empty:
             return
-        if len(chunk) == 1:
-            t = chunk[0]
+        req = [_yahoo_symbol(t) for t in originals]
+        if len(originals) == 1:
+            t = originals[0]
             try:
                 s = raw["Close"].dropna() if "Close" in raw else pd.Series(dtype=float)
                 if not s.empty:
@@ -562,16 +659,16 @@ def download_prices(tickers):
             except Exception:
                 pass
         else:
-            for t in chunk:
+            for t, ysym in zip(originals, req):
                 try:
-                    s = raw[t]["Close"].dropna()
+                    s = raw[ysym]["Close"].dropna()
                     if not s.empty:
                         all_frames[t] = s
                 except Exception:
                     pass
 
-    # SPY is required by every row. Fetch it first and fail loudly rather than
-    # silently producing empty portfolio files when Yahoo is rate-limited.
+    # SPY is required for every benchmark comparison. A missing SPY series is a
+    # hard failure, never a green workflow with blank output files.
     for attempt in range(5):
         try:
             raw = yf.download(["SPY"], start=start, end=end, auto_adjust=True,
@@ -583,30 +680,27 @@ def download_prices(tickers):
             pass
         time.sleep(5 * (attempt + 1))
     if "SPY" not in all_frames:
-        raise RuntimeError("SPY price download failed; refusing to write empty backtest outputs")
+        raise RuntimeError("SPY price download failed; refusing to write backtest outputs")
 
-    # Download signal candidates in priority order, with no parallel hammering of Yahoo.
-    # Smaller sequential chunks trade a little speed for much lower 429 risk.
     rest = [t for t in ordered if t != "SPY"]
     for k in range(0, len(rest), 20):
         chunk = rest[k:k+20]
+        req = [_yahoo_symbol(t) for t in chunk]
         raw = pd.DataFrame()
-        for attempt in range(3):
+        for attempt in range(4):
             try:
-                raw = yf.download(chunk, start=start, end=end, auto_adjust=True,
+                raw = yf.download(req, start=start, end=end, auto_adjust=True,
                                   progress=False, group_by="ticker", threads=False)
                 if raw is not None and not raw.empty:
                     break
             except Exception:
                 raw = pd.DataFrame()
-            time.sleep(4 * (attempt + 1))
+            time.sleep(5 * (attempt + 1))
         ingest(raw, chunk)
-        time.sleep(0.75)
+        time.sleep(1.25)
     return all_frames
 
 def add_returns(rows):
-    # Price the highest signal ranks first across every quarter/method/universe.
-    # This is important because only the first five tradable names are needed.
     ranked = sorted(
         [r for r in rows if r.get("ticker")],
         key=lambda r: (int(r.get("signal_rank", 999999)), r.get("quarter", ""), r.get("method", ""), r.get("universe", ""))
@@ -618,56 +712,46 @@ def add_returns(rows):
         q = datetime.strptime(r["period_end"], "%Y-%m-%d").date()
         target_entry = cutoff_for(q) + timedelta(days=1)
         s = prices.get(r["ticker"], pd.Series(dtype=float))
-        if s.empty or spy.empty:
-            r.update(entry_date=None, exit_date=None, return_90d=np.nan, spy_return_90d=np.nan, spy_excess_return=np.nan)
+        if s.empty:
+            r.update(price_status="missing_symbol", entry_date=None, exit_date=None,
+                     return_90d=np.nan, spy_return_90d=np.nan, spy_excess_return=np.nan)
             continue
+        if spy.empty:
+            raise RuntimeError("SPY unexpectedly missing after successful benchmark download")
         entry = next_price_date(s.index, target_entry)
         if entry is None:
-            r.update(entry_date=None, exit_date=None, return_90d=np.nan, spy_return_90d=np.nan, spy_excess_return=np.nan)
+            r.update(price_status="missing_entry_window", entry_date=None, exit_date=None,
+                     return_90d=np.nan, spy_return_90d=np.nan, spy_excess_return=np.nan)
             continue
         target_exit = entry.date() + timedelta(days=90)
         exitd = next_price_date(s.index, target_exit)
         spy_entry = next_price_date(spy.index, entry)
         spy_exit = next_price_date(spy.index, target_exit)
         if exitd is None or spy_entry is None or spy_exit is None:
-            r.update(entry_date=entry.date().isoformat(), exit_date=None, return_90d=np.nan, spy_return_90d=np.nan, spy_excess_return=np.nan)
+            r.update(price_status="missing_exit_window", entry_date=entry.date().isoformat(), exit_date=None,
+                     return_90d=np.nan, spy_return_90d=np.nan, spy_excess_return=np.nan)
             continue
         ret = float(s.loc[exitd] / s.loc[entry] - 1)
         sret = float(spy.loc[spy_exit] / spy.loc[spy_entry] - 1)
-        r.update(entry_date=entry.date().isoformat(), exit_date=exitd.date().isoformat(),
+        r.update(price_status="ok", entry_date=entry.date().isoformat(), exit_date=exitd.date().isoformat(),
                  return_90d=ret, spy_return_90d=sret, spy_excess_return=ret-sret)
 
 def select_top5_from_candidates(candidates):
-    """Select the first five signal-ranked names with usable historical price data.
-
-    This is a data-availability fallback, not an additional alpha signal. For quarters
-    whose 90-day window has fully elapsed, a usable return is required; for the still-
-    open latest quarter, only an entry price is required.
-    """
+    """Select strict signal ranks 1..5; never replace a missing-price name ex post."""
     if candidates.empty:
         return pd.DataFrame()
 
     selected = []
     keys = ["quarter", "period_end", "universe", "method"]
     for key, grp in candidates.groupby(keys, sort=True):
-        grp = grp.sort_values("signal_rank").copy()
-        q = datetime.strptime(key[1], "%Y-%m-%d").date()
-        target_entry = cutoff_for(q) + timedelta(days=1)
-        mature = (target_entry + timedelta(days=90)) <= date.today()
-
-        eligible = grp[grp.entry_date.notna()].copy()
-        if mature:
-            eligible = eligible[eligible.return_90d.notna()].copy()
-
-        picks = eligible.head(PORTFOLIO_SIZE).copy()
+        picks = grp.sort_values("signal_rank").head(PORTFOLIO_SIZE).copy()
         if picks.empty:
             continue
-        picks["portfolio_rank"] = np.arange(1, len(picks) + 1)
+        picks["portfolio_rank"] = picks["signal_rank"].astype(int)
         picks["weight"] = 1.0 / PORTFOLIO_SIZE
         selected.append(picks)
 
     return pd.concat(selected, ignore_index=True) if selected else pd.DataFrame()
-
 
 def build_quarterly_portfolio(constituents):
     rows = []
@@ -719,8 +803,9 @@ def portfolio_summary(portfolios):
     return pd.DataFrame(rows)
 
 def main():
-    global SEC_FUND_TICKERS, SEC_CEF_NAMES_BY_YEAR
+    global SEC_FUND_TICKERS, SEC_FUND_TICKERS_BY_YEAR, SEC_CEF_NAMES_BY_YEAR
     SEC_FUND_TICKERS = load_sec_fund_tickers()
+    SEC_FUND_TICKERS_BY_YEAR = load_sec_annual_fund_tickers()
     SEC_CEF_NAMES_BY_YEAR = load_sec_cef_names_by_year()
     snap = load_snapshot()
     print("snapshot generated:", snap.get("generatedAt"))
@@ -779,29 +864,51 @@ def main():
                         "matched_managers": meta["matched_managers"],
                     })
 
-    add_returns(candidate_rows)
+    # Price ONLY the strict signal Top-5. The previous implementation priced the
+    # full Top-20 candidate pool and substituted lower-ranked names when a Top-5
+    # ticker had no Yahoo history, which introduced ex-post availability bias.
+    strict_rows = [r for r in candidate_rows if int(r["signal_rank"]) <= PORTFOLIO_SIZE]
+    add_returns(strict_rows)
+
     candidate_df = pd.DataFrame(candidate_rows)
     candidate_df.to_csv(RESULTS / "accumulation_candidate_pool.csv", index=False)
 
     constituents = select_top5_from_candidates(candidate_df)
     if constituents.empty:
-        raise RuntimeError("No priced constituents were selected; refusing to commit empty backtest outputs")
+        raise RuntimeError("No strict Top-5 constituents were selected")
     constituents.to_csv(RESULTS / "accumulation_constituents.csv", index=False)
 
-    # Mature quarter/method/universe groups should have five priced names. Fail loudly
-    # if widespread pricing failure would otherwise masquerade as a successful workflow.
     mature_cutoff = date.today() - timedelta(days=90)
-    expected = candidate_df[
-        pd.to_datetime(candidate_df["period_end"]).dt.date.map(lambda q: cutoff_for(q) + timedelta(days=1) <= mature_cutoff)
-    ][["quarter","period_end","universe","method"]].drop_duplicates()
-    actual = constituents.groupby(["quarter","period_end","universe","method"]).size().reset_index(name="n")
-    check = expected.merge(actual, on=["quarter","period_end","universe","method"], how="left")
-    incomplete = check[check["n"].fillna(0) < PORTFOLIO_SIZE]
-    if len(incomplete) > 0:
-        print("WARNING: incomplete mature groups:", len(incomplete))
-        print(incomplete.to_string(index=False))
-    if len(incomplete) > max(2, int(0.05 * max(1, len(expected)))):
-        raise RuntimeError(f"Too many incomplete mature portfolio groups ({len(incomplete)}/{len(expected)}); likely price-source throttling")
+    mature = constituents[
+        pd.to_datetime(constituents["period_end"]).dt.date.map(
+            lambda q: cutoff_for(q) + timedelta(days=1) <= mature_cutoff
+        )
+    ].copy()
+
+    group_keys = ["quarter","period_end","universe","method"]
+    group_sizes = mature.groupby(group_keys).size().reset_index(name="n_selected")
+    bad_size = group_sizes[group_sizes.n_selected != PORTFOLIO_SIZE]
+    if not bad_size.empty:
+        print("STRICT TOP5 SIZE FAILURES")
+        print(bad_size.to_string(index=False))
+        raise RuntimeError("At least one mature signal group does not contain exactly five strict picks")
+
+    price_coverage = mature.groupby(group_keys).agg(
+        n_selected=("ticker","size"),
+        n_priced=("return_90d",lambda s: int(s.notna().sum()))
+    ).reset_index()
+    price_coverage.to_csv(RESULTS / "accumulation_price_coverage.csv", index=False)
+    missing_prices = mature[mature.return_90d.isna()][
+        ["quarter","universe","method","signal_rank","ticker","issuer","price_status"]
+    ]
+    missing_prices.to_csv(RESULTS / "accumulation_missing_prices.csv", index=False)
+    if not missing_prices.empty:
+        print("STRICT TOP5 MISSING HISTORICAL PRICES")
+        print(missing_prices.to_string(index=False))
+        raise RuntimeError(
+            f"{len(missing_prices)} strict Top-5 mature rows lack historical prices; "
+            "refusing to substitute lower-ranked names or publish a biased summary"
+        )
 
     portfolios = build_quarterly_portfolio(constituents)
     portfolios.to_csv(RESULTS / "accumulation_quarterly_portfolios.csv", index=False)
@@ -824,7 +931,7 @@ def main():
             "BuyerRatioConviction",
             "CompositeAccumulationScore"
         ],
-        "absolute_holder_increase_definition": "current matched 13F holder count minus prior-quarter matched 13F holder count",
+        "absolute_holder_increase_definition": "current matched 13F holder count minus prior-quarter matched 13F holder count; securities with zero prior-quarter holders are excluded to avoid treating new CUSIPs/corporate actions as accumulation",
         "institutional_ownership_increase_definition": "split-adjusted percentage growth in aggregate shares held by matched 13F managers; proxy used because the source does not contain point-in-time issuer shares outstanding for every security",
         "buyer_ratio_definition": f"among continuing matched managers that changed their split-adjusted position by more than {BUYER_EPS:.1%}, buyers / (buyers + sellers); require at least 5 active changers",
         "composite_definition": "equal-weight mean of cross-sectional z-scores for absolute holder increase, institutional ownership increase proxy, and buyer ratio; each input winsorized at 1st/99th percentile before z-scoring",
@@ -832,8 +939,8 @@ def main():
         "universes": ["AllStocks", "OpportunisticExLeaders"],
         "entry_rule": "first trading day after the 45-day 13F filing cutoff",
         "holding_period": "90 calendar days, exit first trading day on/after day 90",
-        "fund_filter": "SEC company_tickers_mf.json plus issuer/class regex filters plus annual SEC Closed-End Fund Information registrant-name matching; applied before leader ranking and signals",
-        "historical_price_fallback": "rank up to candidate_depth by signal, then take first five with usable historical Yahoo price data; no return-based ranking",
+        "fund_filter": "SEC company_tickers_mf.json plus annual SEC Investment Company Series/Class ticker lists plus issuer/class regex filters plus annual SEC Closed-End Fund Information registrant-name matching; applied before leader ranking and signals",
+        "historical_price_rule": "strict signal ranks 1-5 only; no ex-post substitution for missing historical prices; workflow fails rather than publishing a biased summary",
         "generated_at_utc": datetime.utcnow().isoformat() + "Z",
         "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
     }
