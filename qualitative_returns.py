@@ -6,12 +6,21 @@ import numpy as np
 import pandas as pd
 import requests
 
-from backtest import cutoff_for
+from pandas.tseries.holiday import USFederalHolidayCalendar
 
 R = Path("results")
 PICKS = R / "qualitative_picks_final.csv"
 HORIZONS = [90, 180, 365]
 UA = {"User-Agent": "Mozilla/5.0 qualitative-13f-backtest"}
+
+_HOLIDAY_CAL = USFederalHolidayCalendar()
+_HOLIDAYS = set(pd.Timestamp(x).date() for x in _HOLIDAY_CAL.holidays(start="2015-01-01", end="2028-12-31"))
+
+def cutoff_for(q):
+    d = q + timedelta(days=45)
+    while d.weekday() >= 5 or d in _HOLIDAYS:
+        d += timedelta(days=1)
+    return d
 
 def quarter_end(q):
     y = int(q[:4]); n = int(q[-1])
