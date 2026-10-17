@@ -1,0 +1,55 @@
+name: Run B2 blind theme discovery
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "b2_discovery.py"
+      - ".github/workflows/b2-discovery.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      START_YEAR: "2016"
+      END_YEAR: "2026"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install networkx scipy pandas_market_calendars
+      - name: Run blind B2 discovery
+        run: python b2_discovery.py
+      - name: Validate outputs
+        run: |
+          python - <<'PY'
+          import pandas as pd, json
+          a=pd.read_csv("results/b2_abnormal_accumulation.csv")
+          c=pd.read_csv("results/b2_blind_clusters.csv")
+          m=pd.read_csv("results/b2_blind_cluster_members.csv")
+          assert len(a)>1000, len(a)
+          assert len(c)>20, len(c)
+          assert len(m)>100, len(m)
+          assert "return" not in " ".join(c.columns).lower()
+          print("abnormal",len(a),"clusters",len(c),"members",len(m))
+          print(c.groupby("quarter").size().to_string())
+          PY
+      - name: Commit blind discovery outputs
+        run: |
+          git config user.name "13f-b2-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add results/b2_*.csv results/b2_methodology.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate frozen B2 blind discovery packets"
+            git pull --rebase origin main
+            git push
+          fi
