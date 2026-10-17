@@ -1,0 +1,46 @@
+name: Evaluate B2 frozen themes
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "b2_returns.py"
+      - "results/b2_picks_final.csv"
+      - ".github/workflows/b2-returns.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pandas numpy requests pandas_market_calendars
+      - name: Evaluate frozen B2 picks
+        run: python b2_returns.py
+      - name: Validate outputs
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          q=pd.read_csv("results/b2_quarterly.csv")
+          s=pd.read_csv("results/b2_summary.csv")
+          assert len(q) >= 20
+          print(q[["quarter","theme","coverage_90d","partial_portfolio_90d","spy_90d"]].to_string(index=False))
+          print(s.to_string(index=False))
+          PY
+      - name: Commit B2 returns
+        run: |
+          git config user.name "13f-b2-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add results/b2_forward_returns.csv results/b2_constituents.csv results/b2_quarterly.csv results/b2_summary.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Evaluate frozen B2 theme selections"
+            git pull --rebase origin main
+            git push
+          fi
