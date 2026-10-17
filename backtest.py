@@ -226,7 +226,7 @@ def choose_winners(metrics):
     winners = {}
     if pos.empty: return winners
     winners["Absolute"] = pos.sort_values(["abs_change","pct_change"], ascending=False).iloc[0]
-    pct = pos[np.isfinite(pos.pct_change)]
+    pct = pos[np.isfinite(pd.to_numeric(pos["pct_change"], errors="coerce"))]
     if not pct.empty:
         winners["Percentage"] = pct.sort_values(["pct_change","abs_change"], ascending=False).iloc[0]
     for f in FLOORS:
@@ -335,7 +335,7 @@ def main():
               "quarter": qlabel(q), "period_end": q.isoformat(),
               "method": method, "ticker": row.ticker, "issuer": row.issuer,
               "abs_share_change": float(row.abs_change),
-              "pct_share_change": float(row.pct_change) if np.isfinite(row.pct_change) else np.nan,
+              "pct_share_change": float(row["pct_change"]) if np.isfinite(float(row["pct_change"])) else np.nan,
               "split_factor": float(row.split_factor),
               "current_shares": float(row.cur_shares),
               "prior_shares_adjusted": float(row.prev_shares_adj),
