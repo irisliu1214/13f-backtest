@@ -1,0 +1,30 @@
+{
+  "dataset": "austin-starks/sec-ownership-disclosures",
+  "dataset_snapshot_generated_at": "2026-10-16T19:30:23.978Z",
+  "start_year": 2016,
+  "end_year": 2026,
+  "portfolio_size": 5,
+  "candidate_depth": 30,
+  "weighting": "equal_weight_20pct_each_when_top5_complete",
+  "methods": [
+    "AbsoluteHolderIncrease",
+    "InstitutionalOwnershipIncrease",
+    "BuyerRatioConviction",
+    "CompositeAccumulationScore"
+  ],
+  "absolute_holder_increase_definition": "current matched 13F holder count minus prior-quarter matched 13F holder count",
+  "institutional_ownership_increase_definition": "split-adjusted percentage growth in aggregate shares held by matched 13F managers; proxy used because the source does not contain point-in-time issuer shares outstanding for every security",
+  "buyer_ratio_definition": "among continuing matched managers that changed their split-adjusted position by more than 1.0%, buyers / (buyers + sellers); require at least 5 active changers",
+  "composite_definition": "equal-weight mean of cross-sectional z-scores for absolute holder increase, institutional ownership increase proxy, and buyer ratio; each input winsorized at 1st/99th percentile before z-scoring",
+  "leader_definition": "top 50 current-quarter common equities by aggregate 13F market value, point-in-time at filing cutoff",
+  "universes": [
+    "AllStocks",
+    "OpportunisticExLeaders"
+  ],
+  "entry_rule": "first trading day after the 45-day 13F filing cutoff",
+  "holding_period": "90 calendar days, exit first trading day on/after day 90",
+  "fund_filter": "SEC company_tickers_mf.json plus issuer/class regex filters plus annual SEC Closed-End Fund Information registrant-name matching; applied before leader ranking and signals",
+  "historical_price_fallback": "rank up to candidate_depth by signal, then take first five with usable historical Yahoo price data; no return-based ranking",
+  "generated_at_utc": "2026-10-17T10:23:10.712294Z",
+  "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
+}
