@@ -8,7 +8,7 @@ import pandas as pd
 RESULTS = Path("results")
 SRC = RESULTS / "accumulation_candidate_pool.csv"
 OUT = RESULTS
-TOP_PACKET = 18
+TOP_PACKET = 50
 PORTFOLIO_SIZE = 5
 
 # Fixed, ex-ante-style industry taxonomy. These are broad business buckets, not
@@ -128,6 +128,11 @@ def main():
                    "institutional_ownership_increase","buyer_ratio","current_holders",
                    "is_leader","current_value_usd"]])
     packets.to_csv(OUT/"theme_blind_packets.csv", index=False)
+
+    # Formal qualitative packet: deliberately omit today's sector taxonomy as well
+    # as every future-return field. This is the input used for Experiment B from 2017 onward.
+    qual_packets = packets.drop(columns=["bucket"]).copy()
+    qual_packets.to_csv(OUT/"qualitative_blind_packets_v2.csv", index=False)
 
     # Quant-first theme aggregation.
     theme = agg[agg.bucket.ne("Other / Unclassified")].groupby(
