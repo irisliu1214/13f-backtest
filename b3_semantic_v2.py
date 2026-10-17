@@ -183,7 +183,7 @@ def clean_html_text(html):
 
 def _strict_section(text, start_patterns, end_patterns, min_chars=3000, max_chars=140000):
     """Return the longest plausible real section; never fall back to whole filing."""
-    u=re.sub(r"\\s+"," ",text.upper())
+    u=re.sub(r"\s+"," ",text.upper())
     starts=[]
     for pat in start_patterns:
         starts.extend(m.start() for m in re.finditer(pat,u,re.I))
@@ -208,14 +208,14 @@ def extract_business(text, form):
     if form=="10-K":
         return _strict_section(
             text,
-            [r"ITEM\\s*1[\\.\\-—:]?\\s*BUSINESS\\b"],
-            [r"ITEM\\s*1A[\\.\\-—:]?\\s*RISK\\s*FACTORS", r"ITEM\\s*2[\\.\\-—:]?\\s*PROPERTIES"]
+            [r"ITEM\s*1[\.\-—:]?\s*BUSINESS\b"],
+            [r"ITEM\s*1A[\.\-—:]?\s*RISK\s*FACTORS", r"ITEM\s*2[\.\-—:]?\s*PROPERTIES"]
         )
     if form=="20-F":
         return _strict_section(
             text,
-            [r"ITEM\\s*4[\\.\\-—:]?\\s*INFORMATION\\s+ON\\s+THE\\s+COMPANY"],
-            [r"ITEM\\s*4A[\\.\\-—:]?", r"ITEM\\s*5[\\.\\-—:]?"]
+            [r"ITEM\s*4[\.\-—:]?\s*INFORMATION\s+ON\s+THE\s+COMPANY"],
+            [r"ITEM\s*4A[\.\-—:]?", r"ITEM\s*5[\.\-—:]?"]
         )
     return ""
 def fetch_business_text(cik, filing, cache):
@@ -304,7 +304,7 @@ def main():
         corpus=[docs[(r.cluster_id,r.ticker)] for r in usable.itertuples(index=False)]
         vec=TfidfVectorizer(
             stop_words=STOP_WORDS,lowercase=True,ngram_range=(1,2),
-            token_pattern=r"(?u)\\b[a-zA-Z][a-zA-Z\\-]{2,}\\b",
+            token_pattern=r"(?u)\b[a-zA-Z][a-zA-Z\-]{2,}\b",
             min_df=2,max_df=0.75,max_features=7000,sublinear_tf=True
         )
         try:
@@ -345,7 +345,7 @@ def main():
                         break
                     if any(w in GENERIC_TERMS for w in term.split()):
                         continue
-                    if re.search(r"\\b(inc|corp|ltd|plc)\\b",term):
+                    if re.search(r"\b(inc|corp|ltd|plc)\b",term):
                         continue
                     terms.append(term)
                     if len(terms)>=8:
