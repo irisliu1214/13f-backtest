@@ -31,5 +31,6 @@ jobs:
           git add results/theme_*.csv results/theme_*.json results/quant_theme_*.csv results/quant_theme_*.json
           if ! git diff --cached --quiet; then
             git commit -m "Add 13F theme pilot results"
+            git pull --rebase origin main
             git push
           fi
