@@ -463,22 +463,75 @@ def aggregate_quarter(db, q: date):
         np.nan
     )
 
-    # Split-adjust prior aggregate share counts so aggregate institutional-share growth
-    # and manager-by-manager buy/sell comparisons are not distorted by common splits.
-    prev_px = np.where(m.prev_shares > 0, m.prev_value / m.prev_shares, np.nan)
-    cur_px = np.where(m.cur_shares > 0, m.cur_value / m.cur_shares, np.nan)
-    px_ratio = prev_px / cur_px
-    sh_ratio = np.where(m.prev_shares > 0, m.cur_shares / m.prev_shares, np.nan)
-    candidates = np.array([0.025,0.05,0.1,0.2,0.25,1/3,0.5,1.0,1.25,4/3,1.5,2,3,4,5,10,20,40], dtype=float)
-    factors = np.ones(len(m))
-    for i in range(len(m)):
-        if not np.isfinite(px_ratio[i]) or not np.isfinite(sh_ratio[i]):
+    # Infer stock splits from the cross-manager distribution of share-count ratios.
+    # A prior version used aggregate implied prices/shares with a wide tolerance, which
+    # could mistake genuine institutional buying plus a price move for a stock split.
+    # Here a split is accepted only when the median continuing-manager share ratio is
+    # very close to a canonical split ratio and the interquartile range also clusters
+    # around that same ratio.
+    ratio_stats = db.execute("""
+      WITH cf AS (
+        SELECT accession,cik,
+               ROW_NUMBER() OVER(PARTITION BY cik ORDER BY available_at DESC, accession DESC) rn
+        FROM filings
+        WHERE period=? AND CAST(available_at AS DATE)<=?
+          AND cik IN (SELECT cik FROM matched_mgrs)
+      ), pf AS (
+        SELECT accession,cik,
+               ROW_NUMBER() OVER(PARTITION BY cik ORDER BY available_at DESC, accession DESC) rn
+        FROM filings
+        WHERE period=? AND CAST(available_at AS DATE)<=?
+          AND cik IN (SELECT cik FROM matched_mgrs)
+      ), cpos AS (
+        SELECT f.cik,h.cusip,SUM(h.shares) shares
+        FROM cf f JOIN holdings h USING(accession)
+        WHERE f.rn=1
+        GROUP BY f.cik,h.cusip
+      ), ppos AS (
+        SELECT f.cik,h.cusip,SUM(h.shares) shares
+        FROM pf f JOIN holdings h USING(accession)
+        WHERE f.rn=1
+        GROUP BY f.cik,h.cusip
+      ), ratios AS (
+        SELECT c.cusip, c.shares / NULLIF(p.shares,0) AS r
+        FROM cpos c
+        JOIN ppos p ON c.cik=p.cik AND c.cusip=p.cusip
+        WHERE c.shares>0 AND p.shares>0
+      )
+      SELECT cusip,
+             COUNT(*) n_continuing,
+             MEDIAN(r) med_ratio,
+             QUANTILE_CONT(r, 0.25) q25_ratio,
+             QUANTILE_CONT(r, 0.75) q75_ratio
+      FROM ratios
+      WHERE r IS NOT NULL AND r>0
+      GROUP BY cusip
+    """, [q, cutoff, pq, pcutoff]).df()
+
+    canonical_splits = np.array(
+        [0.025,0.05,0.1,0.2,0.25,1/3,0.5,1.0,1.25,4/3,1.5,2,3,4,5,10,20,40],
+        dtype=float
+    )
+    split_map = {}
+    for _, rr in ratio_stats.iterrows():
+        med = float(rr.med_ratio)
+        q25 = float(rr.q25_ratio)
+        q75 = float(rr.q75_ratio)
+        n = int(rr.n_continuing)
+        if n < 5 or not all(np.isfinite([med,q25,q75])) or med <= 0:
             continue
-        errs = np.abs(np.log(px_ratio[i] / candidates)) + np.abs(np.log(sh_ratio[i] / candidates))
-        f = candidates[np.argmin(errs)]
-        if f != 1.0 and 0.72 <= px_ratio[i]/f <= 1.38 and 0.72 <= sh_ratio[i]/f <= 1.38:
-            factors[i] = f
-    m["split_factor"] = factors
+        f = float(canonical_splits[np.argmin(np.abs(np.log(med / canonical_splits)))])
+        if f == 1.0:
+            continue
+        if (
+            0.95 <= med / f <= 1.05
+            and 0.80 <= q25 / f <= 1.20
+            and 0.80 <= q75 / f <= 1.20
+            and q75 / max(q25, 1e-12) <= 1.50
+        ):
+            split_map[str(rr.cusip)] = f
+
+    m["split_factor"] = m["cusip"].astype(str).map(split_map).fillna(1.0)
     m["prev_shares_adj"] = m.prev_shares * m.split_factor
 
     # Depth signal proxy. The 13F source has position shares but not a clean
@@ -943,7 +996,7 @@ def main():
             "CompositeAccumulationScore"
         ],
         "absolute_holder_increase_definition": "current matched 13F holder count minus prior-quarter matched 13F holder count; securities with zero prior-quarter holders are excluded to avoid treating new CUSIPs/corporate actions as accumulation",
-        "institutional_ownership_increase_definition": "split-adjusted percentage growth in aggregate shares held by matched 13F managers; proxy used because the source does not contain point-in-time issuer shares outstanding for every security",
+        "institutional_ownership_increase_definition": "percentage growth in aggregate shares held by matched 13F managers, adjusted for inferred splits using clustered continuing-manager share ratios; this is a proxy because the source lacks point-in-time issuer shares outstanding",
         "buyer_ratio_definition": f"among continuing matched managers that changed their split-adjusted position by more than {BUYER_EPS:.1%}, buyers / (buyers + sellers); require at least 5 active changers",
         "composite_definition": "equal-weight mean of cross-sectional z-scores for absolute holder increase, institutional ownership increase proxy, and buyer ratio; each input winsorized at 1st/99th percentile before z-scoring",
         "leader_definition": f"top {LEADER_TOP_N} current-quarter common equities by aggregate 13F market value, point-in-time at filing cutoff",
