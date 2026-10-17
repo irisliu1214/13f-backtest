@@ -1,0 +1,36 @@
+name: Evaluate qualitative experiment
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "qualitative_returns.py"
+      - "results/qualitative_picks_final.csv"
+      - ".github/workflows/qualitative-returns.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pandas numpy requests pandas_market_calendars
+      - name: Evaluate frozen qualitative picks
+        run: python qualitative_returns.py
+      - name: Commit evaluation outputs
+        run: |
+          git config user.name "13f-qualitative-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add results/qualitative_forward_returns.csv results/qualitative_constituents.csv results/qualitative_quarterly.csv results/qualitative_summary.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Evaluate frozen qualitative 13F selections"
+            git pull --rebase origin main
+            git push
+          fi
