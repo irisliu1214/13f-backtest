@@ -30,6 +30,7 @@ EQUITY_BAD = re.compile(
 )
 TICKER_OK = re.compile(r"^[A-Z][A-Z0-9.\-]{0,9}$")
 SEC_FUND_TICKERS = set()
+KNOWN_CEF_TICKERS = {"BWG","AOD","RMM","BSTZ","TYG","NFJ","BKT"}
 
 def load_sec_fund_tickers():
     """Load SEC's official mutual-fund/ETF class ticker file once per run."""
@@ -200,8 +201,10 @@ def clean_equity(df):
         case=False, regex=True
     )
     good &= df["ticker"].fillna("").str.match(TICKER_OK)
+    tickers_upper = df["ticker"].fillna("").str.upper()
     if SEC_FUND_TICKERS:
-        good &= ~df["ticker"].fillna("").str.upper().isin(SEC_FUND_TICKERS)
+        good &= ~tickers_upper.isin(SEC_FUND_TICKERS)
+    good &= ~tickers_upper.isin(KNOWN_CEF_TICKERS)
     return df.loc[good].copy()
 
 def aggregate_quarter(db, q: date):
@@ -536,7 +539,7 @@ def main():
         "universes": ["AllStocks", "OpportunisticExLeaders"],
         "entry_rule": "first trading day after the 45-day 13F filing cutoff",
         "holding_period": "90 calendar days, exit first trading day on/after day 90",
-        "fund_filter": "SEC company_tickers_mf.json plus issuer/class regex filters; applied before leader ranking and signals",
+        "fund_filter": "SEC company_tickers_mf.json plus issuer/class regex filters and identified closed-end-fund tickers; applied before leader ranking and signals",
         "historical_price_fallback": "rank up to candidate_depth by signal, then take first five with usable historical Yahoo price data; no return-based ranking",
         "generated_at_utc": datetime.utcnow().isoformat() + "Z",
         "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
