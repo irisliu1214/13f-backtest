@@ -139,7 +139,7 @@ def qlabel(q): return f"{q.year}Q{(q.month-1)//3+1}"
 
 def clean_equity(df):
     if df.empty: return df
-    text = (df["issuer"].fillna("") + " " + df["class"].fillna(""))
+    text = (df["issuer"].fillna("") + " " + df["class_name"].fillna(""))
     good = ~text.str.contains(EQUITY_BAD)
     good &= df["ticker"].fillna("").str.match(TICKER_OK)
     return df.loc[good].copy()
@@ -174,7 +174,7 @@ def aggregate_quarter(db, q: date):
           SELECT
             h.ticker,
             MAX(h.issuerName) issuer,
-            MAX(h.titleOfClass) class,
+            MAX(h.titleOfClass) AS class_name,
             SUM(h.shares) shares,
             SUM(h.value_usd) value_usd,
             COUNT(DISTINCT f.cik) holders
@@ -186,17 +186,17 @@ def aggregate_quarter(db, q: date):
 
     cur = one(q, cutoff).rename(columns={
         "shares":"cur_shares","value_usd":"cur_value","holders":"cur_holders",
-        "issuer":"cur_issuer","class":"cur_class"
+        "issuer":"cur_issuer","class_name":"cur_class"
     })
     prv = one(pq, pcutoff).rename(columns={
         "shares":"prev_shares","value_usd":"prev_value","holders":"prev_holders",
-        "issuer":"prev_issuer","class":"prev_class"
+        "issuer":"prev_issuer","class_name":"prev_class"
     })
     m = cur.merge(prv, on="ticker", how="outer")
     for c in ["cur_shares","prev_shares","cur_value","prev_value","cur_holders","prev_holders"]:
         m[c] = m[c].fillna(0.0)
     m["issuer"] = m["cur_issuer"].fillna(m["prev_issuer"])
-    m["class"] = m["cur_class"].fillna(m["prev_class"])
+    m["class_name"] = m["cur_class"].fillna(m["prev_class"])
 
     # Infer forward split factors from both inverse implied-price movement and share-count jump.
     # This catches the large distortions that otherwise dominate an absolute-share ranking.
