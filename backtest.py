@@ -696,36 +696,52 @@ def _yahoo_symbol(ticker):
     return str(ticker).replace(".", "-")
 
 
-def _read_stooq_series(ticker):
-    """Best-effort daily close fallback from Stooq for US-listed symbols."""
+def _read_stooq_series(ticker, connect_timeout=3.0, read_timeout=8.0):
+    """Best-effort daily close fallback from Stooq for US-listed symbols.
+
+    Returns (series, status), where status is one of: ok, no_data, timeout, error.
+    """
     sym = _yahoo_symbol(ticker).lower()
-    # Stooq uses dot-US suffix for US listings and dash for share classes.
     url = (
         "https://stooq.com/q/d/l/?s=" + sym + ".us&i=d"
         + "&d1=" + str(START_YEAR) + "0101"
         + "&d2=" + (date.today() + timedelta(days=5)).strftime("%Y%m%d")
     )
     try:
-        r = requests.get(url, timeout=45, headers={"User-Agent":"Mozilla/5.0"})
+        r = requests.get(
+            url,
+            timeout=(connect_timeout, read_timeout),
+            headers={"User-Agent":"Mozilla/5.0"},
+        )
         r.raise_for_status()
         if not r.text or "No data" in r.text or "Date,Open" not in r.text:
-            return pd.Series(dtype=float)
+            return pd.Series(dtype=float), "no_data"
         df = pd.read_csv(io.StringIO(r.text))
         if "Date" not in df or "Close" not in df:
-            return pd.Series(dtype=float)
+            return pd.Series(dtype=float), "no_data"
         idx = pd.to_datetime(df["Date"], errors="coerce")
         vals = pd.to_numeric(df["Close"], errors="coerce")
-        s = pd.Series(vals.values, index=idx).dropna().sort_index()
-        return s
+        series = pd.Series(vals.values, index=idx).dropna().sort_index()
+        return series, ("ok" if not series.empty else "no_data")
+    except requests.exceptions.ConnectTimeout as exc:
+        print(f"Stooq connect timeout for {ticker}: {exc}")
+        return pd.Series(dtype=float), "timeout"
+    except requests.exceptions.Timeout as exc:
+        print(f"Stooq timeout for {ticker}: {exc}")
+        return pd.Series(dtype=float), "timeout"
     except Exception as exc:
         print(f"Stooq fallback failed for {ticker}: {exc}")
-        return pd.Series(dtype=float)
+        return pd.Series(dtype=float), "error"
 
 
 def download_prices(tickers):
-    # Only unresolved strict Top-5 names are passed here. Try Stooq first because
-    # GitHub-hosted runners are frequently throttled by Yahoo. Yahoo is only a
-    # fallback for symbols Stooq cannot supply.
+    """Recover strict Top-5 histories without allowing the fallback layer to stall.
+
+    Yahoo is tried first in small sequential batches. Stooq is only a secondary
+    fallback; if two Stooq requests time out, the Stooq circuit breaker opens and
+    remaining symbols are left unresolved so the strict-validation layer can fail
+    fast with an exact missing-ticker list rather than hanging for hours.
+    """
     ordered = []
     seen = set()
     for t in ["SPY"] + list(tickers):
@@ -734,62 +750,91 @@ def download_prices(tickers):
             seen.add(t)
 
     all_frames = {}
-    yahoo_missing = []
-    for i, t in enumerate(ordered, 1):
-        s = _read_stooq_series(t)
-        if not s.empty:
-            all_frames[t] = s
+    start = f"{START_YEAR}-01-01"
+    end = (date.today() + timedelta(days=5)).isoformat()
+
+    def ingest(raw, originals):
+        if raw is None or raw.empty:
+            return
+        req = [_yahoo_symbol(t) for t in originals]
+        if len(originals) == 1:
+            t = originals[0]
+            try:
+                series = raw["Close"].dropna() if "Close" in raw else pd.Series(dtype=float)
+                if not series.empty:
+                    all_frames[t] = series
+            except Exception:
+                pass
         else:
-            yahoo_missing.append(t)
-        if i % 25 == 0:
-            print(f"Stooq price progress {i}/{len(ordered)}; found={len(all_frames)}")
-        time.sleep(0.05)
-
-    if yahoo_missing:
-        start = f"{START_YEAR}-01-01"
-        end = (date.today() + timedelta(days=5)).isoformat()
-
-        def ingest(raw, originals):
-            if raw is None or raw.empty:
-                return
-            req = [_yahoo_symbol(t) for t in originals]
-            if len(originals) == 1:
-                t = originals[0]
+            for t, ysym in zip(originals, req):
                 try:
-                    s = raw["Close"].dropna() if "Close" in raw else pd.Series(dtype=float)
-                    if not s.empty:
-                        all_frames[t] = s
+                    series = raw[ysym]["Close"].dropna()
+                    if not series.empty:
+                        all_frames[t] = series
                 except Exception:
                     pass
-            else:
-                for t, ysym in zip(originals, req):
-                    try:
-                        s = raw[ysym]["Close"].dropna()
-                        if not s.empty:
-                            all_frames[t] = s
-                    except Exception:
-                        pass
 
-        # Keep Yahoo batches small and sequential. Do not fail on SPY here if Stooq
-        # already supplied it.
-        for k in range(0, len(yahoo_missing), 10):
-            chunk = yahoo_missing[k:k+10]
-            req = [_yahoo_symbol(t) for t in chunk]
-            raw = pd.DataFrame()
-            for attempt in range(3):
-                try:
-                    raw = yf.download(req, start=start, end=end, auto_adjust=True,
-                                      progress=False, group_by="ticker", threads=False)
-                    if raw is not None and not raw.empty:
-                        break
-                except Exception:
-                    raw = pd.DataFrame()
-                time.sleep(6 * (attempt + 1))
-            ingest(raw, chunk)
-            time.sleep(2)
+    # Yahoo first. Small sequential batches reduce 429 risk while avoiding the
+    # multi-hour Stooq timeout failure that cancelled Run #18.
+    for k in range(0, len(ordered), 8):
+        chunk = ordered[k:k+8]
+        req = [_yahoo_symbol(t) for t in chunk]
+        raw = pd.DataFrame()
+        for attempt in range(2):
+            try:
+                raw = yf.download(
+                    req,
+                    start=start,
+                    end=end,
+                    auto_adjust=True,
+                    progress=False,
+                    group_by="ticker",
+                    threads=False,
+                )
+                if raw is not None and not raw.empty:
+                    break
+            except Exception as exc:
+                print(f"Yahoo batch attempt {attempt+1} failed for {chunk}: {exc}")
+                raw = pd.DataFrame()
+            time.sleep(3 * (attempt + 1))
+        ingest(raw, chunk)
+        if (k // 8 + 1) % 10 == 0:
+            print(f"Yahoo price progress {min(k+8, len(ordered))}/{len(ordered)}; found={len(all_frames)}")
+        time.sleep(0.75)
+
+    missing = [t for t in ordered if t not in all_frames]
+    print(f"Yahoo unresolved symbols: {len(missing)} / {len(ordered)}")
+
+    # Stooq fallback with a hard circuit breaker. Two connection timeouts imply
+    # the host is unreachable from this runner; do not spend hours retrying.
+    timeout_count = 0
+    stooq_attempted = 0
+    for t in missing:
+        if timeout_count >= 2:
+            print(
+                f"Stooq circuit breaker open after {timeout_count} timeouts; "
+                f"skipping {len(missing)-stooq_attempted} remaining symbols"
+            )
+            break
+        stooq_attempted += 1
+        series, status = _read_stooq_series(t)
+        if status == "ok":
+            all_frames[t] = series
+        elif status == "timeout":
+            timeout_count += 1
+        if stooq_attempted % 25 == 0:
+            print(
+                f"Stooq fallback progress {stooq_attempted}/{len(missing)}; "
+                f"recovered={sum(1 for x in missing[:stooq_attempted] if x in all_frames)}"
+            )
+
+    final_missing = [t for t in ordered if t not in all_frames]
+    print("FINAL_UNRESOLVED_PRICE_SYMBOLS=" + ",".join(final_missing))
 
     if "SPY" not in all_frames:
-        raise RuntimeError("SPY unavailable from both Stooq and Yahoo; refusing to write backtest outputs")
+        raise RuntimeError(
+            "SPY unavailable from Yahoo and Stooq; refusing to write backtest outputs"
+        )
     return all_frames
 
 
