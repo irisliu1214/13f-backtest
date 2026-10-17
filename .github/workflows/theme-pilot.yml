@@ -29,7 +29,7 @@ jobs:
         run: |
           git config user.name "13f-theme-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add results/theme_*.csv results/theme_*.json results/quant_theme_*.csv results/quant_theme_*.json
+          git add results/theme_*.csv results/theme_*.json results/quant_theme_*.csv results/quant_theme_*.json results/qualitative_blind_packets_v2.csv
           if ! git diff --cached --quiet; then
             git commit -m "Add 13F theme pilot results"
             git pull --rebase origin main
