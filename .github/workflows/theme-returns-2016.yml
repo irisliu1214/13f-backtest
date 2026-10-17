@@ -6,6 +6,7 @@ on:
     paths:
       - "theme_returns_2016.py"
       - ".github/workflows/theme-returns-2016.yml"
+      - "results/quant_theme_constituents.csv"
 permissions:
   contents: write
 jobs:
@@ -26,5 +27,6 @@ jobs:
           git add results/*_2016.csv
           if ! git diff --cached --quiet; then
             git commit -m "Fill 2016 theme forward returns"
+            git pull --rebase origin main
             git push
           fi
