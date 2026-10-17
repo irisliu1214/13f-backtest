@@ -1,0 +1,18 @@
+{
+  "experiment": "B3-v2",
+  "forward_returns_used": false,
+  "input_clusters": "B2 blind corporate-action-filtered co-buy clusters",
+  "semantic_source": "strict Item 1 Business from latest full SEC 10-K, or Item 4 from 20-F, filed on or before each quarter legal cutoff; amendments and whole-filing fallbacks prohibited",
+  "semantic_model": "TF-IDF over strict historical business sections only; alphabetic tokens; SEC/accounting boilerplate stopwords; no LLM; no present-day hand-authored industry taxonomy",
+  "cluster_candidates": 3,
+  "max_text_members_per_cluster": 10,
+  "minimum_text_docs": 5,
+  "minimum_text_coverage": 0.6,
+  "minimum_semantic_percentile": 0.65,
+  "theme_score": "0.35 abnormal-percentile + 0.25 edge-density-percentile + 0.25 semantic-percentile + 0.15 structural-cluster-score-percentile",
+  "beneficiary_score": "0.45 abnormal + 0.20 ownership-growth + 0.15 buyer-ratio + 0.10 holder-abs + 0.10 historical-text theme-fit; each percentile within chosen cluster",
+  "portfolio_size": 5,
+  "manual_replacement_allowed": false,
+  "ticker_or_identity_used_in_scoring": false,
+  "known_limitation": "SEC CIK resolution begins from the current SEC company ticker/title index. Unresolved historical/delisted issuers are missing rather than backfilled with current descriptions; this can create sample-selection bias."
+}
