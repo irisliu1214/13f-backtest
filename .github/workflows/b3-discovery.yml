@@ -1,0 +1,59 @@
+name: Run B3 deterministic discovery
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "b3_discovery.py"
+      - ".github/workflows/b3-discovery.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      START_YEAR: "2016"
+      END_YEAR: "2026"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install networkx scipy pandas_market_calendars scikit-learn beautifulsoup4
+      - name: Run B3 discovery
+        run: python b3_discovery.py
+      - name: Validate no-return outputs
+        run: |
+          python - <<'PY'
+          import json, pandas as pd
+          p=pd.read_csv("results/b3_picks_frozen.csv")
+          c=pd.read_csv("results/b3_cluster_scores.csv")
+          d=pd.read_csv("results/b3_document_audit.csv")
+          m=json.load(open("results/b3_methodology.json"))
+          assert m["forward_returns_used"] is False
+          assert len(p)>=30, len(p)
+          assert len(c)>=50, len(c)
+          assert len(d)>=100, len(d)
+          cols=" ".join(list(p.columns)+list(c.columns)+list(d.columns)).lower()
+          assert "return_" not in cols and "forward_return" not in cols
+          print("picks rows",len(p),"invest",int((p.decision=="INVEST").sum()))
+          print("clusters",len(c),"docs",len(d),"usable docs",int(d.usable_text.sum()))
+          print(p[["quarter","decision","cluster_id","auto_terms","selected_tickers"]].to_string(index=False))
+          PY
+      - name: Commit frozen B3 discovery outputs
+        run: |
+          git config user.name "13f-b3-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add results/b3_*.csv results/b3_methodology.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Freeze B3 deterministic selections before returns"
+            git pull --rebase origin main
+            git push
+          fi
