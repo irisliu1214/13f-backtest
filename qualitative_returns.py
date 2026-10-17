@@ -2,6 +2,7 @@
 from pathlib import Path
 from datetime import date, datetime, timedelta, timezone
 import io, time, urllib.parse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import numpy as np
 import pandas as pd
 import requests
@@ -72,11 +73,13 @@ def fetch_yahoo(t,start,end):
         return pd.Series(dtype=float), None
 
 def fetch_prices(t,start,end):
-    s,src=fetch_stooq(t,start,end)
+    # Yahoo chart is materially faster for active/historical US tickers; use Stooq
+    # only as a fallback for rate limits or missing chart history.
+    s,src=fetch_yahoo(t,start,end)
     if len(s)>=2:
         return s,src
-    time.sleep(0.15)
-    return fetch_yahoo(t,start,end)
+    time.sleep(0.1)
+    return fetch_stooq(t,start,end)
 
 def on_or_after(s,target,max_gap=10):
     if s.empty: return None
@@ -130,10 +133,19 @@ def main():
     pairs=set(zip(e.quarter,e.ticker))
     pairs |= {(q,"SPY") for q in e.quarter.unique()}
     rows=[]
-    for q,t in sorted(pairs):
-        print("price",q,t,flush=True)
-        rows.append(calc(t,q))
-        time.sleep(0.15)
+    pair_list=sorted(pairs)
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        futs={ex.submit(calc,t,q):(q,t) for q,t in pair_list}
+        for fut in as_completed(futs):
+            q,t=futs[fut]
+            print("price",q,t,flush=True)
+            try:
+                rows.append(fut.result())
+            except Exception as e:
+                print("price_error",q,t,repr(e),flush=True)
+                rows.append({"quarter":q,"ticker":t,"source":None,"target_entry_date":None,"entry_date":None,
+                             **{f"exit_{h}d":None for h in HORIZONS},
+                             **{f"return_{h}d":np.nan for h in HORIZONS}})
     ret=pd.DataFrame(rows)
     ret.to_csv(R/"qualitative_forward_returns.csv",index=False)
 
