@@ -150,7 +150,7 @@ def choose_filing(cik, cutoff):
         obj=r.json()
         SUBMISSION_CACHE[int(cik)]=obj
     rows=filing_rows_from_submission(obj)
-    forms={"10-K","20-F","40-F"}
+    forms={"10-K","20-F"}
     candidates=[x for x in rows if x.get("form") in forms and x.get("filingDate") and x["filingDate"]<=cutoff.isoformat()]
     if not candidates:
         for f in obj.get("filings",{}).get("files",[])[:4]:
