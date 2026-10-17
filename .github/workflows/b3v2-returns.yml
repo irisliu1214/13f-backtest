@@ -1,0 +1,50 @@
+name: Evaluate frozen B3 v2 returns
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "results/b3v2_picks_frozen.csv"
+
+permissions:
+  contents: write
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pandas_market_calendars
+      - name: Evaluate frozen B3 v2 selections
+        run: python b3v2_returns.py
+      - name: Validate outputs
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          q=pd.read_csv("results/b3v2_quarterly.csv")
+          s=pd.read_csv("results/b3v2_summary.csv")
+          c=pd.read_csv("results/b3v2_constituents.csv")
+          assert len(q)>=5, len(q)
+          assert len(c)>=25, len(c)
+          assert set(s.horizon_days)=={90,180,365}
+          print(s.to_string(index=False))
+          print(q.to_string(index=False))
+          PY
+      - name: Commit B3 v2 return outputs
+        run: |
+          git config user.name "13f-b3v2-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add results/b3v2_forward_returns.csv results/b3v2_constituents.csv results/b3v2_quarterly.csv results/b3v2_summary.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Evaluate frozen B3 v2 selections"
+            git pull --rebase origin main
+            git push
+          fi
