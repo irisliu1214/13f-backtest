@@ -21,7 +21,7 @@ END_YEAR = int(os.getenv("END_YEAR", "2026"))
 PRIMARY_FLOOR_MANAGERS = int(os.getenv("PRIMARY_FLOOR_MANAGERS", "5"))
 LEADER_TOP_N = int(os.getenv("LEADER_TOP_N", "50"))
 PORTFOLIO_SIZE = int(os.getenv("PORTFOLIO_SIZE", "5"))
-CANDIDATE_DEPTH = int(os.getenv("CANDIDATE_DEPTH", "30"))
+CANDIDATE_DEPTH = int(os.getenv("CANDIDATE_DEPTH", "20"))
 BUYER_EPS = float(os.getenv("BUYER_EPS", "0.01"))
 
 EQUITY_BAD = re.compile(
@@ -266,7 +266,8 @@ def quarter_ends(start_year, end_year):
     for y in range(start_year, end_year + 1):
         for m, d in [(3,31),(6,30),(9,30),(12,31)]:
             q = date(y,m,d)
-            if q <= date.today():
+            # Do not evaluate a quarter before its full statutory 13F cutoff has arrived.
+            if q <= date.today() and (q + timedelta(days=45)) <= date.today():
                 out.append(q)
     return out
 
@@ -536,37 +537,81 @@ def next_price_date(idx, target, max_gap_days=7):
     return found
 
 def download_prices(tickers):
-    tickers = sorted(set(tickers) | {"SPY"})
+    # Preserve caller priority rather than alphabetically sorting thousands of symbols.
+    # This lets the highest-ranked candidates get priced first if Yahoo throttles later.
+    ordered = []
+    seen = set()
+    for t in ["SPY"] + list(tickers):
+        if t and t not in seen:
+            ordered.append(t)
+            seen.add(t)
+
     start = f"{START_YEAR}-01-01"
     end = (date.today() + timedelta(days=5)).isoformat()
     all_frames = {}
-    # Chunk to reduce Yahoo throttling.
-    for k in range(0, len(tickers), 40):
-        chunk = tickers[k:k+40]
-        for attempt in range(3):
-            try:
-                raw = yf.download(chunk, start=start, end=end, auto_adjust=True,
-                                  progress=False, group_by="ticker", threads=True)
-                break
-            except Exception:
-                if attempt == 2: raw = pd.DataFrame()
-                time.sleep(3*(attempt+1))
-        if raw.empty: continue
+
+    def ingest(raw, chunk):
+        if raw is None or raw.empty:
+            return
         if len(chunk) == 1:
             t = chunk[0]
-            s = raw["Close"].dropna() if "Close" in raw else pd.Series(dtype=float)
-            all_frames[t] = s
+            try:
+                s = raw["Close"].dropna() if "Close" in raw else pd.Series(dtype=float)
+                if not s.empty:
+                    all_frames[t] = s
+            except Exception:
+                pass
         else:
             for t in chunk:
                 try:
                     s = raw[t]["Close"].dropna()
-                    if not s.empty: all_frames[t] = s
+                    if not s.empty:
+                        all_frames[t] = s
                 except Exception:
                     pass
+
+    # SPY is required by every row. Fetch it first and fail loudly rather than
+    # silently producing empty portfolio files when Yahoo is rate-limited.
+    for attempt in range(5):
+        try:
+            raw = yf.download(["SPY"], start=start, end=end, auto_adjust=True,
+                              progress=False, group_by="ticker", threads=False)
+            ingest(raw, ["SPY"])
+            if "SPY" in all_frames:
+                break
+        except Exception:
+            pass
+        time.sleep(5 * (attempt + 1))
+    if "SPY" not in all_frames:
+        raise RuntimeError("SPY price download failed; refusing to write empty backtest outputs")
+
+    # Download signal candidates in priority order, with no parallel hammering of Yahoo.
+    # Smaller sequential chunks trade a little speed for much lower 429 risk.
+    rest = [t for t in ordered if t != "SPY"]
+    for k in range(0, len(rest), 20):
+        chunk = rest[k:k+20]
+        raw = pd.DataFrame()
+        for attempt in range(3):
+            try:
+                raw = yf.download(chunk, start=start, end=end, auto_adjust=True,
+                                  progress=False, group_by="ticker", threads=False)
+                if raw is not None and not raw.empty:
+                    break
+            except Exception:
+                raw = pd.DataFrame()
+            time.sleep(4 * (attempt + 1))
+        ingest(raw, chunk)
+        time.sleep(0.75)
     return all_frames
 
 def add_returns(rows):
-    tickers = [r["ticker"] for r in rows if r.get("ticker")]
+    # Price the highest signal ranks first across every quarter/method/universe.
+    # This is important because only the first five tradable names are needed.
+    ranked = sorted(
+        [r for r in rows if r.get("ticker")],
+        key=lambda r: (int(r.get("signal_rank", 999999)), r.get("quarter", ""), r.get("method", ""), r.get("universe", ""))
+    )
+    tickers = [r["ticker"] for r in ranked]
     prices = download_prices(tickers)
     spy = prices.get("SPY", pd.Series(dtype=float))
     for r in rows:
@@ -739,7 +784,24 @@ def main():
     candidate_df.to_csv(RESULTS / "accumulation_candidate_pool.csv", index=False)
 
     constituents = select_top5_from_candidates(candidate_df)
+    if constituents.empty:
+        raise RuntimeError("No priced constituents were selected; refusing to commit empty backtest outputs")
     constituents.to_csv(RESULTS / "accumulation_constituents.csv", index=False)
+
+    # Mature quarter/method/universe groups should have five priced names. Fail loudly
+    # if widespread pricing failure would otherwise masquerade as a successful workflow.
+    mature_cutoff = date.today() - timedelta(days=90)
+    expected = candidate_df[
+        pd.to_datetime(candidate_df["period_end"]).dt.date.map(lambda q: cutoff_for(q) + timedelta(days=1) <= mature_cutoff)
+    ][["quarter","period_end","universe","method"]].drop_duplicates()
+    actual = constituents.groupby(["quarter","period_end","universe","method"]).size().reset_index(name="n")
+    check = expected.merge(actual, on=["quarter","period_end","universe","method"], how="left")
+    incomplete = check[check["n"].fillna(0) < PORTFOLIO_SIZE]
+    if len(incomplete) > 0:
+        print("WARNING: incomplete mature groups:", len(incomplete))
+        print(incomplete.to_string(index=False))
+    if len(incomplete) > max(2, int(0.05 * max(1, len(expected)))):
+        raise RuntimeError(f"Too many incomplete mature portfolio groups ({len(incomplete)}/{len(expected)}); likely price-source throttling")
 
     portfolios = build_quarterly_portfolio(constituents)
     portfolios.to_csv(RESULTS / "accumulation_quarterly_portfolios.csv", index=False)
