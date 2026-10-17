@@ -7,6 +7,7 @@ on:
     paths:
       - "theme_pilot.py"
       - ".github/workflows/theme-pilot.yml"
+      - "results/accumulation_candidate_pool.csv"
 
 permissions:
   contents: write
