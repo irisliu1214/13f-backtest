@@ -1,0 +1,23 @@
+{
+  "experiment": "B2",
+  "forward_returns_used": false,
+  "years": "2016-2026",
+  "corporate_action_filter": {
+    "zero_base": "prior_holders <= 0",
+    "near_zero_reset": "prior_holders <= 5 and current_holders >= 50 and holder_pct_change >= 5x",
+    "mass_holder_reset": "current_holders >= 100 and holder_pct_change >= 8x",
+    "mechanical_distribution": "current_holders >=100, holder_abs>=75, pct>=1.5x, active_changers>=5, buyer_ratio<=0.25"
+  },
+  "base_universe": "current_holders >= 20, current_13F_value >= 25000000, positive holder change",
+  "abnormal_score": "0.80 * cross-sectional weighted percentile score + 0.20 * trailing-own-history surprise",
+  "cross_score_weights": {
+    "holder_abs": 0.35,
+    "composite": 0.25,
+    "ownership_growth": 0.2,
+    "buyer_ratio": 0.2
+  },
+  "own_history": "prior 8 available quarters only, minimum 4; tanh-scaled z score",
+  "cluster_method": "co-buy network among top 250 abnormal stocks; manager weights inverse sqrt(number of candidate buys); cosine similarity; top-10 neighbors; edge>=0.08; greedy modularity communities",
+  "minimum_cluster_size": 3,
+  "information_firewall": "No market prices or forward returns are read or written by b2_discovery.py"
+}
