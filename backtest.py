@@ -696,9 +696,36 @@ def _yahoo_symbol(ticker):
     return str(ticker).replace(".", "-")
 
 
+def _read_stooq_series(ticker):
+    """Best-effort daily close fallback from Stooq for US-listed symbols."""
+    sym = _yahoo_symbol(ticker).lower()
+    # Stooq uses dot-US suffix for US listings and dash for share classes.
+    url = (
+        "https://stooq.com/q/d/l/?s=" + sym + ".us&i=d"
+        + "&d1=" + str(START_YEAR) + "0101"
+        + "&d2=" + (date.today() + timedelta(days=5)).strftime("%Y%m%d")
+    )
+    try:
+        r = requests.get(url, timeout=45, headers={"User-Agent":"Mozilla/5.0"})
+        r.raise_for_status()
+        if not r.text or "No data" in r.text or "Date,Open" not in r.text:
+            return pd.Series(dtype=float)
+        df = pd.read_csv(io.StringIO(r.text))
+        if "Date" not in df or "Close" not in df:
+            return pd.Series(dtype=float)
+        idx = pd.to_datetime(df["Date"], errors="coerce")
+        vals = pd.to_numeric(df["Close"], errors="coerce")
+        s = pd.Series(vals.values, index=idx).dropna().sort_index()
+        return s
+    except Exception as exc:
+        print(f"Stooq fallback failed for {ticker}: {exc}")
+        return pd.Series(dtype=float)
+
+
 def download_prices(tickers):
-    # Only strict signal Top-5 names are passed here. Preserve priority and avoid
-    # downloading the full candidate pool, which previously triggered Yahoo 429s.
+    # Only unresolved strict Top-5 names are passed here. Try Stooq first because
+    # GitHub-hosted runners are frequently throttled by Yahoo. Yahoo is only a
+    # fallback for symbols Stooq cannot supply.
     ordered = []
     seen = set()
     for t in ["SPY"] + list(tickers):
@@ -706,73 +733,136 @@ def download_prices(tickers):
             ordered.append(t)
             seen.add(t)
 
-    start = f"{START_YEAR}-01-01"
-    end = (date.today() + timedelta(days=5)).isoformat()
     all_frames = {}
-
-    def ingest(raw, originals):
-        if raw is None or raw.empty:
-            return
-        req = [_yahoo_symbol(t) for t in originals]
-        if len(originals) == 1:
-            t = originals[0]
-            try:
-                s = raw["Close"].dropna() if "Close" in raw else pd.Series(dtype=float)
-                if not s.empty:
-                    all_frames[t] = s
-            except Exception:
-                pass
+    yahoo_missing = []
+    for i, t in enumerate(ordered, 1):
+        s = _read_stooq_series(t)
+        if not s.empty:
+            all_frames[t] = s
         else:
-            for t, ysym in zip(originals, req):
+            yahoo_missing.append(t)
+        if i % 25 == 0:
+            print(f"Stooq price progress {i}/{len(ordered)}; found={len(all_frames)}")
+        time.sleep(0.05)
+
+    if yahoo_missing:
+        start = f"{START_YEAR}-01-01"
+        end = (date.today() + timedelta(days=5)).isoformat()
+
+        def ingest(raw, originals):
+            if raw is None or raw.empty:
+                return
+            req = [_yahoo_symbol(t) for t in originals]
+            if len(originals) == 1:
+                t = originals[0]
                 try:
-                    s = raw[ysym]["Close"].dropna()
+                    s = raw["Close"].dropna() if "Close" in raw else pd.Series(dtype=float)
                     if not s.empty:
                         all_frames[t] = s
                 except Exception:
                     pass
+            else:
+                for t, ysym in zip(originals, req):
+                    try:
+                        s = raw[ysym]["Close"].dropna()
+                        if not s.empty:
+                            all_frames[t] = s
+                    except Exception:
+                        pass
 
-    # SPY is required for every benchmark comparison. A missing SPY series is a
-    # hard failure, never a green workflow with blank output files.
-    for attempt in range(5):
-        try:
-            raw = yf.download(["SPY"], start=start, end=end, auto_adjust=True,
-                              progress=False, group_by="ticker", threads=False)
-            ingest(raw, ["SPY"])
-            if "SPY" in all_frames:
-                break
-        except Exception:
-            pass
-        time.sleep(5 * (attempt + 1))
+        # Keep Yahoo batches small and sequential. Do not fail on SPY here if Stooq
+        # already supplied it.
+        for k in range(0, len(yahoo_missing), 10):
+            chunk = yahoo_missing[k:k+10]
+            req = [_yahoo_symbol(t) for t in chunk]
+            raw = pd.DataFrame()
+            for attempt in range(3):
+                try:
+                    raw = yf.download(req, start=start, end=end, auto_adjust=True,
+                                      progress=False, group_by="ticker", threads=False)
+                    if raw is not None and not raw.empty:
+                        break
+                except Exception:
+                    raw = pd.DataFrame()
+                time.sleep(6 * (attempt + 1))
+            ingest(raw, chunk)
+            time.sleep(2)
+
     if "SPY" not in all_frames:
-        raise RuntimeError("SPY price download failed; refusing to write backtest outputs")
-
-    rest = [t for t in ordered if t != "SPY"]
-    for k in range(0, len(rest), 20):
-        chunk = rest[k:k+20]
-        req = [_yahoo_symbol(t) for t in chunk]
-        raw = pd.DataFrame()
-        for attempt in range(4):
-            try:
-                raw = yf.download(req, start=start, end=end, auto_adjust=True,
-                                  progress=False, group_by="ticker", threads=False)
-                if raw is not None and not raw.empty:
-                    break
-            except Exception:
-                raw = pd.DataFrame()
-            time.sleep(5 * (attempt + 1))
-        ingest(raw, chunk)
-        time.sleep(1.25)
+        raise RuntimeError("SPY unavailable from both Stooq and Yahoo; refusing to write backtest outputs")
     return all_frames
 
+
+def load_legacy_return_cache():
+    p = RESULTS / "legacy_price_return_cache.csv"
+    if not p.exists():
+        return {}
+    try:
+        df = pd.read_csv(p)
+    except Exception as exc:
+        print("WARNING: could not read legacy price cache:", exc)
+        return {}
+    out = {}
+    for _, r in df.iterrows():
+        try:
+            key = (str(r["quarter"]), str(r["ticker"]))
+            out[key] = {
+                "entry_date": str(r["entry_date"]),
+                "exit_date": str(r["exit_date"]),
+                "return_90d": float(r["return_90d"]),
+                "spy_return_90d": float(r["spy_return_90d"]),
+            }
+        except Exception:
+            continue
+    print("Legacy quarter/ticker return cache loaded:", len(out))
+    return out
+
 def add_returns(rows):
+    legacy = load_legacy_return_cache()
+    unresolved = []
+
+    # First reuse previously verified returns when the cached entry date is still
+    # valid under the corrected legal-deadline rule. This avoids re-downloading
+    # SPY and stock prices for quarters whose entry did not change.
+    for r in rows:
+        q = datetime.strptime(r["period_end"], "%Y-%m-%d").date()
+        target_entry = cutoff_for(q) + timedelta(days=1)
+        hit = legacy.get((r["quarter"], r["ticker"]))
+        if hit:
+            try:
+                cached_entry = datetime.strptime(hit["entry_date"], "%Y-%m-%d").date()
+                # A cache hit is usable only if it is the first plausible trading
+                # date after the corrected target. Old entries before the target
+                # are rejected (important for rolled weekend/holiday deadlines).
+                if target_entry <= cached_entry <= target_entry + timedelta(days=7):
+                    ret = float(hit["return_90d"])
+                    sret = float(hit["spy_return_90d"])
+                    r.update(
+                        price_status="legacy_cache",
+                        entry_date=hit["entry_date"],
+                        exit_date=hit["exit_date"],
+                        return_90d=ret,
+                        spy_return_90d=sret,
+                        spy_excess_return=ret-sret,
+                    )
+                    continue
+            except Exception:
+                pass
+        unresolved.append(r)
+
+    print(f"Price cache hits: {len(rows)-len(unresolved)} / {len(rows)} strict rows")
+    if not unresolved:
+        return
+
     ranked = sorted(
-        [r for r in rows if r.get("ticker")],
+        [r for r in unresolved if r.get("ticker")],
         key=lambda r: (int(r.get("signal_rank", 999999)), r.get("quarter", ""), r.get("method", ""), r.get("universe", ""))
     )
     tickers = [r["ticker"] for r in ranked]
     prices = download_prices(tickers)
     spy = prices.get("SPY", pd.Series(dtype=float))
-    for r in rows:
+
+    for r in unresolved:
         q = datetime.strptime(r["period_end"], "%Y-%m-%d").date()
         target_entry = cutoff_for(q) + timedelta(days=1)
         s = prices.get(r["ticker"], pd.Series(dtype=float))
@@ -781,7 +871,7 @@ def add_returns(rows):
                      return_90d=np.nan, spy_return_90d=np.nan, spy_excess_return=np.nan)
             continue
         if spy.empty:
-            raise RuntimeError("SPY unexpectedly missing after successful benchmark download")
+            raise RuntimeError("SPY unexpectedly missing after benchmark download")
         entry = next_price_date(s.index, target_entry)
         if entry is None:
             r.update(price_status="missing_entry_window", entry_date=None, exit_date=None,
@@ -797,7 +887,7 @@ def add_returns(rows):
             continue
         ret = float(s.loc[exitd] / s.loc[entry] - 1)
         sret = float(spy.loc[spy_exit] / spy.loc[spy_entry] - 1)
-        r.update(price_status="ok", entry_date=entry.date().isoformat(), exit_date=exitd.date().isoformat(),
+        r.update(price_status="live_price", entry_date=entry.date().isoformat(), exit_date=exitd.date().isoformat(),
                  return_90d=ret, spy_return_90d=sret, spy_excess_return=ret-sret)
 
 def select_top5_from_candidates(candidates):
