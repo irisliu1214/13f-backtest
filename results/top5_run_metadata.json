@@ -16,8 +16,8 @@
   ],
   "entry_rule": "first trading day after the 45-day 13F filing cutoff",
   "holding_period": "90 calendar days, exit first trading day on/after day 90",
-  "fund_filter": "SEC company_tickers_mf.json plus issuer/class regex filters; applied before leader ranking and signals",
+  "fund_filter": "SEC company_tickers_mf.json plus issuer/class regex filters and identified closed-end-fund tickers; applied before leader ranking and signals",
   "historical_price_fallback": "rank up to candidate_depth by signal, then take first five with usable historical Yahoo price data; no return-based ranking",
-  "generated_at_utc": "2026-10-17T08:34:36.991706Z",
+  "generated_at_utc": "2026-10-17T08:42:37.941789Z",
   "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
 }
