@@ -21,7 +21,8 @@ END_YEAR = int(os.getenv("END_YEAR", "2026"))
 PRIMARY_FLOOR_MANAGERS = int(os.getenv("PRIMARY_FLOOR_MANAGERS", "5"))
 LEADER_TOP_N = int(os.getenv("LEADER_TOP_N", "50"))
 PORTFOLIO_SIZE = int(os.getenv("PORTFOLIO_SIZE", "5"))
-CANDIDATE_DEPTH = int(os.getenv("CANDIDATE_DEPTH", "20"))
+CANDIDATE_DEPTH = int(os.getenv("CANDIDATE_DEPTH", "30"))
+BUYER_EPS = float(os.getenv("BUYER_EPS", "0.01"))
 
 EQUITY_BAD = re.compile(
     r"(NOTE|BOND|DEBT|PRFD|PREFERRED|PFD|WARRANT|UNIT|RIGHT|CVT|CONVERTIBLE|"
@@ -359,14 +360,118 @@ def aggregate_quarter(db, q: date):
     m["issuer"] = m["cur_issuer"].fillna(m["prev_issuer"])
     m["class_name"] = m["cur_class"].fillna(m["prev_class"])
 
-    # Signals are defined ONLY on institution counts among matched managers.
-    # Absolute = current holders - prior holders.
-    # Percentage = Absolute / prior holders (new positions with prior_holders=0 are excluded from Percentage).
+    # Breadth signal: net increase in matched 13F holder count.
     m["holder_abs_change"] = m.cur_holders - m.prev_holders
     m["holder_pct_change"] = np.where(
         m.prev_holders > 0,
         m.holder_abs_change / m.prev_holders,
         np.nan
+    )
+
+    # Split-adjust prior aggregate share counts so aggregate institutional-share growth
+    # and manager-by-manager buy/sell comparisons are not distorted by common splits.
+    prev_px = np.where(m.prev_shares > 0, m.prev_value / m.prev_shares, np.nan)
+    cur_px = np.where(m.cur_shares > 0, m.cur_value / m.cur_shares, np.nan)
+    px_ratio = prev_px / cur_px
+    sh_ratio = np.where(m.prev_shares > 0, m.cur_shares / m.prev_shares, np.nan)
+    candidates = np.array([0.025,0.05,0.1,0.2,0.25,1/3,0.5,1.0,1.25,4/3,1.5,2,3,4,5,10,20,40], dtype=float)
+    factors = np.ones(len(m))
+    for i in range(len(m)):
+        if not np.isfinite(px_ratio[i]) or not np.isfinite(sh_ratio[i]):
+            continue
+        errs = np.abs(np.log(px_ratio[i] / candidates)) + np.abs(np.log(sh_ratio[i] / candidates))
+        f = candidates[np.argmin(errs)]
+        if f != 1.0 and 0.72 <= px_ratio[i]/f <= 1.38 and 0.72 <= sh_ratio[i]/f <= 1.38:
+            factors[i] = f
+    m["split_factor"] = factors
+    m["prev_shares_adj"] = m.prev_shares * m.split_factor
+
+    # Depth signal proxy. The 13F source has position shares but not a clean
+    # point-in-time shares-outstanding denominator for every historical security.
+    # So this first-pass institutional-ownership measure is split-adjusted growth
+    # in aggregate matched-manager 13F shares.
+    m["institutional_ownership_increase"] = np.where(
+        m.prev_shares_adj > 0,
+        (m.cur_shares - m.prev_shares_adj) / m.prev_shares_adj,
+        np.nan
+    )
+
+    # Conviction signal: among continuing matched managers, what fraction of active
+    # changers increased their split-adjusted share position?
+    split_tbl = m[["cusip","split_factor"]].dropna().drop_duplicates("cusip")
+    db.register("split_tbl", split_tbl)
+    conviction = db.execute("""
+      WITH cf AS (
+        SELECT accession,cik,
+               ROW_NUMBER() OVER(PARTITION BY cik ORDER BY available_at DESC, accession DESC) rn
+        FROM filings
+        WHERE period=? AND CAST(available_at AS DATE)<=?
+          AND cik IN (SELECT cik FROM matched_mgrs)
+      ), pf AS (
+        SELECT accession,cik,
+               ROW_NUMBER() OVER(PARTITION BY cik ORDER BY available_at DESC, accession DESC) rn
+        FROM filings
+        WHERE period=? AND CAST(available_at AS DATE)<=?
+          AND cik IN (SELECT cik FROM matched_mgrs)
+      ), cpos AS (
+        SELECT f.cik,h.cusip,SUM(h.shares) shares
+        FROM cf f JOIN holdings h USING(accession)
+        WHERE f.rn=1
+        GROUP BY f.cik,h.cusip
+      ), ppos AS (
+        SELECT f.cik,h.cusip,SUM(h.shares) shares
+        FROM pf f JOIN holdings h USING(accession)
+        WHERE f.rn=1
+        GROUP BY f.cik,h.cusip
+      )
+      SELECT c.cusip,
+             SUM(CASE WHEN c.shares > p.shares*s.split_factor*(1+?) THEN 1 ELSE 0 END) buyers,
+             SUM(CASE WHEN c.shares < p.shares*s.split_factor*(1-?) THEN 1 ELSE 0 END) sellers,
+             COUNT(*) continuing_holders
+      FROM cpos c
+      JOIN ppos p ON c.cik=p.cik AND c.cusip=p.cusip
+      JOIN split_tbl s ON c.cusip=s.cusip
+      WHERE c.shares>0 AND p.shares>0
+      GROUP BY c.cusip
+    """, [q, cutoff, pq, pcutoff, BUYER_EPS, BUYER_EPS]).df()
+    if not conviction.empty:
+        conviction["active_changers"] = conviction.buyers + conviction.sellers
+        conviction["buyer_ratio"] = np.where(
+            conviction.active_changers > 0,
+            conviction.buyers / conviction.active_changers,
+            np.nan
+        )
+        m = m.merge(conviction, on="cusip", how="left")
+    else:
+        m["buyers"] = np.nan
+        m["sellers"] = np.nan
+        m["continuing_holders"] = np.nan
+        m["active_changers"] = np.nan
+        m["buyer_ratio"] = np.nan
+
+    for col in ["buyers","sellers","continuing_holders","active_changers"]:
+        if col not in m:
+            m[col] = np.nan
+
+    # Equal-weight composite of three cross-sectional standardized signals.
+    # Winsorization reduces domination by tiny-base outliers.
+    def zscore(s):
+        s = pd.to_numeric(s, errors="coerce")
+        finite = s[np.isfinite(s)]
+        if len(finite) < 5:
+            return pd.Series(np.nan, index=s.index)
+        lo, hi = finite.quantile([0.01, 0.99])
+        w = s.clip(lo, hi)
+        sd = w.std(ddof=0)
+        if not np.isfinite(sd) or sd == 0:
+            return pd.Series(0.0, index=s.index)
+        return (w - w.mean()) / sd
+
+    m["z_holder_abs"] = zscore(m.holder_abs_change)
+    m["z_inst_ownership"] = zscore(m.institutional_ownership_increase)
+    m["z_buyer_ratio"] = zscore(m.buyer_ratio.where(m.active_changers >= 5))
+    m["composite_accumulation_score"] = (
+        m[["z_holder_abs","z_inst_ownership","z_buyer_ratio"]].mean(axis=1, skipna=False)
     )
 
     # Point-in-time leader definition used for the opportunistic universe.
@@ -380,30 +485,39 @@ def aggregate_quarter(db, q: date):
     return m, {"matched_managers": int(len(managers)), "securities": int(len(m))}
 
 def rank_candidates(metrics, method, exclude_leaders=False):
-    x = metrics[metrics.holder_abs_change > 0].copy()
+    x = metrics.copy()
     if exclude_leaders:
         x = x[~x.is_leader]
     if x.empty:
         return x
 
-    if method == "Absolute":
+    if method == "AbsoluteHolderIncrease":
+        x = x[x.holder_abs_change > 0]
         x = x.sort_values(
-            ["holder_abs_change", "holder_pct_change", "cur_holders"],
+            ["holder_abs_change", "institutional_ownership_increase", "buyer_ratio", "cur_holders"],
+            ascending=[False, False, False, False]
+        )
+    elif method == "InstitutionalOwnershipIncrease":
+        x = x[np.isfinite(pd.to_numeric(x["institutional_ownership_increase"], errors="coerce"))]
+        x = x[x.institutional_ownership_increase > 0]
+        x = x.sort_values(
+            ["institutional_ownership_increase", "holder_abs_change", "buyer_ratio"],
             ascending=[False, False, False]
         )
-    elif method == "Percentage":
-        x = x[np.isfinite(pd.to_numeric(x["holder_pct_change"], errors="coerce"))]
-        x = x.sort_values(
-            ["holder_pct_change", "holder_abs_change", "cur_holders"],
-            ascending=[False, False, False]
-        )
-    elif method == "Percentage+floor":
+    elif method == "BuyerRatioConviction":
         x = x[
-            np.isfinite(pd.to_numeric(x["holder_pct_change"], errors="coerce"))
-            & (x.holder_abs_change >= PRIMARY_FLOOR_MANAGERS)
+            np.isfinite(pd.to_numeric(x["buyer_ratio"], errors="coerce"))
+            & (x.active_changers >= 5)
+            & (x.buyer_ratio > 0.5)
         ]
         x = x.sort_values(
-            ["holder_pct_change", "holder_abs_change", "cur_holders"],
+            ["buyer_ratio", "active_changers", "holder_abs_change"],
+            ascending=[False, False, False]
+        )
+    elif method == "CompositeAccumulationScore":
+        x = x[np.isfinite(pd.to_numeric(x["composite_accumulation_score"], errors="coerce"))]
+        x = x.sort_values(
+            ["composite_accumulation_score", "holder_abs_change", "institutional_ownership_increase"],
             ascending=[False, False, False]
         )
     else:
@@ -570,7 +684,12 @@ def main():
 
     candidate_rows = []
     quality = []
-    methods = ["Absolute", "Percentage", "Percentage+floor"]
+    methods = [
+        "AbsoluteHolderIncrease",
+        "InstitutionalOwnershipIncrease",
+        "BuyerRatioConviction",
+        "CompositeAccumulationScore",
+    ]
     universes = [
         ("AllStocks", False),
         ("OpportunisticExLeaders", True),
@@ -602,23 +721,31 @@ def main():
                         "prior_holders": float(row.prev_holders),
                         "holder_abs_change": float(row.holder_abs_change),
                         "holder_pct_change": float(row.holder_pct_change) if pd.notna(row.holder_pct_change) else np.nan,
+                        "institutional_ownership_increase": float(row.institutional_ownership_increase) if pd.notna(row.institutional_ownership_increase) else np.nan,
+                        "split_factor": float(row.split_factor),
+                        "buyers": float(row.buyers) if pd.notna(row.buyers) else np.nan,
+                        "sellers": float(row.sellers) if pd.notna(row.sellers) else np.nan,
+                        "active_changers": float(row.active_changers) if pd.notna(row.active_changers) else np.nan,
+                        "buyer_ratio": float(row.buyer_ratio) if pd.notna(row.buyer_ratio) else np.nan,
+                        "composite_accumulation_score": float(row.composite_accumulation_score) if pd.notna(row.composite_accumulation_score) else np.nan,
                         "current_value_usd": float(row.cur_value),
                         "current_shares": float(row.cur_shares),
+                        "prior_shares_adjusted": float(row.prev_shares_adj),
                         "matched_managers": meta["matched_managers"],
                     })
 
     add_returns(candidate_rows)
     candidate_df = pd.DataFrame(candidate_rows)
-    candidate_df.to_csv(RESULTS / "top5_candidate_pool.csv", index=False)
+    candidate_df.to_csv(RESULTS / "accumulation_candidate_pool.csv", index=False)
 
     constituents = select_top5_from_candidates(candidate_df)
-    constituents.to_csv(RESULTS / "top5_constituents.csv", index=False)
+    constituents.to_csv(RESULTS / "accumulation_constituents.csv", index=False)
 
     portfolios = build_quarterly_portfolio(constituents)
-    portfolios.to_csv(RESULTS / "top5_quarterly_portfolios.csv", index=False)
+    portfolios.to_csv(RESULTS / "accumulation_quarterly_portfolios.csv", index=False)
 
     summ = portfolio_summary(portfolios)
-    summ.to_csv(RESULTS / "top5_method_summary.csv", index=False)
+    summ.to_csv(RESULTS / "accumulation_method_summary.csv", index=False)
     pd.DataFrame(quality).to_csv(RESULTS / "data_quality.csv", index=False)
 
     meta = {
@@ -629,20 +756,26 @@ def main():
         "portfolio_size": PORTFOLIO_SIZE,
         "candidate_depth": CANDIDATE_DEPTH,
         "weighting": "equal_weight_20pct_each_when_top5_complete",
-        "absolute_definition": "current matched 13F holder count minus prior-quarter matched 13F holder count",
-        "percentage_definition": "holder_abs_change divided by prior-quarter matched holder count; zero-base/new positions excluded",
-        "percentage_floor_definition": f"Percentage ranking with holder_abs_change >= {PRIMARY_FLOOR_MANAGERS}",
+        "methods": [
+            "AbsoluteHolderIncrease",
+            "InstitutionalOwnershipIncrease",
+            "BuyerRatioConviction",
+            "CompositeAccumulationScore"
+        ],
+        "absolute_holder_increase_definition": "current matched 13F holder count minus prior-quarter matched 13F holder count",
+        "institutional_ownership_increase_definition": "split-adjusted percentage growth in aggregate shares held by matched 13F managers; proxy used because the source does not contain point-in-time issuer shares outstanding for every security",
+        "buyer_ratio_definition": f"among continuing matched managers that changed their split-adjusted position by more than {BUYER_EPS:.1%}, buyers / (buyers + sellers); require at least 5 active changers",
+        "composite_definition": "equal-weight mean of cross-sectional z-scores for absolute holder increase, institutional ownership increase proxy, and buyer ratio; each input winsorized at 1st/99th percentile before z-scoring",
         "leader_definition": f"top {LEADER_TOP_N} current-quarter common equities by aggregate 13F market value, point-in-time at filing cutoff",
         "universes": ["AllStocks", "OpportunisticExLeaders"],
         "entry_rule": "first trading day after the 45-day 13F filing cutoff",
         "holding_period": "90 calendar days, exit first trading day on/after day 90",
         "fund_filter": "SEC company_tickers_mf.json plus issuer/class regex filters plus annual SEC Closed-End Fund Information registrant-name matching; applied before leader ranking and signals",
-        "cef_2021_bridge": "SEC CEF catalog has 2021 XML only; 2021 exclusion uses conservative union of 2020 and 2022 annual CEF registrant-name sets",
         "historical_price_fallback": "rank up to candidate_depth by signal, then take first five with usable historical Yahoo price data; no return-based ranking",
         "generated_at_utc": datetime.utcnow().isoformat() + "Z",
         "note": "2026Q2 may not yet have a complete 90-calendar-day forward return."
     }
-    (RESULTS / "top5_run_metadata.json").write_text(json.dumps(meta, indent=2))
+    (RESULTS / "accumulation_run_metadata.json").write_text(json.dumps(meta, indent=2))
 
     print("\nTOP5 PORTFOLIOS")
     print(portfolios.to_string(index=False))
