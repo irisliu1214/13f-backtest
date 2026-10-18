@@ -1,0 +1,55 @@
+name: Freeze B4 v4 mechanical Top5
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "b4v4_finalize.py"
+      - ".github/workflows/b4v4-finalize.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install scikit-learn beautifulsoup4
+      - name: Finalize from frozen blind graph
+        run: python b4v4_finalize.py
+      - name: Validate return firewall
+        run: |
+          python - <<'PY'
+          import json,pandas as pd
+          p=pd.read_csv("results/b4v4_picks_frozen.csv")
+          m=json.load(open("results/b4v4_finalization_methodology.json"))
+          assert len(p)==42
+          assert m["forward_returns_used"] is False and m["prices_read"] is False
+          inv=p[p.decision.eq("INVEST")]
+          assert len(inv)>0
+          assert inv.selected_tickers.str.split("|").map(len).eq(5).all()
+          txt=" ".join(p.columns).lower()
+          for bad in ["return_90","return_180","return_365","spy_return","entry_price","exit_price"]:
+              assert bad not in txt
+          print("INVEST",len(inv))
+          print(p.to_string(index=False))
+          PY
+      - name: Freeze identity reveal and Top5 before returns
+        run: |
+          git config user.name "13f-b4-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add results/b4v4_identity_reveal_audit.csv results/b4v4_picks_frozen.csv results/b4v4_finalization_methodology.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Freeze B4 v4 mechanical Top5 before returns"
+            git push
+          fi
