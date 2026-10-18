@@ -1,43 +1,43 @@
-quarter,decision,cluster_id,auto_terms,selected_tickers,reason
-2016Q1,NO_TRADE,,,,insufficient point-in-time SEC text
-2016Q2,NO_TRADE,,,,insufficient point-in-time SEC text
-2016Q3,NO_TRADE,,,,insufficient point-in-time SEC text
-2016Q4,NO_TRADE,,,,insufficient point-in-time SEC text
-2017Q1,NO_TRADE,,,,insufficient point-in-time SEC text
-2017Q2,NO_TRADE,,,,insufficient point-in-time SEC text
-2017Q3,NO_TRADE,,,,insufficient point-in-time SEC text
-2017Q4,NO_TRADE,,,,insufficient point-in-time SEC text
-2018Q1,NO_TRADE,,,,insufficient point-in-time SEC text
-2018Q2,NO_TRADE,,,,insufficient point-in-time SEC text
-2018Q3,NO_TRADE,,,,insufficient point-in-time SEC text
-2018Q4,NO_TRADE,,,,insufficient point-in-time SEC text
-2019Q1,NO_TRADE,,,,insufficient point-in-time SEC text
-2019Q2,NO_TRADE,,,,insufficient point-in-time SEC text
-2019Q3,NO_TRADE,,,,insufficient point-in-time SEC text
-2019Q4,NO_TRADE,,,,insufficient point-in-time SEC text
-2020Q1,NO_TRADE,,,,insufficient point-in-time SEC text
-2020Q2,NO_TRADE,,,,insufficient point-in-time SEC text
-2020Q3,NO_TRADE,,,,insufficient point-in-time SEC text
-2020Q4,NO_TRADE,,,,insufficient point-in-time SEC text
-2021Q1,NO_TRADE,,,,insufficient point-in-time SEC text
-2021Q2,NO_TRADE,,,,insufficient point-in-time SEC text
-2021Q3,NO_TRADE,,,,insufficient point-in-time SEC text
-2021Q4,NO_TRADE,,,,insufficient point-in-time SEC text
-2022Q1,NO_TRADE,,,,insufficient point-in-time SEC text
-2022Q2,NO_TRADE,,,,insufficient point-in-time SEC text
-2022Q3,NO_TRADE,,,,insufficient point-in-time SEC text
-2022Q4,NO_TRADE,,,,insufficient point-in-time SEC text
-2023Q1,NO_TRADE,,,,insufficient point-in-time SEC text
-2023Q2,NO_TRADE,,,,insufficient point-in-time SEC text
-2023Q3,NO_TRADE,,,,insufficient point-in-time SEC text
-2023Q4,NO_TRADE,,,,insufficient point-in-time SEC text
-2024Q1,NO_TRADE,,,,insufficient point-in-time SEC text
-2024Q2,NO_TRADE,,,,insufficient point-in-time SEC text
-2024Q3,NO_TRADE,,,,insufficient point-in-time SEC text
-2024Q4,NO_TRADE,,,,insufficient point-in-time SEC text
-2025Q1,NO_TRADE,,,,insufficient point-in-time SEC text
-2025Q2,NO_TRADE,,,,insufficient point-in-time SEC text
-2025Q3,NO_TRADE,,,,insufficient point-in-time SEC text
-2025Q4,NO_TRADE,,,,insufficient point-in-time SEC text
-2026Q1,NO_TRADE,,,,insufficient point-in-time SEC text
-2026Q2,NO_TRADE,,,,insufficient point-in-time SEC text
+quarter,decision,cluster_id,auto_terms,selected_tickers,reason,theme_score,semantic_percentile,selected_cusips,beneficiary_scores
+2016Q1,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2016Q2,INVEST,2016Q2_C3,gas | storage | natural gas | capacity | environmental | digital | renewal | crude,GLPI|NWL|WDC|IRM|UAN,deterministic top theme + deterministic top5; no forward returns read,0.507333,0.696,36467J108|651229106|958102105|46284V101|126633106,0.883333|0.725000|0.583333|0.550000|0.416667
+2016Q3,INVEST,2016Q3_C1,forward-looking | suppliers | raw | oems | manufacturing | acquisition | raw materials | manufacture,COTY|LDOS|ITGR|IRT|AMPH,deterministic top theme + deterministic top5; no forward returns read,0.993000,0.972,222070203|525327102|45826H109|45378A106|03209R103,0.927778|0.816667|0.772222|0.594444|0.555556
+2016Q4,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2017Q1,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2017Q2,INVEST,2017Q2_C3,caribbean | brands | asia | australia | environmental | food | representatives | distributors,SITE|SSNC|ROL|ATHM|PFGC,deterministic top theme + deterministic top5; no forward returns read,0.535333,0.808,82982L103|78467J100|775711104|05278C107|71377A103,0.775000|0.741667|0.641667|0.608333|0.483333
+2017Q3,INVEST,2017Q3_C1,rental | brands | entertainment | venues | digital | reit | asia | ticket,OKE|DLR|NCLH|CCI|IRM,deterministic top theme + deterministic top5; no forward returns read,0.685667,0.676,682680103|253868103|G66721104|22822V101|46284V101,0.942857|0.871429|0.607143|0.585714|0.450000
+2017Q4,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2018Q1,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2018Q2,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2018Q3,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2018Q4,INVEST,2018Q4_C1,hotel | ada | software | resort | hotels | retailers | cloud | unsecured notes,PEB|SNX|VICI|EGBN|SPSC,deterministic top theme + deterministic top5; no forward returns read,0.701667,0.740,70509V100|87162W100|925652109|268948106|78463M107,0.858333|0.683333|0.616667|0.583333|0.458333
+2019Q1,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2019Q2,INVEST,2019Q2_C2,transaction | closing | community | preferred | debt | investment | values | agreement,NEM|COLD|MDB|VICI|BCSF,deterministic top theme + deterministic top5; no forward returns read,0.720333,0.748,651639106|03064D108|60937P106|925652109|05684B107,0.866667|0.811111|0.655556|0.650000|0.511111
+2019Q3,INVEST,2019Q3_C2,clients | hotel | transaction | card | hotels | managers | software | master,FIS|GPN|FISV|EXPE|JLL,deterministic top theme + deterministic top5; no forward returns read,0.750000,1.000,31620M106|37940X102|337738108|30212P303|48020Q107,0.906250|0.881250|0.650000|0.587500|0.450000
+2019Q4,INVEST,2019Q4_C3,loans | estate | real estate | capital | assets | real | loan | reit,PB|VLY|TTEC|SAFE|KREF,deterministic top theme + deterministic top5; no forward returns read,0.800667,0.936,743606105|919794107|89854H102|78645L100|48251K100,0.925000|0.725000|0.693750|0.675000|0.631250
+2020Q1,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2020Q2,INVEST,2020Q2_C1,forward looking | tax | immune | disease | responses | key information | trial | clinical,RCUS|NVAX|ICL|GERN|EARN,deterministic top theme + deterministic top5; no forward returns read,0.766000,0.864,03969F109|670002401|M53213100|374163103|288578107,0.800000|0.766667|0.625000|0.500000|0.416667
+2020Q3,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2020Q4,INVEST,2020Q4_C1,utility | solar | homes | residential | home | solar energy | nearly | trusted,RUN|TDOC|TWLO|TXG|ZG,deterministic top theme + deterministic top5; no forward returns read,0.882667,0.864,86771W105|87918A105|90138F102|88025U109|98954M101,0.914286|0.814286|0.650000|0.514286|0.492857
+2021Q1,INVEST,2021Q1_C2,users | relative | production capacity | machine | foreign | oil | fluid | cloud,CLOV|GTES|TROX|SNOW|EAF,deterministic top theme + deterministic top5; no forward returns read,0.755333,0.888,18914F103|G39108108|G9087Q102|833445109|384313508,0.778571|0.757143|0.578571|0.578571|0.521429
+2021Q2,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2021Q3,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2021Q4,INVEST,2021Q4_C2,real-time | listings | listing | analytics | platform | fixed income | data analytics | nasdaq,ENTG|ABNB|ENPH|KLAC|KDP,deterministic top theme + deterministic top5; no forward returns read,0.628333,0.980,29362U104|009066101|29355A107|482480100|49271V100,0.775000|0.768750|0.725000|0.593750|0.562500
+2022Q1,INVEST,2022Q1_C3,vessels | team members | month | cybersecurity | armour | residential | members | trust,WSFS|SBLK|FTI|PANL|NBR,deterministic top theme + deterministic top5; no forward returns read,0.484000,0.936,929328102|Y8162K204|G87110105|G6891L105|G6359F137,0.888889|0.822222|0.666667|0.650000|0.466667
+2022Q2,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2022Q3,INVEST,2022Q3_C3,real estate | real | association | estate | reit | shareholders | income | standards board,GRAB|ARE|GLPI|PDD|CION,deterministic top theme + deterministic top5; no forward returns read,0.555333,0.888,G4124C109|015271109|36467J108|722304102|17259U204,0.825000|0.706250|0.637500|0.606250|0.525000
+2022Q4,INVEST,2022Q4_C1,automotive | restaurants | quick | significantly | convenience stores | purchase | proprietary | laundering,TOST|EGY|CALM|ALGM|ADNT,deterministic top theme + deterministic top5; no forward returns read,0.786333,0.812,888787108|91851C201|128030202|01749D105|G0084W101,0.960000|0.805000|0.605000|0.590000|0.550000
+2023Q1,INVEST,2023Q1_C1,mineral | exploration | designs | workday | programs | people | workforce | nevada,DRI|NVR|NOW|WDAY|OKTA,deterministic top theme + deterministic top5; no forward returns read,0.739667,0.892,237194105|62944T105|81762P102|98138H101|679295105,0.800893|0.649107|0.643750|0.566071|0.508036
+2023Q2,INVEST,2023Q2_C2,aerospace | assemblies | defense | equipment | revenues | ended respectively | aftermarket | commercial vehicle,GTX|MG|PAGS|HBIO|INTT,deterministic top theme + deterministic top5; no forward returns read,0.692000,0.768,366505105|60649T107|G68707101|416906105|461147100,0.850000|0.842857|0.642857|0.514286|0.464286
+2023Q3,INVEST,2023Q3_C2,forward-looking | media | restaurants | traffic | trademarks | web | social media | network,ACHR|AUR|FWRG|JBI|OPRA,deterministic top theme + deterministic top5; no forward returns read,0.831333,0.992,03945R102|051774107|33748L101|47103N106|68373M107,0.878571|0.714286|0.664286|0.550000|0.507143
+2023Q4,INVEST,2023Q4_C3,air | commercial | contractors | european | brazil | agriculture | brazilian | reinsurance,ZS|AER|DASH|MDB|PLTR,deterministic top theme + deterministic top5; no forward returns read,0.671000,0.884,98980G102|N00985106|25809K105|60937P106|69608A108,0.838889|0.750000|0.722222|0.594444|0.583333
+2024Q1,INVEST,2024Q1_C3,logistics | financing | dash | guidance | mobile apps | manage | delivery | apps,DOC|NXT|APP|IOT|CNH,deterministic top theme + deterministic top5; no forward returns read,0.569667,0.812,42250P103|65290E101|03831W108|79589L106|N20944109,0.835714|0.728571|0.721429|0.614286|0.528571
+2024Q2,INVEST,2024Q2_C3,metals | classes | asset classes | portfolio | rigs | mining | infrastructure | mifid,STEP|CHRD|AZZ|VIRT|SNX,deterministic top theme + deterministic top5; no forward returns read,0.773667,0.828,85914M107|674215207|002474104|928254101|87162W100,0.835714|0.814286|0.607143|0.464286|0.442857
+2024Q3,INVEST,2024Q3_C3,export | mexico | production | assembly | regions | backlog | fresh | product lines,QXO|ASTS|CTRE|NE|PPC,deterministic top theme + deterministic top5; no forward returns read,0.745667,0.716,82846H405|00217D100|14174T107|G65431127|72147K108,0.857143|0.800000|0.678571|0.457143|0.457143
+2024Q4,INVEST,2024Q4_C3,pet | stores | grid | tenants | iot | retail | pharmacy | shopping,HIMS|GDYN|SMTC|OLLI|AKR,deterministic top theme + deterministic top5; no forward returns read,0.748667,0.728,433000106|39813G109|816850101|681116109|004239109,0.850000|0.750000|0.556250|0.537500|0.537500
+2025Q1,INVEST,2025Q1_C2,machine learning | scalable | cloud | machine | deployment | deep | artificial intelligence | growth strategy,LTH|QBTS|INOD|XERS|AUR,deterministic top theme + deterministic top5; no forward returns read,0.665667,0.996,53190C102|26740W109|457642205|98422E103|051774107,0.831250|0.831250|0.681250|0.550000|0.456250
+2025Q2,INVEST,2025Q2_C1,guests | automotive | virtual | rewards | auto | network | video | invest,COF|ORLY|CVNA|META|HOOD,deterministic top theme + deterministic top5; no forward returns read,0.986000,0.944,14040H105|67103H107|146869102|30303M102|770700102,0.915000|0.795000|0.655000|0.570000|0.555000
+2025Q3,INVEST,2025Q3_C1,advertisers | users | advertising | user | monetization | video | data protection | ecosystem,APP|SNPS|RDDT|WDC|DHI,deterministic top theme + deterministic top5; no forward returns read,0.752667,0.944,03831W108|871607107|75734B100|958102105|23331A109,0.800000|0.772222|0.566667|0.561111|0.555556
+2025Q4,NO_TRADE,,,,no cluster passed pre-registered semantic coherence threshold,,,,
+2026Q1,INVEST,2026Q1_C3,bhc | stress | motor | forward-looking | final rule | bhcs | carrier | proposal,WAT|SNDA|FITB|HBAN|OKE,deterministic top theme + deterministic top5; no forward returns read,0.637667,0.884,941848103|140475203|316773100|446150104|682680103,0.883333|0.783333|0.658333|0.591667|0.366667
+2026Q2,INVEST,2026Q2_C1,residential | retail | mortgage | underwriting | watch | premium | dynamic | licensed,LWLG|AIP|NP|FSUN|FOSL,deterministic top theme + deterministic top5; no forward returns read,0.802333,0.876,532275104|04302A104|64073B103|33767U107|34988V106,0.725000|0.675000|0.658333|0.633333|0.466667
