@@ -1,0 +1,68 @@
+name: Run B4 v3 economic-driver firewall
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "b4v3_firewall.py"
+      - ".github/workflows/b4v3-discovery.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: b4v3-discovery
+  cancel-in-progress: true
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install scikit-learn beautifulsoup4
+      - name: Compile
+        run: python -m py_compile b4v3_firewall.py
+      - name: Run pre-return B4 v3 discovery
+        run: python b4v3_firewall.py
+      - name: Validate information firewall and semantic hygiene
+        run: |
+          python - <<'PY'
+          import json, re, pandas as pd
+          p=pd.read_csv("results/b4v3_pre_return_picks.csv")
+          d=pd.read_csv("results/b4v3_pre_return_driver_scores.csv")
+          e=pd.read_csv("results/b4v3_pre_return_driver_evidence.csv")
+          m=json.load(open("results/b4v3_pre_return_methodology.json"))
+          assert m["forward_returns_used"] is False and m["prices_read"] is False
+          assert len(p)==42, len(p)
+          cols=" ".join(map(str,list(p.columns)+list(d.columns)+list(e.columns))).lower()
+          for bad in ["return_90","return_180","return_365","spy_","entry_price","exit_price","forward_return"]:
+              assert bad not in cols, bad
+          invest=p[p.decision.eq("INVEST")]
+          if len(invest):
+              assert (invest.theme_score>=m["gates"]["min_theme_score"]).all()
+              assert (invest.mean_novelty>=m["gates"]["min_theme_novelty"]).all()
+          # Driver labels themselves must not contain known accounting/reporting classes.
+          badpat=re.compile(r"\b(asu|asc|fasb|gaap|deferred tax|income tax|valuation allowance|retained earnings|lease liability|right-of-use|balance sheet|fair value|stock-based compensation|cash flows?|accounting|disclosures?)\b",re.I)
+          bad=[x for x in invest.driver_terms.fillna("") if badpat.search(str(x))]
+          assert not bad, bad[:5]
+          print("quarters",len(p),"INVEST",len(invest),"NO_TRADE",int((p.decision=="NO_TRADE").sum()),"drivers",len(d),"evidence",len(e))
+          print(p.to_string(index=False))
+          PY
+      - name: Commit pre-return audit only
+        run: |
+          git config user.name "13f-b4-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add results/b4v3_pre_return_*.csv results/b4v3_pre_return_methodology.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Record B4 v3 pre-return economic-driver audit"
+            git push
+          fi
