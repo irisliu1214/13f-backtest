@@ -1,0 +1,82 @@
+{
+  "quarter": "2025Q1",
+  "driver_name": "AI/cloud data-center buildout increases compute and power-infrastructure demand",
+  "frozen_causal_chain": "AI and mainstream cloud adoption -> more data-processing loads and data-center construction -> higher demand for AI platforms, cloud services and electrical/power infrastructure.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.96,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2025Q1_P1_E011",
+        "2025Q1_P1_E013"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2025Q1_P1_E012",
+          "text": "Customer growth and customer usage are affected by a number of factors outside the control of ENTITY , such as mandated energy efficiency measures, demand-side management goals, distributed generation resources and economic and demographic conditions, such as population changes, job and income growth, housing starts, new business formation and the overall level of economic activity, including changes due to public health considerations."
+        },
+        {
+          "evidence_id": "2025Q1_P1_E014",
+          "text": "OPCo anticipates a PUCO decision in 2025. 6 ENTITY to ENTITY growth of ENTITY \u2019s regulated generation portfolio reflects the company\u2019s commitment to meet increasing customer demand for power while balancing cost and reliability."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.9,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2025Q1_P1_E039",
+        "2025Q1_P1_E040"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C26",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.96,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2025Q1_P1_E054"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2025Q1_P1_E055",
+          "text": "ENTITY price of Bitcoin increased during the first quarter of 2024 due to a new source of demand, the eleven Bitcoin spot ENTITY (\u201cETFs\u201d), which were approved to begin trading by the SEC on January 11, 2024."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.84,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2025Q1_P1_E052"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2025Q1_P1_E051",
+          "text": "We will require significant capital expenditures and the allocation of valuable management resources to grow and change in these areas without undermining our culture of rapid innovation, teamwork and attention to customer success, which has been central to our growth so far."
+        },
+        {
+          "evidence_id": "2025Q1_P1_E053",
+          "text": "Increasing awareness of our platform and capabilities, coupled with the mainstream adoption of cloud technology, has expanded the diversity of our customer base to include organizations of all sizes across all industries."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

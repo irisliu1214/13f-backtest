@@ -1,0 +1,126 @@
+{
+  "quarter": "2021Q2",
+  "driver_name": "Pandemic normalization and stimulus reshape mobility, consumer and system demand",
+  "frozen_causal_chain": "Economic reopening/stimulus plus persistent at-home behavior -> vehicle scarcity/pricing, deferred medical-system purchases, pet-related spending, home-computing demand and freight congestion.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.97,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q2_P1_E027"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E028",
+          "text": "For the full year 2021, ENTITY Financial expects used vehicle prices to be higher than 2020 levels, primarily due to sustained low new vehicle inventory and an economic recovery driving continued strong demand for new and used vehicles."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E029",
+          "text": "In 2021, ENTITY Financial expects used vehicle prices to increase by an amount in the low to mid single digits on a percentage basis, as compared to 2020 levels, primarily due to sustained low new vehicle inventory and continued strong demand."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.96,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q2_P1_E041"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E042",
+          "text": "Service revenue remained unchanged, driven by the growth of the installed base of da Vinci ENTITY Systems, offset by the effects of the ENTITY that was implemented as a result of the COVID-19 pandemic in the second quarter of 2020."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E043",
+          "text": "The increase in systems placed reflects the significant disruption experienced as a result of the COVID-19 pandemic in the second quarter of 2020, as well as procedure growth, more customers trading in da Vinci Si ENTITY Systems for fourth generation da Vinci systems in order to access fourth generation instruments and capabilities as well as to standardize their system portfolio, and further customer validation that da Vinci surgery addresses their quadruple aim objectives."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E044",
+          "text": "The unfavorable impact of these items on cash provided by operating activities was partially offset by a $38 million increase in accounts payable, primarily due to the timing of billings, a $19 million increase in accrued compensation and employee benefits, primarily due to higher headcount and variable compensation, and an $11 million increase in deferred revenue, primarily due to the increased volume of sales contracts."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.97,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q2_P1_E053"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E054",
+          "text": "Given the long-term, recurring demand for pet care products and services, which is expected to continue to grow in response to the pet humanization trend, this step function increase in the pet population represents a meaningful acceleration in total industry growth from 5% historically to 7% through 2024, according to ENTITY and company internal estimates."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E055",
+          "text": "The remainder of the increase was predominately due to higher incentive compensation for corporate and field employees along with increased variable costs associated with our higher sales growth."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E056",
+          "text": "The increase in services was primarily due to growth in the hospital business due to the addition of 44 new hospitals period-over-period partially offset by the temporary suspension of our training, grooming and vaccination clinic services while stay-at-home orders were in place."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.94,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q2_P1_E045",
+        "2021Q2_P1_E046"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E047",
+          "text": "ENTITY and ENTITY market platforms have benefited from stronger demand as people continue to work, learn, and play from home."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E048",
+          "text": "ENTITY market platform benefited from work-from-home trends in mobile workstations and desktop workstation demand has started to recover, although not back to pre-COVID levels."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.93,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2021Q2_P1_E001"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E002",
+          "text": "During the first half of 2021, we experienced negative impacts to our margins related to increased international freight demands, lack of shipping containers and general international freight congestion due to the continued increased demand of goods being sold on ecommerce marketplaces."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E003",
+          "text": "This has benefited the Company as historically over 90 % of its net revenue comes from the sale of products online in the 8 U.S. and it believes this shift to increased online consumer spending will continue even after the COVID-19 pandemic ends."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E004",
+          "text": "ENTITY has experienced, and expects to continue to experience, an increase in last-mile shipping costs as shipping providers\u2019 delivery networks continue be stressed due to increased demand from the increase of goods sold on ecommerce marketplaces."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

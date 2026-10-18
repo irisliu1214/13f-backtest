@@ -1,0 +1,80 @@
+{
+  "quarter": "2025Q3",
+  "driver_name": "AI compute expansion raises memory, storage, electricity and technology-material demand",
+  "frozen_causal_chain": "Large-language-model and generative-AI adoption -> greater memory/storage and hyperscale infrastructure needs -> higher information-sector electricity use and technology-material demand.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.98,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2025Q3_P1_E006"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.88,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2025Q3_P1_E042"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.8,
+      "baseline_evidence_directness": 0.8,
+      "removed_evidence_ids": [
+        "2025Q3_P1_E045",
+        "2025Q3_P1_E046"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E043",
+          "text": "C&I sales increased due to higher use per customer and customer growth, primarily driven by the ENTITY sector. \u2022 NSP-Wisconsin \u2014 Residential sales increased due to both increased use per customer (1.1%) and customer growth (1.0%)."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E044",
+          "text": "C&I sales increased due to higher use per customer, primarily driven by the ENTITY sector. \u2022 NSP-Wisconsin \u2014 Residential sales increased due to both increased use per customer (1.1%) and customer growth (1.0%)."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.91,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2025Q3_P1_E048"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E047",
+          "text": "In the past, ENTITY ENTITY and other gold mining companies experienced shortages in critical consumables, particularly as production capacity in the global mining industry expanded in response to increased demand for commodities."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E049",
+          "text": "At ENTITY in Argentina, capital expenditure increased by $9 million, from $66 million in 2022 to $75 million in 2023, mainly due to higher expenditure on the heap leaching pad expansion and higher waste stripping capital expenditure compared to 2022."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E050",
+          "text": "At ENTITY in Argentina, capital expenditure increased by $9 million, from $66 million in 2022 to $75 million in 2023, mainly due to higher expenditure on the heap leaching expansion and higher waste stripping capital expenditure compared to 2022."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

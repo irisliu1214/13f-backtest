@@ -1,0 +1,77 @@
+{
+  "quarter": "2023Q1",
+  "driver_name": "Digital transformation, 5G and HPC drive semiconductor capacity demand",
+  "frozen_causal_chain": "5G, AI/HPC and wider digital infrastructure adoption -> stronger demand across advanced/mature semiconductor nodes and automotive sensing -> manufacturers add wafer-fab capacity and production capability.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.98,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2023Q1_P1_E058",
+        "2023Q1_P1_E060"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E059",
+          "text": "Memory systems sales benefited from continued strong end-market demand for servers, while for Logic system sales we saw strong demand in advanced and mature nodes to support the digital transformation (5G, AI, VR, intelligent cloud solutions and simulation and visualization applications)."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E061",
+          "text": "We invest in our factories and facilities around the world so we can meet increasing customer demand for our products and services, driven by strong growth rates across both advanced and mature semiconductor markets, continued innovation, more foundry competition and technological sovereignty."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.95,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2023Q1_P1_E054"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E053",
+          "text": "Due to changes in the energy policy of the government, the growth of manufacturers in the ENTITY, Southern ENTITY ENTITY and Central ENTITY ENTITY, and the droughts that ENTITY experiences from time to time, there is concern regarding future availability of sufficient electricity and water for our production in ENTITY ."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E055",
+          "text": "We are entering a period of higher growth as the multiyear megatrends of 5G and high performance computing are expected to fuel strong demand for our ENTITY technologies in the next several years."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.88,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2023Q1_P1_E051",
+        "2023Q1_P1_E052"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C26",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.8,
+      "baseline_evidence_directness": 0.8,
+      "removed_evidence_ids": [
+        "2023Q1_P1_E027"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

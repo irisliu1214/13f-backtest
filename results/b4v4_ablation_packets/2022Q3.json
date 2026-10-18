@@ -1,0 +1,106 @@
+{
+  "quarter": "2022Q3",
+  "driver_name": "Digitalization and cloud migration sustain semiconductor and SaaS demand",
+  "frozen_causal_chain": "Persistent digitalization and cloud migration -> semiconductor/device demand and SMB SaaS adoption remain elevated -> component constraints, server/platform investment and cloud-software demand persist.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.97,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2022Q3_P1_E041"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.97,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2022Q3_P1_E048",
+        "2022Q3_P1_E051"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2022Q3_P1_E049",
+          "text": "The increased demand for deliveries was driven by stay-at-home and movement control orders, work-from-home arrangements and social distancing measures implemented as a result of the COVID-19 pandemic in our markets."
+        },
+        {
+          "evidence_id": "2022Q3_P1_E050",
+          "text": "In particular, our business segments were impacted as follows: \u2022 Deliveries : Our deliveries segment experienced significant year-on-year GMV and revenue growth from 2019 to 2021 as consumer adoption of deliveries offerings increased in light of the stay-at-home and movement control orders, work-from-home arrangements and social distancing measures imposed as a result of the COVID-19 pandemic."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.94,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2022Q3_P1_E037",
+        "2022Q3_P1_E040"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2022Q3_P1_E038",
+          "text": "The increase was driven by increased demand for our ENTITY SaaS product as SMBs accelerate their move away from manual processes and towards cloud platforms to more efficiently manage and grow their businesses, and by our success in re-focusing our go-to-market and onboarding strategy to target higher value clients."
+        },
+        {
+          "evidence_id": "2022Q3_P1_E039",
+          "text": "The increase was driven by increased demand for our ENTITY platform as we continue to increase sales to SMBs in Australia."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.79,
+      "baseline_evidence_directness": 0.8,
+      "removed_evidence_ids": [
+        "2022Q3_P1_E030"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2022Q3_P1_E031",
+          "text": "The increase in costs directly attributable to the operation of our platform and others from RMB5,996.9 million in 2019 to RMB17,733.1 million in 2020 was primarily due to the increase of RMB7,198.7 million in cost and expenses attributable to merchandise sales and delivery and storage fees, the increase of RMB2,061.8 million in bandwidth and server costs to keep pace with the growth of our online marketplace services, and the increase of RMB1,466.2 million in call center and merchant support services."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.86,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2022Q3_P1_E042"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2022Q3_P1_E043",
+          "text": "Net revenues for ENTITY increased 27.2% compared to the second quarter of 2022, primarily due to the ability to shift manufacturing resources to focus on available backlog, as well as, favorable market conditions in ENTITY and Europe for ENTITY."
+        },
+        {
+          "evidence_id": "2022Q3_P1_E044",
+          "text": "Given the growth profiles of the markets we serve with our ENTITY line and our ENTITY line, our strategy involves a transition in organizational focus, emphasizing investment in our ENTITY line and targeting high growth market segments with a low-mix, high-volume operational model, while maintaining a profitable business in the mature market segments we serve with our ENTITY line with a high-mix, low-volume operational model."
+        },
+        {
+          "evidence_id": "2022Q3_P1_E045",
+          "text": "Both the increase in gross margin dollars and gross margin percentage were primarily due to the increase in net revenues and improved absorption of fixed costs due to increased volumes. \u2022 Backlog, which represents the total value of orders for products for which shipment is scheduled within the next 12 months, was approximately $410,015,000 at the end of the second quarter of 2022, as compared to $423,738,000 at the end of the first quarter of 2022."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

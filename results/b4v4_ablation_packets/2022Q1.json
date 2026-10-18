@@ -1,0 +1,115 @@
+{
+  "quarter": "2022Q1",
+  "driver_name": "Post-COVID energy-demand recovery collides with tight supply and geopolitical disruption",
+  "frozen_causal_chain": "Economic reopening and recovering mobility/industrial activity lift oil, NGL and refined-product demand while supply remains tight and geopolitical disruption intensifies -> higher energy prices, margins, transport and service activity.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.96,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2022Q1_P1_E017"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C25",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.91,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2022Q1_P1_E018",
+        "2022Q1_P1_E020"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2022Q1_P1_E019",
+          "text": "These seasonal trends can affect throughput volumes on our TE ENTITY, ENTITY and Mid-ENTITY and associated terminals. \u2022 Due to increased demand for fuel additives used in the production of motor gasoline, our isomerization and octane enhancement businesses experience higher levels of demand during the summer driving season, which typically occurs in the spring and summer months."
+        },
+        {
+          "evidence_id": "2022Q1_P1_E021",
+          "text": "Revenues from our crude oil pipeline assets increased $124.5 million year-to-year primarily due to higher demand for crude oil transportation services."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.96,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2022Q1_P1_E069"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2022Q1_P1_E070",
+          "text": "Jet fuel demand continues to improve slowly but remains below pre-pandemic levels. \u2022 Sour crude oil discounts are expected to continue to improve as OPEC increases its production of sour crude oils in response to anticipated continued growth in global crude oil demand. \u2022 Renewable diesel margins are expected to moderate from the levels achieved in 2021."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.96,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2022Q1_P1_E075",
+        "2022Q1_P1_E076"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2022Q1_P1_E077",
+          "text": "The remaining increase in EBITDA was driven by margin improvements due to an increase in the Maya 2-1-1 market margin resulting from higher demand."
+        },
+        {
+          "evidence_id": "2022Q1_P1_E078",
+          "text": "Intermediates and ENTITY \u2014EBITDA increased in the first quarter of 2022 compared to the first and fourth quarter of 2021, primarily driven by higher margins across most businesses due to market supply tightness coupled with strong demand recovery."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.84,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2022Q1_P1_E067",
+        "2022Q1_P1_E068"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.95,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2022Q1_P1_E046",
+        "2022Q1_P1_E048"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2022Q1_P1_E047",
+          "text": "In addition, equity earnings from our Chemicals segment increased significantly due to higher margins driven by strong demand and tight product supply."
+        },
+        {
+          "evidence_id": "2022Q1_P1_E049",
+          "text": "The increase was primarily due to higher equity earnings from CPChem mainly driven by improved margins and higher sales volumes and WRB Refining LP (WRB) resulting from improved realized refining margins and higher refinery production."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

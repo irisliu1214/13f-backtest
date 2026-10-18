@@ -1,0 +1,93 @@
+{
+  "quarter": "2025Q2",
+  "driver_name": "AI data-center buildout propagates into networking, electrical infrastructure and grid/storage demand",
+  "frozen_causal_chain": "Accelerated AI compute adoption -> rapid data-center/network buildout -> demand expands for high-speed networking, datacenter enclosures/electrical projects and grid/storage infrastructure.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.99,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2025Q2_P1_E031",
+        "2025Q2_P1_E033"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2025Q2_P1_E032",
+          "text": "Networking revenue was $5.0 billion, up 56% from a year ago and up 64% sequentially, driven by the growth of NVLink compute fabric in our GB200 systems and continued adoption of Ethernet for AI solutions at cloud service providers and consumer internet companies."
+        },
+        {
+          "evidence_id": "2025Q2_P1_E034",
+          "text": "The strong year-on-year growth was driven by demand for our Hopper architecture accelerated computing platform used for large language models, recommendation engines, and generative AI applications."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.94,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2025Q2_P1_E035"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2025Q2_P1_E036",
+          "text": "The decrease in gross margin is primarily due to strong sales growth in comparatively lower-margin products and temporary inefficiencies related to our accelerated production ramp-up."
+        },
+        {
+          "evidence_id": "2025Q2_P1_E037",
+          "text": "The increase is primarily due to a favorable non-recurring legal reserve reduction in 2024, and higher costs associated with employee incentive programs, increased sales and administrative expenses to support ongoing business growth in 2025."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.82,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2025Q2_P1_E022"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.88,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2025Q2_P1_E016",
+        "2025Q2_P1_E017"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.74,
+      "baseline_evidence_directness": 0.75,
+      "removed_evidence_ids": [
+        "2025Q2_P1_E025"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2025Q2_P1_E026",
+          "text": "These policies expand our total addressable market, creating opportunities for increased sales and broader adoption of our battery technologies."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

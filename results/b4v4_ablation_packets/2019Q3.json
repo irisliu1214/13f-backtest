@@ -1,0 +1,77 @@
+{
+  "quarter": "2019Q3",
+  "driver_name": "Migration of business and consumer activity to digital channels",
+  "frozen_causal_chain": "Business processes, advertising and commerce increasingly move to digital/outsourced channels -> outsourced bank technology, digital advertising/display and e-commerce logistics demand increase.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.9,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2019Q3_P1_E022"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2019Q3_P1_E023",
+          "text": "Financial segment revenue growth in 2019 was driven by growth in our bank processing business."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.88,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2019Q3_P1_E049"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2019Q3_P1_E048",
+          "text": "MAUs, and international revenue growth was driven by 127% and 105% respective increases in international ARPU supported by a 38% increase in international MAUs."
+        },
+        {
+          "evidence_id": "2019Q3_P1_E050",
+          "text": "ARPU growth in the U.S. and internationally was driven by higher monetization of both of those user bases largely due to an increase in advertising demand from new and existing advertisers on our platform."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.82,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2019Q3_P1_E010",
+        "2019Q3_P1_E011"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2019Q3_P1_E012",
+          "text": "The increase was primarily due to higher site lease expenses in countries experiencing revenue growth , partially offset by lower site lease expenses in Italy and Spain due to non-renewal of contracts ."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.76,
+      "baseline_evidence_directness": 0.75,
+      "removed_evidence_ids": [
+        "2019Q3_P1_E053"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

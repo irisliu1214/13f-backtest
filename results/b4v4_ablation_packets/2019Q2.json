@@ -1,0 +1,69 @@
+{
+  "quarter": "2019Q2",
+  "driver_name": "Broadband/cloud and subscription-software adoption",
+  "frozen_causal_chain": "Growing broadband/mobile-data use and enterprise migration to cloud/solution-based software -> greater network usage and hosted-service deployment -> higher data-service, subscription and cloud revenue.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.95,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2019Q2_P1_E023",
+        "2019Q2_P1_E024"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2019Q2_P1_E025",
+          "text": "This growth is driven by increasing demand for broadband services which the company is providing through its existing copper network and a nationwide roll-out of its FTTH network."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.88,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2019Q2_P1_E032"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.81,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2019Q2_P1_E001"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.93,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2019Q2_P1_E038",
+        "2019Q2_P1_E039"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2019Q2_P1_E037",
+          "text": "These inflows were partially offset by a $21.6 million increase in accounts receivable due to higher billings and timing of collections from our customers, an increase in deferred contract acqui sition costs of $20.5 million as our sales commissions increased due to the addition of new customers and expansion of our existing customer subscriptions, and a $ 15.4 million increase in prepaid expenses and other assets primarily related to an increase i n prepaid hosting costs and prepaid software subscription costs driven by the growth in our business."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

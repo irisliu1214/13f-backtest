@@ -1,0 +1,112 @@
+{
+  "quarter": "2020Q3",
+  "driver_name": "Pandemic accelerates e-commerce and online-service adoption",
+  "frozen_causal_chain": "Stay-at-home restrictions and property closures move shopping, entertainment and housing-search activity online -> e-commerce, digital betting, online retail and application adoption rise.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.94,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2020Q3_P1_E022"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2020Q3_P1_E023",
+          "text": "Sales volume growth in the first nine months of 2020 compared to the prior year period for the ENTITY segment included strong K-Cup pod volume growth of 5.8% , reflecting strength in at-home consumption which was significantly offset by softness in the away-from-home business due to the pandemic."
+        },
+        {
+          "evidence_id": "2020Q3_P1_E024",
+          "text": "Volume growth for the ENTITY segment included K-Cup pod volume growth of 2.4% , reflecting continued strength in at-home consumption, which was significantly offset by ongoing softness in the away-from-home business as return to offices and hospitality remained depressed, despite increased consumer mobility."
+        },
+        {
+          "evidence_id": "2020Q3_P1_E025",
+          "text": "Net sales increased 3.0% to $1,097 million for the third quarter of 2020 compared to net sales of $1,065 million in the prior year period, driven by strong volume/mix growth of 6.0% , which was partially offset by lower net price realization of 2.8% , resulting from strategic price investments."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.95,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2020Q3_P1_E028"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.96,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2020Q3_P1_E048"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2020Q3_P1_E047",
+          "text": "Increases in our customer service and merchant fees are driven by the growth in our net revenue and are expected to remain relatively consistent as a percentage of net revenue."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.93,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2020Q3_P1_E043"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2020Q3_P1_E044",
+          "text": "The increase was primarily due to positive comparable sales growth in the majority of our markets driven by a change in consumer behavior in response to the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2020Q3_P1_E045",
+          "text": "ENTITY's Club segment's comparable sales benefited from growth in transactions and average ticket resulting from the COVID-19 pandemic, partially offset by lower fuel sales and our decision to remove tobacco from certain club locations."
+        },
+        {
+          "evidence_id": "2020Q3_P1_E046",
+          "text": "ENTITY's Club segment's comparable sales benefited from growth in transactions resulting from the COVID-19 pandemic, partially offset by our decision to remove tobacco from certain club locations and lower fuel sales."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.83,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2020Q3_P1_E049"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2020Q3_P1_E050",
+          "text": "The increase in ENTITY Offers revenue was due to an increase in the number of homes sold in the period as customer adoption of ENTITY Offers increased in geographic areas in which it is currently operating and as ENTITY Offers expanded into new geographic markets."
+        },
+        {
+          "evidence_id": "2020Q3_P1_E051",
+          "text": "The growth in mortgages revenue was primarily driven by increases in marketplace and Mortech revenue driven by increased demand for our Connect and Mortech services, primarily due to the low interest-rate environment."
+        },
+        {
+          "evidence_id": "2020Q3_P1_E052",
+          "text": "These changes were partially offset by an $88.8 million increase in mortgage loans held for sale, a $31.8 million increase in contract cost assets due primarily to the capitalization of sales commissions, a $16.4 million increase in prepaid expenses and other current assets due primarily to timing of payments and growth in our contract assets, a $14.5 million increase in accounts receivable due to an increase in revenue from products and services billed in arrears, and a $2.3 million decrease in accrued compensation and benefits."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

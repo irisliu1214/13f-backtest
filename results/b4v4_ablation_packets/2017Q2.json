@@ -1,0 +1,91 @@
+{
+  "quarter": "2017Q2",
+  "driver_name": "Online/cloud adoption expands bandwidth and digital-service deployment",
+  "frozen_causal_chain": "More network-connected devices, cloud computing and online commerce -> higher bandwidth/network-upgrade demand and broader deployment of online/SaaS services -> higher e-commerce and subscription/service revenue.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.95,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2017Q2_P1_E005",
+        "2017Q2_P1_E006"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2017Q2_P1_E007",
+          "text": "The increase in revenues in the CATV market for the year was a result of increased demand from customers who are supplying equipment for CATV network upgrades which began during the year."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.86,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2017Q2_P1_E012"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2017Q2_P1_E013",
+          "text": "Net revenues in our brand e-commerce segment increased also because service revenue increased from RMB397.3 million in 2014 to RMB656.2million (US$101.3 million) in 2015, resulting from growth in sales of apparel products sold by existing brand partners as they expanded their online presence and the addition of new brand partners in the same category."
+        },
+        {
+          "evidence_id": "2017Q2_P1_E014",
+          "text": "Our accrued expenses and other current liabilities increased primarily due to i) an increase in amount received from end customers on behalf of and payable to merchants on Maikefeng marketplace after Maikefeng open to third party merchants; ii) increases in logistics, marketing and salary expenses payable as a result of business growth."
+        },
+        {
+          "evidence_id": "2017Q2_P1_E015",
+          "text": "This increase was primarily due to an increase in product sales in our Maikefeng segment from RMB29.0 million in 2014 to RMB67.9 million (US$10.5 million) in 2015, resulting from growth in sales volume."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.87,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2017Q2_P1_E016"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2017Q2_P1_E017",
+          "text": "The increase in deferred revenue was primarily due to the growth in the number of paying customers and increased renewals and expansion of our existing customers as they broadened their deployment of our services."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.83,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2017Q2_P1_E018",
+        "2017Q2_P1_E019"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2017Q2_P1_E020",
+          "text": "The increase in gross profit was attributable to the growth in e-commerce revenue in our DTC channel as well as overall higher revenue in fiscal 2016 ."
+        },
+        {
+          "evidence_id": "2017Q2_P1_E021",
+          "text": "Over the past two fiscal years, our gross margin has improved as a result of an increase in sales in our DTC channel, execution on our geographic expansion strategy, and an increase in the average effective price of our products."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "quarter": "2021Q3",
+  "driver_name": "Post-pandemic demand rebound meets semiconductor and supply constraints",
+  "frozen_causal_chain": "Economic reopening and persistent digital/vehicle demand -> strong automotive/consumer demand while semiconductor/material capacity remains constrained -> higher prices/margins and supply shortages.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.95,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q3_P1_E024"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q3_P1_E025",
+          "text": "Total same store gross margin in the U.K. increased 130 basis points driven by improved parts and service margins, reflecting higher internal work as a result of increased new and used sales volumes, and higher new and used vehicle margins because of increased demand and vehicle supply constraints."
+        },
+        {
+          "evidence_id": "2021Q3_P1_E026",
+          "text": "Total same store gross margin in the U.K. increased 130 basis points driven by improved parts and service margins, reflecting higher internal work as a result of increased new and used sales volumes, and higher new and used vehicle margins because of higher demand and vehicle supply constraints."
+        },
+        {
+          "evidence_id": "2021Q3_P1_E027",
+          "text": "The 29.0% increase in new vehicle retail same store sales was driven by a 20.0% increase in new vehicle retail same store unit sales, coupled with a 7.5% increase in average new vehicle retail same store sales price reflecting increased demand at our dealerships and lower vehicle inventory supply as a result of the OEMs producing and delivering fewer vehicles to dealerships due to a global semiconductor chip shortage."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.97,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q3_P1_E029"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q3_P1_E028",
+          "text": "The increase in personnel costs was driven by increase in the headcount to support the continuous growth in customer demand."
+        },
+        {
+          "evidence_id": "2021Q3_P1_E030",
+          "text": "As customer demand increased during the second half of fiscal year 2020 and the first quarter of 2021, the ENTITY industry, and automotive semiconductors in particular, experienced material shortages and supply constraints."
+        },
+        {
+          "evidence_id": "2021Q3_P1_E031",
+          "text": "As customer demand increased beginning the second half of fiscal year 2020, the ENTITY industry, and automotive semiconductors in particular, experienced material shortages and supply constraints."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.98,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q3_P1_E032"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q3_P1_E033",
+          "text": "Service revenue remained unchanged, driven by growth of the installed base of da Vinci ENTITY Systems, offset by an $80 million decrease due to service fee credits provided to customers as part of the ENTITY that was implemented as a result of the COVID-19 pandemic in the second quarter of 2020."
+        },
+        {
+          "evidence_id": "2021Q3_P1_E034",
+          "text": "The increase in systems shipments was primarily driven by decisions in the second and third quarters of 2020 by customers to defer purchases or leases of systems into future quarters as a result of the COVID-19 pandemic, as well as procedure growth, more customers trading in da Vinci Si ENTITY Systems for fourth generation da Vinci Xi and da Vinci X systems in order to access fourth generation instruments and capabilities as well as to standardize their system portfolio, and further customer validation that da Vinci surgery addresses their quadruple aim objectives."
+        },
+        {
+          "evidence_id": "2021Q3_P1_E035",
+          "text": "The increase in systems shipments was primarily driven by decisions in the second quarter of 2020 by customers to defer purchases or leases of systems into future quarters as a result of the COVID-19 pandemic, as well as procedure growth, more customers trading in da Vinci Si ENTITY Systems for fourth generation da Vinci Xi and da Vinci X systems in order to access fourth generation instruments and capabilities as well as to standardize their system portfolio, and further customer validation that da Vinci surgery addresses their quadruple aim objectives."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.94,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2021Q3_P1_E036"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q3_P1_E037",
+          "text": "The increase in revenue was due to the significant improvement in economic conditions, specifically with automotive component manufacturers and the automotive industry overall, resulting in increased demand for these products along with a favorable mix in the products sold and an increase in average selling prices."
+        },
+        {
+          "evidence_id": "2021Q3_P1_E038",
+          "text": "The increase in revenue was due to the significant improvement in economic conditions, specifically with automotive component manufacturers and the automotive industry overall, resulting in increased demand for these products along with an increase in average selling prices."
+        },
+        {
+          "evidence_id": "2021Q3_P1_E039",
+          "text": "The increases were due to the significant improvement of economic conditions, specifically with automotive component manufacturers and the automotive industry overall, resulting in increased demand for these products along with an increase in average selling prices."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.9,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2021Q3_P1_E044"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q3_P1_E045",
+          "text": "This increase in net sales was driven by growth in cases sold due to the declining effects of COVID-19 on the restaurant industry, and an increase in selling price per case as a result of inflation ."
+        },
+        {
+          "evidence_id": "2021Q3_P1_E046",
+          "text": "Also, gross profit increased due to an increase in the gross profit per case driven by case growth in Foodservice, particularly in the independent channel."
+        },
+        {
+          "evidence_id": "2021Q3_P1_E047",
+          "text": "Also, gross profit increased due to case growth in Foodservice and an increase in the gross profit per case driven by growth in the independent channel."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.89,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2021Q3_P1_E059"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

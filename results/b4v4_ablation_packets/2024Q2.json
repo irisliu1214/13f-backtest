@@ -1,0 +1,87 @@
+{
+  "quarter": "2024Q2",
+  "driver_name": "Enterprise cloud/data-platform adoption with emerging AI infrastructure spend",
+  "frozen_causal_chain": "Organizations increase use of cloud, SaaS, data-driven services and AI-optimized infrastructure -> more installed-base service revenue, hosting usage and cloud transaction volume, with AI beginning to redirect infrastructure spending.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.96,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2024Q2_P1_E013"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2024Q2_P1_E014",
+          "text": "The increases were primarily attributable to growth within ISG services gross margin and, to a lesser extent, CSG services gross margin, that were driven by support and maintenance associated with products sold in prior periods."
+        },
+        {
+          "evidence_id": "2024Q2_P1_E015",
+          "text": "The increases were primarily attributable to growth within CSG services gross margin that was driven by hardware and third-party software support and maintenance as well as support and maintenance associated with products sold in prior periods."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.84,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2024Q2_P1_E033"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.82,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2024Q2_P1_E047",
+        "2024Q2_P1_E049"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2024Q2_P1_E048",
+          "text": "The change in operating assets and liabilities was primarily driven by a decrease in accounts receivable and an increase in deferred revenue, primarily due to cash collections and customer growth during the period."
+        },
+        {
+          "evidence_id": "2024Q2_P1_E050",
+          "text": "This increase was primarily driven by an increase in net cash provided by operating activities of $62.1 million, primarily attributable to customer growth and cash collections during the period."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.82,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2024Q2_P1_E034"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.78,
+      "baseline_evidence_directness": 0.8,
+      "removed_evidence_ids": [
+        "2024Q2_P1_E016"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

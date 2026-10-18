@@ -1,0 +1,101 @@
+{
+  "quarter": "2022Q2",
+  "driver_name": "Pandemic-accelerated digitalization persists in semiconductors, e-commerce and cloud software",
+  "frozen_causal_chain": "Work-from-home/stay-at-home behavior and broader digitalization -> higher device/semiconductor use, e-commerce/delivery penetration and cloud/software/payment adoption -> sustained digital-service and compute demand.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.97,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2022Q2_P1_E033"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E034",
+          "text": "In particular, increased demand for semiconductor chips in 2020, due in part to the COVID-19 pandemic and an increased use of laptop computers, 5G phones, gaming systems, and other IT equipment that use these chips, has resulted in an ongoing severe global shortage of chips."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.98,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2022Q2_P1_E039",
+        "2022Q2_P1_E042"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E040",
+          "text": "The increased demand for deliveries was driven by stay-at-home and movement control orders, work-from-home arrangements and social distancing measures implemented as a result of the COVID-19 pandemic in our markets."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E041",
+          "text": "In particular, our business segments were impacted as follows: \u2022 Deliveries : Our deliveries segment experienced significant year-on-year GMV and revenue growth from 2019 to 2021 as consumer adoption of deliveries offerings increased in light of the stay-at-home and movement control orders, work-from-home arrangements and social distancing measures imposed as a result of the COVID-19 pandemic."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.91,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2022Q2_P1_E035"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E036",
+          "text": "Last year's brick-and-mortar sales were down significantly as a result of the pandemic. 2022 retail net sales surpassed the 2019 level by 41%, due primarily to growth in e-commerce."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E037",
+          "text": "Earnings from operations in the ENTITY wholesale segment rose to $4.8 million in the first quarter of 2022, up from $1.4 million in the same period last year, due to higher sales, partially offset by lower gross margins and higher selling and administrative expenses."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E038",
+          "text": "The year-to-date earnings increase was primarily due to higher sales volumes, partially offset by lower gross margins."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.84,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2022Q2_P1_E009"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E010",
+          "text": "This increase was driven primarily by increased software subscription revenues from expanding solution adoption among existing customers, existing customer upgrades and sales to new customers and economies of scale resulting from fixed cost arrangements."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.8,
+      "baseline_evidence_directness": 0.8,
+      "removed_evidence_ids": [
+        "2022Q2_P1_E026"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

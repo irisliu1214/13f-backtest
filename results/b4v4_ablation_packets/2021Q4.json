@@ -1,0 +1,129 @@
+{
+  "quarter": "2021Q4",
+  "driver_name": "Accelerated digitalization, 5G and HPC drive semiconductor/data-center demand",
+  "frozen_causal_chain": "Digitalization, 5G and high-performance computing adoption accelerate -> demand for leading-edge semiconductors, networking, data-center equipment and related talent/capacity rises.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.98,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q4_P1_E020"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E019",
+          "text": "Total net sales increased primarily as a result of strong growth across all three segments, as we benefited from robust industry conditions and record demand for our products and solutions."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E021",
+          "text": "Additionally, although we have been increasing inventory levels to support strong demand in a challenging supply chain environment, historically we have operated our business on a just-in-time shipment basis with a modest level of inventory, ordering supplies and planning production based on internal demand forecasts."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.94,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q4_P1_E024"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E025",
+          "text": "ENTITY Credit\u2019s U.S. 36-month auction values for off-lease vehicles were up 25% from a year ago, reflecting strong demand for used vehicles, including the impact of lower new vehicle production due to the semiconductor shortage."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E026",
+          "text": "Third quarter 2021 revenue decreased 5%, driven by lower wholesales, partially offset by higher net pricing (primarily reflecting strong demand for the new product portfolio and lower incentives) and favorable mix."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E027",
+          "text": "U.S. auction values in the third quarter of 2021 were 27% higher than a year ago, reflecting continued strong demand for used vehicles."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.92,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2021Q4_P1_E035"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.87,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2021Q4_P1_E066"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E067",
+          "text": "General and Administrative and ENTITY and administrative and marketing expenses in 2020 increased by NT$7,484 million, or 27%, from 2019, mainly reflecting one-time expenses to facilitate the expansion of our production base in Hsinchu, donation for COVID-19, and higher employee profit sharing expenses due to higher net income."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.85,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2021Q4_P1_E052"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E053",
+          "text": "The increase was primarily due to continued strong demand in ENTITY residential HVAC and combustion markets, recovering demand in EMEA and ENTITY."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E054",
+          "text": "The increase was primarily due to continued strong demand in ENTITY residential HVAC market and recovering demand in EMEA and ENTITY."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E055",
+          "text": "The increase was primarily driven by strength in the generator business, strong growth in China and in India markets, and improving demand in the ENTITY industrial motors business."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.92,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2021Q4_P1_E009",
+        "2021Q4_P1_E011"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E008",
+          "text": "Operating income from our semiconductor solutions segment increased primarily due to higher demand for our wireless content in mobile handsets, as well as the delayed production ramp of a new mobile handset by a major customer, which resulted in lower shipments in the prior year fiscal period."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E010",
+          "text": "Operating income from our infrastructure software segment increased primarily due to higher demand for our FC SAN products, mainframe and cyber security solutions."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

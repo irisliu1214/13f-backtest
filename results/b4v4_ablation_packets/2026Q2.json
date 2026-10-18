@@ -1,0 +1,79 @@
+{
+  "quarter": "2026Q2",
+  "driver_name": "AI-driven HPC buildout propagates through servers, semiconductors and fab/packaging equipment",
+  "frozen_causal_chain": "AI/ML application demand -> rapid HPC/GPU-server and networking buildout -> higher semiconductor-chip demand -> higher advanced-packaging and semiconductor environmental/equipment demand.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.99,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2026Q2_P1_E001"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2026Q2_P1_E002",
+          "text": "The growing demand for high-performance computing driven by artificial intelligence (or \u201cAI\u201d), and the supporting infrastructure such as servers, data centers, and networking equipment has resulted in increased demand for semiconductor chips."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.98,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2026Q2_P1_E007",
+        "2026Q2_P1_E008"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2026Q2_P1_E006",
+          "text": "ENTITY results for the second quarter increased primarily due to increased shipments of our polishing and wafer cleaning equipment, and increased demand for our consumables."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.86,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2026Q2_P1_E017",
+        "2026Q2_P1_E018"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2026Q2_P1_E019",
+          "text": "The largest contributor to organic revenue growth is demand for products and solutions serving power generation end markets."
+        },
+        {
+          "evidence_id": "2026Q2_P1_E020",
+          "text": "The increase in net sales is driven by execution and delivery on the Company's record backlog, with growth primarily coming from exhaust and selective catalytic reduction systems."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.98,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2026Q2_P1_E051",
+        "2026Q2_P1_E052"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

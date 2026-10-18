@@ -1,0 +1,85 @@
+{
+  "quarter": "2018Q1",
+  "driver_name": "Cloud/data growth increases datacenter and semiconductor demand",
+  "frozen_causal_chain": "Rapid growth of Internet/e-commerce/big data and cloud adoption -> greater datacenter power/compute and analytics requirements -> stronger semiconductor/wafer demand and data/analytics demand.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.96,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2018Q1_P1_E019",
+        "2018Q1_P1_E020"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2018Q1_P1_E021",
+          "text": "The forward-looking statements included in this annual report on Form 20-F relate to, among others: \u00b7 our goals and strategies; \u00b7 our expansion plans; \u00b7 our future business development, financial condition and results of operations; \u00b7 the expected growth of the data center and cloud services market; \u00b7 our expectations regarding demand for, and market acceptance of, our services; \u00b7 our expectations regarding keeping and strengthening our relationships with customers; and \u00b7 general economic and business conditions in the regions where we operate."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.83,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2018Q1_P1_E042",
+        "2018Q1_P1_E044"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2018Q1_P1_E043",
+          "text": "ENTITY is a growing market with increasing demand for credit driven by a rising middle class that offers significant growth potential in analytics and decisioning."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.82,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2018Q1_P1_E045",
+        "2018Q1_P1_E046"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2018Q1_P1_E047",
+          "text": "Our gross margin percentage and absolute dollars of gross profit increased in fiscal year 2016 from the comparable period in 2015 due to higher sales volume, a sales mix which included higher margin products and certain improvements in operational efficiencies at our manufacturing locations in the U.S., which typically deliver lower margins due to higher labor and overhead costs. 34 Research and ENTITY and development expense for fiscal year 2016 was $9.9 million or 1.8% of sales, compared to $9.6 million, or 2.0% of sales, for fiscal year 2015."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.79,
+      "baseline_evidence_directness": 0.8,
+      "removed_evidence_ids": [
+        "2018Q1_P1_E038",
+        "2018Q1_P1_E041"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2018Q1_P1_E039",
+          "text": "The recent increase in silicon wafer prices due to increased demand for such wafers across the industry had a negative impact on our gross margin in 2017 and the trend is expected to continue in 2018."
+        },
+        {
+          "evidence_id": "2018Q1_P1_E040",
+          "text": "For example, the recent increase in silicon wafer prices due to increased demand for such wafers across industry is expected to negatively impact our gross margin in 2017."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "quarter": "2023Q3",
+  "driver_name": "Enterprise and consumer digital-platform adoption",
+  "frozen_causal_chain": "Digital transformation, cloudification and AI adoption accelerate -> enterprises expand software/platform usage while consumers shift more activity to digital channels -> subscription and digital monetization demand rises.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.98,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2023Q3_P1_E040",
+        "2023Q3_P1_E041"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E039",
+          "text": "Due to increased demand for hyper personalized products and services, next generation technologies such as data and AI, mixed reality, digital engineering, blockchain, multi-cloud, cybersecurity, edge computing and 5G is expected to continue to grow exponentially."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E042",
+          "text": "The demand for digital transformation and infrastructure modernization will continue to drive growth for the industry with accelerated adoption of digital and emerging technologies, such as next generation AI, augmented reality (\u201c AR \u201d), virtual reality (\u201c VR\u201d) , extended reality, web3 and metaverse, 5G and edge, cyber and bio convergence."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.88,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2023Q3_P1_E046"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.83,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2023Q3_P1_E003",
+        "2023Q3_P1_E005"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E004",
+          "text": "Approximately 55.9% of the increase in subscription revenue was attributable to the growth from existing customers due to an increase in monthly active users, expansion across channels and committed entitlements and features, and the remaining 44.1% was attributable to new customers."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.87,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2023Q3_P1_E026",
+        "2023Q3_P1_E027"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E028",
+          "text": "The 52% revenue increase from 2020 to 2021, corresponding to an increase of US$85.9 million in absolute amount, was driven by increased monetization on a per-user basis, a result of both underlying demand and pricing factors as well as the growth of our browser and news user bases in western markets."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E029",
+          "text": "This growth was fueled by the same factors that led to our search revenue growth, however the impact of growth in western markets was even more pronounced as the ENTITY News platform scaled significantly in western markets, and additionally our ad tech platform allowed us to leverage third party inventories as well to meet the demand we sourced from our advertisers."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

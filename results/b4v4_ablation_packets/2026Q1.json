@@ -1,0 +1,98 @@
+{
+  "quarter": "2026Q1",
+  "driver_name": "AI/cloud data-center expansion creates a time-to-power and digital-infrastructure buildout",
+  "frozen_causal_chain": "Adoption of AI tools, cloud computing and digital technologies -> more hyperscale/data-center capacity -> higher server, power, edge/digital-platform and supporting material demand.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.99,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2026Q1_P1_E002",
+        "2026Q1_P1_E003"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E001",
+          "text": "The increase was primarily due to stronger demand for our products driven by the time to power needs of the growing market, partially offset by $15.9 million related to share-based consideration payable to a key hyperscaler customer."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E004",
+          "text": "Product costs increased primarily due to higher sales volumes driven by increased demand for our ENTITY Server systems, and an increase in product warranty."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C26",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.99,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2026Q1_P1_E029",
+        "2026Q1_P1_E032"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E030",
+          "text": "ENTITY ENTITY ENTITY for energy in foreign markets is currently being driven by population growth, industrialization and urbanization with countries in Asia contributing the most to international growth."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E031",
+          "text": "Foreign ENTITY ENTITY for energy in foreign markets is currently being driven by population growth, industrialization and urbanization with countries in Asia contributing the most to international growth."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.8,
+      "baseline_evidence_directness": 0.8,
+      "removed_evidence_ids": [
+        "2026Q1_P1_E054"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.78,
+      "baseline_evidence_directness": 0.8,
+      "removed_evidence_ids": [
+        "2026Q1_P1_E048",
+        "2026Q1_P1_E051"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E049",
+          "text": "We experienced sequential organic revenue growth both in ENTITY and in the international markets, driven by higher offshore activity and strong year-end product and digital sales in ENTITY, the ENTITY and Asia, across Sub-ENTITY and in ENTITY."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E050",
+          "text": "The organic sequential revenue growth both in the international markets and ENTITY was driven by higher offshore activity and strong year-end product and digital sales, most notably in ENTITY, the ENTITY and Asia, across Sub-ENTITY and Gulf of America."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.73,
+      "baseline_evidence_directness": 0.75,
+      "removed_evidence_ids": [
+        "2026Q1_P1_E016"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "quarter": "2020Q1",
+  "driver_name": "Early stay-at-home shock accelerates at-home/digital demand",
+  "frozen_causal_chain": "COVID-related stay-at-home and off-premise behavior plus ongoing cloud adoption -> demand shifts toward at-home products, delivery and digital infrastructure -> higher digital/cloud capacity and selected at-home sales.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.84,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2020Q1_P1_E012"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.77,
+      "baseline_evidence_directness": 0.75,
+      "removed_evidence_ids": [
+        "2020Q1_P1_E002"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E003",
+          "text": "Cash capital expenditures were $11.3 billion , and $12.7 billion in 2018 and 2019 , which primarily reflect additional capacity to support our fulfillment operations and additional investments in support of continued business growth in technology infrastructure (the majority of which is to support AWS)."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.95,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2020Q1_P1_E024"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E025",
+          "text": "The increase in net operating assets and liabilities was primarily due to a $124.0 million increase in customer deposits and deferred revenue driven by elevated sales volumes towards the end of the quarter and longer delivery windows, and a $64.0 million increase in 38 accounts payable and accrued expenses related to increased expenditures to support general business growth, as well as the timing of payments, partially offset by a $46.2 million increase in inventory levels as we ramped up supply to meet the current increased demand."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E026",
+          "text": "The increase in net operating assets and liabilities was primarily due to a $98.0 million increase in accounts payable and accrued expenses related to increased expenditures to support general business growth over holiday season, as well as the timing of payments, a $68.3 million increase in customer deposits and deferred revenue driven by increased sales and timing, partially offset by a $94.2 million increase in inventory levels as we ramp up supply over the holiday season, as well as support our expansion into Germany."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E027",
+          "text": "The increase was attributable to the growth of our branded apparel sales, driven by our growing Member base and expanded retail showroom footprint year over year."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.94,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2020Q1_P1_E046"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E047",
+          "text": "The increase as a percentage of company-owned restaurant sales was primarily due to an investment in labor as well as training associated with the three franchised restaurants that we acquired in the fiscal fourth quarter of 2018 as these acquired restaurants operate at lower AUVs than our other company-owned restaurants, as well as increases in the wage rate and labor hours to support the growth in the business."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.9,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2020Q1_P1_E035",
+        "2020Q1_P1_E036"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E037",
+          "text": "Our results of operations for the quarter ended March 29, 2020 have benefited from increased demand from our customers stockpiling groceries and consuming more food at home, and we in turn have made significant investments in compensation, benefits and personal protective equipment for our front-line store team members."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E038",
+          "text": "This overall demand for healthy products is driven by many factors, including increased awareness about the benefits of eating healthy, a greater focus on preventative health measures, and the rising costs of health care."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "quarter": "2016Q1",
+  "driver_name": "Mobile/cloud data-consumption expansion",
+  "frozen_causal_chain": "Growth in mobile Internet, connected applications and cloud usage -> more analytics/content traffic and cloud-compute demand -> higher demand for mobile analytics, digital content services and datacenter compute.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.91,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2016Q1_P1_E008"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.9,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2016Q1_P1_E019"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E018",
+          "text": "Presenting the data in a highly visual, accessible, and interactive format to collate, view, and explore information with agility and ease of use improves the overall comprehension of the business and speeds up the decision-making process. \u2022 Increased demand for personalized, one-to-one customer and/or supplier experience."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.94,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2016Q1_P1_E023"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E021",
+          "text": "This increase was due primarily to higher revenue from GeForce GPU products and associated memory for gaming, which increased over 30% reflecting a combination of continued strength in PC gaming and increased sales of our Maxwell-based GPU products."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E022",
+          "text": "This increase was driven by higher sales of Tegra products serving automotive infotainment systems, OEM smartphones and tablet devices, and the onset of SHIELD tablet sales in fiscal year 2015."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E024",
+          "text": "Cash provided by operating activities increased in fiscal year 2015 compared to fiscal year 2014 primarily due to higher net income from revenue growth and contained operating expenses, partially offset by an increase in inventories resulting from the introduction of newly launched Maxwell-based GPUs and certain Tegra SOCs and SHIELD devices, and an increase in accounts receivable."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.73,
+      "baseline_evidence_directness": 0.75,
+      "removed_evidence_ids": [
+        "2016Q1_P1_E020"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

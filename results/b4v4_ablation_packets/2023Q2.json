@@ -1,0 +1,118 @@
+{
+  "quarter": "2023Q2",
+  "driver_name": "Digital-first shift expands cybersecurity, semiconductor and automation infrastructure",
+  "frozen_causal_chain": "Organizations move toward a digital-first operating model -> demand rises for security/network software, semiconductors/compute connectivity and industrial automation/robotics -> capital equipment and cloud-service demand expand.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C33",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.96,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2023Q2_P1_E002",
+        "2023Q2_P1_E003"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.93,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2023Q2_P1_E021",
+        "2023Q2_P1_E022"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2023Q2_P1_E023",
+          "text": "FortiGuard outpaced technical support growth due to expansion of our SaaS-based security subscription service offerings, while technical support growth was impacted by lower service revenue of Alaxala."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.93,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2023Q2_P1_E037"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2023Q2_P1_E036",
+          "text": "The expansion of high technology companies worldwide and the elevated demand for talent from the growth in the demand for semiconductors following the onset of the COVID-19 pandemic has increased demand and competition for qualified personnel."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.88,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2023Q2_P1_E038"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2023Q2_P1_E039",
+          "text": "Revenue from the Industrial and Automotive end market increased by 55% for the first quarter of fiscal 2023 compared to the first quarter of fiscal 2022 primarily due to strong customer adoption in a broad range of applications, including industrial automation and robotics."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C25",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.87,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2023Q2_P1_E030"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2023Q2_P1_E029",
+          "text": "We also had an increase in salary and benefits expense, reflecting annual merit adjustments and additional headcount investments, and higher levels of travel and advertising costs as we are increasing the number of customer visits and trade show attendance as we work to continue to grow our business."
+        },
+        {
+          "evidence_id": "2023Q2_P1_E031",
+          "text": "The significant increase in our backlog as compared to the level at March 31, 2022 primarily reflects increased demand for our products and, to a lesser extent, longer lead times for many of our products which has led to our customers placing orders with us earlier than had been their historical practice."
+        },
+        {
+          "evidence_id": "2023Q2_P1_E032",
+          "text": "The increase primarily represents higher commission expense because of the higher revenue in the first quarter of 2023."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.77,
+      "baseline_evidence_directness": 0.75,
+      "removed_evidence_ids": [
+        "2023Q2_P1_E066"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2023Q2_P1_E065",
+          "text": "The increasing adoption of ENTITY banks in Brazil is expected to continue as a strong trend, rendering numerous advantages such as the reduction in operational costs, maximized revenues due to increased customer attraction and retention, and new technologies and advancements in the regulatory framework."
+        },
+        {
+          "evidence_id": "2023Q2_P1_E067",
+          "text": "This increase in our Selling expenses as a percentage of our Total revenue and income was driven by the increase in marketing expenses, chargebacks following the growth of TPV, provisions for expected credit losses and Hubs\u2019 workforce expansion."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

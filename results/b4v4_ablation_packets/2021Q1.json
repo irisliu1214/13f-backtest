@@ -1,0 +1,99 @@
+{
+  "quarter": "2021Q1",
+  "driver_name": "Pandemic reallocates demand toward health, home and digital products",
+  "frozen_causal_chain": "COVID changes health/sanitization needs, mobility and household behavior -> sanitizer/PPE/home-care demand rises, vehicle supply is disrupted and stay-at-home digital demand increases.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.97,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q1_P1_E002"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "baseline_edge_confidence": 0.97,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q1_P1_E026"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.95,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q1_P1_E016"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q1_P1_E017",
+          "text": "In 2021, ENTITY Financial expects used vehicle prices to increase by an amount in the low to mid single digits on a percentage basis, as compared to 2020 levels, primarily due to sustained low new vehicle inventory and continued strong demand."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.94,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2021Q1_P1_E020"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q1_P1_E021",
+          "text": "Sales growth in the Scent operating segment was led by ENTITY, primarily driven by volume increases."
+        },
+        {
+          "evidence_id": "2021Q1_P1_E022",
+          "text": "In addition, sales performance reflected growth for the Nourish, Health & Biosciences and Scent segments, primarily driven by volume increases across the three segments. 33 ENTITY by Segment % Change in Sales - ENTITY 2021 vs."
+        },
+        {
+          "evidence_id": "2021Q1_P1_E023",
+          "text": "Historically, demand for consumer products using our products, such as ENTITY and fragrance compounds and ingredients, was stimulated and broadened by changing social habits and consumer needs, population growth, an expanding global middle-class and general economic growth, especially in emerging markets."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.88,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2021Q1_P1_E035"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2021Q1_P1_E034",
+          "text": "ENTITY & ENTITY in the network communication market is driven by strong demand for digital content, ubiquitous access, security, increased enterprise adoption of advanced video communication and the trend towards an increasingly global and mobile workforce."
+        },
+        {
+          "evidence_id": "2021Q1_P1_E036",
+          "text": "The year-on-year increase was due to a combination of the early build-outs of 5G cellular networks, primarily in China, which created demand for our high-performance radio frequency (HPRF) power amplifier solutions, as well as increased demand for multi-core network edge processors within the network edge equipment market."
+        },
+        {
+          "evidence_id": "2021Q1_P1_E037",
+          "text": "The increase was predominantly associated with continued customer adoption of secure mobile wallet solutions primarily to distributors in ENTITY, as well as increased demand for embedded power solutions, which increased sales to distributors mainly in ENTITY and OEM sales in ENTITY."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

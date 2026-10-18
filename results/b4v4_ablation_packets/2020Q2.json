@@ -1,0 +1,111 @@
+{
+  "quarter": "2020Q2",
+  "driver_name": "Remote-work and stay-at-home shift accelerates cloud and digital channels",
+  "frozen_causal_chain": "Pandemic restrictions push work, consumption and sales online -> remote-work/cloud usage, digital fulfillment and delivery adoption rise -> higher cloud/platform/digital-channel demand.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.97,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2020Q2_P1_E001"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.91,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2020Q2_P1_E018"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.92,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2020Q2_P1_E031"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E032",
+          "text": "We will require significant capital expenditures and the allocation of valuable management resources to grow and change in these areas without undermining our culture of rapid innovation, teamwork and attention to customer success, which has been central to our growth so far."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "baseline_edge_confidence": 0.97,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2020Q2_P1_E033"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E034",
+          "text": "The increase in net operating assets and liabilities was primarily due to a $124.0 million increase in customer deposits and deferred revenue driven by elevated sales volumes towards the end of the quarter and longer delivery windows, and a $64.0 million increase in 38 accounts payable and accrued expenses related to increased expenditures to support general business growth, as well as the timing of payments, partially offset by a $46.2 million increase in inventory levels as we ramped up supply to meet the current increased demand."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E035",
+          "text": "The increase in net operating assets and liabilities was primarily due to a $98.0 million increase in accounts payable and accrued expenses related to increased expenditures to support general business growth over holiday season, as well as the timing of payments, a $68.3 million increase in customer deposits and deferred revenue driven by increased sales and timing, partially offset by a $94.2 million increase in inventory levels as we ramp up supply over the holiday season, as well as support our expansion into Germany."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E036",
+          "text": "The increase was attributable to the growth of our branded apparel sales, driven by our growing Member base and expanded retail showroom footprint year over year."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G2",
+      "baseline_edge_confidence": 0.9,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2020Q2_P1_E039"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E040",
+          "text": "ENTITY (dollar amounts in thousands) March 25 2020 March 27 2019 General and administrative expenses $ 16,191 $ 13,937 Percentage of total revenue 11.3 % 10.5 % Dollar change compared to prior year $ 2,254 Percentage change compared to prior year 16.2 % The increase in general and administrative expenses for the thirteen weeks ended March 25, 2020 was primarily due to our investment across the business, particularly an increase in headcount to support our strategic growth plan, and increased investments in technology and marketing."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.85,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2020Q2_P1_E050"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E051",
+          "text": "During 2019, over 70% of our comparable digital sales growth was driven by same-day fulfillment options: ENTITY, Drive Up, and delivery via our wholly owned subsidiary, Shipt."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E052",
+          "text": "From a rate perspective, these increased costs were more than offset by leverage resulting from strong revenue growth."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}

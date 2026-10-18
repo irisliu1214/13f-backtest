@@ -1,0 +1,120 @@
+{
+  "quarter": "2019Q1",
+  "driver_name": "Digitalization and e-commerce expand data, cloud and delivery infrastructure",
+  "frozen_causal_chain": "More consumer and enterprise activity moves online -> data traffic, cloud usage, digital advertising and e-commerce GMV rise -> server capacity, parcel-delivery activity and digital monetization increase.",
+  "instructions": {
+    "identity_blind": true,
+    "outside_knowledge_forbidden": true,
+    "task": "Re-score each company-driver edge using only remaining_evidence after all originally cited evidence was removed.",
+    "pass_dependence_rule": "Evidence dependence passes if new confidence drops >=0.20, OR new confidence <0.70, OR edge is removed."
+  },
+  "edges": [
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.95,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2019Q1_P1_E028",
+        "2019Q1_P1_E029"
+      ],
+      "remaining_evidence": [],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.93,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2019Q1_P1_E030"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E031",
+          "text": "These forward-looking statements include statements relating to: \u00b7 our growth strategies; \u00b7 our future business development, financial conditions and results of operations; \u00b7 the trends in the e-commerce industry in China; \u00b7 our expectations regarding demand for and market acceptance of our products and services; \u00b7 our expectations regarding our relationships with buyers and merchants; \u00b7 competition in our industry; and \u00b7 relevant government policies and regulations relating to our industry."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.95,
+      "baseline_evidence_directness": 1,
+      "removed_evidence_ids": [
+        "2019Q1_P1_E062"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E061",
+          "text": "The increase in other costs as a percentage of revenues was mainly due to the growth of dispatching cost as a result of the expansion of direct ENTITY delivery services to enterprise customers."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E063",
+          "text": "The increase in other costs as a percentage of revenues was mainly due to the growth of dispatching cost as a result of the increase indirect ENTITY delivery services to enterprise customers."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E064",
+          "text": "These forward-looking statements include statements relating to: \u00b7 our goals and strategies; \u00b7 our future business development, financial conditions and results of operations; \u00b7 the expected growth of the ENTITY delivery industry in China; \u00b7 our expectations regarding demand for and market acceptance of our services; \u00b7 our expectations regarding our relationships with network partners, direct and end customers, suppliers and our other stakeholders; \u00b7 competition in our industry; and \u00b7 relevant government policies and regulations relating to our industry."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G1",
+      "baseline_edge_confidence": 0.9,
+      "baseline_evidence_directness": 0.95,
+      "removed_evidence_ids": [
+        "2019Q1_P1_E001",
+        "2019Q1_P1_E002"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E003",
+          "text": "The increase was primarily due to an increase in revenue generated from Lazada and AliExpress, primarily driven by robust GMV growth on these two marketplaces."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.82,
+      "baseline_evidence_directness": 0.85,
+      "removed_evidence_ids": [
+        "2019Q1_P1_E021",
+        "2019Q1_P1_E022"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E023",
+          "text": "The RMB5,075.9 million increase was primarily due to the increased purchase of third-party PPC or PGC, which increased by RMB3,633.9 million as we procured more high-quality and popular licensed content; and to a lesser extent, to the increase of RMB1,002.9 million in revenue sharing with content partners as more content was uploaded onto our platform, and to our rapid expansion of original content production, which resulted in an increase of RMB429.4 million in content cost."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "baseline_edge_confidence": 0.88,
+      "baseline_evidence_directness": 0.9,
+      "removed_evidence_ids": [
+        "2019Q1_P1_E034",
+        "2019Q1_P1_E035"
+      ],
+      "remaining_evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E033",
+          "text": "The increase in sales and marketing expenses in 2018 was mainly from the marketing efforts of our e-commerce business, which was aligned with our strategy to fully capture the market growth opportunity and was primarily attributable to the ramping up of offline and online digital marketing and other promotions on our platform that were designed to increase our user base and enhance user engagement."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E036",
+          "text": "This increase was primarily due to significant marketing efforts that was aligned with our strategy to fully capture the market growth opportunity and was primarily driven by shipping and other promotions on our platform in order to increase our user base and enhance user engagement."
+        }
+      ],
+      "question": "Using ONLY remaining_evidence, does this alias still have evidence for the frozen driver/causal chain? Do not use memory of removed text or company identity."
+    }
+  ]
+}
