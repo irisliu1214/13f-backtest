@@ -1,0 +1,169 @@
+name: Build cached B4 causal themes and evaluate
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "b4_causal.py"
+      - "b4_cache_builder.py"
+      - "b4_from_cache.py"
+      - "b4v2_returns.py"
+      - ".github/workflows/b4-cached.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: b4-cached-v2
+  cancel-in-progress: true
+
+jobs:
+  build-cache:
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        year: [2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install scikit-learn beautifulsoup4
+      - name: Build or reuse persistent year cache
+        env:
+          B4_YEAR: ${{ matrix.year }}
+        run: |
+          mkdir -p results/b4_cache_v2
+          if [ -s "results/b4_cache_v2/b4_sentences_${B4_YEAR}.csv" ] && [ -s "results/b4_cache_v2/b4_audit_${B4_YEAR}.csv" ]; then
+            echo "Reusing repo cache for ${B4_YEAR}"
+          else
+            python b4_cache_builder.py
+          fi
+      - name: Validate year cache
+        env:
+          B4_YEAR: ${{ matrix.year }}
+        run: |
+          python - <<'PY'
+          import os, pandas as pd
+          y=os.environ["B4_YEAR"]
+          a=pd.read_csv(f"results/b4_cache_v2/b4_audit_{y}.csv")
+          s=pd.read_csv(f"results/b4_cache_v2/b4_sentences_{y}.csv")
+          assert len(a)>0, (y,"empty audit")
+          assert set(["quarter","ticker","cusip","filings","causal_sentence_count"]).issubset(a.columns)
+          assert set(["quarter","ticker","cusip","sentence"]).issubset(s.columns)
+          print("CACHE_YEAR",y,"audit",len(a),"sentences",len(s),"companies_with_evidence",int((a.causal_sentence_count>0).sum()))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: b4-cache-${{ matrix.year }}
+          path: |
+            results/b4_cache_v2/b4_audit_${{ matrix.year }}.csv
+            results/b4_cache_v2/b4_sentences_${{ matrix.year }}.csv
+          retention-days: 7
+
+  discover-freeze-evaluate:
+    needs: build-cache
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install scikit-learn beautifulsoup4 pandas_market_calendars
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: b4-cache-*
+          path: results/b4_cache_v2
+          merge-multiple: true
+      - name: Validate consolidated persistent cache
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import pandas as pd
+          p=Path("results/b4_cache_v2")
+          sf=sorted(p.glob("b4_sentences_*.csv"))
+          af=sorted(p.glob("b4_audit_*.csv"))
+          assert len(sf)==11, [x.name for x in sf]
+          assert len(af)==11, [x.name for x in af]
+          s=pd.concat([pd.read_csv(x) for x in sf],ignore_index=True)
+          a=pd.concat([pd.read_csv(x) for x in af],ignore_index=True)
+          assert len(a)>1000, len(a)
+          assert len(s)>100, len(s)
+          print("CACHE_TOTAL audit",len(a),"sentences",len(s),"companies_with_evidence",int((a.causal_sentence_count>0).sum()))
+          PY
+      - name: Run return-blind cached B4 discovery
+        run: python b4_from_cache.py
+      - name: Validate B4 information firewall
+        run: |
+          python - <<'PY'
+          import json, pandas as pd
+          p=pd.read_csv("results/b4v2_picks_frozen.csv")
+          d=pd.read_csv("results/b4v2_driver_scores.csv")
+          e=pd.read_csv("results/b4v2_driver_evidence.csv")
+          m=json.load(open("results/b4v2_methodology.json"))
+          assert m["forward_returns_used"] is False
+          assert m["prices_read"] is False
+          assert len(p)==42, len(p)
+          cols=" ".join(map(str,list(p.columns)+list(d.columns)+list(e.columns))).lower()
+          for bad in ["return_90","return_180","return_365","spy_","entry_price","exit_price","forward_return"]:
+              assert bad not in cols, bad
+          invest=p[p.decision.eq("INVEST")]
+          print("B4_FROZEN quarters",len(p),"invest",len(invest),"drivers",len(d),"evidence",len(e))
+          print(p.to_string(index=False))
+          PY
+      - name: Freeze B4 selections and persistent cache before returns
+        run: |
+          git config user.name "13f-b4-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add results/b4_cache_v2 results/b4v2_driver_scores.csv results/b4v2_driver_evidence.csv results/b4v2_document_audit.csv results/b4v2_picks_frozen.csv results/b4v2_methodology.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Freeze cached B4 causal-theme selections before returns"
+            git push
+          fi
+          echo "FREEZE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Evaluate returns only after freeze
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          p=pd.read_csv("results/b4v2_picks_frozen.csv")
+          n=int((p.decision=="INVEST").sum())
+          print("Frozen INVEST quarters",n)
+          open("/tmp/b4_invest_count","w").write(str(n))
+          PY
+          if [ "$(cat /tmp/b4_invest_count)" -gt 0 ]; then
+            python b4v2_returns.py
+          else
+            echo "No INVEST quarters; no return evaluation required."
+          fi
+      - name: Validate and commit return outputs
+        run: |
+          if [ "$(cat /tmp/b4_invest_count)" -gt 0 ]; then
+            python - <<'PY'
+            import pandas as pd
+            s=pd.read_csv("results/b4v2_summary.csv")
+            q=pd.read_csv("results/b4v2_quarterly.csv")
+            c=pd.read_csv("results/b4v2_constituents.csv")
+            assert set(s.horizon_days)=={90,180,365}
+            assert len(q)>0 and len(c)>0
+            print("FREEZE_SHA_FROM_ENV",__import__("os").environ.get("FREEZE_SHA"))
+            print(s.to_string(index=False))
+            print(q.to_string(index=False))
+            PY
+            git add results/b4v2_forward_returns.csv results/b4v2_constituents.csv results/b4v2_quarterly.csv results/b4v2_summary.csv
+            if ! git diff --cached --quiet; then
+              git commit -m "Evaluate frozen cached B4 selections"
+              git push
+            fi
+          fi
