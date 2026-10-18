@@ -124,6 +124,24 @@ PURELY_INTERNAL=re.compile(
     re.I
 )
 
+RISK_HYPOTHETICAL=re.compile(
+    r"\\b(if|may|might|could|would|risks?|uncertain|uncertainty|unable|cannot assure|can not assure|"
+    r"difficult to predict|depends? on|future capital requirements?|potentially?|possible|subject to|"
+    r"we expect|we believe|anticipate|forecast|forecasted)\\b",
+    re.I
+)
+
+DRIVER_GENERIC={
+    "adoption","adopt","adopted","demand","demands","product","products","service","services",
+    "customer","customers","consumer","consumers","user","users","usage","market","markets",
+    "industry","industries","sales","revenue","revenues","volume","volumes","orders","order",
+    "growth","expansion","expand","expanded","price","prices","pricing","supply","capacity",
+    "spending","investment","investments","technology","technologies","infrastructure",
+    "business","businesses","solution","solutions","platform","platforms","general","existing",
+    "new","increase","increased","higher","lower","strong","stronger","improve","improved",
+    "international","global","economic","economy","factors","factor","changes","change"
+}
+
 # Causal connector extraction. For 'X due to Y' / 'X driven by Y', take Y.
 POST_CONNECTORS=[
     r"primarily due to",r"due to",r"because of",r"driven by",r"attributable to",
