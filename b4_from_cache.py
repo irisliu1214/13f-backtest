@@ -14,7 +14,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import b4_causal as core
 
 R=Path("results")
-CACHE=R/"b4_cache"
+CACHE=R/"b4_cache_v2"
 
 members=pd.read_csv(core.MEMBERS)
 members=members[
@@ -232,7 +232,7 @@ meta={
     "forward_returns_used":False,
     "prices_read":False,
     "implementation_fix":"B4-v1 positive/negative/mechanical regex word-boundaries were accidentally stored as backspace characters. Fixed before any B4 forward returns were viewed.",
-    "persistent_cache":"yearly point-in-time SEC causal-sentence cache under results/b4_cache",
+    "persistent_cache":"yearly point-in-time SEC causal-sentence cache under results/b4_cache_v2",
     "input":"B2 corporate-action-filtered co-buy clusters/members",
     "candidate_pool":f"top {core.TOP_B2_CLUSTERS} B2 clusters x top {core.MAX_MEMBERS_PER_CLUSTER} members, deduped by CUSIP",
     "causal_evidence_gate":"same B4 gate: contemporaneous causal/demand mechanism + positive business-direction marker; mechanical corporate-action/hypothetical adverse-risk evidence excluded",
