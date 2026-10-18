@@ -1,0 +1,12 @@
+{
+  "experiment": "B4-v4 runtime audit note",
+  "created_before_b4v4_returns": true,
+  "prices_or_returns_seen": false,
+  "alias_permutation_limitation": "Permutation 2 is adjudicated sequentially by the same GPT-5.6 Sol conversation, not an independent model context. It is an alias/order-invariance audit, not proof that latent model memory is absent.",
+  "evidence_ablation_rule": {
+    "scope": "For each provisional PASS driver, remove all evidence IDs cited for each accepted member edge and re-adjudicate that edge using only the remaining point-in-time evidence for that alias.",
+    "material_dependence": "An edge passes dependence if confidence falls by at least 0.20 OR falls below 0.70 OR the edge is removed.",
+    "driver_level_pass": "At least 75% of accepted member edges must pass evidence dependence, and after removing unsupported edges the driver must still satisfy the original minimum company/cluster rules.",
+    "no_retuning_after_ablation": "Thresholds and driver definitions are not changed in response to ablation results."
+  }
+}
