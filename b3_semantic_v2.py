@@ -23,7 +23,8 @@ sample-selection bias, so coverage is emitted explicitly.
 """
 from pathlib import Path
 from datetime import date, timedelta
-import hashlib, io, json, math, re, time
+import hashlib, io, json, math, re, time, threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import numpy as np
 import pandas as pd
 import requests
@@ -53,6 +54,31 @@ SEC_ARCH = "https://www.sec.gov/Archives/edgar/data/{cik}/{acc_no}/{primary}"
 SUBMISSION_CACHE = {}
 OLD_SUBMISSION_CACHE = {}
 FILING_CACHE = {}
+SEC_RATE_LOCK = threading.Lock()
+SEC_LAST_REQUEST = [0.0]
+
+def sec_get(url, timeout=30):
+    """SEC-friendly globally rate-limited GET with deterministic retries."""
+    last_err=None
+    for attempt in range(3):
+        with SEC_RATE_LOCK:
+            wait=0.13-(time.monotonic()-SEC_LAST_REQUEST[0])
+            if wait>0:
+                time.sleep(wait)
+            SEC_LAST_REQUEST[0]=time.monotonic()
+        try:
+            r=requests.get(url,headers=UA,timeout=timeout)
+            if r.status_code==200:
+                return r
+            last_err=RuntimeError(f"SEC HTTP {r.status_code}")
+            if r.status_code not in (429,500,502,503,504):
+                return r
+        except Exception as e:
+            last_err=e
+        time.sleep(0.5*(attempt+1))
+    if last_err:
+        raise last_err
+    raise RuntimeError("SEC request failed")
 
 BAD_ISSUER = re.compile(
     r"(NUVEEN|POWERSHS|POWERSHARES|ISHARES|SPDR|VANGUARD|ETF|ETN|"
@@ -92,7 +118,7 @@ def norm_name(s):
     return [t for t in toks if t not in CORP_WORDS and len(t)>1]
 
 def load_company_index():
-    r=requests.get(SEC_TICKERS,headers=UA,timeout=60); r.raise_for_status()
+    r=sec_get(SEC_TICKERS,timeout=60); r.raise_for_status()
     obj=r.json()
     rows=[]
     for _,v in obj.items():
@@ -143,7 +169,7 @@ def choose_filing(cik, cutoff):
         obj=SUBMISSION_CACHE[int(cik)]
     else:
         url=SEC_SUB.format(cik=cik)
-        r=requests.get(url,headers=UA,timeout=30)
+        r=sec_get(url,timeout=30)
         if r.status_code!=200:
             FILING_CACHE[cache_key]=None
             return None
@@ -160,7 +186,7 @@ def choose_filing(cik, cutoff):
             if old_key in OLD_SUBMISSION_CACHE:
                 old_obj=OLD_SUBMISSION_CACHE[old_key]
             else:
-                rr=requests.get("https://data.sec.gov/submissions/"+name,headers=UA,timeout=30)
+                rr=sec_get("https://data.sec.gov/submissions/"+name,timeout=30)
                 if rr.status_code!=200: continue
                 old_obj=rr.json(); OLD_SUBMISSION_CACHE[old_key]=old_obj
             rows2=filing_rows_from_submission({"filings":{"recent":old_obj}})
@@ -227,7 +253,7 @@ def fetch_business_text(cik, filing, cache):
         cache[key]=""; return ""
     url=SEC_ARCH.format(cik=cik,acc_no=acc,primary=primary)
     try:
-        r=requests.get(url,headers=UA,timeout=60)
+        r=sec_get(url,timeout=60)
         if r.status_code!=200:
             cache[key]=""; return ""
         txt=extract_business(clean_html_text(r.text),filing.get("form",""))
@@ -273,17 +299,20 @@ def main():
                   .groupby("cluster_id",group_keys=False).head(MAX_TEXT_MEMBERS).copy())
         docs={}
         resolve_meta={}
-        for r in wanted.itertuples(index=False):
+        rows=list(wanted.itertuples(index=False))
+        def load_one(r):
             key=(r.cluster_id,r.ticker)
             cik,method=resolve_cik(r.ticker,r.issuer,idx)
             filing=None; txt=""
             if cik:
-                filing=choose_filing(cik,cutoff)
-                if filing:
-                    txt=fetch_business_text(cik,filing,doc_cache)
-            docs[key]=txt
-            resolve_meta[key]=(cik,method,filing)
-            audit.append({
+                try:
+                    filing=choose_filing(cik,cutoff)
+                    if filing:
+                        txt=fetch_business_text(cik,filing,doc_cache)
+                except Exception as e:
+                    print("sec_fetch_error",q,r.ticker,repr(e),flush=True)
+                    filing=None; txt=""
+            rec={
                 "quarter":q,"cluster_id":r.cluster_id,"ticker":r.ticker,"issuer":r.issuer,
                 "cik":cik,"resolve_method":method,
                 "cutoff":cutoff.isoformat(),
@@ -292,7 +321,19 @@ def main():
                 "accession":filing.get("accessionNumber") if filing else None,
                 "text_chars":len(txt),
                 "usable_text":bool(len(txt)>=2000),
-            })
+            }
+            return key,txt,(cik,method,filing),rec
+        loaded=[]
+        with ThreadPoolExecutor(max_workers=4) as ex:
+            futs=[ex.submit(load_one,r) for r in rows]
+            for fut in as_completed(futs):
+                loaded.append(fut.result())
+        # Sort before writing so network completion order cannot change outputs.
+        loaded.sort(key=lambda x:(str(x[0][0]),str(x[0][1])))
+        for key,txt,meta,rec in loaded:
+            docs[key]=txt
+            resolve_meta[key]=meta
+            audit.append(rec)
 
         usable=wanted[[len(docs.get((r.cluster_id,r.ticker),""))>=2000 for r in wanted.itertuples(index=False)]].copy()
         if len(usable)<MIN_TEXT_DOCS:
