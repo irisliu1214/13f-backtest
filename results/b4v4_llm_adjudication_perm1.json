@@ -1,0 +1,1590 @@
+{
+  "experiment": "B4-v4 LLM Causal Chain Adjudicator",
+  "permutation": 1,
+  "model": "GPT-5.6 Sol",
+  "adjudication_mode": "identity-blinded, evidence-constrained, return-blind",
+  "outside_knowledge_used_as_evidence": false,
+  "prices_or_returns_seen": false,
+  "note": "Causal-chain membership is based only on the supplied point-in-time evidence packet. Semantic equivalence does not require lexical similarity. PASS remains provisional until permutation consistency and evidence-ablation tests pass.",
+  "quarters": [
+    {
+      "quarter": "2016Q1",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Mobile/cloud data-consumption expansion",
+      "causal_chain": "Growth in mobile Internet, connected applications and cloud usage -> more analytics/content traffic and cloud-compute demand -> higher demand for mobile analytics, digital content services and datacenter compute.",
+      "members": [
+        {
+          "alias": "C10",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2016Q1_P1_E008"
+          ],
+          "edge_confidence": 0.91,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C11",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2016Q1_P1_E019"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C06",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2016Q1_P1_E023"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C16",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2016Q1_P1_E020"
+          ],
+          "edge_confidence": 0.73,
+          "evidence_directness": 0.75
+        }
+      ],
+      "mean_edge_confidence": 0.87,
+      "counterevidence_and_caveats": "C16 is less explicit about the upstream mobile/cloud driver; edge is retained at lower confidence because its realized growth is in digital publishing/content-management services rather than merely generic company growth."
+    },
+    {
+      "quarter": "2016Q2",
+      "decision": "NO_DRIVER",
+      "reason": "Evidence contains isolated PC-form-factor, renewables/gas, broadband, e-commerce and customer-growth mechanisms, but no single upstream external driver is supported by >=4 companies across the required cluster structure."
+    },
+    {
+      "quarter": "2016Q3",
+      "decision": "NO_DRIVER",
+      "reason": "Demand evidence is fragmented across construction products, bikes, hotels, medical devices and telecom; no common upstream external driver clears the breadth and cross-cluster rules."
+    },
+    {
+      "quarter": "2016Q4",
+      "decision": "NO_DRIVER",
+      "reason": "Cloud infrastructure, biopharma, mortgage demand, semiconductors and consumer demand are present, but fewer than four companies support one evidence-grounded upstream chain without over-generalizing to 'economic growth'."
+    },
+    {
+      "quarter": "2017Q1",
+      "decision": "NO_DRIVER",
+      "reason": "Optical networking, cloud infrastructure, automation, housing and energy-service demand are individually credible but do not form one sufficiently specific shared upstream causal chain."
+    },
+    {
+      "quarter": "2017Q2",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Online/cloud adoption expands bandwidth and digital-service deployment",
+      "causal_chain": "More network-connected devices, cloud computing and online commerce -> higher bandwidth/network-upgrade demand and broader deployment of online/SaaS services -> higher e-commerce and subscription/service revenue.",
+      "members": [
+        {
+          "alias": "C16",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2017Q2_P1_E005",
+            "2017Q2_P1_E006"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C10",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2017Q2_P1_E012"
+          ],
+          "edge_confidence": 0.86,
+          "evidence_directness": 0.9
+        },
+        {
+          "alias": "C11",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2017Q2_P1_E016"
+          ],
+          "edge_confidence": 0.87,
+          "evidence_directness": 0.9
+        },
+        {
+          "alias": "C06",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2017Q2_P1_E018",
+            "2017Q2_P1_E019"
+          ],
+          "edge_confidence": 0.83,
+          "evidence_directness": 0.85
+        }
+      ],
+      "mean_edge_confidence": 0.8775000000000001,
+      "counterevidence_and_caveats": "The downstream businesses differ, but all cited evidence points to realized expansion of online/cloud/network activity rather than generic internal growth."
+    },
+    {
+      "quarter": "2017Q3",
+      "decision": "NO_DRIVER",
+      "reason": "E-commerce/last-mile evidence appears in only a small subset; energy, tickets, coal, education and wireless evidence do not support one common driver with sufficient breadth."
+    },
+    {
+      "quarter": "2017Q4",
+      "decision": "NO_DRIVER",
+      "reason": "Online commerce/payments, cloud capex, housing and hurricane-rebuild demand are heterogeneous; a shared 'digital growth' label would be too broad relative to the packet evidence."
+    },
+    {
+      "quarter": "2018Q1",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Cloud/data growth increases datacenter and semiconductor demand",
+      "causal_chain": "Rapid growth of Internet/e-commerce/big data and cloud adoption -> greater datacenter power/compute and analytics requirements -> stronger semiconductor/wafer demand and data/analytics demand.",
+      "members": [
+        {
+          "alias": "C05",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2018Q1_P1_E019",
+            "2018Q1_P1_E020"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C21",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2018Q1_P1_E042",
+            "2018Q1_P1_E044"
+          ],
+          "edge_confidence": 0.83,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C20",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2018Q1_P1_E045",
+            "2018Q1_P1_E046"
+          ],
+          "edge_confidence": 0.82,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C17",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2018Q1_P1_E038",
+            "2018Q1_P1_E041"
+          ],
+          "edge_confidence": 0.79,
+          "evidence_directness": 0.8
+        }
+      ],
+      "mean_edge_confidence": 0.85,
+      "counterevidence_and_caveats": "C20/C17 identify semiconductor/wafer demand but do not themselves state cloud as the sole cause; their edges are treated as downstream infrastructure exposure, not direct cloud-demand proof."
+    },
+    {
+      "quarter": "2018Q2",
+      "decision": "NO_DRIVER",
+      "reason": "One strong AI/datacenter demand edge exists, but the remaining evidence is spread across housing, energy, consulting, healthcare and regional sales; insufficient independent support for the same chain."
+    },
+    {
+      "quarter": "2018Q3",
+      "decision": "NO_DRIVER",
+      "reason": "E-commerce distribution, graphite-electrode scarcity, pipelines and digital identity are separate mechanisms; no one upstream driver reaches four companies with cross-cluster support."
+    },
+    {
+      "quarter": "2018Q4",
+      "decision": "NO_DRIVER",
+      "reason": "Graphite/steel, vehicle technology, pharmacy, weather and commercial real estate evidence are not one sufficiently specific common causal chain."
+    },
+    {
+      "quarter": "2019Q1",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Digitalization and e-commerce expand data, cloud and delivery infrastructure",
+      "causal_chain": "More consumer and enterprise activity moves online -> data traffic, cloud usage, digital advertising and e-commerce GMV rise -> server capacity, parcel-delivery activity and digital monetization increase.",
+      "members": [
+        {
+          "alias": "C03",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2019Q1_P1_E028",
+            "2019Q1_P1_E029"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C12",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2019Q1_P1_E030"
+          ],
+          "edge_confidence": 0.93,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C04",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2019Q1_P1_E062"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C21",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2019Q1_P1_E001",
+            "2019Q1_P1_E002"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C14",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2019Q1_P1_E021",
+            "2019Q1_P1_E022"
+          ],
+          "edge_confidence": 0.82,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C06",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2019Q1_P1_E034",
+            "2019Q1_P1_E035"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9
+        }
+      ],
+      "mean_edge_confidence": 0.9049999999999999,
+      "counterevidence_and_caveats": "Digital advertising and parcel logistics are different downstream nodes, but their cited business outcomes are explicitly tied to rising online activity rather than being grouped by vocabulary."
+    },
+    {
+      "quarter": "2019Q2",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Broadband/cloud and subscription-software adoption",
+      "causal_chain": "Growing broadband/mobile-data use and enterprise migration to cloud/solution-based software -> greater network usage and hosted-service deployment -> higher data-service, subscription and cloud revenue.",
+      "members": [
+        {
+          "alias": "C09",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2019Q2_P1_E023",
+            "2019Q2_P1_E024"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C14",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2019Q2_P1_E032"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9
+        },
+        {
+          "alias": "C16",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2019Q2_P1_E001"
+          ],
+          "edge_confidence": 0.81,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C05",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2019Q2_P1_E038",
+            "2019Q2_P1_E039"
+          ],
+          "edge_confidence": 0.93,
+          "evidence_directness": 1
+        }
+      ],
+      "mean_edge_confidence": 0.8925000000000001,
+      "counterevidence_and_caveats": "The evidence supports a shared adoption/migration mechanism; no edge relies on merely similar accounting or generic growth language."
+    },
+    {
+      "quarter": "2019Q3",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Migration of business and consumer activity to digital channels",
+      "causal_chain": "Business processes, advertising and commerce increasingly move to digital/outsourced channels -> outsourced bank technology, digital advertising/display and e-commerce logistics demand increase.",
+      "members": [
+        {
+          "alias": "C06",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2019Q3_P1_E022"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C14",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2019Q3_P1_E049"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C09",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2019Q3_P1_E010",
+            "2019Q3_P1_E011"
+          ],
+          "edge_confidence": 0.82,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C16",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2019Q3_P1_E053"
+          ],
+          "edge_confidence": 0.76,
+          "evidence_directness": 0.75
+        }
+      ],
+      "mean_edge_confidence": 0.8400000000000001,
+      "counterevidence_and_caveats": "C16 is forward-looking industrial commentary and therefore lower-directness; if its evidence is removed the driver may fail the minimum breadth test."
+    },
+    {
+      "quarter": "2019Q4",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Mainstream cloud/SaaS and app-platform adoption",
+      "causal_chain": "Cloud-based always-on technology and digital application adoption become mainstream -> customers shift from on-premise software and offline services toward SaaS/cloud/app platforms -> recurring cloud/software/platform revenue scales.",
+      "members": [
+        {
+          "alias": "C06",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2019Q4_P1_E026"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C08",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2019Q4_P1_E034",
+            "2019Q4_P1_E035"
+          ],
+          "edge_confidence": 0.83,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C10",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2019Q4_P1_E036"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C04",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2019Q4_P1_E037",
+            "2019Q4_P1_E038"
+          ],
+          "edge_confidence": 0.84,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C02",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2019Q4_P1_E032"
+          ],
+          "edge_confidence": 0.79,
+          "evidence_directness": 0.8
+        }
+      ],
+      "mean_edge_confidence": 0.86,
+      "counterevidence_and_caveats": "C02 is digital-ad monetization rather than SaaS specifically, so it is a weaker downstream digital-platform edge."
+    },
+    {
+      "quarter": "2020Q1",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Early stay-at-home shock accelerates at-home/digital demand",
+      "causal_chain": "COVID-related stay-at-home and off-premise behavior plus ongoing cloud adoption -> demand shifts toward at-home products, delivery and digital infrastructure -> higher digital/cloud capacity and selected at-home sales.",
+      "members": [
+        {
+          "alias": "C13",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2020Q1_P1_E012"
+          ],
+          "edge_confidence": 0.84,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C04",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2020Q1_P1_E002"
+          ],
+          "edge_confidence": 0.77,
+          "evidence_directness": 0.75
+        },
+        {
+          "alias": "C21",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2020Q1_P1_E024"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C05",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2020Q1_P1_E046"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C24",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2020Q1_P1_E035",
+            "2020Q1_P1_E036"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95
+        }
+      ],
+      "mean_edge_confidence": 0.8799999999999999,
+      "counterevidence_and_caveats": "C13/C04 establish cloud/infrastructure expansion but do not independently attribute it to COVID; the common driver is therefore framed as the broader at-home/digital demand acceleration, not 'COVID caused AWS growth'."
+    },
+    {
+      "quarter": "2020Q2",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Remote-work and stay-at-home shift accelerates cloud and digital channels",
+      "causal_chain": "Pandemic restrictions push work, consumption and sales online -> remote-work/cloud usage, digital fulfillment and delivery adoption rise -> higher cloud/platform/digital-channel demand.",
+      "members": [
+        {
+          "alias": "C08",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2020Q2_P1_E001"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C23",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2020Q2_P1_E018"
+          ],
+          "edge_confidence": 0.91,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C24",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2020Q2_P1_E031"
+          ],
+          "edge_confidence": 0.92,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C10",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2020Q2_P1_E033"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C07",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2020Q2_P1_E039"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C01",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2020Q2_P1_E050"
+          ],
+          "edge_confidence": 0.85,
+          "evidence_directness": 0.85
+        }
+      ],
+      "mean_edge_confidence": 0.9199999999999999,
+      "counterevidence_and_caveats": "Some companies capture cost/fulfillment consequences rather than pure demand, but each cited edge reflects the same externally imposed shift toward remote/digital activity."
+    },
+    {
+      "quarter": "2020Q3",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Pandemic accelerates e-commerce and online-service adoption",
+      "causal_chain": "Stay-at-home restrictions and property closures move shopping, entertainment and housing-search activity online -> e-commerce, digital betting, online retail and application adoption rise.",
+      "members": [
+        {
+          "alias": "C11",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2020Q3_P1_E022"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C22",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2020Q3_P1_E028"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C01",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2020Q3_P1_E048"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C09",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2020Q3_P1_E043"
+          ],
+          "edge_confidence": 0.93,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C21",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2020Q3_P1_E049"
+          ],
+          "edge_confidence": 0.83,
+          "evidence_directness": 0.85
+        }
+      ],
+      "mean_edge_confidence": 0.9219999999999999,
+      "counterevidence_and_caveats": "The exact end markets differ, but the packet explicitly links each selected edge to pandemic-induced digital/at-home behavior."
+    },
+    {
+      "quarter": "2020Q4",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Persistent work-from-home and digital engagement",
+      "causal_chain": "Work/learn/play-from-home behavior and digital-payment/app adoption remain elevated -> demand for mobile workstations, apps, digital payments and hosted software rises.",
+      "members": [
+        {
+          "alias": "C16",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2020Q4_P1_E022",
+            "2020Q4_P1_E023"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C05",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2020Q4_P1_E004",
+            "2020Q4_P1_E005"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C03",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2020Q4_P1_E035"
+          ],
+          "edge_confidence": 0.83,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C15",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2020Q4_P1_E054"
+          ],
+          "edge_confidence": 0.8,
+          "evidence_directness": 0.8
+        },
+        {
+          "alias": "C04",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2020Q4_P1_E027"
+          ],
+          "edge_confidence": 0.78,
+          "evidence_directness": 0.8
+        },
+        {
+          "alias": "C18",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2020Q4_P1_E028"
+          ],
+          "edge_confidence": 0.76,
+          "evidence_directness": 0.75
+        }
+      ],
+      "mean_edge_confidence": 0.8483333333333333,
+      "counterevidence_and_caveats": "Hosted-software and payments edges are broader digital-adoption exposures; the strongest direct evidence is the work-from-home computing/app behavior."
+    },
+    {
+      "quarter": "2021Q1",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Pandemic reallocates demand toward health, home and digital products",
+      "causal_chain": "COVID changes health/sanitization needs, mobility and household behavior -> sanitizer/PPE/home-care demand rises, vehicle supply is disrupted and stay-at-home digital demand increases.",
+      "members": [
+        {
+          "alias": "C06",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2021Q1_P1_E002"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C16",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2021Q1_P1_E026"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C18",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2021Q1_P1_E016"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C11",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2021Q1_P1_E020"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C01",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2021Q1_P1_E035"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9
+        }
+      ],
+      "mean_edge_confidence": 0.942,
+      "counterevidence_and_caveats": "This is one upstream pandemic shock with heterogeneous downstream transmissions; the graph does not claim the beneficiary products are substitutable or textually similar."
+    },
+    {
+      "quarter": "2021Q2",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Pandemic normalization and stimulus reshape mobility, consumer and system demand",
+      "causal_chain": "Economic reopening/stimulus plus persistent at-home behavior -> vehicle scarcity/pricing, deferred medical-system purchases, pet-related spending, home-computing demand and freight congestion.",
+      "members": [
+        {
+          "alias": "C10",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2021Q2_P1_E027"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C16",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2021Q2_P1_E041"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C05",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2021Q2_P1_E053"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C02",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2021Q2_P1_E045",
+            "2021Q2_P1_E046"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C17",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2021Q2_P1_E001"
+          ],
+          "edge_confidence": 0.93,
+          "evidence_directness": 0.95
+        }
+      ],
+      "mean_edge_confidence": 0.954,
+      "counterevidence_and_caveats": "The shared ancestor is pandemic/reopening behavior; downstream signs differ by industry, which is intentional in a causal-chain adjudication."
+    },
+    {
+      "quarter": "2021Q3",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Post-pandemic demand rebound meets semiconductor and supply constraints",
+      "causal_chain": "Economic reopening and persistent digital/vehicle demand -> strong automotive/consumer demand while semiconductor/material capacity remains constrained -> higher prices/margins and supply shortages.",
+      "members": [
+        {
+          "alias": "C01",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2021Q3_P1_E024"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C16",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2021Q3_P1_E029"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C11",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2021Q3_P1_E032"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C08",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2021Q3_P1_E036"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C09",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2021Q3_P1_E044"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C02",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2021Q3_P1_E059"
+          ],
+          "edge_confidence": 0.89,
+          "evidence_directness": 0.9
+        }
+      ],
+      "mean_edge_confidence": 0.9383333333333334,
+      "counterevidence_and_caveats": "C09/C02 are broader reopening-demand edges; the semiconductor/material bottleneck is most direct in C16/C11 and automotive demand in C01/C08."
+    },
+    {
+      "quarter": "2021Q4",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Accelerated digitalization, 5G and HPC drive semiconductor/data-center demand",
+      "causal_chain": "Digitalization, 5G and high-performance computing adoption accelerate -> demand for leading-edge semiconductors, networking, data-center equipment and related talent/capacity rises.",
+      "members": [
+        {
+          "alias": "C12",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2021Q4_P1_E020"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C14",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2021Q4_P1_E024"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C22",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2021Q4_P1_E035"
+          ],
+          "edge_confidence": 0.92,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C19",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2021Q4_P1_E066"
+          ],
+          "edge_confidence": 0.87,
+          "evidence_directness": 0.9
+        },
+        {
+          "alias": "C11",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2021Q4_P1_E052"
+          ],
+          "edge_confidence": 0.85,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C09",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2021Q4_P1_E009",
+            "2021Q4_P1_E011"
+          ],
+          "edge_confidence": 0.92,
+          "evidence_directness": 0.95
+        }
+      ],
+      "mean_edge_confidence": 0.9133333333333332,
+      "counterevidence_and_caveats": "C11 is a broad data-center exposure and C22 is a labor-market transmission; both remain downstream nodes of the same semiconductor/digital-infrastructure expansion."
+    },
+    {
+      "quarter": "2022Q1",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Post-COVID energy-demand recovery collides with tight supply and geopolitical disruption",
+      "causal_chain": "Economic reopening and recovering mobility/industrial activity lift oil, NGL and refined-product demand while supply remains tight and geopolitical disruption intensifies -> higher energy prices, margins, transport and service activity.",
+      "members": [
+        {
+          "alias": "C10",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2022Q1_P1_E017"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C25",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2022Q1_P1_E018",
+            "2022Q1_P1_E020"
+          ],
+          "edge_confidence": 0.91,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C05",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2022Q1_P1_E069"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C08",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2022Q1_P1_E075",
+            "2022Q1_P1_E076"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C23",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2022Q1_P1_E067",
+            "2022Q1_P1_E068"
+          ],
+          "edge_confidence": 0.84,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C17",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2022Q1_P1_E046",
+            "2022Q1_P1_E048"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1
+        }
+      ],
+      "mean_edge_confidence": 0.93,
+      "counterevidence_and_caveats": "C23 is an oilfield-service/capex transmission rather than a commodity-price beneficiary and receives lower confidence."
+    },
+    {
+      "quarter": "2022Q2",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Pandemic-accelerated digitalization persists in semiconductors, e-commerce and cloud software",
+      "causal_chain": "Work-from-home/stay-at-home behavior and broader digitalization -> higher device/semiconductor use, e-commerce/delivery penetration and cloud/software/payment adoption -> sustained digital-service and compute demand.",
+      "members": [
+        {
+          "alias": "C13",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2022Q2_P1_E033"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C11",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2022Q2_P1_E039",
+            "2022Q2_P1_E042"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C06",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2022Q2_P1_E035"
+          ],
+          "edge_confidence": 0.91,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C07",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2022Q2_P1_E009"
+          ],
+          "edge_confidence": 0.84,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C19",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2022Q2_P1_E026"
+          ],
+          "edge_confidence": 0.8,
+          "evidence_directness": 0.8
+        }
+      ],
+      "mean_edge_confidence": 0.9,
+      "counterevidence_and_caveats": "C07/C19 reflect general software/payment technology adoption and are weaker than the explicit pandemic/digitalization edges."
+    },
+    {
+      "quarter": "2022Q3",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Digitalization and cloud migration sustain semiconductor and SaaS demand",
+      "causal_chain": "Persistent digitalization and cloud migration -> semiconductor/device demand and SMB SaaS adoption remain elevated -> component constraints, server/platform investment and cloud-software demand persist.",
+      "members": [
+        {
+          "alias": "C15",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2022Q3_P1_E041"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C21",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2022Q3_P1_E048",
+            "2022Q3_P1_E051"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C08",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2022Q3_P1_E037",
+            "2022Q3_P1_E040"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C05",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2022Q3_P1_E030"
+          ],
+          "edge_confidence": 0.79,
+          "evidence_directness": 0.8
+        },
+        {
+          "alias": "C11",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2022Q3_P1_E042"
+          ],
+          "edge_confidence": 0.86,
+          "evidence_directness": 0.9
+        }
+      ],
+      "mean_edge_confidence": 0.906,
+      "counterevidence_and_caveats": "C05 is a cost/capacity consequence of marketplace growth rather than an explicit cloud-demand statement; it receives lower confidence."
+    },
+    {
+      "quarter": "2022Q4",
+      "decision": "NO_DRIVER",
+      "reason": "The packet contains isolated data-center/semiconductor, GLP-1, energy and specialty-product demand, but fewer than four independent companies support a single specific upstream driver."
+    },
+    {
+      "quarter": "2023Q1",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Digital transformation, 5G and HPC drive semiconductor capacity demand",
+      "causal_chain": "5G, AI/HPC and wider digital infrastructure adoption -> stronger demand across advanced/mature semiconductor nodes and automotive sensing -> manufacturers add wafer-fab capacity and production capability.",
+      "members": [
+        {
+          "alias": "C23",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2023Q1_P1_E058",
+            "2023Q1_P1_E060"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C02",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2023Q1_P1_E054"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C01",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2023Q1_P1_E051",
+            "2023Q1_P1_E052"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9
+        },
+        {
+          "alias": "C26",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2023Q1_P1_E027"
+          ],
+          "edge_confidence": 0.8,
+          "evidence_directness": 0.8
+        }
+      ],
+      "mean_edge_confidence": 0.9025000000000001,
+      "counterevidence_and_caveats": "C26 is specifically ADAS adoption rather than all digital infrastructure and is therefore the weakest edge."
+    },
+    {
+      "quarter": "2023Q2",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Digital-first shift expands cybersecurity, semiconductor and automation infrastructure",
+      "causal_chain": "Organizations move toward a digital-first operating model -> demand rises for security/network software, semiconductors/compute connectivity and industrial automation/robotics -> capital equipment and cloud-service demand expand.",
+      "members": [
+        {
+          "alias": "C33",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2023Q2_P1_E002",
+            "2023Q2_P1_E003"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C12",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2023Q2_P1_E021",
+            "2023Q2_P1_E022"
+          ],
+          "edge_confidence": 0.93,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C21",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2023Q2_P1_E037"
+          ],
+          "edge_confidence": 0.93,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C05",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2023Q2_P1_E038"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9
+        },
+        {
+          "alias": "C25",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2023Q2_P1_E030"
+          ],
+          "edge_confidence": 0.87,
+          "evidence_directness": 0.9
+        },
+        {
+          "alias": "C13",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2023Q2_P1_E066"
+          ],
+          "edge_confidence": 0.77,
+          "evidence_directness": 0.75
+        }
+      ],
+      "mean_edge_confidence": 0.89,
+      "counterevidence_and_caveats": "C13 is cloud-services adoption in a financial platform rather than infrastructure demand and is retained only as a lower-directness downstream digitalization edge."
+    },
+    {
+      "quarter": "2023Q3",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Enterprise and consumer digital-platform adoption",
+      "causal_chain": "Digital transformation, cloudification and AI adoption accelerate -> enterprises expand software/platform usage while consumers shift more activity to digital channels -> subscription and digital monetization demand rises.",
+      "members": [
+        {
+          "alias": "C03",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2023Q3_P1_E040",
+            "2023Q3_P1_E041"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C15",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2023Q3_P1_E046"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9
+        },
+        {
+          "alias": "C10",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2023Q3_P1_E003",
+            "2023Q3_P1_E005"
+          ],
+          "edge_confidence": 0.83,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C20",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2023Q3_P1_E026",
+            "2023Q3_P1_E027"
+          ],
+          "edge_confidence": 0.87,
+          "evidence_directness": 0.9
+        }
+      ],
+      "mean_edge_confidence": 0.89,
+      "counterevidence_and_caveats": "Only C03 explicitly names AI/cloudification; the broader accepted driver is digital-platform adoption, not an AI-specific theme."
+    },
+    {
+      "quarter": "2023Q4",
+      "decision": "NO_DRIVER",
+      "reason": "Generative-AI/GPU demand is explicit in one company, but the rest of the packet does not provide >=3 additional independent companies with evidence-grounded exposure to the same upstream driver."
+    },
+    {
+      "quarter": "2024Q1",
+      "decision": "NO_DRIVER",
+      "reason": "Cloud-platform, server, utility-infrastructure and GLP-1 demand appear, but no specific upstream driver is evidenced by four companies across the required B2 communities."
+    },
+    {
+      "quarter": "2024Q2",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "Enterprise cloud/data-platform adoption with emerging AI infrastructure spend",
+      "causal_chain": "Organizations increase use of cloud, SaaS, data-driven services and AI-optimized infrastructure -> more installed-base service revenue, hosting usage and cloud transaction volume, with AI beginning to redirect infrastructure spending.",
+      "members": [
+        {
+          "alias": "C09",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2024Q2_P1_E013"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C07",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2024Q2_P1_E033"
+          ],
+          "edge_confidence": 0.84,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C15",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2024Q2_P1_E047",
+            "2024Q2_P1_E049"
+          ],
+          "edge_confidence": 0.82,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C05",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2024Q2_P1_E034"
+          ],
+          "edge_confidence": 0.82,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C04",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2024Q2_P1_E016"
+          ],
+          "edge_confidence": 0.78,
+          "evidence_directness": 0.8
+        }
+      ],
+      "mean_edge_confidence": 0.844,
+      "counterevidence_and_caveats": "Only C09 directly attributes spending to AI; the official driver remains broader cloud/data-platform adoption rather than retroactively labeling all members as AI beneficiaries."
+    },
+    {
+      "quarter": "2024Q3",
+      "decision": "NO_DRIVER",
+      "reason": "Evidence is fragmented across mortgages, chicken demand, cyber security, building products, gaming and digital assets; no common external driver meets the breadth rule."
+    },
+    {
+      "quarter": "2024Q4",
+      "decision": "NO_DRIVER",
+      "reason": "AI/data-center demand is direct for only a small subset; oilfield, healthcare, agriculture, media and banking evidence cannot be joined without narrative overreach."
+    },
+    {
+      "quarter": "2025Q1",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "AI/cloud data-center buildout increases compute and power-infrastructure demand",
+      "causal_chain": "AI and mainstream cloud adoption -> more data-processing loads and data-center construction -> higher demand for AI platforms, cloud services and electrical/power infrastructure.",
+      "members": [
+        {
+          "alias": "C02",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2025Q1_P1_E011",
+            "2025Q1_P1_E013"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C03",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2025Q1_P1_E039",
+            "2025Q1_P1_E040"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95
+        },
+        {
+          "alias": "C26",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2025Q1_P1_E054"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C18",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2025Q1_P1_E052"
+          ],
+          "edge_confidence": 0.84,
+          "evidence_directness": 0.85
+        }
+      ],
+      "mean_edge_confidence": 0.9149999999999999,
+      "counterevidence_and_caveats": "C18 is cloud-adoption exposure without explicit data-center power linkage; it is retained as an upstream digital-demand node at lower confidence."
+    },
+    {
+      "quarter": "2025Q2",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "AI data-center buildout propagates into networking, electrical infrastructure and grid/storage demand",
+      "causal_chain": "Accelerated AI compute adoption -> rapid data-center/network buildout -> demand expands for high-speed networking, datacenter enclosures/electrical projects and grid/storage infrastructure.",
+      "members": [
+        {
+          "alias": "C07",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2025Q2_P1_E031",
+            "2025Q2_P1_E033"
+          ],
+          "edge_confidence": 0.99,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C18",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2025Q2_P1_E035"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C10",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2025Q2_P1_E022"
+          ],
+          "edge_confidence": 0.82,
+          "evidence_directness": 0.85
+        },
+        {
+          "alias": "C17",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2025Q2_P1_E016",
+            "2025Q2_P1_E017"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9
+        },
+        {
+          "alias": "C01",
+          "b2_cluster_alias": "G2",
+          "evidence_ids": [
+            "2025Q2_P1_E025"
+          ],
+          "edge_confidence": 0.74,
+          "evidence_directness": 0.75
+        }
+      ],
+      "mean_edge_confidence": 0.874,
+      "counterevidence_and_caveats": "C10/C01 are grid-storage demand nodes and do not explicitly name AI; they are accepted only as downstream infrastructure exposure, with lower confidence than the networking/datacenter edges."
+    },
+    {
+      "quarter": "2025Q3",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "AI compute expansion raises memory, storage, electricity and technology-material demand",
+      "causal_chain": "Large-language-model and generative-AI adoption -> greater memory/storage and hyperscale infrastructure needs -> higher information-sector electricity use and technology-material demand.",
+      "members": [
+        {
+          "alias": "C16",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2025Q3_P1_E006"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C02",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2025Q3_P1_E042"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9
+        },
+        {
+          "alias": "C12",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2025Q3_P1_E045",
+            "2025Q3_P1_E046"
+          ],
+          "edge_confidence": 0.8,
+          "evidence_directness": 0.8
+        },
+        {
+          "alias": "C09",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2025Q3_P1_E048"
+          ],
+          "edge_confidence": 0.91,
+          "evidence_directness": 0.95
+        }
+      ],
+      "mean_edge_confidence": 0.8925000000000001,
+      "counterevidence_and_caveats": "C12's masked 'information' sector does not explicitly say AI/data centers; it is the weakest infrastructure edge and should be highly sensitive to evidence ablation."
+    },
+    {
+      "quarter": "2025Q4",
+      "decision": "NO_DRIVER",
+      "reason": "One company has strong next-generation AI/datacom demand, but the remaining evidence is mostly defense, healthcare, energy, e-commerce logistics and finance; insufficient four-company AI causal chain."
+    },
+    {
+      "quarter": "2026Q1",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "AI/cloud data-center expansion creates a time-to-power and digital-infrastructure buildout",
+      "causal_chain": "Adoption of AI tools, cloud computing and digital technologies -> more hyperscale/data-center capacity -> higher server, power, edge/digital-platform and supporting material demand.",
+      "members": [
+        {
+          "alias": "C13",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2026Q1_P1_E002",
+            "2026Q1_P1_E003"
+          ],
+          "edge_confidence": 0.99,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C26",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2026Q1_P1_E029",
+            "2026Q1_P1_E032"
+          ],
+          "edge_confidence": 0.99,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C20",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2026Q1_P1_E054"
+          ],
+          "edge_confidence": 0.8,
+          "evidence_directness": 0.8
+        },
+        {
+          "alias": "C11",
+          "b2_cluster_alias": "G3",
+          "evidence_ids": [
+            "2026Q1_P1_E048",
+            "2026Q1_P1_E051"
+          ],
+          "edge_confidence": 0.78,
+          "evidence_directness": 0.8
+        },
+        {
+          "alias": "C07",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2026Q1_P1_E016"
+          ],
+          "edge_confidence": 0.73,
+          "evidence_directness": 0.75
+        }
+      ],
+      "mean_edge_confidence": 0.8580000000000002,
+      "counterevidence_and_caveats": "C20 is anticipated demand and C11/C07 are broad digital/edge adoption; the causal core is C13/C26. Permutation and ablation tests are expected to challenge the weaker outer edges."
+    },
+    {
+      "quarter": "2026Q2",
+      "decision": "PASS_PROVISIONAL",
+      "driver_name": "AI-driven HPC buildout propagates through servers, semiconductors and fab/packaging equipment",
+      "causal_chain": "AI/ML application demand -> rapid HPC/GPU-server and networking buildout -> higher semiconductor-chip demand -> higher advanced-packaging and semiconductor environmental/equipment demand.",
+      "members": [
+        {
+          "alias": "C22",
+          "b2_cluster_alias": "G4",
+          "evidence_ids": [
+            "2026Q2_P1_E001"
+          ],
+          "edge_confidence": 0.99,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C24",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2026Q2_P1_E007",
+            "2026Q2_P1_E008"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1
+        },
+        {
+          "alias": "C07",
+          "b2_cluster_alias": "G1",
+          "evidence_ids": [
+            "2026Q2_P1_E017",
+            "2026Q2_P1_E018"
+          ],
+          "edge_confidence": 0.86,
+          "evidence_directness": 0.9
+        },
+        {
+          "alias": "C20",
+          "b2_cluster_alias": "G5",
+          "evidence_ids": [
+            "2026Q2_P1_E051",
+            "2026Q2_P1_E052"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1
+        }
+      ],
+      "mean_edge_confidence": 0.9525,
+      "counterevidence_and_caveats": "C07 names semiconductor demand rather than AI directly, but its position as a downstream fab-support exposure is supported by the same-quarter AI-driven semiconductor evidence from other independent companies."
+    }
+  ]
+}
