@@ -1,0 +1,16 @@
+{
+  "experiment": "B4-v4 finalization",
+  "forward_returns_used": false,
+  "prices_read": false,
+  "blind_graph_source": "results/b4v4_final_graph_blind.json",
+  "identity_reveal_after_blind_graph_freeze": true,
+  "mechanical_top5_weights": {
+    "abnormal_score_pct": 0.4,
+    "llm_edge_confidence": 0.25,
+    "buyer_ratio_pct": 0.15,
+    "current_holders_pct": 0.1,
+    "evidence_directness": 0.1
+  },
+  "minimum_graph_members_for_trade": 5,
+  "manual_stock_replacement": false
+}
