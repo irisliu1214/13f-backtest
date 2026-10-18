@@ -1,0 +1,60 @@
+{
+  "experiment": "B4-v4 LLM Causal Chain Adjudicator",
+  "status": "pre-return methodology",
+  "forward_returns_used": false,
+  "prices_read": false,
+  "source_universe": [
+    "results/b2_blind_cluster_members.csv",
+    "results/b4_cache_v2/b4_sentences_*.csv"
+  ],
+  "identity_firewall": {
+    "ticker_hidden_from_llm": true,
+    "issuer_hidden_from_llm": true,
+    "aliases_randomized_deterministically_per_quarter_and_permutation": true,
+    "brand_and_proper_noun_masking": "best-effort additional masking on top of issuer/ticker masking",
+    "official_membership_uses_blind_graph_only": true
+  },
+  "llm_task": {
+    "allowed": [
+      "extract external economic driver",
+      "infer multi-step causal chain from supplied evidence",
+      "decide whether different wording belongs to the same upstream economic causal chain",
+      "identify counterevidence",
+      "score edge directness and confidence"
+    ],
+    "forbidden": [
+      "use facts not present in the packet",
+      "infer company identity",
+      "recommend stocks",
+      "use prices or returns",
+      "use present-day knowledge as evidence"
+    ],
+    "edge_rule": "Every accepted company-driver edge must cite at least one contemporaneous evidence_id from the packet."
+  },
+  "driver_acceptance": {
+    "min_companies": 4,
+    "min_b2_clusters": 2,
+    "min_outside_dominant_cluster": 2,
+    "min_mean_edge_confidence": 0.70,
+    "must_be_external_economic_driver": true,
+    "must_have_business_transmission_chain": true,
+    "accounting_or_internal_mechanism_disallowed": true
+  },
+  "leakage_audit": {
+    "alias_permutations": 2,
+    "min_alias_jaccard": 0.75,
+    "evidence_ablation_required_for_passed_driver": true,
+    "ablation_rule": "Removing cited causal evidence must materially reduce edge confidence or membership for the affected company.",
+    "identity_reveal_is_diagnostic_only": true,
+    "official_graph_remains_blind": true
+  },
+  "mechanical_top5_after_graph_freeze": {
+    "abnormal_score_pct": 0.40,
+    "llm_edge_confidence": 0.25,
+    "buyer_ratio_pct": 0.15,
+    "current_holders_pct": 0.10,
+    "evidence_directness": 0.10
+  },
+  "interpretation": "Identity-blinded, evidence-constrained, return-blind LLM adjudication. This controls access to future information but does not mathematically erase latent future knowledge in model weights.",
+  "historical_status": "Methodology was designed after observing B4-v2 and B4-v3.1 historical results; therefore historical B4-v4 is a robustness experiment, not untouched out-of-sample evidence."
+}
