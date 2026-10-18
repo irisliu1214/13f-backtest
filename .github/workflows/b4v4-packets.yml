@@ -1,0 +1,57 @@
+name: Build B4 v4 blind evidence packets
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "b4v4_packet_builder.py"
+      - "results/b4v4_methodology_pre_return.json"
+      - ".github/workflows/b4v4-packets.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install scikit-learn beautifulsoup4
+      - name: Compile
+        run: python -m py_compile b4v4_packet_builder.py
+      - name: Build blind packets
+        run: python b4v4_packet_builder.py
+      - name: Validate no return leakage
+        run: |
+          python - <<'PY'
+          import json, pathlib, pandas as pd
+          idx=json.load(open("results/b4v4_packet_index.json"))
+          assert len(idx)==84, len(idx)
+          assert len({x["quarter"] for x in idx})==42
+          for p in pathlib.Path("results/b4v4_packets").glob("*.json"):
+              txt=p.read_text().lower()
+              for bad in ["return_90","return_180","return_365","spy_return","entry_price","exit_price"]:
+                  assert bad not in txt, (p,bad)
+              obj=json.loads(p.read_text())
+              for c in obj["companies"]:
+                  assert "ticker" not in c and "issuer" not in c and "cusip" not in c
+          print(pd.DataFrame(idx).to_string(index=False))
+          PY
+      - name: Commit packets before LLM adjudication
+        run: |
+          git config user.name "13f-b4-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add results/b4v4_packets results/b4v4_packet_index.json results/b4v4_identity_map_private.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Freeze B4 v4 blind evidence packets before adjudication"
+            git push
+          fi
