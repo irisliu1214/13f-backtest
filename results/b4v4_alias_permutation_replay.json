@@ -1,0 +1,1809 @@
+{
+  "experiment": "B4-v4 alias permutation 2 replay",
+  "mode": "same-model sequential alias/order-invariance audit; NOT independent-context adjudication",
+  "identity_map_used": false,
+  "prices_or_returns_seen": false,
+  "quarters": [
+    {
+      "quarter": "2016Q1",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Mobile/cloud data-consumption expansion",
+      "members": [
+        {
+          "perm1_alias": "C10",
+          "perm2_alias": "C19",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2016Q1_P2_E008"
+          ],
+          "edge_confidence": 0.91,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C11",
+          "perm2_alias": "C18",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2016Q1_P2_E019"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C06",
+          "perm2_alias": "C09",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2016Q1_P2_E023"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C16",
+          "perm2_alias": "C23",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2016Q1_P2_E020"
+          ],
+          "edge_confidence": 0.73,
+          "evidence_directness": 0.75,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2016Q2",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2016Q3",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2016Q4",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2017Q1",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2017Q2",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Online/cloud adoption expands bandwidth and digital-service deployment",
+      "members": [
+        {
+          "perm1_alias": "C16",
+          "perm2_alias": "C08",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2017Q2_P2_E005",
+            "2017Q2_P2_E006"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C10",
+          "perm2_alias": "C07",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2017Q2_P2_E012"
+          ],
+          "edge_confidence": 0.86,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C11",
+          "perm2_alias": "C10",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2017Q2_P2_E016"
+          ],
+          "edge_confidence": 0.87,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C06",
+          "perm2_alias": "C11",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2017Q2_P2_E018",
+            "2017Q2_P2_E019"
+          ],
+          "edge_confidence": 0.83,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2017Q3",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2017Q4",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2018Q1",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Cloud/data growth increases datacenter and semiconductor demand",
+      "members": [
+        {
+          "perm1_alias": "C05",
+          "perm2_alias": "C20",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2018Q1_P2_E019",
+            "2018Q1_P2_E020"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C21",
+          "perm2_alias": "C21",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2018Q1_P2_E042",
+            "2018Q1_P2_E044"
+          ],
+          "edge_confidence": 0.83,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C20",
+          "perm2_alias": "C03",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2018Q1_P2_E045",
+            "2018Q1_P2_E046"
+          ],
+          "edge_confidence": 0.82,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C17",
+          "perm2_alias": "C12",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2018Q1_P2_E038",
+            "2018Q1_P2_E041"
+          ],
+          "edge_confidence": 0.79,
+          "evidence_directness": 0.8,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2018Q2",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2018Q3",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2018Q4",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2019Q1",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Digitalization and e-commerce expand data, cloud and delivery infrastructure",
+      "members": [
+        {
+          "perm1_alias": "C03",
+          "perm2_alias": "C25",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2019Q1_P2_E028",
+            "2019Q1_P2_E029"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C12",
+          "perm2_alias": "C17",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2019Q1_P2_E030"
+          ],
+          "edge_confidence": 0.93,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C04",
+          "perm2_alias": "C01",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2019Q1_P2_E062"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C21",
+          "perm2_alias": "C23",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2019Q1_P2_E001",
+            "2019Q1_P2_E002"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C14",
+          "perm2_alias": "C03",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2019Q1_P2_E021",
+            "2019Q1_P2_E022"
+          ],
+          "edge_confidence": 0.82,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C06",
+          "perm2_alias": "C11",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2019Q1_P2_E034",
+            "2019Q1_P2_E035"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2019Q2",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Broadband/cloud and subscription-software adoption",
+      "members": [
+        {
+          "perm1_alias": "C09",
+          "perm2_alias": "C06",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2019Q2_P2_E023",
+            "2019Q2_P2_E024"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C14",
+          "perm2_alias": "C02",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2019Q2_P2_E032"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C16",
+          "perm2_alias": "C04",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2019Q2_P2_E001"
+          ],
+          "edge_confidence": 0.81,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C05",
+          "perm2_alias": "C21",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2019Q2_P2_E038",
+            "2019Q2_P2_E039"
+          ],
+          "edge_confidence": 0.93,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2019Q3",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Migration of business and consumer activity to digital channels",
+      "members": [
+        {
+          "perm1_alias": "C06",
+          "perm2_alias": "C19",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2019Q3_P2_E022"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C14",
+          "perm2_alias": "C04",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2019Q3_P2_E049"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C09",
+          "perm2_alias": "C18",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2019Q3_P2_E010",
+            "2019Q3_P2_E011"
+          ],
+          "edge_confidence": 0.82,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C16",
+          "perm2_alias": "C13",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2019Q3_P2_E053"
+          ],
+          "edge_confidence": 0.76,
+          "evidence_directness": 0.75,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2019Q4",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Mainstream cloud/SaaS and app-platform adoption",
+      "members": [
+        {
+          "perm1_alias": "C06",
+          "perm2_alias": "C15",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2019Q4_P2_E026"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C08",
+          "perm2_alias": "C06",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2019Q4_P2_E034",
+            "2019Q4_P2_E035"
+          ],
+          "edge_confidence": 0.83,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C10",
+          "perm2_alias": "C16",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2019Q4_P2_E036"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C04",
+          "perm2_alias": "C03",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2019Q4_P2_E037",
+            "2019Q4_P2_E038"
+          ],
+          "edge_confidence": 0.84,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C02",
+          "perm2_alias": "C12",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2019Q4_P2_E032"
+          ],
+          "edge_confidence": 0.79,
+          "evidence_directness": 0.8,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2020Q1",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Early stay-at-home shock accelerates at-home/digital demand",
+      "members": [
+        {
+          "perm1_alias": "C13",
+          "perm2_alias": "C07",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2020Q1_P2_E012"
+          ],
+          "edge_confidence": 0.84,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C04",
+          "perm2_alias": "C02",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2020Q1_P2_E002"
+          ],
+          "edge_confidence": 0.77,
+          "evidence_directness": 0.75,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C21",
+          "perm2_alias": "C06",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2020Q1_P2_E024"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C05",
+          "perm2_alias": "C01",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2020Q1_P2_E046"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C24",
+          "perm2_alias": "C09",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2020Q1_P2_E035",
+            "2020Q1_P2_E036"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2020Q2",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Remote-work and stay-at-home shift accelerates cloud and digital channels",
+      "members": [
+        {
+          "perm1_alias": "C08",
+          "perm2_alias": "C09",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2020Q2_P2_E001"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C23",
+          "perm2_alias": "C12",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2020Q2_P2_E018"
+          ],
+          "edge_confidence": 0.91,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C24",
+          "perm2_alias": "C02",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2020Q2_P2_E031"
+          ],
+          "edge_confidence": 0.92,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C10",
+          "perm2_alias": "C11",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2020Q2_P2_E033"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C07",
+          "perm2_alias": "C16",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2020Q2_P2_E039"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C01",
+          "perm2_alias": "C18",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2020Q2_P2_E050"
+          ],
+          "edge_confidence": 0.85,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2020Q3",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Pandemic accelerates e-commerce and online-service adoption",
+      "members": [
+        {
+          "perm1_alias": "C11",
+          "perm2_alias": "C19",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2020Q3_P2_E022"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C22",
+          "perm2_alias": "C20",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2020Q3_P2_E028"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C01",
+          "perm2_alias": "C16",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2020Q3_P2_E048"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C09",
+          "perm2_alias": "C24",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2020Q3_P2_E043"
+          ],
+          "edge_confidence": 0.93,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C21",
+          "perm2_alias": "C09",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2020Q3_P2_E049"
+          ],
+          "edge_confidence": 0.83,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2020Q4",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Persistent work-from-home and digital engagement",
+      "members": [
+        {
+          "perm1_alias": "C16",
+          "perm2_alias": "C03",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2020Q4_P2_E022",
+            "2020Q4_P2_E023"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C05",
+          "perm2_alias": "C16",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2020Q4_P2_E004",
+            "2020Q4_P2_E005"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C03",
+          "perm2_alias": "C04",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2020Q4_P2_E035"
+          ],
+          "edge_confidence": 0.83,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C15",
+          "perm2_alias": "C06",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2020Q4_P2_E054"
+          ],
+          "edge_confidence": 0.8,
+          "evidence_directness": 0.8,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C04",
+          "perm2_alias": "C10",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2020Q4_P2_E027"
+          ],
+          "edge_confidence": 0.78,
+          "evidence_directness": 0.8,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C18",
+          "perm2_alias": "C20",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2020Q4_P2_E028"
+          ],
+          "edge_confidence": 0.76,
+          "evidence_directness": 0.75,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2021Q1",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Pandemic reallocates demand toward health, home and digital products",
+      "members": [
+        {
+          "perm1_alias": "C06",
+          "perm2_alias": "C02",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2021Q1_P2_E002"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C16",
+          "perm2_alias": "C16",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2021Q1_P2_E026"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C18",
+          "perm2_alias": "C11",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2021Q1_P2_E016"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C11",
+          "perm2_alias": "C08",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2021Q1_P2_E020"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C01",
+          "perm2_alias": "C01",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2021Q1_P2_E035"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2021Q2",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Pandemic normalization and stimulus reshape mobility, consumer and system demand",
+      "members": [
+        {
+          "perm1_alias": "C10",
+          "perm2_alias": "C10",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2021Q2_P2_E027"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C16",
+          "perm2_alias": "C12",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2021Q2_P2_E041"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C05",
+          "perm2_alias": "C09",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2021Q2_P2_E053"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C02",
+          "perm2_alias": "C14",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2021Q2_P2_E045",
+            "2021Q2_P2_E046"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C17",
+          "perm2_alias": "C05",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2021Q2_P2_E001"
+          ],
+          "edge_confidence": 0.93,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2021Q3",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Post-pandemic demand rebound meets semiconductor and supply constraints",
+      "members": [
+        {
+          "perm1_alias": "C01",
+          "perm2_alias": "C11",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2021Q3_P2_E024"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C16",
+          "perm2_alias": "C14",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2021Q3_P2_E029"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C11",
+          "perm2_alias": "C15",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2021Q3_P2_E032"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C08",
+          "perm2_alias": "C21",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2021Q3_P2_E036"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C09",
+          "perm2_alias": "C17",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2021Q3_P2_E044"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C02",
+          "perm2_alias": "C19",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2021Q3_P2_E059"
+          ],
+          "edge_confidence": 0.89,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2021Q4",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Accelerated digitalization, 5G and HPC drive semiconductor/data-center demand",
+      "members": [
+        {
+          "perm1_alias": "C12",
+          "perm2_alias": "C05",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2021Q4_P2_E020"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C14",
+          "perm2_alias": "C13",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2021Q4_P2_E024"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C22",
+          "perm2_alias": "C02",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2021Q4_P2_E035"
+          ],
+          "edge_confidence": 0.92,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C19",
+          "perm2_alias": "C07",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2021Q4_P2_E066"
+          ],
+          "edge_confidence": 0.87,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C11",
+          "perm2_alias": "C03",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2021Q4_P2_E052"
+          ],
+          "edge_confidence": 0.85,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C09",
+          "perm2_alias": "C22",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2021Q4_P2_E009",
+            "2021Q4_P2_E011"
+          ],
+          "edge_confidence": 0.92,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2022Q1",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Post-COVID energy-demand recovery collides with tight supply and geopolitical disruption",
+      "members": [
+        {
+          "perm1_alias": "C10",
+          "perm2_alias": "C07",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2022Q1_P2_E017"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C25",
+          "perm2_alias": "C23",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2022Q1_P2_E018",
+            "2022Q1_P2_E020"
+          ],
+          "edge_confidence": 0.91,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C05",
+          "perm2_alias": "C11",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2022Q1_P2_E069"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C08",
+          "perm2_alias": "C10",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2022Q1_P2_E075",
+            "2022Q1_P2_E076"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C23",
+          "perm2_alias": "C27",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2022Q1_P2_E067",
+            "2022Q1_P2_E068"
+          ],
+          "edge_confidence": 0.84,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C17",
+          "perm2_alias": "C13",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2022Q1_P2_E046",
+            "2022Q1_P2_E048"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2022Q2",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Pandemic-accelerated digitalization persists in semiconductors, e-commerce and cloud software",
+      "members": [
+        {
+          "perm1_alias": "C13",
+          "perm2_alias": "C11",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2022Q2_P2_E033"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C11",
+          "perm2_alias": "C12",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2022Q2_P2_E039",
+            "2022Q2_P2_E042"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C06",
+          "perm2_alias": "C13",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2022Q2_P2_E035"
+          ],
+          "edge_confidence": 0.91,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C07",
+          "perm2_alias": "C06",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2022Q2_P2_E009"
+          ],
+          "edge_confidence": 0.84,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C19",
+          "perm2_alias": "C16",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2022Q2_P2_E026"
+          ],
+          "edge_confidence": 0.8,
+          "evidence_directness": 0.8,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2022Q3",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Digitalization and cloud migration sustain semiconductor and SaaS demand",
+      "members": [
+        {
+          "perm1_alias": "C15",
+          "perm2_alias": "C08",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2022Q3_P2_E041"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C21",
+          "perm2_alias": "C05",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2022Q3_P2_E048",
+            "2022Q3_P2_E051"
+          ],
+          "edge_confidence": 0.97,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C08",
+          "perm2_alias": "C19",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2022Q3_P2_E037",
+            "2022Q3_P2_E040"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C05",
+          "perm2_alias": "C22",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2022Q3_P2_E030"
+          ],
+          "edge_confidence": 0.79,
+          "evidence_directness": 0.8,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C11",
+          "perm2_alias": "C04",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2022Q3_P2_E042"
+          ],
+          "edge_confidence": 0.86,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2022Q4",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2023Q1",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Digital transformation, 5G and HPC drive semiconductor capacity demand",
+      "members": [
+        {
+          "perm1_alias": "C23",
+          "perm2_alias": "C09",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2023Q1_P2_E058",
+            "2023Q1_P2_E060"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C02",
+          "perm2_alias": "C10",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2023Q1_P2_E054"
+          ],
+          "edge_confidence": 0.95,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C01",
+          "perm2_alias": "C19",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2023Q1_P2_E051",
+            "2023Q1_P2_E052"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C26",
+          "perm2_alias": "C15",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2023Q1_P2_E027"
+          ],
+          "edge_confidence": 0.8,
+          "evidence_directness": 0.8,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2023Q2",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Digital-first shift expands cybersecurity, semiconductor and automation infrastructure",
+      "members": [
+        {
+          "perm1_alias": "C33",
+          "perm2_alias": "C25",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2023Q2_P2_E002",
+            "2023Q2_P2_E003"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C12",
+          "perm2_alias": "C14",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2023Q2_P2_E021",
+            "2023Q2_P2_E022"
+          ],
+          "edge_confidence": 0.93,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C21",
+          "perm2_alias": "C11",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2023Q2_P2_E037"
+          ],
+          "edge_confidence": 0.93,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C05",
+          "perm2_alias": "C23",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2023Q2_P2_E038"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C25",
+          "perm2_alias": "C09",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2023Q2_P2_E030"
+          ],
+          "edge_confidence": 0.87,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C13",
+          "perm2_alias": "C17",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2023Q2_P2_E066"
+          ],
+          "edge_confidence": 0.77,
+          "evidence_directness": 0.75,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2023Q3",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Enterprise and consumer digital-platform adoption",
+      "members": [
+        {
+          "perm1_alias": "C03",
+          "perm2_alias": "C14",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2023Q3_P2_E040",
+            "2023Q3_P2_E041"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C15",
+          "perm2_alias": "C20",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2023Q3_P2_E046"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C10",
+          "perm2_alias": "C15",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2023Q3_P2_E003",
+            "2023Q3_P2_E005"
+          ],
+          "edge_confidence": 0.83,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C20",
+          "perm2_alias": "C04",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2023Q3_P2_E026",
+            "2023Q3_P2_E027"
+          ],
+          "edge_confidence": 0.87,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2023Q4",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2024Q1",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2024Q2",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "Enterprise cloud/data-platform adoption with emerging AI infrastructure spend",
+      "members": [
+        {
+          "perm1_alias": "C09",
+          "perm2_alias": "C09",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2024Q2_P2_E013"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C07",
+          "perm2_alias": "C08",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2024Q2_P2_E033"
+          ],
+          "edge_confidence": 0.84,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C15",
+          "perm2_alias": "C06",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2024Q2_P2_E047",
+            "2024Q2_P2_E049"
+          ],
+          "edge_confidence": 0.82,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C05",
+          "perm2_alias": "C15",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2024Q2_P2_E034"
+          ],
+          "edge_confidence": 0.82,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C04",
+          "perm2_alias": "C02",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2024Q2_P2_E016"
+          ],
+          "edge_confidence": 0.78,
+          "evidence_directness": 0.8,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2024Q3",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2024Q4",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2025Q1",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "AI/cloud data-center buildout increases compute and power-infrastructure demand",
+      "members": [
+        {
+          "perm1_alias": "C02",
+          "perm2_alias": "C22",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2025Q1_P2_E011",
+            "2025Q1_P2_E013"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C03",
+          "perm2_alias": "C19",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2025Q1_P2_E039",
+            "2025Q1_P2_E040"
+          ],
+          "edge_confidence": 0.9,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C26",
+          "perm2_alias": "C18",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2025Q1_P2_E054"
+          ],
+          "edge_confidence": 0.96,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C18",
+          "perm2_alias": "C08",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2025Q1_P2_E052"
+          ],
+          "edge_confidence": 0.84,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2025Q2",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "AI data-center buildout propagates into networking, electrical infrastructure and grid/storage demand",
+      "members": [
+        {
+          "perm1_alias": "C07",
+          "perm2_alias": "C02",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2025Q2_P2_E031",
+            "2025Q2_P2_E033"
+          ],
+          "edge_confidence": 0.99,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C18",
+          "perm2_alias": "C18",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2025Q2_P2_E035"
+          ],
+          "edge_confidence": 0.94,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C10",
+          "perm2_alias": "C05",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2025Q2_P2_E022"
+          ],
+          "edge_confidence": 0.82,
+          "evidence_directness": 0.85,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C17",
+          "perm2_alias": "C07",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2025Q2_P2_E016",
+            "2025Q2_P2_E017"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C01",
+          "perm2_alias": "C13",
+          "b2_cluster_alias": "G2",
+          "perm2_evidence_ids": [
+            "2025Q2_P2_E025"
+          ],
+          "edge_confidence": 0.74,
+          "evidence_directness": 0.75,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2025Q3",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "AI compute expansion raises memory, storage, electricity and technology-material demand",
+      "members": [
+        {
+          "perm1_alias": "C16",
+          "perm2_alias": "C01",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2025Q3_P2_E006"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C02",
+          "perm2_alias": "C18",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2025Q3_P2_E042"
+          ],
+          "edge_confidence": 0.88,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C12",
+          "perm2_alias": "C05",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2025Q3_P2_E045",
+            "2025Q3_P2_E046"
+          ],
+          "edge_confidence": 0.8,
+          "evidence_directness": 0.8,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C09",
+          "perm2_alias": "C16",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2025Q3_P2_E048"
+          ],
+          "edge_confidence": 0.91,
+          "evidence_directness": 0.95,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2025Q4",
+      "decision": "NOT_RUN_NO_DRIVER_IN_PERM1"
+    },
+    {
+      "quarter": "2026Q1",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "AI/cloud data-center expansion creates a time-to-power and digital-infrastructure buildout",
+      "members": [
+        {
+          "perm1_alias": "C13",
+          "perm2_alias": "C02",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2026Q1_P2_E002",
+            "2026Q1_P2_E003"
+          ],
+          "edge_confidence": 0.99,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C26",
+          "perm2_alias": "C13",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2026Q1_P2_E029",
+            "2026Q1_P2_E032"
+          ],
+          "edge_confidence": 0.99,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C20",
+          "perm2_alias": "C23",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2026Q1_P2_E054"
+          ],
+          "edge_confidence": 0.8,
+          "evidence_directness": 0.8,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C11",
+          "perm2_alias": "C27",
+          "b2_cluster_alias": "G3",
+          "perm2_evidence_ids": [
+            "2026Q1_P2_E048",
+            "2026Q1_P2_E051"
+          ],
+          "edge_confidence": 0.78,
+          "evidence_directness": 0.8,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C07",
+          "perm2_alias": "C28",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2026Q1_P2_E016"
+          ],
+          "edge_confidence": 0.73,
+          "evidence_directness": 0.75,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    },
+    {
+      "quarter": "2026Q2",
+      "decision": "PASS_PROVISIONAL_ALIAS_REPLAY",
+      "driver_name": "AI-driven HPC buildout propagates through servers, semiconductors and fab/packaging equipment",
+      "members": [
+        {
+          "perm1_alias": "C22",
+          "perm2_alias": "C07",
+          "b2_cluster_alias": "G4",
+          "perm2_evidence_ids": [
+            "2026Q2_P2_E001"
+          ],
+          "edge_confidence": 0.99,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C24",
+          "perm2_alias": "C29",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2026Q2_P2_E007",
+            "2026Q2_P2_E008"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C07",
+          "perm2_alias": "C23",
+          "b2_cluster_alias": "G1",
+          "perm2_evidence_ids": [
+            "2026Q2_P2_E017",
+            "2026Q2_P2_E018"
+          ],
+          "edge_confidence": 0.86,
+          "evidence_directness": 0.9,
+          "evidence_fingerprint_match": true
+        },
+        {
+          "perm1_alias": "C20",
+          "perm2_alias": "C22",
+          "b2_cluster_alias": "G5",
+          "perm2_evidence_ids": [
+            "2026Q2_P2_E051",
+            "2026Q2_P2_E052"
+          ],
+          "edge_confidence": 0.98,
+          "evidence_directness": 1,
+          "evidence_fingerprint_match": true
+        }
+      ],
+      "unmatched_perm1_aliases": [],
+      "alias_replay_rate": 1.0
+    }
+  ]
+}
