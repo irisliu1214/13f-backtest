@@ -75,26 +75,26 @@ BEN_W={
 # These are semantic *classes*, not historical theme labels. They define what an
 # external economic antecedent may look like without naming winners/sectors.
 EXTERNAL_ANCHORS=re.compile(
-    r"\\b(customer|customers|consumer|consumers|market|markets|industry|industries|"
+    r"\b(customer|customers|consumer|consumers|market|markets|industry|industries|"
     r"regulation|regulatory|government|federal|state|policy|policies|economic|economy|macroeconomic|"
     r"inflation|interest rate|interest rates|commodity|commodities|raw material|raw materials|"
     r"supply|shortage|shortages|constraint|constraints|infrastructure|technology|technologies|digital|online|"
     r"energy|power|healthcare|housing|labor market|competition|competitive|international|global|"
-    r"pandemic|outbreak|hurricane|weather|geopolitical|tariff|tariffs|trade|environmental|emission|emissions)\\b",
+    r"pandemic|outbreak|hurricane|weather|geopolitical|tariff|tariffs|trade|environmental|emission|emissions)\b",
     re.I
 )
 
 TRANSMISSION=re.compile(
-    r"\\b(demand|usage|orders?|backlog|bookings?|revenue|revenues|sales|volume|volumes|"
+    r"\b(demand|usage|orders?|backlog|bookings?|revenue|revenues|sales|volume|volumes|"
     r"pricing|price realization|market share|customers?|subscribers?|shipments?|production|"
-    r"capacity|utilization|capital expenditures?|capex|gross profit|operating income|margin|margins)\\b",
+    r"capacity|utilization|capital expenditures?|capex|gross profit|operating income|margin|margins)\b",
     re.I
 )
 
 POSITIVE_DIRECTION=re.compile(
-    r"\\b(increased|grew|rose|rising|higher|stronger|strong demand|growth|expanded|expanding|"
+    r"\b(increased|grew|rose|rising|higher|stronger|strong demand|growth|expanded|expanding|"
     r"accelerated|benefited|benefiting|improved|record|surged|additional demand|higher demand|"
-    r"increased demand|increased usage|increased orders|increased sales|increased revenue)\\b",
+    r"increased demand|increased usage|increased orders|increased sales|increased revenue)\b",
     re.I
 )
 
@@ -125,9 +125,9 @@ PURELY_INTERNAL=re.compile(
 )
 
 RISK_HYPOTHETICAL=re.compile(
-    r"\\b(if|may|might|could|would|risks?|uncertain|uncertainty|unable|cannot assure|can not assure|"
+    r"\b(if|may|might|could|would|risks?|uncertain|uncertainty|unable|cannot assure|can not assure|"
     r"difficult to predict|depends? on|future capital requirements?|potentially?|possible|subject to|"
-    r"we expect|we believe|anticipate|forecast|forecasted)\\b",
+    r"we expect|we believe|anticipate|forecast|forecasted)\b",
     re.I
 )
 
