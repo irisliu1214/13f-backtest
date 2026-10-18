@@ -1,0 +1,45 @@
+{
+  "experiment": "B4-v3.1 Economic Driver Firewall, pre-return discovery",
+  "forward_returns_used": false,
+  "prices_read": false,
+  "source_cache": "results/b4_cache_v2, built from point-in-time SEC filings",
+  "designed_after_observing_b4v2_returns": true,
+  "v3_1_revision_basis": "Semantic sanity audit only; no B4-v3 forward returns were opened. Tightened factual-vs-hypothetical evidence, sentence-level accounting exclusion, and removed generic economic words from driver clustering.",
+  "interpretation": "historical robustness experiment, not untouched out-of-sample evidence",
+  "gates": {
+    "min_seed_companies": 3,
+    "min_support_companies": 5,
+    "min_support_clusters": 2,
+    "min_external_support": 2,
+    "driver_cluster_distance": 0.66,
+    "expansion_similarity": 0.22,
+    "min_company_novelty": 0.35,
+    "min_theme_novelty": 0.4,
+    "min_externality_rate": 0.8,
+    "min_transmission_rate": 0.8,
+    "min_theme_score": 0.7
+  },
+  "theme_weights": {
+    "breadth": 0.2,
+    "externality": 0.2,
+    "transmission": 0.2,
+    "novelty": 0.15,
+    "out_of_seed": 0.15,
+    "abnormal": 0.1
+  },
+  "beneficiary_weights": {
+    "abnormal": 0.35,
+    "driver_exposure": 0.25,
+    "novel_evidence": 0.15,
+    "holders": 0.15,
+    "buyer_ratio": 0.1
+  },
+  "manual_theme_selection": false,
+  "manual_stock_replacement": false,
+  "prohibited_inputs": [
+    "prices",
+    "forward returns",
+    "SPY returns",
+    "present-day company descriptions"
+  ]
+}
