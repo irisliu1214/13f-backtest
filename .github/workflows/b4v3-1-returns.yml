@@ -1,0 +1,56 @@
+name: Evaluate frozen B4 v3.1 returns
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "results/b4v3_1_picks_frozen.csv"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Confirm frozen selections
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          p=pd.read_csv("results/b4v3_1_picks_frozen.csv")
+          assert len(p)==42
+          inv=p[p.decision.eq("INVEST")]
+          print("Frozen INVEST quarters",len(inv))
+          print(inv[["quarter","driver_terms","selected_tickers"]].to_string(index=False))
+          PY
+      - name: Evaluate returns
+        run: python b4v3_1_returns.py
+      - name: Validate outputs
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          s=pd.read_csv("results/b4v3_1_summary.csv")
+          q=pd.read_csv("results/b4v3_1_quarterly.csv")
+          assert set(s.horizon_days)=={90,180,365}
+          assert len(q)>0
+          print(s.to_string(index=False))
+          print(q.to_string(index=False))
+          PY
+      - name: Commit return outputs
+        run: |
+          git config user.name "13f-b4-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add results/b4v3_1_forward_returns.csv results/b4v3_1_constituents.csv results/b4v3_1_quarterly.csv results/b4v3_1_summary.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Evaluate frozen B4 v3.1 selections"
+            git push
+          fi
