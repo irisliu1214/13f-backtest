@@ -1,0 +1,40 @@
+name: Run B4 v4 blind audit prep
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "b4v4_alias_replay.py"
+      - "b4v4_ablation_builder.py"
+      - ".github/workflows/b4v4-audit-prep.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  prep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build alias replay
+        run: python b4v4_alias_replay.py
+      - name: Build ablation packets
+        if: hashFiles('b4v4_ablation_builder.py') != ''
+        run: python b4v4_ablation_builder.py
+      - name: Commit blind audit artifacts
+        run: |
+          git config user.name "13f-b4-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add results/b4v4_alias_permutation_replay.json
+          if [ -d results/b4v4_ablation_packets ]; then git add results/b4v4_ablation_packets; fi
+          if [ -f results/b4v4_ablation_index.json ]; then git add results/b4v4_ablation_index.json; fi
+          if ! git diff --cached --quiet; then
+            git commit -m "Record B4 v4 blind alias and ablation audit inputs"
+            git push
+          fi
