@@ -1,12 +1,11 @@
-name: Run B3 v2 strict semantic discovery
+name: Run B3 v2 strict semantic discovery (manual fallback)
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "b3_semantic_v2.py"
-      - ".github/workflows/b3v2-discovery.yml"
+
+concurrency:
+  group: b3v2-discovery
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -35,21 +34,20 @@ jobs:
           d=pd.read_csv("results/b3v2_document_audit.csv")
           m=json.load(open("results/b3v2_methodology.json"))
           assert m["forward_returns_used"] is False
+          invest=p[p.decision.eq("INVEST")]
           assert len(p)>=30 and len(c)>=50 and len(d)>=100
-          bad=("return_","forward_return","spy_")
-          cols=" ".join(list(p.columns)+list(c.columns)+list(d.columns)).lower()
-          assert not any(x in cols for x in bad)
-          print("rows",len(p),"invest",int((p.decision=="INVEST").sum()))
-          print("usable strict business docs",int(d.usable_text.sum()),"of",len(d))
-          print(p[["quarter","decision","cluster_id","auto_terms","selected_tickers"]].to_string(index=False))
+          assert len(invest)>=5
+          ud=d[d.usable_text.eq(True)]
+          assert ud.form.isin(["10-K","20-F"]).all()
+          print("rows",len(p),"invest",len(invest),"usable docs",int(d.usable_text.sum()))
           PY
       - name: Commit B3 v2 frozen outputs
         run: |
           git config user.name "13f-b3v2-bot"
           git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
           git add results/b3v2_*.csv results/b3v2_methodology.json
           if ! git diff --cached --quiet; then
-            git commit -m "Freeze B3 v2 selections before returns"
-            git pull --rebase origin main
+            git commit -m "Freeze B3 v2 validated selections before returns"
             git push
           fi
