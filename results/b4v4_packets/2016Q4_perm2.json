@@ -1,0 +1,295 @@
+{
+  "quarter": "2016Q4",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E001",
+          "text": "The increase in AWS operating income in absolute dollars in 2014 , 2015 , and 2016 , compared to the comparable prior year periods, is primarily due to increased customer usage and cost structure productivity, partially offset by pricing changes and increased spending on technology infrastructure, which was primarily driven by additional investments to support the business growth."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E002",
+          "text": "Cash capital expenditures were $4.9 billion , $ 4.6 billion , and $6.7 billion in 2014 , 2015 , and 2016 , which primarily reflect additional capacity to support our fulfillment operations and additional investments in support of continued business growth due to investments in technology infrastructure (the majority of which is to support AWS), during all three periods."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E003",
+          "text": "This primarily reflects additional investments in support of continued business growth due to investments in technology infrastructure (the majority of which is to support AWS) and additional capacity to support our fulfillment operations."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E004",
+          "text": "The U.S. economy continued its expansion in 2015 with the GDP increasing by 2.4% during the year driven by strong domestic consumption that was able to offset weaknesses in other areas of the economy such as investment, especially in the energy sector, exports, which grew due to the appreciation of the U.S. dollar, and foreign demand weaknesses."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E005",
+          "text": "Direct consulting staff labor growth is driven by consulting staff headcount growth, after attrition, and total backlog growth."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E006",
+          "text": "ENTITY on a stand alone basis had a increase in net sales of $1.5 million, due to higher demand in ENTITY and international club sales from 2015 to 2016, and an increase in conventional hemp hearts demand partially offset by the lack of availability of organic based hemp hearts supply to meet demand levels."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E007",
+          "text": "The increase in sales is attributable to strong overall market demand during the first and third quarters of 2016 and Liberty\u2019s increased ability to meet that demand, particularly in the first quarter, and growth in the handgun vault business."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E008",
+          "text": "ENTITY typically has higher sales in the second and fourth quarter of each year, reflecting the outdoor summer season and the holiday season."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E009",
+          "text": "ENTITY- ENTITY advertising and consumer promotion expense increased as a percentage of net revenues as a result of increased investment in defending the Rimmel and ENTITY brands as well as investment in growth and innovation for Bourjois , and continued spend in core countries and channels despite a decrease in net revenues due to our strategic efforts to rationalize wholesale distribution by reducing the amount of product diversion to the value and mass channels."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E010",
+          "text": "Our sales generally increase during our second fiscal quarter as a result of increased demand by retailers associated with the holiday seasons."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E011",
+          "text": "ENTITY\u2019s revenues generally increase during the second fiscal quarter as a result of increased demand associated with the holiday season."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E012",
+          "text": "Our sales generally increase during our second fiscal quarter as a result of increased demand by retailers associated with the holiday season."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E013",
+          "text": "During the three and nine month periods ended September 30, 2016 , Pall\u2019s revenues grew on a year-over-year basis compared to the business\u2019 2015 results as a stand-alone company, led by continued growth in the life sciences business primarily due to demand for biopharmaceutical solutions, partially offset by continued soft demand in the industrial business as a result of overall market weakness."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E014",
+          "text": "During the three and six month periods ended July 1, 2016 , Pall's revenues grew on a year-over-year basis compared to the business' 2015 results as a stand-alone company, with continued growth in the life sciences business due to demand for biopharmaceutical solutions, partially offset by soft demand in the industrial business as a result of overall market weakness and exiting of lower margin product lines."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E015",
+          "text": "The percentage of sales attributable to high-growth markets is higher than previously reported as a result of the ENTITY since Fortive had a lower overall percentage of sales to high-growth markets."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E016",
+          "text": "Geographically, these businesses experienced increased demand in the high-growth markets in both the three and nine month periods ended September 30, 2016 particularly due to increased government investments in China while the developed markets were essentially flat during the three month period but had moderate growth during the nine month period ended September 30, 2016 ."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E017",
+          "text": "The increase in originations of mortgage loans to be sold is due to increased overall volume as well as the expansion of the consumer direct delivery and correspondent delivery channels and a favorable interest rate environment."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E018",
+          "text": "The increase in total assets is primarily attributable to increases in both loans held for sale and loan held for investment balances, driven by strong demand for our loan products in our markets and the success of our growth initiatives. 59 Loan portfolio Our loan portfolio is our most significant earning asset, comprising 56.3% and 58.7% of our total assets as of September 30, 2016 and December 31, 2015, respectively."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E019",
+          "text": "Noninterest income during 2016 is expected to be higher than 2015, reflecting our continued efforts to increase both account and transaction-based fee income, coupled with the benefit of revenue from our fee-based subsidiaries, ENTITY and ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E020",
+          "text": "Average deposit balances increased, in part reflecting new Premier customers in RBWM and increased Payments and ENTITY balances in CMB, though the benefit of this growth was more than offset by narrower deposit spreads due to a fall in short-term interbank interest rates."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E021",
+          "text": "The increases were primarily attributable to continued growth in ENTITY (US$2.9bn) and, to a lesser extent, in Australia (US$0.5bn), Malaysia (US$0.4bn), and Taiwan (US$0.3bn) as a result of strong demand and competitive customer offerings."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E022",
+          "text": "The increases were primarily attributable to continued growth in ENTITY ($4.2bn), mainland China ($1.7bn) and Australia ($1.1bn) as a result of strong demand and our competitive customer offerings."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E023",
+          "text": "Our owned and leased ENTITY segment, which is made up primarily of ENTITY located in the Americas, saw strong group revenue growth as a result of both increased demand and ADR in the second quarter of 2016, as well as moderate transient revenue growth as a result of increased ADR in 2016 compared to 2015."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E024",
+          "text": "Our owned and leased ENTITY segment, which consists of ENTITY located primarily in the Americas, experienced transient revenue growth as a result of increased ADR in the third quarter of 2016."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E025",
+          "text": "Although capital spending in all three semiconductor markets has historically been very cyclical, the demand for more advanced and lower cost chips used in a growing number of consumer electronics, communications, data processing, and industrial and automotive products has resulted over the long term in a favorable demand environment for our process control and yield management solutions, particularly in the foundry and logic markets, which have higher levels of process control adoption than the memory market."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E026",
+          "text": "Operating income at our domestic ENTITY increased 23%, or $143 million, and benefited from ENTITY initiatives as discussed in \u201cENTITY \u2013 ENTITY,\u201d while operating income at ENTITY China decreased 24%, or $31 million, compared to the prior year period."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E027",
+          "text": "Gross margin for the PCB operating segment increased from 14.3% for the third quarter of 2015 to 17.7% for the third quarter of 2016, and from 14.8% for the first three quarters of 2015 to 16.9% for the first three quarters of 2016, primarily due to the improved operating performance at certain acquired manufacturing facilities and the benefits resulting from our synergy initiatives, partially offset by reduced volumes at our facilities supporting the Networking/Communications end market."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E028",
+          "text": "Gross margin for the PCB operating segment increased from 14.6% for the second quarter of 2015 to 17.1% for the second quarter of 2016, and from 15.3% for the first two quarters of 2015 to 16.4% for the first two quarters of 2016, primarily due to the improved operating performance at certain acquired manufacturing facilities and the benefits resulting from our synergy initiatives, partially offset by reduced volumes at our facilities supporting the cellular phone end market."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E029",
+          "text": "These expenses, other than fuel and power, generally remain relatively stable and independent of the volumes through our systems, but fluctuate depending on the scope of the activities performed during a specific period. 47 ENTITY projects associated with growth and maintenance projects are closely monitored."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E030",
+          "text": "In addition to the major projects noted above, we have other growth capital expenditures in 2016 related to the continued build out of our gathering and processing infrastructure and logistics capabilities."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E031",
+          "text": "During the quarter ended June 30, 2016, we recognized total revenues of $1.27 billion, an increase of $315.0 million over total revenues of $955.0 million for the quarter ended June 30, 2015, primarily driven by growth of vehicle deliveries worldwide, including introduction of Model X during the third quarter of fiscal 2015."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E032",
+          "text": "During the quarter ended September 30, 2016, we recognized total revenues of $2.30 billion, an increase of $1.36 billion over total revenues of $936.8 million for the quarter ended September 30, 2015, primarily driven by growth of vehicle deliveries worldwide, including increasing production and deliveries of Model X."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E033",
+          "text": "This increase is driven by engineering, design, and testing expenses related to Model 3 supplier contracts and higher sales and service costs associated with expanding our geographic presence."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E034",
+          "text": "ENTITY from ENTITY flows from investing activities primarily relate to capital expenditures to support our growth in operations, including investments in Model S and Model X manufacturing equipment and tooling, the continued construction of our Gigafactory, and our stores, service centers and Supercharger network infrastructure."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E035",
+          "text": "The increase was primarily attributable to a $2.1 million increase in personnel costs, largely as a result of a 24% average increase in sales and marketing headcount as we continued to expand our sales efforts in the ENTITY and internationally, a $0.7 million increase in marketing and advertising costs, a $0.4 million increase in credit card processing fees due to increased volume, a $0.2 million increase in facilities expenses to accommodate our headcount growth and a $0.2 million increase related to our international SIGNAL conference."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E036",
+          "text": "The increase in international revenue in absolute dollars and as a percentage of total revenue was attributable to the growth in usage of our products, particularly our ENTITY products and ENTITY products, by our existing international customers and to a 63% increase in the number of international ENTITY, driven in part by our focus on expanding our sales to customers outside of the ENTITY."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E037",
+          "text": "The increase in international revenue in absolute dollars was attributable to the growth in usage of our products, particularly our ENTITY products and ENTITY products, by our existing international ENTITY and to a 63% increase in the number of international ENTITY, driven in part by our focus on expanding our sales to customers outside of the ENTITY."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E038",
+          "text": "The increase was primarily attributable to a $2.3 million increase in personnel costs, largely as a result of a 28% increase in sales and marketing headcount as we continued to expand our sales efforts in the ENTITY and internationally, a $0.4 million increase related to our SIGNAL conference, a $0.3 million increase in credit card processing fees, a $0.2 million increase in outside consulting services, a $0.2 million increase related to our brand awareness programs and events other than SIGNAL and a $0.2 million increase in facilities expenses to accommodate our headcount growth."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E039",
+          "text": "ENTITY ENTITY business and, to a lesser extent, its ENTITY business tend to experience slightly higher sales volume in the summer months due to summer vacations and increased driving, as well as during the periods of time leading into holidays."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q4_P2_E040",
+          "text": "The increase was primarily due to the company-owned same store sales increase of 7.9% and menu price increases, which were partially offset by a 2.9% increase in commodities rates for bone-in chicken wings and investments in roster sizes and staffing to support the continued sales growth in our company-owned restaurants."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E041",
+          "text": "The increase as a percentage of company-owned restaurant sales is primarily due to investments in roster sizes and staffing to support the continued sales growth in our company-owned restaurants, as well as the ramp up of one company-owned restaurant that opened during the second fiscal quarter of 2016 as it gets to normal efficiency."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E042",
+          "text": "The increase as a percentage of company-owned restaurant sales is primarily due to investments in roster sizes and staffing to support the continued sales growth in our company-owned restaurants."
+        },
+        {
+          "evidence_id": "2016Q4_P2_E043",
+          "text": "The increase as a percentage of company-owned restaurant sales is primarily due to pre-opening expenses associated with the opening of a new company-owned restaurant during the thirteen weeks ended June 25, 2016 , as well as increased rent expense associated with the expansion of one restaurant."
+        }
+      ]
+    }
+  ]
+}

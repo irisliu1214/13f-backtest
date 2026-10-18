@@ -1,0 +1,397 @@
+{
+  "quarter": "2019Q3",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E001",
+          "text": "The increase in cost of revenue was primarily attributable to an increase of $1.5 million in the cost of overhead and $0.1 million in the cost of materials due to the production laboratory expansion and increased sample volumes, as well as an increase in personnel costs of $0.1 million."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E002",
+          "text": "The increase in cost of revenue was primarily attributable to an increase of $0.6 million in the cost of overhead and $0.1 million in the cost of materials due to the production laboratory expansion and increased sample volumes."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E003",
+          "text": "The increase in cost of revenue was primarily attributable to a $0.4 million increase in the cost of overhead due to the production laboratory expansion and increased sample volumes, partially offset by a $0.1 million decrease in cost of materials primarily due to mix to lower cost assays."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E004",
+          "text": "The increase in cost of revenue was primarily attributable to an increase of $1.9 million in the cost of overhead due to the production laboratory expansion and increased sample volumes, partially offset by a $0.1 million decrease in computer and software expenses."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E005",
+          "text": "U.S. revenues increased year-to-date due to higher demand in the first and second quarters of 2019 resulting from the second quarter 2018 approval of the Opdivo + Yervoy combination for kidney cancer and increased use in adjuvant melanoma. \u2022 International revenues increased due to higher demand as a result of approvals for additional indications and launches in new countries."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E006",
+          "text": "Yervoy (ipilimumab) \u2014 a monoclonal antibody for the treatment of patients with unresectable or metastatic melanoma. \u2022 U.S. revenues increased due to higher demand resulting from the second quarter 2018 approval of the Opdivo + Yervoy combination for kidney cancer. \u2022 International revenues increased due to higher demand and from the approval of the Opdivo + Yervoy combination for melanoma and kidney cancer in Japan."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E007",
+          "text": "Eliquis (apixaban) \u2014 an oral Factor Xa inhibitor targeted at stroke prevention in adult patients with NVAF and the prevention and treatment of VTE disorders. \u2022 U.S. revenues increased due to market share gains within the oral anticoagulants market. \u2022 International revenues increased due to higher demand attributed to both oral anticoagulant market growth and market share gains."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E008",
+          "text": "U.S revenues increased year-to-date due to higher demand in the first and second quarters of 2019 primarily due to the approval of the Opdivo + Yervoy combination for kidney cancer. \u2022 International revenues increased due to higher demand and from the approval of the Opdivo + Yervoy combination for melanoma and kidney cancer in Japan and certain European countries."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E009",
+          "text": "The increase was driven by the 7.2% increase in pharmacy same store prescription volumes on a 30-day equivalent basis driven mainly by (i) continued adoption of patient care programs, (ii) collaborations with PBMs, (iii) the Company\u2019s preferred status in a number of ENTITY D networks, and (iv) a stronger allergy season as compared to prior year. \u2022 Pharmacy revenue continues to be adversely affected by the conversion of brand name drugs to equivalent generic drugs, which typically have a lower selling price."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E010",
+          "text": "The largest driver was an increase in digital revenue from billboards and street furniture, which was driven by a combination of organic growth and the deployment of new digital displays ."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E011",
+          "text": "Increases in revenue from airport displays (primarily driven by digital), print billboards, other transit displays and wallscapes also contributed to the growth in revenue."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E012",
+          "text": "The increase was primarily due to higher site lease expenses in countries experiencing revenue growth , partially offset by lower site lease expenses in Italy and Spain due to non-renewal of contracts ."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E013",
+          "text": "Domestic unit revenue increased 3.2% , resulting from our commercial initiatives, including our premium products, as well as high load factors driven by a combination of strong demand and limited industry capacity growth."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E014",
+          "text": "Unit revenue of the domestic region increased 3.6% , resulting from our commercial initiatives, including our premium products, as well as high load factors driven by a combination of strong business demand, the Easter holiday shifting into the second quarter in 2019 and limited industry capacity growth."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E015",
+          "text": "Unit revenues of the domestic region increased 2.3% , resulting from our commercial initiatives, including our premium products, as well as high load factors driven by a combination of strong business demand and limited industry capacity growth."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E016",
+          "text": "Brazil benefited from reduced industry capacity resulting from both domestic and international carriers exiting certain markets between the ENTITY and Brazil."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E017",
+          "text": "The increase in core earnings was primarily due to the adoption of the 2018 GRC final decision in the 3 second quarter of 2019, the timing of regulatory deferral and cost recovery of wildfire insurance costs and higher revenue due to a change in estimate under the FERC formula rate mechanism, partially offset by higher wildfire mitigation costs in 2019."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E018",
+          "text": "The increase in core earnings was primarily due to the adoption of the 2018 GRC final decision in the second quarter of 2019, the timing of regulatory deferrals related to wildfire insurance and wildfire mitigation costs and higher revenue due to a change in estimate under the FERC formula rate mechanism."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E019",
+          "text": "Net cash provided by operating activities was impacted by the following: Net income and non-cash items decreased in 2019 by $153 million primarily due to the adoption of the 2018 GRC final decision in the second quarter of 2019, the timing of regulatory deferral and cost recovery of wildfire insurance costs and higher revenue due to a change in estimate under the FERC formula rate mechanism, partially offset by higher wildfire mitigation costs in 2019."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E020",
+          "text": "ENTITY increased by $96 million primarily due to the adoption of the 2018 GRC final decision in the second quarter of 2019, higher FERC revenue due to the pending settlement of SCE's 2018 ENTITY proceeding, and timing of regulatory deferrals of wildfire insurance costs, partially offset by higher wildfire mitigation and other maintenance expenses."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E021",
+          "text": "Load growth and other includes requests for new business and capacity additions on distribution lines and substation additions and expansions. 49 For the natural gas distribution business, basic business addresses daily operational needs including meters, pipe relocations due to public works projects, vehicles, and tools."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E022",
+          "text": "Financial segment revenue growth in 2019 was driven by growth in our bank solutions business from new business, customer migrations from in-house technology to outsourced solutions and growth with existing customers across a range of products."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E023",
+          "text": "Financial segment revenue growth in 2019 was driven by growth in our bank processing business."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E024",
+          "text": "The increase in ENTITY SG&A expense was primarily due to investments in new sales personnel, increased commissions on higher sales, and the cost of developing new materials to provide growth opportunities in future periods."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E025",
+          "text": "ENTITY operating expenses increased primarily due to increased commissions on higher sales; new sales and sales related personnel, including implementation specialists; and new personnel from businesses acquired during the third and fourth quarters of fiscal 2017."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E026",
+          "text": "Higher operational expenses related to capacity expansion projects also impacted profitability. \u2022 ENTITY profit increased primarily due to higher volume and margin across many product categories. \u2022 JOTS segment profit was negatively impacted by higher-than-expected plant startup costs, higher feed costs, and lower retail sales. \u2022 International & Other profit decreased primarily due to the continued impact of tariffs on fresh pork exports along with higher freight costs. \u2022 ENTITY completed the sale of CytoSport to PepsiCo, Inc., on April 15, 2019."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E027",
+          "text": "Looking ahead to the fourth quarter, Refrigerated ENTITY is expected to grow volume and sales due to strong demand for value-added products."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E028",
+          "text": "For the second quarter, segment profit increased primarily due to higher volume and margin across many categories and lower expenses for CytoSport."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E029",
+          "text": "Refrigerated ENTITY profit for the quarter declined as growth in value-added profits did not fully offset a steep decline in commodity profits and higher operational expenses related to capacity expansion projects."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E030",
+          "text": "Revenue and fee revenue growth for the first nine months of 2019 was led by Property & ENTITY and Project & ENTITY, both reflecting expansion of existing client mandates and new client wins in ENTITY."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E031",
+          "text": "ENTITY 's 44% revenue growth (47% fee revenue growth) was due to higher incentive and advisory fees."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E032",
+          "text": "ENTITY performance drove the Americas double-digit fee revenue growth this quarter, led by markets in the southeast U.S., and across all major asset classes."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E033",
+          "text": "For the first nine months of 2019, fee revenue growth from 2018 was led by Leasing and ENTITY, with drivers similar to the quarterly discussion."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E034",
+          "text": "This program includes discretionary spending, which we can adjust in response to economic and other changes in our business environment, to grow our network through the following: (1) capacity expansion at institutions to support enrollment growth; (2) new campuses for institutions in our existing markets; (3) information technology to increase efficiency and controls; and (4) online content development."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E035",
+          "text": "This decrease was attributable to a decrease in organic enrollment at the University of Liverpool and the University of Roehampton as we no longer accept new enrollments at those institutions, partially offset by organic growth at ENTITY. \u2022 A portion of the product mix, pricing and timing decrease was due to higher discounts and scholarships. \u2022 Revenues represented 20% of our consolidated total revenues for the 2019 fiscal quarter compared to 21% for the 2018 fiscal quarter."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E036",
+          "text": "This decrease was attributable to a decrease in organic enrollment at the University of Liverpool and the University of Roehampton as we no longer accept new enrollments at those institutions, partially offset by organic growth at ENTITY. \u2022 A portion of the product mix, pricing and timing decrease was due to higher discounts and scholarships. \u2022 Revenues represented 20% of our consolidated total revenues for the 2019 fiscal period compared to 21% for the 2018 fiscal period."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E037",
+          "text": "The increase in enrollments for the 2019 fiscal period is attributable to growth in distance learning, which has a lower average revenue per student than our campus-based programs. \u2022 Revenues represented 18% of our consolidated total revenues for the 2019 fiscal period compared to 20% for the 2018 fiscal period."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E038",
+          "text": "The increase was primarily attributable to higher net sales of approximately $485 million for IWSS programs due to higher volume (primarily ENTITY, ENTITY, LCS and Aegis); about $155 million for various TLS programs due to higher volume; and about $55 million for Sikorsky helicopter programs due to higher volume (primarily military aircraft services and international military aircraft production programs) partially offset by lower volume (primarily ENTITY production and commercial aircraft services)."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E039",
+          "text": "The increase was primarily attributable to higher net sales of approximately $530 million for government satellite programs due to higher volume (primarily ENTITY OPIR, GPS III, and government satellite services); about $165 million for strategic and missile defense programs due to higher volume (primarily new hypersonic development programs); and about $25 million due to higher volume on the Orion program."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E040",
+          "text": "The increase was primarily attributable to higher net sales of approximately $430 million for government satellite programs due to higher volume (primarily ENTITY OPIR; GPS III; and government satellite services); about $75 million for strategic and missile defense programs due to higher volume (primarily hypersonic programs); and about $60 million due to higher volume on the Orion program."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E041",
+          "text": "The increase was primarily attributable to higher net sales of approximately $170 million for government satellite programs due to higher volume (primarily ENTITY OPIR; GPS III; and government satellite services) and about $70 million for strategic and missile defense programs due to higher volume (primarily hypersonic programs)."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E042",
+          "text": "Gross margin increased 350 basis points, driven by growth in our higher margin direct to consumer business, as well as higher full-price ASP and lower product costs due to changes in product mix."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E043",
+          "text": "Unit sales of apparel increased 7% and higher ASP per unit contributed approximately 8 percentage points of apparel revenue growth, primarily driven by higher full-price and ENTITY Direct ASPs, in part reflecting inflationary conditions in our SOCO territory."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E044",
+          "text": "Unit sales of footwear increased 6% and higher ASP per pair contributed approximately 6 percentage points of footwear revenue growth, driven by higher full-price and ENTITY Direct ASPs, in part reflecting inflationary conditions in our SOCO territory."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E045",
+          "text": "Unit sales of apparel increased 5% and higher ASP per unit contributed approximately 4 percentage points of apparel revenue growth, primarily due to higher full-price ASP, in part reflecting lower discounts, as well as higher ENTITY Direct ASP."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E046",
+          "text": "The estimates and assumptions we use are dependent on many variables, such as loss adjustment expenses, insurance\u2011to\u2011value, storm or earthquake intensity, building code compliance and demand surge, which is the temporary inflation of costs for building materials and labor resulting from increased demand for rebuilding services in the aftermath of a catastrophe."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E047",
+          "text": "Premium growth was primarily due to an increased volume of policies written across our lines of business which was driven by expansion of our product, geographic and distribution footprint, new partnerships and strong premium retention rates for our existing book of business."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E048",
+          "text": "MAUs, and international revenue growth was driven by 127% and 105% respective increases in international ARPU supported by a 38% increase in international MAUs."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E049",
+          "text": "ARPU growth in the U.S. and internationally was driven by higher monetization of both of those user bases largely due to an increase in advertising demand from new and existing advertisers on our platform, which resulted in an increase in the number of advertisements served."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E050",
+          "text": "ARPU growth in the U.S. and internationally was driven by higher monetization of both of those user bases largely due to an increase in advertising demand from new and existing advertisers on our platform."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E051",
+          "text": "The increase was driven by new customers, and same sales growth from existing customers."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E052",
+          "text": "The increases in our BK and PLK segments were primarily driven by increases in royalties as a result of system-wide sales growth."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E053",
+          "text": "Several industrial specific trends contribute to the expected strong demand, including: \u2022 the rise of e-commerce (as compared to the traditional retail store distribution model) and the concomitant demand by e-commerce industry participants for well-located, functional distribution space; \u2022 the increasing attractiveness of the U.S. as a manufacturing and distribution location because of the size of the U.S. consumer market, an increase in overseas labor costs and the overall cost of supplying and shipping goods (i.e. the shortening and fattening of the supply chain); and \u2022 the overall quality of the transportation infrastructure in the U.S."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E054",
+          "text": "Gross margin, which is gross profit as a percentage of sales, was 20.12% in the first quarter of fiscal 2020 , which was an increase of 2 basis points from the gross margin of 20.10% in the first quarter of fiscal 2019 , primarily attributable to a continued shift in in our customer mix and continued growth in penetration of our ENTITY brand portfolio."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E055",
+          "text": "Our sales growth during the first quarter of fiscal 2020 was driven by continued growth with our local restaurant customers, partially offset by the continued transition of certain national customers including accounts that we exited during fiscal 2019 from both our U.S."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E056",
+          "text": "ENTITY core market volumes increased 1.3 bcf (3.3%) principally reflecting the effects of the growth in the number of core market customers and the slightly colder temperatures."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E057",
+          "text": "Our organic unit growth was slower than previous quarters as a result of adding fewer new customers and emphasizing profitability and margin requirements over units sales growth which resulted in eliminating less profitable business."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E058",
+          "text": "Our organic unit growth was 6% primarily due to improved weather in the second quarter, an increase in new product sales, and market share gains we achieved in our Deckorators product category with one of our big box customers."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E059",
+          "text": "Our organic unit growth was primarily due to an increase in new product sales, market share gains we achieved in our Deckorators product category and an increase in demand with one of our big box customers."
+        },
+        {
+          "evidence_id": "2019Q3_P2_E060",
+          "text": "Our organic growth in unit sales of 1% was primarily due to an increase in sales of new products and increasing our share of business with existing customers."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q3_P2_E061",
+          "text": "We produced results during the quarter in line with expectations, reflecting the stability of our integrated model with the generation fleet operating safely and reliably over the volatile ERCOT summer while our Retail segment delivered stable pricing and growth in ERCOT residential customer counts."
+        }
+      ]
+    }
+  ]
+}

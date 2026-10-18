@@ -1,0 +1,377 @@
+{
+  "quarter": "2021Q3",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E001",
+          "text": "Capital expenditures are expected to be approximately $65 million to $70 million in 2021 compared to $83 million in 2020, reflecting efficiencies in project execution and following the completion of several high-return growth and cost savings investments."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E002",
+          "text": "Capital expenditures are expected to be approximately $63 million in 2021 compared to $83 million in 2020, reflecting efficiencies in project execution and following the completion of several high-return growth and cost savings investments."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E003",
+          "text": "The performance of Symbicort sales in ENTITY slowed down compared to the level of growth seen in 2019, reflecting a reduction in hospital visits in China due to the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E004",
+          "text": "Forxiga sales in ENTITY increased by 40% in 2019 (CER: 48%) to $471 million (2018: $336 million; 2017: $232 million), reflecting growth in the sodium-glucose transport protein 2 (SGLT-2) class at the expense of the dipeptidyl-peptidase 4 class; there was also a further improvement in levels of access."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E005",
+          "text": "ENTITY sales platform in the U.S., however, grew by 25% to $1,120 million, primarily reflecting encouraging Tagrisso sales growth of 59% to $405 million."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E006",
+          "text": "Oncology sales in Europe increased by 35% (CER: 42%) to $1,423 million driven by growth in Tagrisso , Imfinzi and Lynparza , representing 33% of Europe sales."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E007",
+          "text": "ENTITY remains focused on improving and investing in the products and services it offers to support its long-term growth while continuing to innovate and develop new products and services in response to customer needs, whether directly as a result of the pandemic or otherwise."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E008",
+          "text": "ENTITY has seen a strong demand for its existing products, as well as products released during the pandemic as a result of its customers' need for security, governance, and collaboration in both remote and hybrid work settings."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E009",
+          "text": "We also obtained triple digit growth in our fitness and vending channels in the 2021 third quarter, as compared to the 2020 third quarter, which provided considerable incremental revenue when compared to the prior year quarter, during which time many fitness facilities were closed due to the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E010",
+          "text": "We also achieved triple digit growth in our fitness and vending channels in the 2021 quarter, as compared to the 2020 quarter, which contributed considerable incremental revenue when compared to the prior year quarter, during which time many fitness facilities were closed due to the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E011",
+          "text": "Furthermore, our fitness and vending channels also reflected triple digit growth of incremental revenue when compared to the prior year period, during which many fitness facilities were closed due to the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E012",
+          "text": "Approximately 99% of this growth was as a result of increased revenues from ENTITY, where third quarter 2021 revenues were $84.5 million, an increase of $57.6 million or 214% from the 2020 quarter."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E013",
+          "text": "The increase in revenues was due to growth in our technology-enabled services and software product offerings from strong renewal rates, client expansion and new customers."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E014",
+          "text": "ENTITY for ENTITY is expected to fluctuate in future periods due to a number of factors, including the growth of our revenue base, the penetration within our ENTITY base, expansion of products and features, and our ability to retain our ENTITY."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E015",
+          "text": "Approximately $11.5 million of the increase in revenue was attributable to new customers, and the remaining increase of $2.2 million was attributable to growth from existing customers."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E016",
+          "text": "The main drivers of the changes in operating assets and liabilities were a $24.1 million increase in deferred revenue, resulting primarily from our Consumer and Enterprise business growth, a $15.7 million increase in educator partners and other accounts payable mainly due to timing of partner fee payments, partially offset by a $4.7 million increase in accounts receivable due to our business growth, and a $10.2 million increase in prepaid expenses and other assets mainly due to deferred partner fees."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E017",
+          "text": "These activities will require significant capital expenditures and allocation of valuable management and employee resources, and our growth will continue to place significant demands on our management and our operational and financial infrastructure."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E018",
+          "text": "The year-over-year change in operating cash flow was primarily driven by a $(401) million reduction in cash flows due to changes in operating assets and liabilities, consisting of increases in accounts receivable of $(35) million as a result of higher sales volume and expanded available selection for customers, decreases in accounts payable of $(387) million impacted from timing of payments, and a decrease in other liabilities of $(70) million from the timing of payments for employee withholdings and operating lease liabilities, partially offset by a decrease in purchases of inventory of $105 million."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E019",
+          "text": "The year-over-year change in operating cash flow was primarily driven by a $(133) million reduction in cash flows due to changes in operating assets and liabilities, consisting of increases in accounts receivable and investments in inventory of $(61) million and $(59) million, respectively, as a result of higher sales volume and expanded available selection for customers, and a decrease in other liabilities of $(81) million from the timing of payments for employee withholdings and operating lease liabilities, partially offset by a $72 million impact from timing of payments on accounts payable."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E020",
+          "text": "The increase was primarily due to growth in our ENTITY in the first and second quarters of 2021, as well as growth in our net other revenue per ENTITY during those same periods, driven by the continued expansion of newer offerings and increased merchants on our marketplace and related product selection."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E021",
+          "text": "The increase was primarily due to growth in our ENTITY compared to the prior year periods, as well as growth in our net other revenue per ENTITY during those same periods, driven by the continued expansion of newer offerings and increased merchants on our marketplace and related product selection."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E022",
+          "text": "The net increase in operating assets and liabilities was primarily driven by an increase of $18.5 million in deferred revenue due to the addition of new customers and expansion from existing customers which are billed in advance of revenue recognition, partially offset by an increase of $14.9 million in accounts receivable due to increased sales resulting in higher billed amounts and the timing of collections."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E023",
+          "text": "Net revenues are primarily driven by the growth in the number of active customers, the frequency with which customers purchase and the average order value. 20 Cost of ENTITY of goods sold consists principally of the cost of purchased merchandise and includes import duties and other taxes, freight-in, defective merchandise returned by customers, inventory write-offs and other miscellaneous shrinkage."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E024",
+          "text": "Total same store gross margin in the U.K. increased 160 basis points, driven by higher new and used vehicle margins due to increased demand and supply constraints and increased parts and service margins, reflecting improved customer-pay margins and higher internal work as a result of increased used vehicle sales volumes."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E025",
+          "text": "Total same store gross margin in the U.K. increased 130 basis points driven by improved parts and service margins, reflecting higher internal work as a result of increased new and used sales volumes, and higher new and used vehicle margins because of increased demand and vehicle supply constraints."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E026",
+          "text": "Total same store gross margin in the U.K. increased 130 basis points driven by improved parts and service margins, reflecting higher internal work as a result of increased new and used sales volumes, and higher new and used vehicle margins because of higher demand and vehicle supply constraints."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E027",
+          "text": "The 29.0% increase in new vehicle retail same store sales was driven by a 20.0% increase in new vehicle retail same store unit sales, coupled with a 7.5% increase in average new vehicle retail same store sales price reflecting increased demand at our dealerships and lower vehicle inventory supply as a result of the OEMs producing and delivering fewer vehicles to dealerships due to a global semiconductor chip shortage."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E028",
+          "text": "The increase in personnel costs was driven by increase in the headcount to support the continuous growth in customer demand."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E029",
+          "text": "As customer demand increased during the second half of fiscal year 2020 and continued through the third quarter of 2021, the ENTITY industry, and automotive semiconductors in particular, experienced material shortages and supply constraints."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E030",
+          "text": "As customer demand increased during the second half of fiscal year 2020 and the first quarter of 2021, the ENTITY industry, and automotive semiconductors in particular, experienced material shortages and supply constraints."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E031",
+          "text": "As customer demand increased beginning the second half of fiscal year 2020, the ENTITY industry, and automotive semiconductors in particular, experienced material shortages and supply constraints."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E032",
+          "text": "Prices of such materials have also increased, and global supply has become significantly constrained due to the increased demand for materials, including semiconductors, to support expansion of server and cloud networks as a greater proportion of the global population worked remotely, the introduction of 5G, and the continued electrification of vehicles."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E033",
+          "text": "Service revenue remained unchanged, driven by growth of the installed base of da Vinci ENTITY Systems, offset by an $80 million decrease due to service fee credits provided to customers as part of the ENTITY that was implemented as a result of the COVID-19 pandemic in the second quarter of 2020."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E034",
+          "text": "The increase in systems shipments was primarily driven by decisions in the second and third quarters of 2020 by customers to defer purchases or leases of systems into future quarters as a result of the COVID-19 pandemic, as well as procedure growth, more customers trading in da Vinci Si ENTITY Systems for fourth generation da Vinci Xi and da Vinci X systems in order to access fourth generation instruments and capabilities as well as to standardize their system portfolio, and further customer validation that da Vinci surgery addresses their quadruple aim objectives."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E035",
+          "text": "The increase in systems shipments was primarily driven by decisions in the second quarter of 2020 by customers to defer purchases or leases of systems into future quarters as a result of the COVID-19 pandemic, as well as procedure growth, more customers trading in da Vinci Si ENTITY Systems for fourth generation da Vinci Xi and da Vinci X systems in order to access fourth generation instruments and capabilities as well as to standardize their system portfolio, and further customer validation that da Vinci surgery addresses their quadruple aim objectives."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E036",
+          "text": "The revenue from our ENTITY increased by $36.9 million due to the significant improvement of economic conditions, specifically with automotive component manufacturers and the automotive industry overall, resulting in increased demand for these products along with an increase in average selling prices."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E037",
+          "text": "The increase in revenue was due to the significant improvement in economic conditions, specifically with automotive component manufacturers and the automotive industry overall, resulting in increased demand for these products along with a favorable mix in the products sold and an increase in average selling prices."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E038",
+          "text": "The increase in revenue was due to the significant improvement in economic conditions, specifically with automotive component manufacturers and the automotive industry overall, resulting in increased demand for these products along with an increase in average selling prices."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E039",
+          "text": "The increases were due to the significant improvement of economic conditions, specifically with automotive component manufacturers and the automotive industry overall, resulting in increased demand for these products along with an increase in average selling prices."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E040",
+          "text": "The change in data processing and software expense compared to prior periods was driven by systems and software upgrades, annual contractual increases and overall growth, which included: the implementation of enhanced functionalities for ENTITY ' core banking system, including making certain mobile banking tools available to customers; software upgrades; and additional network capacity and security features in the latter part of 2020 and first quarter of 2021."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E041",
+          "text": "The increase in sales-based and incentive compensation for the second quarter of 2021 compared to prior periods was primarily due to overall company performance relative to measures used in calculating incentive awards, coupled with higher incentive compensation related to trust and investments reflected in the growth of income."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E042",
+          "text": "For the first six months of 2021 compared to the same period in 2020, the increase was driven by the overall company performance relative to measures used in calculating incentive awards and higher sales-based compensation from insurance, trust and investments, and mortgage banking."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E043",
+          "text": "For the first nine months of 2021 compared to the same period in 2020, the increase was driven by the overall company performance relative to measures used in calculating incentive awards and higher sales-based compensation from insurance and trust and investments."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E044",
+          "text": "The increase in net sales was also driven by growth in cases sold due to the declining effects of COVID-19 on the restaurant industry, and an increase in selling price per case as a result of inflation."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E045",
+          "text": "This increase in net sales was driven by growth in cases sold due to the declining effects of COVID-19 on the restaurant industry, and an increase in selling price per case as a result of inflation ."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E046",
+          "text": "Also, gross profit increased due to an increase in the gross profit per case driven by case growth in Foodservice, particularly in the independent channel."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E047",
+          "text": "Also, gross profit increased due to case growth in Foodservice and an increase in the gross profit per case driven by growth in the independent channel."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E048",
+          "text": "In recent periods, we have experienced rapid growth in the adoption of our platform, customer base and revenue."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E049",
+          "text": "The personal loan origination volume increase was primarily due to an increase in the percentage of loan application approvals and higher demand for our products as a result of improved economic conditions in the 2021 period relative to the 2020 period in which the COVID-19 pandemic had a more acute impact."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E050",
+          "text": "Personal loan origination volume increased 55% period over period, primarily due to an increase in the loan application approval rate and higher demand for personal loan financing in the second quarter of 2021 amid the improved economic conditions relative to 2020."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E051",
+          "text": "ENTITY fees benefited from year-over-year growth in revenues from existing clients, as well as the addition of new clients."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E052",
+          "text": "Lastly, the increase in referral fees was primarily attributable to growth in our partner relationships and related activity, as we continue to onboard new partners and help drive volume to our partners, as well as an increase associated with a referral fulfillment arrangement we entered into in the third quarter of 2021."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E053",
+          "text": "In addition to our strategic initiatives, our main capital investment in front-end is in (i) our 300 mm fab in Crolles, optimizing existing infrastructures to support production ramp up on our main runner technologies; (ii) increase capacity for SiC ENTITY in our Catania and Singapore facilities; and (iii) mix evolution, and a few selected programs of capacity growth and infrastructure preparation in some of our most advanced 200 mm fabs including the Singapore fab we acquired from Micron."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E054",
+          "text": "Furthermore, during certain periods, we have also experienced increased demand in certain market segments and product technologies, which has led to a shortage of capacity, an increase in the lead times of our delivery to customers and, in certain instances, being required to enter into agreements with our suppliers with onerous terms, such as take-or-pay arrangements."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E055",
+          "text": "In addition to our strategic initiatives, our main capital investment in front-end is in (i) our 300 mm fab in Crolles, optimizing existing infrastructure to support production ramp up on our main runner technologies; (ii) mix evolution, and a few selected programs of capacity growth and infrastructure preparation."
+        },
+        {
+          "evidence_id": "2021Q3_P2_E056",
+          "text": "I n 2018 revenues grew across all regions, led by ENTITY and EMEA , mainly due to growth in Imaging and Automo tive ."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E057",
+          "text": "We have offered our cloud-based products for only a short period of time, and we cannot predict how increased adoption of our cloud-based products will change the buying patterns of our customers or impact our future ARR or revenue."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E058",
+          "text": "ENTITY will seek to benefit from this increased outsourcing by clients to grow our business by increasing market share with our existing client base and adding new clients within the Phase I-IV outsourced development services market; the aim being to ensure we will be considered for all major Phase I-IV projects."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2021Q3_P2_E059",
+          "text": "In fact, demand growth already began to rebound by the end of Q3 2020 across the East-West trades, driven by the tapering of lockdown measures in ENTITY, improving consumer spending and growing global e-commerce demand. 84 ITEM 6."
+        }
+      ]
+    }
+  ]
+}

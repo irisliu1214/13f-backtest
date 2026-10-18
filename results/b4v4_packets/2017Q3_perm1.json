@@ -1,0 +1,321 @@
+{
+  "quarter": "2017Q3",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E001",
+          "text": "As a percentage of net sales, selling, general and administrative expenses decreased to 19.7% in the third quarter of 2017 from 20.1% in the third quarter of 2016, primarily attributable to cost leverage on increased sales, offset by investments the Company made towards growth initiatives, including additional sales associates and new locations."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E002",
+          "text": "This decrease in selling, general and administrative expenses, as a percentage of net sales, was primarily attributable to cost leverage on increased sales, offset by investments the Company made towards growth initiatives, including additional sales associates and new locations."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E003",
+          "text": "We also believe that there will be considerable future demand for our wireless infrastructure based on the location of our wireless infrastructure and the rapid growth in wireless connectivity, which will lead to future growth in the wireless industry. \u2022 Return cash provided by operating activities to stockholders in the form of dividends ."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E004",
+          "text": "The increase in contribution margin was primarily attributable to improved contribution margin in our west Texas operations as a result of continued increased drilling activity in the region, which has improved market conditions and increased demand."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E005",
+          "text": "The increase in contribution margin was primarily attributable to improved contribution margin in our west Texas operations as a result of increased drilling activity in the region, which has improved market conditions and increased demand."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E006",
+          "text": "Additionally, contribution margin in our west Texas operations benefited from higher margins during a period of product supply disruptions associated with ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E007",
+          "text": "As a result of this growth, our period-to-period comparison of our financial performance focuses on the impact on our revenues and expenses on a stabilized portfolio basis."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E008",
+          "text": "ENTITY high rate of economic growth in recent years, which has been fueled by Argentina\u2019s full utilization of its installed productive capacity, along with expansive fiscal and monetary policies, has caused a high level of inflation in Argentina since 2007."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E009",
+          "text": "Economic growth was initially fueled by a significant devaluation of the Peso, the availability of excess production capacity resulting from a long period of deep recession, and high commodity prices."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E010",
+          "text": "Net revenues attributable to ENTITY & ENTITY segment in 2016 were Ps.330.2 million, Ps.164.2 million or 99% higher than Ps.166.0 million in 2015, mainly due to the increase in the net service fee income reflecting the successful cross-selling initiatives to leverage our compelling financial product offering both through the asset management business and the non-financial products and services sold by ENTITY, and the growth in gross intermediation margin mainly in the microfinance business."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E011",
+          "text": "Net revenues of this segment in 2015 were Ps.166.0 million, Ps.62.8 million or 61% higher than the Ps.103.2 million recorded in 2014, mainly due to the expansion of ENTITY, which increased the sale of non-financial products (primarily technology and home appliances), and an increase in mutual fund management fees generated by SAM."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E012",
+          "text": "Real GDP growth in 2015 was primarily driven by a 3.8% increase in gross investment, resulting from a 5.2% increase in total durable equipment of production and a 2.3% increase in construction, as well as a 4.0% increase in total consumption due to a 6.8% increase in public sector consumption and a 3.5% increase in private sector consumption."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E013",
+          "text": "While the former is expected to continue to grow at the same rate, driven by government thrust on education and the health of the print media sector, the latter is expected to achieve a relatively higher rate of growth, driven by revival in demand for key end-user industries for packaging such as FMCG, pharmaceutical, retailing and consumer durables."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E014",
+          "text": "The economies of scale that our larger competitors benefit from make it difficult for us to offer competitive pricing on products and services to retain existing customers and attract new customers so that we can execute our growth strategy successfully."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E015",
+          "text": "The internal growth rate for service revenue is inherently more volatile than the internal growth rate for storage rental revenues due to the more discretionary nature of certain services we offer, such as large special projects, and, as a commodity, the volatility of pricing for recycled paper."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E016",
+          "text": "We delivered strong growth in ticket sales globally for our Ticketing segment in the quarter, driven by high demand for concert tickets and continued positive fan reaction to our integrated ticketing platform."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E017",
+          "text": "ENTITY segment operating results for the quarter exceeded last year and this was again largely driven by the high volume of arena, stadium and amphitheater activity as well as our revenue growth initiatives."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E018",
+          "text": "ENTITY segment operating results for the quarter exceeded last year and this was again largely driven by the high volume of arena and stadium activity as well as our onsite revenue growth initiatives."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E019",
+          "text": "This growth was primarily due to more shows in our stadiums, arenas, theaters and clubs globally and our ENTITY amphitheaters, increased festival activity in Europe, driven by new festivals and the timing of certain events, and higher tour-related merchandise sales."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E020",
+          "text": "The increase in OSB prices was likely due to higher demand compared to the supply available in the market and the continued focus on higher value products which resulted in a higher average selling price."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E021",
+          "text": "For CanExel, sales volumes increased in the third quarter and first nine months of 2017 as compared to the corresponding periods in 2016 due to increased demand in Canada as well as demand related to the introduction of several new colors."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E022",
+          "text": "For CanExel, sales volumes increased in the second quarter and first six months of 2017 as compared to the corresponding periods in 2016 due to increased demand in Canada as well as demand related to the introduction of several new colors."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E023",
+          "text": "The growth of our paid emoticon revenues was primarily attributable to the increase in our paying users, which was in turn driven by the size of our active user base."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E024",
+          "text": "We also expect additional demand for our services to support increased demand for NGL products from the petrochemical industry and NGL exporters, and increased demand for natural gas from exports and power plants previously fueled by coal."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E025",
+          "text": "The forward-looking statements relate to our anticipated financial performance (including projected operating income, net income, capital expenditures, cash flow and projected levels of distributions), liquidity, management\u2019s plans and objectives for our future growth projects and other future operations (including plans to construct additional natural gas and natural gas liquids pipelines and processing facilities and related cost estimates), our business prospects, the outcome of regulatory and legal proceedings, market conditions and other matters."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E026",
+          "text": "With regard to seaborne thermal coal, China coal import demand increased 16 million tonnes, or 20%, through June compared to the same period in the prior year as a result of strong generation, policy initiatives aimed to support domestic producers by sustaining coal prices, improving mine safety and rationalizing excess capacity."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E027",
+          "text": "Meanwhile, underlying tenant demand within our infill markets continues to demonstrate growth, illustrated or driven by strong re-leasing spreads, an expanding regional population, substantial growth in e-commerce transaction and delivery volumes, as well as further compression of delivery time-frames to consumers and to businesses, increasing the significance of last-mile facilities for timely fulfillment."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E028",
+          "text": "Examples of forward-looking statements include all statements regarding our expected future financial position, results of operations, cash flows, liquidity, financing plans, business strategy, tenants, the expected amounts and timing of dividends and other distributions, projected expenses and capital expenditures, competitive position, growth opportunities, potential investments, plans and objectives for future operations, and compliance with and changes in governmental regulations."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E029",
+          "text": "The increase in cost of revenue primarily consisted of $87.5 million related to increased hosting costs, in part attributable to DAU growth of 17% between the periods, $32.0 million related to increased revenue share payments to our partners consistent with our overall increase in revenue, $20.5 million related to increased product costs for Spectacles, which launched in fourth quarter of 2016, and $49.6 million related to increased measurement and content creation costs."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E030",
+          "text": "The increase in cost of revenue primarily consisted of $27.2 million related to increased hosting costs, in part attributable to DAU growth of 21% between the periods, $13.1 million related to increased revenue share payments to our partners consistent with our overall increase in revenue, and $9.1 million related to increased content creation costs, which include personnel-related costs."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E031",
+          "text": "The increase in cost of revenue primarily consisted of $63.5 million related to increased hosting costs, in part attributable to DAU growth of 21% between the periods, $29.5 million related to increased revenue share payments to our partners consistent with our overall increase in revenue, and $31.4 million related to increased content creation costs."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E032",
+          "text": "The remaining increase in net loss and the increase in Adjusted EBITDA for both periods was driven by an increase in cost of revenue and operating expenses, which more than offset revenue growth during the period."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E033",
+          "text": "Number of ENTITY revenue growth is primarily driven by the increase in the number of student enrollments, which is directly affected by the number of our learning centers, the number and varieties of our courses and service offerings, including both our center-based and online courses offerings, our student retention rate, our ability to attract new students and the effectiveness of our cross-selling efforts."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E034",
+          "text": "The decrease in cash used in operating activities was primarily the result of increased gross profit resulting from the growth in revenue offset by additional headcount, increased advertising and marketing expenses, costs incurred to improve and optimize our technology platform, increases in our provider network operations center and office-related charges to support the growth of our business."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E035",
+          "text": "ENTITY increase in the value of our backlog at April 30, 2017 , as compared to the backlog at April 30, 2016 , was primarily attributable to the 14% higher value of backlog at October 31, 2016, as compared to the backlog at October 31, 2015 and a 19% increase in the value of net contracts signed in the six -month period ended April 30, 2017 , as compared to the value of net contracts signed in the six -month period ended April 30, 2016 , offset, in part, by a 12% increase in the value of deliveries in the six -month period ended April 30, 2017 ."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E036",
+          "text": "The higher sales and marketing costs were the result of the increased spending on advertising, higher model operating costs due to the increase in the number of selling communities, and the increased number of homes delivered."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E037",
+          "text": "The higher sales and marketing costs were the result of the increased spending on model operating costs due to the increase in the number of selling communities and the increased number of homes delivered."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E038",
+          "text": "The dollar increase in SG&A was due primarily to increased compensation costs due to a higher number of employees; increased sales and marketing costs; and increased spending on our upgrading of computer software."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E039",
+          "text": "Other consumer loans increased $35.6 million , or 22.2 percent on an annualized basis, to $677.9 million at September 30, 2017 as compared to $642.2 million at June 30, 2017 mainly due to continued growth and customer usage of collateralized personal lines of credit."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E040",
+          "text": "Other consumer loans increased $41.7 million , or 27.8 percent on an annualized basis, to $642.2 million at June 30, 2017 as compared to $600.5 million at March 31, 2017 mainly due to continued growth and customer usage of collateralized personal lines of credit."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E041",
+          "text": "Total loans increased $490.7 million to approximately $18.2 billion at September 30, 2017 from June 30, 2017 primarily due to solid organic growth in the residential mortgage loan and commercial real estate loan, supplemented by steady consumer loan volumes and an uptick in our commercial and industrial loans portfolios during the third quarter of 2017 ."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q3_P1_E042",
+          "text": "The increase in revenue was primarily driven by strong demand for contract ENTITY both in Europe and ENTITY, partially offset by a decline in managed transportation revenue in ENTITY."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E043",
+          "text": "The increase in revenue was primarily driven by strong demand for contract ENTITY 23 in both Europe and ENTITY, partially offset by a decline in managed transportation revenue."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E044",
+          "text": "European ENTITY revenue growth reflected a significant benefit from new contract starts, notably with e-commerce and cold chain customers in the ENTITY, Spain and the Netherlands."
+        },
+        {
+          "evidence_id": "2017Q3_P1_E045",
+          "text": "European ENTITY revenue growth reflected a significant benefit from new contract starts, notably with e-commerce and cold chain customers in the ENTITY, Italy and the Netherlands."
+        }
+      ]
+    }
+  ]
+}

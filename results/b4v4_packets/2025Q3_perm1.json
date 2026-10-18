@@ -1,0 +1,363 @@
+{
+  "quarter": "2025Q3",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E001",
+          "text": "While we have experienced some increase in costs as a result of inflation, we have, for the most part, been able to offset the rising costs through cost-saving opportunities, as well as price increases to our customers."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E002",
+          "text": "This increase in service revenue wa s primarily driven by higher customer penetration and improved volumes in run and maintain and callout work, supported by growth in the energy processing and midstream energy infrastructure end markets."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E003",
+          "text": "This increase in service revenue was primarily driven by higher customer penetration and improved volumes in run and maintain and callout work, supported by growth in the energy processing and midstream energy infrastructure end markets."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E004",
+          "text": "The prior year period also benefited from certain one-time, higher margin projects that did not recur in 2025."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E005",
+          "text": "This decrease was p rimarily due to a less favorable mix of work and the absence of one-time higher margin projects that benefited the prior year period."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E006",
+          "text": "Demand for components in the memory sector is poised for substantial growth, driven by AI applications such as large language models and generative AI."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E007",
+          "text": "Our growth and future demand for our battery products is dependent in part upon the adoption by consumers of alternative fuel vehicles in general and battery-powered aviation applications and other electrically powered modes of transportation in particular."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E008",
+          "text": "ENTITY experienced another year of significant growth, both in terms of activity, with a greater number of clients and operations, and in terms of liability income, due to higher volumes and the benefits from high interest rates in the markets where we operate."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E009",
+          "text": "In constant euros, profit fell 47%, as follows: \u2022 Total income increased 3%, due to higher net interest income (+4%), supported by active loan repricing and customer deposit growth, and net fee income (+13%) driven by greater penetration in direct insurance, especially in Germany and due to higher fees from our agreements. \u2022 Administrative expenses and amortizations fell slightly, even as we invest in business growth."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E010",
+          "text": "Administrative expenses and amortizations rose due to strategic transformation investments and business growth, as already mentioned. \u2022 In the ENTITY , net operating income improved EUR 1,029 million, driven by the improvement of net interest income (higher liquidity buffer remuneration) and gains on financial transactions higher (FX hedge costs in 2022)."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E011",
+          "text": "The contraction was driven by loan payoffs and slower origination volume, partially offset by draws in CRE construction loans and growth in owner-occupied term CRE balances. \u2022 Total deposits were $41.7 billion as of June 30, 2025, an increase of $21.9 million, as compared to December 31, 2024."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E012",
+          "text": "The contraction was driven by loan payoffs and slower origination volume, partially offset by draws in CRE construction loans and growth in owner-occupied term CRE balances."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E013",
+          "text": "In 2023, net revenue from our global albumin sales increased by 17.6% as compared to 2022, mainly as a result of a 40.0% growth in China fueled by higher demand and price increases."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E014",
+          "text": "Certain sales regions, particularly in emerging markets, have experienced continuous growth, driven by enhanced socioeconomic conditions, including a general increase in the testing of patients for immunodeficiencies, autoimmune diseases and low levels of alpha 1 protein, all conditions treatable by our products, more informed patients who are demanding better quality medical care, as well as increasing government healthcare spending on plasma derivative products."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E015",
+          "text": "See \u201c\u2014ENTITY our ENTITY and Results of Operations\u2014ENTITY\u201d and Item 4 of this Part I, \u201cInformation on the Company\u2014ENTITY\u2014 ENTITY.\u201d ENTITY increase in gross margin from 37.7% of net revenue in 2023 to 38.7% in 2024 was mainly due to strong revenue growth and lower cost per liter of plasma as a result of continued improvements in yields and plasma center operations."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E016",
+          "text": "Positive market dynamics, including strong demand for our key proteins, in conjunction with the recovery of our plasma collection volumes were critical to these results, with the increase in total net revenue being largely due to the performance of our Biopharma business unit, as explained below."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E017",
+          "text": "The higher costs primarily relate to: (i) hourly employee profit sharing costs due to higher silver prices and production; (ii) property and liability insurance resulting from higher asset values and coverage limits; (iii) higher employee medical costs related to headcount growth and inflation in medical care costs; and (iv) consumables and repairs to support increased production."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E018",
+          "text": "Higher realized prices for silver and zinc also positively contributed to the higher gross profit, however this benefit 35 was partly offset by lower realized lead prices and higher contractor, drilling, consumables and maintenance costs reflecting the higher volumes produced and sold, and higher profit sharing costs under the collective bargaining agreement."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E019",
+          "text": "Higher realized prices for silver and zinc also positively contributed to the higher gross profit, however this benefit was partly offset by higher contractor, consumables and maintenance costs reflecting the higher volumes produced and sold, and higher profit sharing costs under the collective bargaining agreement."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E020",
+          "text": "AISC, After By-product Credits, per ENTITY also benefited from lower sustaining capital expenditures."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E021",
+          "text": "In addition, our growth and future demand for our products is highly dependent upon the adoption of quantum computers and networks and commercially useful quantum algorithms to run on quantum computers by developers and customers, as well as on our ability to demonstrate the value of quantum computing to our customers."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E022",
+          "text": "Change in our operating assets and liabilities was also driven by a decrease in accounts receivable of $3.4 million,which was due to timing of invoicing and improved collection and a decrease in inventory of $5.8 million which was due to increased production activity to support higher sales volume."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E023",
+          "text": "From 2022 to 2024, the demand for automotive panels experienced gradual growth, driven by the recovery of the automobile market and increasing adoption of ENTITY panels, partly due to a recovery in demand for automobiles following the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E024",
+          "text": "However, in 2024, the IT market experienced a rebound, mainly driven by increased demand for low-cost IT products and growth in emerging markets, and our revenue from this segment was further boosted by the commencement of mass production of medium-sized OLED panels at our new AP5 facility."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E025",
+          "text": "This is in part due to trends in consumer electronics and other markets, such as IT products, televisions and mobile and other applications, where the growth in demand is led by end products employing newer technologies with specifications tailored to deliver enhanced performance, convenience and user experience in a cost-efficient and timely manner."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E026",
+          "text": "This is in part due to trends in consumer electronics and other markets, such as IT products, televisions, mobile devices and auto products where the growth in demand is led by end products employing newer technologies with specifications tailored to deliver enhanced performance, convenience and user experience in a cost-efficient and timely manner."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E027",
+          "text": "Cost of revenues related to the Medical segment increased $2.7 million period over period due to organic volume growth and inflation."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E028",
+          "text": "Cost of revenues related to the Medical segment decreased $1.0 million period over period as a result of a positive shift in margin mix in the current period, partially offset by organic volume growth."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E029",
+          "text": "In response to increasing customer needs related to their growth strategy or business succession in an unclear business environment, we offer multi-layered solutions in response to the various development stages of our customers\u2019 businesses through the combined strength of our entire ENTITY , including banking, trust banking and securities, based on a customer-focused approach."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E030",
+          "text": "The increase was primarily due to a $9.4 million increase from new customer growth and partially offset by net contraction of existing customer contracts of $3.6 million."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E031",
+          "text": "We have experienced rapid growth and demand for our services since inception as a result of our focus on growth."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E032",
+          "text": "The increase in cost of revenue was primarily attributable to increased hosting usage to support user growth and product enhancements on our platform, as well as an increase in advertising measurement and other services, partially offset by lower hosting prices."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E033",
+          "text": "The increase in cost of revenue was primarily attributable to increased hosting usage to support user growth and product enhancements on our platform, as well as an increase in other services related to advertising, partially offset by lower hosting prices."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E034",
+          "text": "Accordingly, the Company does not have any capitalized contract fulfillment costs as of June 30, 2025 or December 31, 2024. \u200b (12) Segments, ENTITY, Concentrations and ENTITY \u200b In addition to consolidated net income (loss), our ENTITY (CODM), the ENTITY, reviews and utilizes natural expenses such as employee wages and benefits at a consolidated level and capital expenditures including fixed asset additions to manage the Company\u2019s operations and strategic growth initiatives."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E035",
+          "text": "Accordingly, the Company does not have any capitalized contract fulfillment costs as of September 30, 2025 or December 31, 2024. \u200b (12) Segments, ENTITY, Concentrations and ENTITY \u200b In addition to consolidated net loss, our ENTITY (CODM), the ENTITY, reviews and utilizes natural expenses such as employee wages and benefits at a consolidated level and capital expenditures including fixed asset additions to manage the Company\u2019s operations and strategic growth initiatives."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E036",
+          "text": "The increase is primarily driven by an increase in amounts earned by developers and creators due to the growth in bookings over the same period."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E037",
+          "text": "Interest income, net in 2025 benefited from higher mortgage loan origination volume, partially offset by higher interest expense from increased utilization of funding facilities."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E038",
+          "text": "Interest income, net in 2025 benefited from higher mortgage loan origination volume, but was offset by higher interest expense from increased utilization of funding facilities."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E039",
+          "text": "This increase was primarily driven by a $44.3 million increase in equity-based compensation due to the acceleration of awards from the completion of our IPO and the issuance of new equity-based awards, a $15.0 million increase in employee-based costs to support increased penetration into our existing customer base and expansion into new industry verticals and geographic markets, a $3.2 million increase in advertising and promotion costs, a $1.0 million increase in travel expenses, a $0.5 million increase in software and hosting costs, and a $0.3 million increase in professional services fees."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E040",
+          "text": "Our ARR has grown in each of the past three years, reflecting growth in new customers as well as expanded sales to existing customers."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E041",
+          "text": "Overall increases in origination volume were primarily due to increased demand for debt consolidation products in an elevated interest rate environment, as well as increased demand driven by expanded advertising and marketing efforts."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E042",
+          "text": "Demand for and prices of our products are influenced by, among other factors, the actual and projected growth of data to be stored, the spending plans of our large hyperscale customers, the balance between supply and demand in the storage market, macroeconomic factors (such as tariffs and actual or perceived threat of recessions), business conditions, the emergence or growth of new or existing technologies (including AI), technology transitions and other actions taken by us or our competitors."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E043",
+          "text": "C&I sales increased due to higher use per customer and customer growth, primarily driven by the ENTITY sector. \u2022 NSP-Wisconsin \u2014 Residential sales increased due to both increased use per customer (1.1%) and customer growth (1.0%)."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E044",
+          "text": "C&I sales increased due to higher use per customer, primarily driven by the ENTITY sector. \u2022 NSP-Wisconsin \u2014 Residential sales increased due to both increased use per customer (1.1%) and customer growth (1.0%)."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E045",
+          "text": "C&I sales increased due to higher use per customer and customer growth, primarily in the information and ENTITY sectors. \u2022 NSP-Minnesota \u2014 Residential sales increased due to customer growth (1.2%) and increase in use per customer (0.2%)."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E046",
+          "text": "C&I sales increased due to higher use per customer and customer growth, primarily in the information and ENTITY sectors. \u2022 SPS \u2014 Residential sales increased due to higher use per customer (4.1%) and customer growth (0.7%)."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E047",
+          "text": "In the past, ENTITY ENTITY and other gold mining companies experienced shortages in critical consumables, particularly as production capacity in the global mining industry expanded in response to increased demand for commodities."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E048",
+          "text": "Annual technology demand for gold saw an increase of seven percent, largely driven by continued growth in AI adoption."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E049",
+          "text": "At ENTITY in Argentina, capital expenditure increased by $9 million, from $66 million in 2022 to $75 million in 2023, mainly due to higher expenditure on the heap leaching pad expansion and higher waste stripping capital expenditure compared to 2022."
+        },
+        {
+          "evidence_id": "2025Q3_P1_E050",
+          "text": "At ENTITY in Argentina, capital expenditure increased by $9 million, from $66 million in 2022 to $75 million in 2023, mainly due to higher expenditure on the heap leaching expansion and higher waste stripping capital expenditure compared to 2022."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q3_P1_E051",
+          "text": "To address the strong demand for its products and solutions, ENTITY has decided to invest additional resources in its manufacturing facilities, recruit additional employees and make additional adjustments such as updating working procedures and processes and information technology systems."
+        }
+      ]
+    }
+  ]
+}

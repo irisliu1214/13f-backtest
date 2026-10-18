@@ -1,0 +1,311 @@
+{
+  "quarter": "2022Q2",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E001",
+          "text": "Prices remain meaningfully elevated, which is driven by strong demand for goods and services, though the Russian invasion of Ukraine and related Western economic sanctions have led to a sharp increase in food and commodity prices."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E002",
+          "text": "While our MSR and ENTITY businesses have benefited from strong home price appreciation in the past, we maintain a constructive outlook given the underlying composition of our portfolios and continued support from the long-term supply/ demand imbalance in the housing market."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E003",
+          "text": "Prices remain meaningfully elevated, which is driven by continued strong demand for goods and services."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E004",
+          "text": "The increase in administrative, transaction and other fees was driven primarily by a $4.8 million increase of dealer manager revenue, a $2.6 million increase of administrative fees related to our ENTITY products and $3.1 million increase of administrative fees related to our GP ENTITY Solutions products due to higher compensation and benefits being recovered from our products, which are included from the ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E005",
+          "text": "The lower growth rate in 2020 was due to the negative impact of COVID-19 in that year, as a number of markets implemented temporary restrictions in response to the pandemic, with ENTITY in particular restricting the production and sale of tobacco products for a period of five months."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E006",
+          "text": "In contrast, the volume decline in 2019 was largely due to the continued difficult trading in Venezuela, market contraction in Canada and illicit trade growth in Brazil \u2013 which was partly offset by higher volume in ENTITY as a result of reduction, in that year, of illicit trade."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E007",
+          "text": "ENTITY In 2021, revenue from Vapour was up 40.2% reflecting strong volume growth (up 30%), driven by an increase in industry volume, and higher consumables pricing."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E008",
+          "text": "This was driven by the higher revenue (in both years), lower losses from Vuse in 2021, initiatives including marketing spend effectiveness and the benefit from trade inventory movements."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E009",
+          "text": "The increase was driven primarily by increased software subscription revenues from expanding solution adoption among existing customers, existing customer upgrades and sales to new customers and economies of scale resulting from fixed cost arrangements and less interest expense resulting from less outstanding long-term debt and a lower variable interest rate."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E010",
+          "text": "This increase was driven primarily by increased software subscription revenues from expanding solution adoption among existing customers, existing customer upgrades and sales to new customers and economies of scale resulting from fixed cost arrangements."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E011",
+          "text": "The overall increase in sales and marketing expense was due to the growth in our business, specifically driven by a $10.7 million increase in personnel-related costs due to headcount growth of 23% as well as a $5.4 million increase in incentive compensation due to increased sales activity."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E012",
+          "text": "The increase in sales and marketing expense was a result of the growth in our business, primarily driven by a $2.8 million increase in personnel-related costs due to headcount growth of approximately 22%."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E013",
+          "text": "The increase in cost of revenue was primarily driven by a $4.2 million increase in personnel-related costs as a result of headcount growth of 36%, $2.6 million increase in expense from the U.S."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E014",
+          "text": "ENTITY ENTITY future revenue growth will be directly tied to the continued adoption of renewable ENTITY storage systems."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E015",
+          "text": "The growth percentage is based on historical production numbers, adjusted for portfolio measures. 20 ENTITY , ENTITY on Form 20-F 2020 current market conditions, the development in realised prices, including price differentials and the effectiveness of actions taken in response to the pandemic."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E016",
+          "text": "Increased demand for and improved cost competitiveness of renewable energy, and innovation and technology changes supporting the further development and use of renewable energy and low-carbon technologies, represent both threats and opportunities for ENTITY ."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E017",
+          "text": "In addition to the increase in interest earned on loans, fully tax-equivalent interest income also increased by approximately $605 thousand as a result of volume growth in investment securities."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E018",
+          "text": "In addition to the increase in interest earned on loans, fully tax-equivalent interest income also increased by approximately $1.5 million as a result of volume growth in investment securities."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E019",
+          "text": "Fully tax-equivalent interest income on securities increased by approximately $898 thousand as a result of volume growth and rate increases in investment securities."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E020",
+          "text": "Net sales increased 16.5% to $819 million in the first six months of 2022, compared to $703 million in the prior year period, reflecting higher net price realization of 13.8%, driven by price increases, as well as the favorable comparison to our prior year customer trade accrual, and volume/mix growth of 2.8%, slightly offset by unfavorable FX translation effects of 0.1%."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E021",
+          "text": "Net sales increased 22.7% to $460 million in the second quarter of 2022, compared to $375 million for the prior year period, reflecting higher net price realization of 19.2%, largely driven by the favorable comparison to our prior year customer trade accrual, as well as price increases, and volume/mix growth of 3.7%."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E022",
+          "text": "Income from operations increased $17 million, or 29.3%, to $75 million for the first six months of 2022 compared to $58 million in the prior year period, driven by the benefit of net sales growth, partially offset by the impacts of broad-based inflation, higher costs associated with higher volumes and higher marketing expense."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E023",
+          "text": "Income from operations increased $14 million, or 38.9%, to $50 million for the second quarter of 2022 compared to $36 million in the prior year period, reflecting the benefit of net sales growth and productivity, partially offset by the impacts of broad-based inflation and higher costs associated with increased volumes."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E024",
+          "text": "The higher revenues in the recent quarter as compared with the first quarter of 2021 were largely attributable to increased retirement services income resulting from growth in collective fund balances."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E025",
+          "text": "ENTITY \u2019s objective is to generate stock market value over the long-term through consistent organic production growth, high full cycle operating margins, an efficient capital program with short economic paybacks, significant free cash flow after capital expenditures, and effective reinvestment of free cash flow."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E026",
+          "text": "Many of the providers of these services are our Customers and they are experiencing accelerated adoption of technologies that enable such payment experiences."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E027",
+          "text": "The increase in SG&A expenses was primarily due to employee-related expenses of our sales and marketing organization and reimbursement and administrative organizations as we expanded our infrastructure to drive and support our growth in revenue."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E028",
+          "text": "The increase was due to higher sales volumes of both our AquaBeam ENTITY and our single-use disposable handpieces, resulting from the expansion of insurance coverage and the increase in personnel in our sales and marketing organizations."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E029",
+          "text": "The increase in gross margin was primarily attributable to the growth in unit sales, which allowed us to spread the fixed portion of our manufacturing overhead costs over more production units."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E030",
+          "text": "The growth in revenue was primarily attributable to an increase of $6.3 million in revenues derived from the ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E031",
+          "text": "In addition, the ENTITY entertainment industry is highly seasonal, with sales typically higher during the fourth calendar quarter, due primarily to increased demand for games during the holiday season."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E032",
+          "text": "This change was, in the opinion of management, due to the stabilization of prices worldwide, strong demand and with modestly higher production which accelerated investor interest."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E033",
+          "text": "In particular, increased demand for semiconductor chips in recent years, due in part to the COVID-19 pandemic and an increased use of laptop computers, 5G phones, gaming systems, and other IT equipment that use these chips, has resulted in an ongoing severe global shortage of chips."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E034",
+          "text": "In particular, increased demand for semiconductor chips in 2020, due in part to the COVID-19 pandemic and an increased use of laptop computers, 5G phones, gaming systems, and other IT equipment that use these chips, has resulted in an ongoing severe global shortage of chips."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E035",
+          "text": "Last year\u2019s first quarter brick-and-mortar sales were down significantly as a result of the pandemic. 2022 retail net sales surpassed the 2019 level by 39%, due primarily to growth in e-commerce."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E036",
+          "text": "Last year's brick-and-mortar sales were down significantly as a result of the pandemic. 2022 retail net sales surpassed the 2019 level by 41%, due primarily to growth in e-commerce."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E037",
+          "text": "Earnings from operations in the ENTITY wholesale segment rose to $4.8 million in the first quarter of 2022, up from $1.4 million in the same period last year, due to higher sales, partially offset by lower gross margins and higher selling and administrative expenses."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E038",
+          "text": "The year-to-date earnings increase was primarily due to higher sales volumes, partially offset by lower gross margins."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E039",
+          "text": "Demand was driven by growth in digitalization resulting from stay-at-home and movement control orders, work-from-home arrangements and social distancing measures implemented as a result of the COVID-19 pandemic in our markets."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E040",
+          "text": "The increased demand for deliveries was driven by stay-at-home and movement control orders, work-from-home arrangements and social distancing measures implemented as a result of the COVID-19 pandemic in our markets."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E041",
+          "text": "In particular, our business segments were impacted as follows: \u2022 Deliveries : Our deliveries segment experienced significant year-on-year GMV and revenue growth from 2019 to 2021 as consumer adoption of deliveries offerings increased in light of the stay-at-home and movement control orders, work-from-home arrangements and social distancing measures imposed as a result of the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2022Q2_P1_E042",
+          "text": "For our deliveries segment, the COVID-19 pandemic drove its GMV and revenue growth as consumer adoption of deliveries offerings increased in light of the stay-at-home and movement control orders, work-from-home arrangements and social distancing measures imposed as a result of the pandemic."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E043",
+          "text": "As a result of the growth of ENTITY 's activities, with a higher volume of deposits and related investment in financial assets, in 2021 the Group began to hold financial assets in a held-to-collect-and-sell business model which resulted in their classification as FVTOCI."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2022Q2_P1_E044",
+          "text": "Coverage and ENTITY the past few years, the growth rate of advanced ENTITY volumes has slowed in part due to additional patient-related cost-sharing programs and an increasing trend of third-party payors intensifying their utilization management efforts, for example, through benefit managers who require prior authorizations to control the growth rate of ENTITY services generally."
+        }
+      ]
+    }
+  ]
+}

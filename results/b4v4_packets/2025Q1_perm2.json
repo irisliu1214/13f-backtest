@@ -1,0 +1,471 @@
+{
+  "quarter": "2025Q1",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E001",
+          "text": "The increase in net product sales of NUPLAZID of $29.8 million was due to the growth in NUPLAZID unit sales as well as a higher average net selling price of NUPLAZID in 2025 compared to 2024."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E002",
+          "text": "The increase in net product sales of NUPLAZID of $60.2 million was due to the growth in NUPLAZID unit sales as well as a higher average net selling price in NUPLAZID in 2024 compared to 2023."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E003",
+          "text": "The increase in net product sales of DAYBUE of $171.2 million was mainly due to the growth in DAYBUE unit sales in 2024 compared to 2023."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E004",
+          "text": "The increase in net product sales of DAYBUE of $8.7 million was primarily due to the growth in DAYBUE unit sales."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E005",
+          "text": "The increase in Net sales and other revenue in fiscal 2024 as compared to fiscal 2023 was driven by our 2.0% increase in identical sales, with growth in pharmacy sales being the primary driver of the identical sales increase, while our digital sales also increased 24% during fiscal 2024."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E006",
+          "text": "The strong growth in pharmacy sales, which carries an overall lower gross margin rate, increases in delivery and handling costs related to the 24% growth in our digital sales and investment in our customer value proposition were the primary drivers of the decrease, partially offset by the benefits from our productivity initiatives."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E007",
+          "text": "The increase in Net sales and other revenue was primarily driven by our 1.9% increase in identical sales, with strong growth in pharmacy sales being the primary driver of the identical sales increase."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E008",
+          "text": "The increase in Net sales and other revenue was driven by our 2.0% increase in identical sales, with strong growth in pharmacy sales being the primary driver of the identical sales increase."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E009",
+          "text": "The following items partially offset the decrease in ENTITY \u2019s cash from operating activities between periods: \u2022 A $96 million increase, primarily at ENTITY Illinois, resulting from increased customer collections primarily from electric distribution and transmission base rate increases and rate base growth and higher electric and natural gas distribution sales volumes due to colder winter temperatures in 2025. \u2022 An $8 million increase due to lower payments for coal deliveries primarily due to weather-related transportation delays."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E010",
+          "text": "The decrease in ENTITY Illinois\u2019 cash from operating activities between periods was partially offset by a $92 million increase resulting from increased customer collections primarily from electric distribution and transmission base rate increases and rate base growth and higher electric and natural gas distribution sales volumes due to colder winter temperatures in 2025."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E011",
+          "text": "In 2024, ENTITY experienced an increase in customer demand for power driven by the growth in new data processing loads and economic development in the commercial customer class."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E012",
+          "text": "Customer growth and customer usage are affected by a number of factors outside the control of ENTITY , such as mandated energy efficiency measures, demand-side management goals, distributed generation resources and economic and demographic conditions, such as population changes, job and income growth, housing starts, new business formation and the overall level of economic activity, including changes due to public health considerations."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E013",
+          "text": "ENTITY electric utility industry is in the midst of an historic transformation, driven by large load growth in the commercial customer class from data processing loads, changing customer needs, evolving public policies, stakeholder demands, demographics, competitive offerings, technologies and commodity prices."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E014",
+          "text": "OPCo anticipates a PUCO decision in 2025. 6 ENTITY to ENTITY growth of ENTITY \u2019s regulated generation portfolio reflects the company\u2019s commitment to meet increasing customer demand for power while balancing cost and reliability."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E015",
+          "text": "The change in selling, general and administrative expense is categorized as follows: \u2022 approximately $9.4 million increase in professional service expenses primarily related to legal services provided on discrete transactions and projects as well as general support of the business; \u2022 approximately $3.2 million increase in personnel expenses for employee costs attributable to supporting the growth of the business; and \u2022 approximately $2.5 million increase in lease and related expenses primarily for operating leases of data center space not yet being used to generate revenue."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E016",
+          "text": "Approximately $59.2 million of the increase was due to the continued growth of our ENTITY due to the deployment of four additional GPU clusters between periods while the remaining increase, approximately $5.4 million, was primarily due to our Ellendale HPC Facility operating at full capacity during the current period ."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E017",
+          "text": "Online marketing revenues of ENTITY Core in 2023 were RMB75.1 billion (US$10.6 billion) in 2023, increasing by RMB5.6 billion, or 8%, compared to RMB69.5 billion in 2022, primarily due to an increase of service demand from our customers in certain industries, including travelling, e-commerce, healthcare, and entertainment and media, which in turn benefited from the recovery of general economy and macroeconomic environment in these industries."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E018",
+          "text": "Our online marketing revenues for ENTITY Core in 2023 were RMB75.1 billion (US$10.6 billion), increasing by 8% from 2022, primarily due to an increase of service demand from our customers in certain industries, including travelling, e-commerce, healthcare, and entertainment and media, which in turn benefited from the recovery of general economy and the macroeconomic environment for these industries."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E019",
+          "text": "Our online marketing revenues for ENTITY Core in 2023 were RMB75.1 billion, increasing by 8% from 2022, primarily due to an increase of service demand from our customers in certain industries, including travelling, e-commerce, healthcare, and entertainment and media, which in turn benefited from the recovery of general economy and the macroeconomic environment for these industries."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E020",
+          "text": "Membership revenue of iQIYI in 2023 were RMB20.3 billion (US$2.9 billion), increasing by RMB2.6 billion, or 15%, from RMB17.7 billion in 2022, primarily driven by the growth in iQIYI\u2019s average revenue per membership during a month, or monthly ARM, the average daily number of total subscribing members of the year and iQIYI\u2019s continuous efforts in refining operations to improve user experience and monetization capabilities. iQIYI\u2019s monthly ARM in 2023 increased by 6% to RMB15.13 in 2023, as compared to RMB14.31 in 2022."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E021",
+          "text": "The increase to operating income was driven by higher volume primarily from higher proportionate growth in ENTITY (\"GTE\") and Subsea & ENTITY (\"SSPS\") and price in both segments, and structural cost-out initiatives across the company, partially offset by cost inflation."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E022",
+          "text": "We capitalized on market tailwinds to deliver substantial IET revenue growth, navigated an uneven market to deliver modest OFSE revenue growth, and realized widening benefits from our transformation efforts across the company."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E023",
+          "text": "The improved performance in 2023 was driven by higher volume primarily from higher proportionate growth in GTE, price and cost-out initiatives, partially offset by un favorable cost productivity, inflationary pressure, and higher research and development costs related to new energy investments ."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E024",
+          "text": "IET segment EBITDA was $501 million in the first quarter of 2025 compared to $386 million in the first quarter of 2024.The improved performance in the first quarter of 2025 was driven by higher volume primarily from higher proportionate growth in GTE, price, and productivity, partially offset by inflationary pressure."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E025",
+          "text": "Prepared food and dispensed beverage revenue increased by $115,402 (10.4%) due to an increase in same-store sales of 4.4% driven by improved sales of hot sandwiches, bakery, and dispensed beverages, as well as an increase of approximately 6.0% related to store growth."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E026",
+          "text": "Grocery and general merchandise revenue increased by $295,035 (10.4%) due to an increase of approximately 7.8% related to store growth, as well as an increase in same-store sales of 2.6% driven by strong sales of non-alcoholic and alcoholic beverages ."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E027",
+          "text": "Prepared food and dispensed beverage revenue increased by $47,740 (13.7%), due to an increase in same-store sales of 4.7% driven by strong sales of hot sandwiches and bakery, as well as an increase of approximately 9.0% related to store growth."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E028",
+          "text": "Grocery and general merchandise revenue increased by $137,726 (15.9%), due to an increase in same-store sales of 3.3% driven by sales of non-alcoholic beverages, as well as an increase of approximately 12.6% related to store growth."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E029",
+          "text": "Revenue increased by $59.8 million, or 38%, of which $30.3 million was due to higher average realized gold and silver prices and $29.5 million was attributable to a higher volume of gold and silver production."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E030",
+          "text": "Revenue increased by $62.7 million, or 39%, of which $37.5 million was due to higher average realized gold prices and $25.2 million resulting from a higher volume of gold production."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E031",
+          "text": "Capital expenditures increased to $68.7 million from $53.3 million reflecting continued investment associated with the multi-year underground development and exploration program designed to extend and enhance the mine life, which began in 2022 and is expected to be completed in 2025, as well as underground development and tailings dam expansion expenditures."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E032",
+          "text": "The increase in gold ounces sold was due to higher gold production at all sites, specifically higher grade and recovery rates at Palmarejo, the successful completion of the Rochester expansion, higher mill throughput and grade at Kensington, and higher tons and grade at Wharf."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E033",
+          "text": "Cost of revenue is driven by the growth of our member network and utilization of our productivity tools."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E034",
+          "text": "In addition, our growth and future demand for our products is highly dependent upon the adoption by developers and customers of ENTITY computing, as well as on our ability to demonstrate the value of ENTITY computing to our customers."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E035",
+          "text": "In Wealth, revenue of $8.8bn was up $1.3bn or 18% . \u2013 Investment distribution revenue grew by $0.4bn , or 16% , driven by higher sales of mutual funds, structured products and bonds due to our continued investment in Wealth and improved market sentiment, including in our entities in Asia. \u2013 ENTITY revenue was $0.3bn or 15% higher, primarily driven by a strong performance in brokerage and trading in our entities in Asia. \u2013 Life insurance revenue was $0.4bn or 32% higher."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E036",
+          "text": "In Wealth, revenue of $7.5bn was up $0.6bn or 8% . \u2013 ENTITY revenue was $0.2bn or 12% higher due to rising interest rates and deposit growth of $11bn or 15%. \u2013 Asset management revenue was $0.2bn or 13% higher, driven by an increase in assets under management of 15%, and from positive market movements. \u2013 Life insurance revenue rose by $0.1bn or 8% , mainly driven by an increase of $0.2bn in contractual service margin (\u2018CSM\u2019) earnings and favourable net investment returns of $0.1bn, partly offset by a $0.3bn loss from corrections to historical valuation estimates."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E037",
+          "text": "For periods after 2027, the ratio is 62.0 % (2022: 61.0 % ), which is similar to BoCom\u2019s actual results in recent years. \u2013 Loans and advances to customers growth rate: ranges from 9.0 % to 10.0 % (2022: 7.1 % to 11.0 % ) in the short to medium term, reflecting higher growth rate in loans and advances to customers as a result of recent macroeconomic, policy and industry factors in mainland China."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E038",
+          "text": "This was driven by a $15.4bn increase in revenue, primarily due to growth in net interest income, reflecting the impact of interest rate rises."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E039",
+          "text": "ENTITY\u2019s customers span a diverse range of industries and a wide range of AI use cases, benefiting from the short time-to-value and high economic returns of the Company\u2019s AI solutions and platforms."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E040",
+          "text": "Our customers span a diverse range of industries and a wide range of AI use cases, benefiting from the short time-to-value and high economic returns our AI solutions and platforms offer."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E041",
+          "text": "Revenue of Mounjaro increased 85 percent in the U.S., primarily driven by strong demand and increased supply."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E042",
+          "text": "Revenue of Taltz increased 18 percent in the U.S., driven by higher realized prices due to changes in estimates for rebates and discounts, as well as increased demand."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E043",
+          "text": "We continue to experience scrutiny on the pricing of current and potential diabetes, obesity, and Alzheimer's disease products due to payer concern over projected growth in these markets and, for certain of these drugs, the anticipated duration of treatment."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E044",
+          "text": "Revenue of Verzenio increased 36 percent in the U.S., driven by increased demand, wholesaler buying patterns and, to a lesser extent, higher realized prices."
+        }
+      ]
+    },
+    {
+      "alias": "C25",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E045",
+          "text": "Demand for our offerings is also affected by a number of factors beyond our control, including macroeconomic conditions, initiatives by retailers to influence shopping behavior, continued market acceptance of our offerings, the timing of development and release of new offerings and features by us, the timing or manner of the adoption of our offerings by retailers and our competitors, changing consumer dietary preferences, technological change, brand recognition, and growth or contraction in our markets."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E046",
+          "text": "The increase was primarily driven by higher volume across most product lines and favorable price/cost, partially offset by manufacturing inefficiencies."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E047",
+          "text": "Markets income(1) of \u00a3698 million, was \u00a3231 million, or 49.5%, higher than 2021 reflecting stronger performance across the product suite. - Net interest income increased by \u00a31,197 million to \u00a34,171 million benefiting from improved yield curve movements, due to interest rate increases, and net loan growth. - Non-interest income of \u00a32,242 million increased by \u00a3378 million primarily driven by increased card payment fees, higher payment services fees and increased income in our markets business. - Net interest margin was 85 basis points higher than 2021 reflecting higher deposits returns. - Operating expenses of \u00a33,744 were \u00a313 million, or 0.3%, lower compared with 2021."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E048",
+          "text": "Bank NIM of 3.04% was 19 basis points higher than 2022 primarily due to benefits from yield curve movements, net of changes in deposit mix as customers shifted to lower margin fixed term accounts, partially offset with lending margin pressure. - Interest receivable was materially above the prior year reflecting the higher rate environment."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E049",
+          "text": "Net loans to customers excluding central items increased by \u00a38.9 billion in the year largely reflecting a \u00a37.6 billion increase in ENTITY and \u00a32.0 billion of growth in Commercial & Institutional due to an increase in term loan facilities and private financing within Corporate & Institutions, net of \u00a32.7 billion of UK Government scheme repayments."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E050",
+          "text": "Total income excluding notable items of \u00a314.6 billion was 2.2% higher than the prior year principally reflecting deposit margin expansion, lending growth and strong customer activity in capital markets partially offset by the impact of the deposit balance mix shift from non-interest bearing to interest bearing balances."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E051",
+          "text": "We will require significant capital expenditures and the allocation of valuable management resources to grow and change in these areas without undermining our culture of rapid innovation, teamwork and attention to customer success, which has been central to our growth so far."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E052",
+          "text": "Increasing awareness of our platforms and capabilities, coupled with the mainstream adoption of cloud technology, has expanded the diversity of our customer base to include organizations of all sizes across all industries."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E053",
+          "text": "Increasing awareness of our platform and capabilities, coupled with the mainstream adoption of cloud technology, has expanded the diversity of our customer base to include organizations of all sizes across all industries."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E054",
+          "text": "There has been increased demand for these products due to the escalated interest in data center construction, as well as the growing worldwide demand for power."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E055",
+          "text": "ENTITY price of Bitcoin increased during the first quarter of 2024 due to a new source of demand, the eleven Bitcoin spot ENTITY (\u201cETFs\u201d), which were approved to begin trading by the SEC on January 11, 2024."
+        }
+      ]
+    },
+    {
+      "alias": "C26",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E056",
+          "text": "Growth was driven by increased demand for Booster vaccines across all regions, and continued expansion of our pediatric combination vaccines in the Rest of World region."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E057",
+          "text": "Sales of Fabrazyme reached \u20ac 1,047 million in 2024 ( + 9.1% CER ), propelled by the Rest of World region due to growth in the number of patients."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E058",
+          "text": "As expected, sales are on a gradual uptrend, driven by continued growth in infusions supported by increased awareness and screening."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E059",
+          "text": "The decrease in other commissions revenue was primarily driven by a $13.2 million decrease in Auto & Home commissions revenue due to the change in strategic direction to reduce revenue growth for Auto & Home based on our limited resources."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E060",
+          "text": "The decrease in other commissions revenue is driven by a $6.3 million decrease in Auto & Home commissions revenue due to the change in strategic direction to reduce revenue growth for Auto & Home based on our limited resources."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E061",
+          "text": "The increase was due to a $65.4 million increase in revenue, partially offset by a $60.5 million increase in operating costs and expenses, primarily as a result of a $51.0 million increase in medication costs and a $7.7 million increase in compensation costs to support and invest in the growth of SelectRx."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E062",
+          "text": "The decrease was due to a $71.7 million increase in revenue, offset by a $72.4 million increase in operating costs and expenses primarily as a result of a $53.8 million increase in medication costs and a $12.7 million increase in compensation costs to support and invest in the growth of SelectRx."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E063",
+          "text": "Revenue generated from our commercial aerospace end market increased $551.2 million or 25.7%, primarily driven by the increases in higher engine repair and maintenance demand as well as additional market share capture on certain engine platforms we service, which benefited from the continued growth in commercial air travel demand and improvement in pilot shortages that impacted the regional jet markets."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E064",
+          "text": "Revenue generated from our commercial aerospace end market increased $54.7 million or 17.3%, primarily driven by an increases in component repair, which benefited from the continued growth in commercial air travel demand and reductions in pilot shortages that impacted the regional jet markets."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E065",
+          "text": "The number of aircraft in operation and the utilization of those aircraft are generally tied to global air travel over the long-term, which has historically grown in excess of GDP driven by secular tailwinds such as globalization, rising middle class population and wealth, increasing demand for leisure travel, growth in corporate earnings and e-commerce and technological advancements in aviation."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E066",
+          "text": "Revenue is typically recognized upon delivery of the data to the customer, as the Company\u2019s obligations for an individual record is complete once the data has been delivered, and the customer is able to benefit from the provision of data as it is received. \u2022 Multi-year data subscriptions \u2013 Customer licenses an interchangeable maximum number of de-identified records, and the Company accounts for the service as a right to access license and one performance obligation."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E067",
+          "text": "The increase was due to higher volume ($16.6 million or 156.6%), primarily driven by prescription growth, offset by unfavorable net pricing ($1.7 million or 15.7%)."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E068",
+          "text": "The increase was due to higher volume ($12.0 million or 17.9%), primarily driven by prescription growth, and favorable net pricing ($3.8 million or 5.6%)."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E069",
+          "text": "The increase was due to higher volume ($2.5 million or 14.9%), and favorable net pricing ($1.8 million or 10.8%)."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E070",
+          "text": "The decrease was due to unfavorable net pricing ($2.3 million or 17.0%), offset by higher volume ($0.6 million or 4.3%)."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E071",
+          "text": "The remaining $21 million of the increase was primarily due to increased investment to support the development and expansion of our ENTITY Money and Towers businesses, increased energy and employee costs, as well as sales and marketing costs to support growth, especially in our Colombia business."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E072",
+          "text": "We have also established partnerships in the area of hypercloud, virtualization and Internet of Things, to capture the growth in the adoption of these technologies and help our customers accelerate their digital transformations."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E073",
+          "text": "Panama and Colombia experienced the highest relative increase in revenues of 5.1%, due to robust growth in the Mobile business (and in Panama, also due to two new large B2B contracts)."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q1_P2_E074",
+          "text": "Ad-Supported MAUs increased due to our continued investment in driving the growth of our Ad-ENTITY through successful consumer marketing campaigns, enhanced content offerings, and product enhancements, resulting in continued Ad-ENTITY engagement and customer satisfaction."
+        },
+        {
+          "evidence_id": "2025Q1_P2_E075",
+          "text": "MAUs increased due to our continued investment in driving the growth of our Service through successful consumer marketing campaigns, enhanced content offerings, and product enhancements, resulting in continued user engagement and customer satisfaction."
+        }
+      ]
+    }
+  ]
+}

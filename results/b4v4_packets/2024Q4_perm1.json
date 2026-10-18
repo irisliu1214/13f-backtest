@@ -1,0 +1,369 @@
+{
+  "quarter": "2024Q4",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E001",
+          "text": "The change in selling, general and administrative expense is categorized as follows: \u2022 approximately $9.4 million increase in professional service expenses primarily related to legal services provided on discrete transactions and projects as well as general support of the business; \u2022 approximately $3.2 million increase in personnel expenses for employee costs attributable to supporting the growth of the business; and \u2022 approximately $2.5 million increase in lease and related expenses primarily for operating leases of data center space not yet being used to generate revenue."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E002",
+          "text": "During early 2023, our industry experienced inflationary pressures, including increased demand for oilfield service equipment, rising fuel costs, and labor shortages, which resulted in observed increases to our operating and capital costs that were not fixed."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E003",
+          "text": "Net sales per active customer increased $23, or 4.2%, in the thirteen weeks ended October 27, 2024 compared to the thirteen weeks ended October 29, 2023, driven by growth across our healthcare and specialty businesses. 25 Net sales for the thirty-nine weeks ended October 27, 2024 increased by $292.1 million, or 3.5%, to $8.6 billion compared to $8.3 billion for the thirty-nine weeks ended October 29, 2023."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E004",
+          "text": "Gross profit as a percentage of net sales for the thirty-nine weeks ended October 27, 2024 increased by 110 basis points compared to the thirty-nine weeks ended October 29, 2023, primarily due to supply chain efficiency gains across our network as well as margin expansion across our consumables, healthcare, and private brands businesses."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E005",
+          "text": "Gross profit as a percentage of net sales for the thirteen weeks ended October 27, 2024 increased by 80 basis points compared to the thirteen weeks ended October 29, 2023, primarily due to supply chain efficiency gains across our network as well as margin expansion across our consumables, healthcare, and private brands businesses."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E006",
+          "text": "Gross profit as a percentage of net sales for the twenty-six weeks ended July 28, 2024 increased by 120 basis points compared to the twenty-six weeks ended July 30, 2023, primarily due to margin expansion across our healthcare, consumables, and private brands businesses."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E007",
+          "text": "Growth was driven primarily by increased product sales as a result of continued market share gains."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E008",
+          "text": "In the market area dimension, sales growth was driven by ENTITY, and Europe and ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E009",
+          "text": "Revenue growth was driven by increased demand across a wide range of customers that included fintech and insurance customers."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E010",
+          "text": "In 2018, and as a result of its strategy focused on growth, customer experience and efficiency, Banco ENTITY began to transform its operating model with the aim of enhancing its operational flexibility and ability to adapt to changes."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E011",
+          "text": "The increase of Ps.413,189 million in the interest earned from government debt securities was due to higher volume and rate yields, as compared to the previous year."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E012",
+          "text": "Of this increase, Ps.167,062 million were due to a increase in the average size of other interest-earning assets due to a higher volume of public debt securities measured at amortized cost."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E013",
+          "text": "Growth in Subscribers was primarily driven by offerings launched after September 30, 2023, along with increased traffic to our platform (through our websites and mobile applications) as a result of our marketing activities and improved onsite and customer onboarding experiences."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E014",
+          "text": "Growth in Subscribers was driven by increased traffic to our platform (through our websites and mobile applications) as a result of our marketing activities, newer offerings, and improved onsite and customer onboarding experiences."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E015",
+          "text": "The increase of $1.9 million, or 3.2%, was primarily driven by an increase in product costs related to higher sales volume, partially offset by savings in fulfillment costs mainly due to the decline in ENTITY .com revenue."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E016",
+          "text": "This was driven by a $223.7 million increase from higher sales volume (11 MBbls/d or 17%) and higher realized oil prices that resulted in an increase of $28.0 million (an increase of 2% per Bbl)."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E017",
+          "text": "This was driven by a $95.4 million increase from higher sales volume (14 MBbls/d, or 19%), partially offset by lower realized oil prices that resulted in a decrease of $51.6 million (a decrease of 9% per Bbl)."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E018",
+          "text": "This was driven by a $39.0 million increase from higher sales volume (195 MMcf/d, or 54%), partially offset by lower natural gas prices that resulted in a decrease of $32.3 million (a decrease of 29% per Mcf)."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E019",
+          "text": "This was driven by lower natural gas prices that resulted in a decrease of $155.6 million (a decrease of 43% per Mcf), partially offset by a $79.4 million increase from higher sales volume (95 MMcf/d, or 27%)."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E020",
+          "text": "Our customers span a diverse range of industries and a wide range of AI use cases, benefiting from the short time-to-value and high economic returns of our AI solutions and platforms."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E021",
+          "text": "The increase in growth capital expenditures includes a $21.8 million non-cash increase related to our sales tax accrual on compression equipment purchases related to audits we are undergoing with the state of Texas."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E022",
+          "text": "The increased demand in personnel and ENTITY related business activity will create increased demand for personnel involved in the licensing and regulatory aspects of the industry, which provide us with potential to root in this area."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E023",
+          "text": "The increased demand in personnel and ENTITY related business activity will create increased demand for personnel involved in the licensing and regulator aspects of the industry, exacerbating the difficulty of acquiring the necessary personnel to develop ENTITY related businesses."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E024",
+          "text": "These decreases are offset by increases in additional rental revenues primarily due to the growth in the size of our real estate investment portfolio, in addition to increased interest income associated with our mortgage loans receivable."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E025",
+          "text": "Net sales consist of sales from comparable stores and non-comparable stores, described below under \u201cENTITY.\u201d Growth of our net sales is primarily driven by expansion of our store base in existing and new markets."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E026",
+          "text": "Our new stores often open with higher sales levels as a result of greater advertising and promotional spend in connection with grand opening events, but decline shortly thereafter to our new store model levels."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E027",
+          "text": "The increase in cost of revenue was primarily attributable to increased hosting usage to support user growth on our platform and an increase in advertising measurement and other services, partially offset by lower hosting prices and hosting cost efficiencies."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E028",
+          "text": "The increase in cost of revenue was primarily attributable to increased hosting usage to support user growth on our platform and an increase in other advertising services, partially offset by hosting cost efficiencies and lower hosting prices."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E029",
+          "text": "Gross margin for our ENTITY segment was 61.9% in the second quarter of fiscal year 2025 , compared to 59.8% in the second quarter of fiscal year 2024, primarily due to higher volume reducing overhead."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E030",
+          "text": "Gross margin for our ENTITY segment was 63.1% in the third quarter of fiscal year 2025 , compared to 51.6% in the third quarter of fiscal year 2024, primarily due to higher volume reducing overhead."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E031",
+          "text": "Gross margin from ENTITY was 61.6% in the first nine months of fiscal year 2025 , compared to 57.0% in the first nine months of fiscal year 2024, primarily due to higher volume reducing overhead ."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E032",
+          "text": "Gross margin from ENTITY was 60.8% in the first six months of fiscal year 2025 , compared to 59.9% in the first six months of fiscal year 2024, primarily due to higher volume reducing overhead ."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E033",
+          "text": "As a result of these factors, as well as our mix of revenue streams and billing frequencies, we do not believe that changes in our remaining performance obligations and deferred revenue in a given period are directly correlated with our revenue growth in that period."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E034",
+          "text": "ENTITY sales experienced significant growth due to increased demand from data center customers for GPU, HPC, and rack-scale solutions."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E035",
+          "text": "The period-over-period increase in net sales for our subsystems and accessories is primarily due to increased demand of accessories sold to data center customers as more accessories and spares were purchased in conjunction with the strong sales of full systems and servers."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E036",
+          "text": "The increased demand for deliveries was driven by stay-at-home and movement control orders, work-from-home arrangements and social distancing measures implemented as a result of the COVID-19 pandemic in our markets."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E037",
+          "text": "In particular, our business segments were impacted as follows: \u2022 Deliveries : Our deliveries segment experienced significant year-on-year GMV and revenue growth from 2020 to 2022 as consumer adoption of deliveries offerings increased in light of the stay-at-home and movement control orders, work-from-home arrangements and social distancing measures imposed as a result of the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E038",
+          "text": "For our deliveries segment, the COVID-19 pandemic drove its GMV and revenue growth as consumer adoption of deliveries offerings increased in light of the stay-at-home and movement control orders, work-from-home arrangements and social distancing measures imposed as a result of the pandemic."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E039",
+          "text": "Our financial services segment experienced significant year-on-year pre-Interco TPV growth and revenue growth driven by strong performance in deliveries transactions, although this growth was partially offset by the drop in demand for mobility offerings."
+        }
+      ]
+    },
+    {
+      "alias": "C25",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E040",
+          "text": "Accelerating oil demand growth in China, and elsewhere in non-OECD countries, will help offset slower growth in the OECD countries due to economic headwinds as a result of high inflation, rising interest rates and emerging concerns about the strength of the global banking market."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E041",
+          "text": "The net decrease was primarily due to a decrease of $4.1 million resulting from the sale of three Aframax / LR2 tankers and one Suezmax tanker at various times during the first three quarters of 2022, as well as a decrease of $1.1 million resulting from lower crewing-related expenditures in 2023, partially offset by an increase of $2.3 million related to higher repair and maintenance costs on certain tankers, an increase of $0.7 million related to higher expenditures for ship management, as well as an increase of $0.7 million resulting from a higher volume of STS support service activities in 2023."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E042",
+          "text": "Accelerating oil demand growth in China, and elsewhere in the non-OECD, will help offset slower growth in the OECD countries due to economic headwinds as a result of high inflation, rising interest rates and emerging concerns about the strength of the global banking market."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E043",
+          "text": "The net decrease was primarily due to a decrease of $4.1 million resulting from the sale of three Aframax / LR2 ENTITY and one Suezmax tanker at various times during the first three quarters of 2022, as well as a decrease of $1.1 million resulting from lower crewing-related expenditures in 2023, partially offset by an increase of $2.3 million related to higher repair and maintenance costs on certain ENTITY , an increase of $0.7 million related to higher expenditures for ship management, as well as an increase of $0.7 million resulting from a higher volume of STS support service activities in 2023."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E044",
+          "text": "Ad-Supported MAUs increased due to our continued investment in driving the growth of our Ad-ENTITY through successful consumer marketing campaigns, enhanced content offerings, and product enhancements, resulting in continued Ad-ENTITY engagement and customer satisfaction."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E045",
+          "text": "MAUs increased due to our continued investment in driving the growth of our Service through successful consumer marketing campaigns, enhanced content offerings, and product enhancements, resulting in continued user engagement and customer satisfaction."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E046",
+          "text": "Our growth in agriculture is driven by innovation, investment in increasing capacity and M&A, and it is supported by the increasing demand for organic fertilizers, micronutrients, bio stimulants and other specialty fertilizer solutions, focusing on growing markets."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E047",
+          "text": "In 2022, the ENTITY segment achieved all-time records of annual sales and operating income, driven by strong demand for the segment's products, mainly in the first half of 2022, where the segment experienced continued 2021 recovery with high demand and high selling prices in most markets."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E048",
+          "text": "Sales of dairy proteins increased year-over-year, driven by strong demand for the Segment\u2019s specialty milk powders and other food applications, including an innovative milk protein which provides better taste and texture in Greek yogurt and other food products."
+        },
+        {
+          "evidence_id": "2024Q4_P1_E049",
+          "text": "In addition, during 2022 there was higher demand for power plants fluids following maintenance shutdowns that were postponed from 2020 to 2021-2022, which was necessary to cope with the increase of private consumption and the shortage of natural gas."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E050",
+          "text": "High-quality customer education and experience has been key to the adoption of our platform, for the conversion of individuals, teams and organizations on our trial version into paying customers, expansion of accounts, and for growth or maintenance of our retention rates."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q4_P1_E051",
+          "text": "Net premiums increased 69.0% mainly due to increases of (i) S/366.0 million in annuities primarily attributable to a market expansion of survivorship annuities, as a result of higher mortality due to the COVID-19 pandemic, (ii) S/42.0 million in individual life primarily explained by a 28% increase in the sales force headcount and continued growth in online sales, and (iii) S/16.8 million in retail insurance premiums primarily due to SOAT recovery and increases in sales from digital products such as car insurance and travel insurance."
+        }
+      ]
+    }
+  ]
+}

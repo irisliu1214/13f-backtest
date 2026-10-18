@@ -1,0 +1,383 @@
+{
+  "quarter": "2018Q1",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E001",
+          "text": "The anticipated low growth is primarily due to inconsistent demand in certain markets and increased hotel supply meeting demand growth in others, limiting the Company\u2019s ability to increase rates."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E002",
+          "text": "The low growth is primarily due to inconsistent demand in certain markets and increased hotel supply meeting demand growth in others, limiting the Company\u2019s ability to increase rates."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E003",
+          "text": "During the first quarter of 2018, revenue growth from the leisure travel sector of the industry was estimated to be stronger than from the business travel sector as a result of the shift of the Easter holiday to March and April in 2018."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E004",
+          "text": "ENTITY-Light revenue growth was primarily due to higher revenue per shipment associated with improved market prices in the ENTITY segment."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E005",
+          "text": "Consolidated operating income for 2017 was impacted by nonunion fringe benefit costs, which increased $3.6 million, compared to 2016, primarily due to additional costs related to contributions to our defined contribution plan, increased nonunion pension costs, and higher costs of long-term incentive plans related to total shareholder returns relative to our industry peer group, partially offset by lower nonunion healthcare costs."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E006",
+          "text": "The higher revenue per hundredweight measure benefited from the yield improvement initiatives we began implementing in 2017 and from higher fuel surcharges."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E007",
+          "text": "The higher revenue per hundredweight measure benefited from the effect of yield improvement initiatives and higher fuel surcharges."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E008",
+          "text": "Further contributing to the rise in total income was the \u20ac1,262 million increase in Net fees and commissions driven by the performance of Brazil and Spain (including ENTITY Popular), basically due to the higher volume of transactions and customer loyalty."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E009",
+          "text": "The latter two occurred in markets that are deleveraging, where growth in new lending is still not sufficient to increase the stock. \u00b7 By segments, growth in loans to individual customers as well as SMEs and companies, spurred by the 1|2|3 and SMEs strategies. \u00b7 As for ENTITY in Spain, net lending was down 29%, as a result of continuing the deleveraging strategy of the last few years."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E010",
+          "text": "This growth was due to ENTITY Consumer USA, driven by the greater volume of portfolios, which boosted Interest/income ( charges ) , and Net fees and commissions from servicing."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E011",
+          "text": "Further contributing to the rise in total income was the \u20ac1,262 million increase in Net fees and commissions driven by the performance of Brazil and Spain (including ENTITY Popular), basically due to the higher volume of transactions and customer loyalty."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E012",
+          "text": "The latter two occurred in markets that are deleveraging, where growth in new lending is still not sufficient to increase the stock. \u00b7 By segments, growth in loans to individual customers as well as SMEs and companies, spurred by the 1|2|3 and SMEs strategies. \u00b7 As for ENTITY in Spain, net lending was down 29%, as a result of continuing the deleveraging strategy of the last few years."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E013",
+          "text": "This growth was due to ENTITY Consumer USA, driven by the greater volume of portfolios, which boosted Interest/income ( charges ) , and Net fees and commissions from servicing."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E014",
+          "text": "This change in our operating assets and liabilities was partially offset by a $6.6 million increase in deferred revenue as a result of the growth of our customer and user base and a $5.1 million decrease in accounts receivable due to increased collections. 28 For the quarter ended March 31, 2017, cash used in operations was $1.7 million resulting from our net loss of $7.7 million and net cash flow used as a result of changes in our operating assets and liabilities of $1.6 million, partially offset by net non-cash expenses of $7.6 million."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E015",
+          "text": "Reported net sales were helped by an estimated net increase in distributor inventories in the ENTITY. \u2022 Herradura grew reported net sales 19% , while underlying net sales increased 20% driven by higher volumes and favorable price/mix in the brand\u2019s largest markets, Mexico and the ENTITY, the former of which benefited from volumetric growth of ENTITY."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E016",
+          "text": "Underlying net sales growth was led by higher volumes of JDTW, ENTITY, ENTITY, and Herradura, the last of which also benefited from favorable price/mix. \u2022 Other non-branded."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E017",
+          "text": "Underlying net sales growth was driven by the ENTITY\u2019s family of brands due to price increases, a shift in product mix to higher margin RTD brands, and higher volumes of JD RTDs and JDTW. \u2022 Other geographies."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E018",
+          "text": "Underlying net sales growth was driven by the ENTITY\u2019s family of brands, led by favorable price/mix and higher volumes of JD RTDs and volumetric growth of JDTW. \u2022 Other geographies."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E019",
+          "text": "Demand is driven by the confluence of several secular economic and industry trends, including: rapid growth of the Internet, e-commerce, e-payments and big data; rising adoption of cloud computing and server virtualization, which requires data centers with higher power capacity, density and efficiency; increasing criticality of information technology and data in the enterprise environment which requires data centers with higher reliability; and growing reliance by enterprises on outsourcing as a solution to the increasing complexity and cost of managing mission-critical IT infrastructure."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E020",
+          "text": "Demand is driven by the confluence of several secular economic and industry trends, including: rapid growth of the Internet, e-commerce and big data; rising adoption of cloud computing and server virtualization, which requires data centers with higher power capacity, density and efficiency; increasing criticality of information technology and data in the enterprise environment which requires data centers with higher reliability; and growing reliance by enterprises on outsourcing as a solution to the increasing complexity and cost of managing mission-critical IT infrastructure."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E021",
+          "text": "The forward-looking statements included in this annual report on Form 20-F relate to, among others: \u00b7 our goals and strategies; \u00b7 our expansion plans; \u00b7 our future business development, financial condition and results of operations; \u00b7 the expected growth of the data center and cloud services market; \u00b7 our expectations regarding demand for, and market acceptance of, our services; \u00b7 our expectations regarding keeping and strengthening our relationships with customers; and \u00b7 general economic and business conditions in the regions where we operate."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E022",
+          "text": "ARPU increased 5.8% from $130 for the period ended March 31, 2017 to $138 for the period ended March 31, 2018 , primarily due to broadened customer adoption of our products resulting in increased customer spend and revenue from acquired businesses."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E023",
+          "text": "The increase was primarily driven by increased customer adoption of our email and productivity solutions as well as seasonal revenue from HEG sponsored events."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E024",
+          "text": "The increase was primarily driven by increased customer adoption of our expanded email and productivity solutions."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E025",
+          "text": "Net cash provided by operating activities increased $127.3 million from $259.2 million in 2015 to $386.5 million in 2016 , driven by our bookings growth and a reduction in interest payments primarily resulting from the repayment of a senior note to YAM in April 2015."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E026",
+          "text": "Unlike the broader timeshare industry, which experienced a contraction in 2008 and 2009 as a result of the overall economic recession, we were able to grow contract sales during the industry downturn and have continued to deliver contract sales growth in each period since, driven by our continued focus on marketing and sales activities, our strong development margins, large-market distribution model, synergies with ENTITY , commitment to new owner transactions and lean organizational structure."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E027",
+          "text": "Gross margin percentage on home sales excluding the backlog write-up increased compared to the first quarter of 2017 primarily due to an increase in the average sales price of homes delivered and increased volume."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E028",
+          "text": "The increase in the number of home deliveries is primarily due to higher demand as the number of deliveries per active community increased and an increase in active communities due to communities acquired from CalAtlantic during the first quarter of 2018 ."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E029",
+          "text": "The increase in the number of deliveries was primarily driven by an increase in active communities over 2015 primarily in Florida and/or driven by higher demand as the number of deliveries per active community increased."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E030",
+          "text": "The increase was primarily due to an increase of $9.4 million in employee compensation costs related to headcount growth, an increase of $5.0 million related to marketing and event costs primarily driven by increases in demand generation programs, advertising, customer sponsorships, a larger annual customer conference and brand awareness efforts aimed at acquiring new customers and an increase of $1.5 million in allocated overhead costs."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E031",
+          "text": "ENTITY of Revenue and ENTITY quarterly gross margin has generally been increasing due to increasing subscription revenue and related economies of scale combined with the overall growth in our professional services revenue and increased utilization of professional services personnel."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E032",
+          "text": "We will require significant capital expenditures and the allocation of valuable management resources to grow and change in these areas without undermining our culture of rapid innovation, teamwork and attention to customer success, which has been central to our growth so far."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E033",
+          "text": "ENTITY ENTITY experienced RevPAR growth of 6.0%, primarily attributable to increased transient demand from leisure business in March 2018 due to the timing of the Easter holiday occurring earlier than in 2017."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E034",
+          "text": "ENTITY experienced overall RevPAR growth of 1.9%, attributable to increased occupancy as a result of increased group demand."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E035",
+          "text": "Our future rental growth will also be dependent upon many factors for each market that we operate in, including demand for self- ENTITY space, the level of new supply of self- ENTITY space and the average length of stay of our tenants."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E036",
+          "text": "Professional services revenue increased by $10.4 million in 2016 compared to 2015, primarily due to increased demand for our assessment services, which are primarily sold on a standalone basis, and deployment and training services, which are primarily sold with software licenses as a multiple-element arrangement."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E037",
+          "text": "The 7.1 percent growth in NOI is primarily due to increased revenues of $26.8 million partially offset by additional expenses of $4.7 million ."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E038",
+          "text": "For example, the recent increase in silicon wafer prices due to increased demand for such wafers across the industry had a negative impact on our gross margin in 2017 and the trend is expected to continue in 2018."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E039",
+          "text": "The recent increase in silicon wafer prices due to increased demand for such wafers across the industry had a negative impact on our gross margin in 2017 and the trend is expected to continue in 2018."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E040",
+          "text": "For example, the recent increase in silicon wafer prices due to increased demand for such wafers across industry is expected to negatively impact our gross margin in 2017."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E041",
+          "text": "Our net revenue in 2017 increased by 3.1% compared to 2016, mainly due to the introduction of 10-nanometer products, the continuing strong demand for 16-nanometer products, partially offset by NT dollar appreciation."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E042",
+          "text": "As a result of the sustained focus of our management team, we have been successful in consistently driving growth, both organically and through acquiring and integrating businesses. 6 ENTITY, Technology and ENTITY to ENTITY As the demand for big data and analytics solutions grows across industries and geographies, we will continue to expand the scope of our underlying data, improve our tools and technology and enhance our analytics and decisioning capabilities to provide innovative solutions that address this demand."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E043",
+          "text": "ENTITY is a growing market with increasing demand for credit driven by a rising middle class that offers significant growth potential in analytics and decisioning."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E044",
+          "text": "There are several underlying trends supporting this market growth, including the creation of large amounts of data, advances in technology and analytics that enable data to be processed more quickly and efficiently to provide business insights, and growing demand for these business insights across industries and geographies."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E045",
+          "text": "ENTITY and ENTITY sales for the first quarter of fiscal 2018 grew to $314.8 million, an increase of 53.9% compared to the comparable quarter in fiscal 2017, as a result of demand for our products increasing with generally strong demand in the semiconductor industry, as well as strong execution on time-sensitive orders and a faster than expected ramp up of new product line wins with our existing customers due to larger than expected demand towards the end of the first quarter of fiscal 2018."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E046",
+          "text": "The increase in overall sales in the first quarter of 2018 compared to the first quarter of 2017 is primarily due to an increase in demand from our existing semiconductor customers as a result of generally strong demand in the semiconductor industry during the period."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E047",
+          "text": "Our gross margin percentage and absolute dollars of gross profit increased in fiscal year 2016 from the comparable period in 2015 due to higher sales volume, a sales mix which included higher margin products and certain improvements in operational efficiencies at our manufacturing locations in the U.S., which typically deliver lower margins due to higher labor and overhead costs. 34 Research and ENTITY and development expense for fiscal year 2016 was $9.9 million or 1.8% of sales, compared to $9.6 million, or 2.0% of sales, for fiscal year 2015."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E048",
+          "text": "These forward-looking statements include, but are not limited to, statements relating to: \u2022 our goals and strategies; \u2022 our future business development, results of operations and financial condition; \u2022 the expected growth of the online discount retail market in China; \u2022 our ability to attract customers and brand partners and further enhance our brand recognition; \u2022 our expectations regarding demand for and market acceptance of flash sales products and services; \u2022 competition in our industry; \u2022 fluctuations in general economic and business conditions in China; and \u2022 assumptions underlying or related to any of the foregoing."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E049",
+          "text": "Historically, we have benefited from viral marketing resulting from word-of-mouth referrals from our customers who often expressed their excitement on social media platforms regarding their purchases on our platform."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E050",
+          "text": "Our capital expenditures increased significantly in 2014 through 2016 largely due to construction and expansion of warehouses, land use right and other logistic infrastructure."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E051",
+          "text": "Growth in ENTITY ENTITY Rentals revenue was primarily attributable to increases in consumer adoption of our rentals information marketplaces, which in turn increased the likelihood of a lead, lease, or click that we monetize, and advertiser adoption of our cost per lead, cost per lease and cost per click advertising products, as well as enhancements to our marketing products that improve the ways in which consumers and advertisers connect through the ENTITY ENTITY Rentals marketplace."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E052",
+          "text": "Growth in ENTITY ENTITY Rentals revenue was primarily attributable to increases in consumer adoption of our rentals information marketplaces, which in turn increased the likelihood of a lead or lease that we monetize, and advertiser adoption of our cost per lead and cost per lease advertising products, as well as enhancements to our marketing products that improve the ways in which consumers and advertisers connect through the ENTITY ENTITY Rentals marketplace."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E053",
+          "text": "The increase in average revenue per loan information request was primarily a result of our flagship mortgage advertising platform, ENTITY, which yields higher revenue than our other mortgage advertising products, and increased consumer adoption of ENTITY, which was driven by product enhancements that allow us to monetize our mortgages products more efficiently."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E054",
+          "text": "Growth in new construction revenue was primarily attributable to increases in adoption by and advertising sales to new home builders through our new construction platform."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E055",
+          "text": "Growth was tempered by lower sales of certain in-line products due to expected competition . \u2022 Livestock revenue increased primarily due to higher sales of cattle and poultry products and a return to growth in our swine business."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E056",
+          "text": "Sales also benefited from increased demand in China due to field force expansions and increasing medicalization rates."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E057",
+          "text": "Growth was partially offset by our operational efficiency initiative, which includes product rationalization and the impact of our business decisions in Venezuela and India. \u2022 Companion animal revenue growth resulted from increased sales of Apoquel \u00ae , other new product launches, and demand for our vaccines portfolio in China, due to increased field force expansions and positive medicalization rates."
+        },
+        {
+          "evidence_id": "2018Q1_P2_E058",
+          "text": "Cattle products grew due to the colder weather increasing treatments and strong demand for vaccines in Mexico."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2018Q1_P2_E059",
+          "text": "The increase of this segment\u2019s share of total revenues in 2016 and 2017 is primarily due to robust growth in the number of rides across our territories driven by aggressive investments in our existing markets as well as in geographical expansion."
+        }
+      ]
+    }
+  ]
+}

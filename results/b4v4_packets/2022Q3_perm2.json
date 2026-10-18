@@ -1,0 +1,373 @@
+{
+  "quarter": "2022Q3",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E001",
+          "text": "Offsetting these declines in net revenue, ENTITY has experienced an increase in net revenue related to increased demand for certain respiratory products (such as oxygen), increased sales in its resupply businesses (primarily as a result of the increased ability to contact patients at home as a result of state and local government imposed stay-at-home orders) and the one-time sale of certain respiratory equipment (primarily ventilators, bi-level PAP devices and oxygen concentrators) to hospitals and local health agencies."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E002",
+          "text": "Net revenue for the 2022 and 2021 periods included $0.4 million and $10.2 million, respectively, from referral partners and healthcare facilities in support of their urgent needs as the coronavirus pandemic led to an increased demand for respiratory equipment including ventilators and oxygen concentrators."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E003",
+          "text": "The increase was primarily due to higher compensation and personnel-related expenses of $9.7 million, higher sales and marketing expenses of $7.3 million, and higher professional services of $1.2 million."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E004",
+          "text": "The increase in administrative, transaction and other fees was driven primarily by the following: (i) an increase of $15.9 million in administrative fees, driven by a higher level of reimbursable expenses due to growth in our products and business overall; (ii) a $14.4 million increase in dealer manager revenues due to growth in the distribution of our retail BDCs; (iii) partially offset by a $21.1 million decrease in fee income earned for services provided to portfolio companies, reflecting a lower volume of transactions on which we earn such fees."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E005",
+          "text": "Cash flow decreases resulting from the net change in assets and liabilities primarily consisted of an increase in prepaid expenses and other assets of $23.3 million mainly due to advanced payments to supply chain partners, an increase in inventory of $9.4 million to improve our responsiveness to customer demand, a decrease in accounts payable of $6.1 million due to the timing of payments related to inventory purchases and an increase in accounts receivable of $0.9 million in line with our revenue growth."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E006",
+          "text": "Cash flow decreases resulting from the net change in assets and liabilities primarily consisted of an increase in inventory of $22.9 million to support revenue growth and to mitigate supply chain shortages and disruptions and an increase in accounts receivable of $22.5 million, due to product shipment timing."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E007",
+          "text": "All statements other than statements of historical facts are \u201cforward-looking statements\u201d for purposes of these provisions, including any projections of earnings, revenue or other financial items, any statement of or concerning the following: the plans and objectives of management for future operations, proposed new products or licensing, product development, anticipated customer demand or capital expenditures, anticipated growth and trends in our business and industry, future economic and/or market conditions or performance and assumptions underlying any of the above."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E008",
+          "text": "The $5.5 billion increase was primarily related to increased cash receipts from the sale of ENTITY cargoes due to higher revenue per MMBtu and to a lesser extent higher volume of ENTITY delivered."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E009",
+          "text": "Cost of revenues as a percentage of direct revenues increased 2.0% from the comparable period in the prior year mainly due to the mix of services, including lower COVID-19 decontamination services and the growth of our industrial services offerings which typically operate at margins lower than our waste disposal focused offerings."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E010",
+          "text": "Direct revenues of our industrial service offerings increased $203.8 million, of which approximately $173.7 million was generated by HydroChemPSC, while the remainder was primarily due to increased demand and pricing for our core industrial services."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E011",
+          "text": "Consistent with the discussion above, a significant portion of this increase is due to the incremental business from the HydroChemPSC operations within industrial service and field and emergency response service revenues and organic growth across our service offerings."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E012",
+          "text": "A. \u200b (a) The increase in the proceeds from sales was mainly due to higher sales and production of the Group, as described in Results of Operations for the ENTITY 31, 2021 and 2020 by Segment . (b) The increase in dividends received from ENTITY was mainly due to the US$137.1 million received during 2021. (c) The decrease in the value-added tax and other taxes recovered is explained by the lower recoveries by the Group during 2021 as a result of a higher offsetting of our tax credit applied against local sales taxes of the Group during 2021."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E013",
+          "text": "The opening of new mines and the expansion of existing ones have led to increased demand for, and increased costs and shortages of, equipment, supplies and experienced personnel."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E014",
+          "text": "The growth in the U.S. was driven primarily by (i) an increase in revenue per car partially driven by the scarcity of vehicles due to global supply chain disruptions and (ii) an increase in volume resulting from higher miles driven due to the reopening of the ENTITY economy."
+        }
+      ]
+    },
+    {
+      "alias": "C25",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E015",
+          "text": "Comparable DTC net sales for the 13 weeks ended October 2, 2022 increased by 38.2%, compared to the prior period. \u2022 Wholesale net sales of the UGG brand increased due to higher international sales growth, including as a result of our international reset strategies, driven by higher demand for our Classics franchise derivatives, as well as hybrid products and lapping disrupted international shipments in the prior period."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E016",
+          "text": "Our DTC channel also had an increase in global sales for the UGG brand, primarily due to higher demand for our Classics franchise derivatives, as well as hybrid products such as the Tasman style."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E017",
+          "text": "Our DTC channel also had higher global net sales for the UGG brand, primarily due to higher demand for our Classics franchise derivatives, as well as hybrid products such as the Tasman style."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E018",
+          "text": "ENTITY income for the Monterrey airport increased by 13.3% from Ps.445,952 thousand in 2020 to Ps.505,076 thousand in 2021, due primarily to an increase of 66.3% in aeronautical and non-aeronautical revenues, which was partially offset by an increase of 57.4% in operating costs, mainly due to the increase in solidarity fees from Ps.855,891 thousand in 2020 to Ps.1,803,003 thousand in 2021, principally as a result of the growth in aeronautical and non-aeronautical revenues."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E019",
+          "text": "Operating income for the ENTITY Potos\u00ed airport increased by 1.8% from Ps.34,648 thousand in 2020 to Ps.35,288 thousand in 2021, due primarily to an increase of 69.2% in aeronautical and non-aeronautical revenues, which was partially offset by an increase of 64.4% in operating costs mainly due to the increase in solidarity fees from Ps.41,086 thousand in 2020 to Ps.73,275 thousand in 2021, principally as a result of the growth in aeronautical and non-aeronautical revenues."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E020",
+          "text": "Operating income for the Durango airport increased by 205.0% from Ps.10,220 thousand in 2020 to Ps.31,170 thousand in 2021, due primarily to an increase of 87.6% in aeronautical and non-aeronautical revenues, which was partially offset by an increase of 33.5% in operating costs mainly due to the increase in solidarity fees from Ps.24,135 thousand in 2020 to Ps.59,662 thousand in 2021, principally as a result of the growth in aeronautical and non-aeronautical revenues."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E021",
+          "text": "Operating income for the Tampico airport increased by 114.4% from Ps.10,158 thousand in 2020 to Ps.21,775 thousand in 2021, due primarily to an increase of 67.0% in aeronautical and non-aeronautical revenues, which was partially offset by an increase of 75.4% in operating costs mainly due to the increase in solidarity fees from Ps.3,441 thousand in 2020 to Ps.38,191 thousand in 2021, principally as a result of the growth in aeronautical and non-aeronautical revenues."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E022",
+          "text": "The increase in both comparable periods was primarily due to patient engagement and marketing activities driven by our commercialization of WAKIX and increased personnel costs related to sales force expansion."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E023",
+          "text": "Benefiting from mortgage and business ENTITY balance growth, offset by lower unsecured balances due to reduced levels of activity and demand during the pandemic."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E024",
+          "text": "The decrease was largely driven by a reduction in balances on the ENTITY (BBLS) and the ENTITY (CBILS) as the schemes closed in March 2021 and repayments commenced from the second quarter of 2021 \u2022 ENTITY benefit from Pay as ENTITY (PAYG) options including repayment holidays and term extensions which have the potential to delay recognition of customer financial difficulties \u2022 Stage 3 loans and advances increased to 4.1 per cent (31 December 2020: 1.0 per cent) driven largely by BBLS assets."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E025",
+          "text": "Digital-only providers have continued to see significant growth in customer numbers, particularly in the small business segment, supported by broader digital adoption."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E026",
+          "text": "Rodenticides, Insecticides & Disinfectants \u2013 Revenues of products in this category sold through our ENTITY operations increased 12% in fiscal 2021 compared to fiscal 2020, due primarily to continued strength in cleaners and disinfectant sales in China resulting from increased demand due to the African swine fever outbreak in that country and the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E027",
+          "text": "The increase was primarily due to continued strength in sales of cleaners and disinfectants to Asia resulting from the African swine fever outbreak in that region increasing demand, and higher sales to a U.K.-based toll manufacturer."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E028",
+          "text": "The growth was led by increases in beef and sheep testing in Australia, due to improved market conditions, and higher sample volumes from domestic dairy and beef cattle and poultry customers."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E029",
+          "text": "China\u2019s sales were flat, as growth in the first half of the fiscal year was offset by lower sales in the last six months due to lockdowns and restrictions resulting from China\u2019s \u201cZero COVID\u201d strategy."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E030",
+          "text": "The increase in costs directly attributable to the operation of our platform and others from RMB5,996.9 million in 2019 to RMB17,733.1 million (US$2,717.7 million) in 2020 was primarily due to the increase of RMB7,198.7 million in cost and expenses attributable to merchandise sales and delivery and storage fees, the increase of RMB2,061.8 million in bandwidths and server costs to keep pace with the growth of our online marketplace services, and the increase of RMB1,466.2 million in call center and merchant support services."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E031",
+          "text": "The increase in costs directly attributable to the operation of our platform and others from RMB5,996.9 million in 2019 to RMB17,733.1 million in 2020 was primarily due to the increase of RMB7,198.7 million in cost and expenses attributable to merchandise sales and delivery and storage fees, the increase of RMB2,061.8 million in bandwidth and server costs to keep pace with the growth of our online marketplace services, and the increase of RMB1,466.2 million in call center and merchant support services."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E032",
+          "text": "Net interest margin also increased in the second quarter and first six months of 2022 compared to the same periods in 2021, benefiting from the rising interest rate environment and controlled deposit costs."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E033",
+          "text": "Operating income increased due to an increase in revenue driven by double digit growth in all lines of service, despite a resurgence of COVID-19 that affected our productivity earlier in the quarter as well as the business interruption from ENTITY that impacted the Southeast market in the latter part of the quarter."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E034",
+          "text": "We also saw a general increase in spending associated with people, materials and supplies and fleet costs, due to an increase in business activity albeit at a slower pace than revenue growth."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E035",
+          "text": "In addition to meeting our development goals on the expected timeline, future growth and demand for our products is highly dependent upon consumers adopting the use of electric vehicles."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E036",
+          "text": "The complaint alleged, among other things, that the Company and the individual defendants made false or misleading statements and/or omitted to disclose material facts concerning the Company\u2019s technological capabilities and expertise to support increased demand for virtual and blended education related to the global emergence of COVID-19, its cybersecurity protocols and protections, and its administrative support and training to teachers, students, and parents."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E037",
+          "text": "The increase was driven by increased demand for our ENTITY SaaS product as SMBs accelerate their move away from manual processes and towards cloud platforms to more efficiently manage and grow their businesses, and by our success in re-focusing our go-to-market and onboarding strategy to target higher spend and higher engaged clients."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E038",
+          "text": "The increase was driven by increased demand for our ENTITY SaaS product as SMBs accelerate their move away from manual processes and towards cloud platforms to more efficiently manage and grow their businesses, and by our success in re-focusing our go-to-market and onboarding strategy to target higher value clients."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E039",
+          "text": "The increase was driven by increased demand for our ENTITY platform as we continue to increase sales to SMBs in Australia."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E040",
+          "text": "The increase was driven by increased demand for our ENTITY SaaS product as SMBs accelerate their move away from manual processes and towards cloud platforms to more efficiently manage and grow their businesses, and by our success in re-focusing our go-to-market and onboarding strategy to target higher value clients. 37 This increase was partially offset by a decline in our lower-spend and less-engaged legacy SaaS clients that tend to have a higher churn rate."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E041",
+          "text": "In particular, increased demand for semiconductor chips in recent years, due in part to the COVID-19 pandemic and an increased use of laptop computers, 5G phones, gaming systems, and other IT equipment that use these chips, has resulted in an ongoing severe global shortage of chips."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E042",
+          "text": "This growth, though, continued to be constrained by limited component availability due to global semiconductor supply allocation issues experienced during the quarter, along with certain internal processing and testing constraints. \u2022 Export sales represented approximately 69.2% of total net revenues in the second quarter of 2022 as compared to 72.0% in the first quarter of 2022. \u2022 Gross margin increased to $46,849,000 for the second quarter of 2022 from $37,601,000 for the first quarter of 2022, and gross margin, as a percentage of net revenues, increased to 45.8% for the second quarter of 2022 from 42.6% for the first quarter of 2022."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E043",
+          "text": "Net revenues for ENTITY increased 27.2% compared to the second quarter of 2022, primarily due to the ability to shift manufacturing resources to focus on available backlog, as well as, favorable market conditions in ENTITY and Europe for ENTITY."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E044",
+          "text": "Given the growth profiles of the markets we serve with our ENTITY line and our ENTITY line, our strategy involves a transition in organizational focus, emphasizing investment in our ENTITY line and targeting high growth market segments with a low-mix, high-volume operational model, while maintaining a profitable business in the mature market segments we serve with our ENTITY line with a high-mix, low-volume operational model."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E045",
+          "text": "Both the increase in gross margin dollars and gross margin percentage were primarily due to the increase in net revenues and improved absorption of fixed costs due to increased volumes. \u2022 Backlog, which represents the total value of orders for products for which shipment is scheduled within the next 12 months, was approximately $410,015,000 at the end of the second quarter of 2022, as compared to $423,738,000 at the end of the first quarter of 2022."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E046",
+          "text": "These increases were primarily caused by increased demand related to supply uncertainties due to Russia\u2019s invasion of Ukraine and general expanding economic activity."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E047",
+          "text": "Demand for our LNG vessels is dependent upon economic growth in the world's economies, seasonal and regional changes in demand, changes in the capacity of the global LNG fleet and the sources and supply of LNG transported by sea."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E048",
+          "text": "Demand was driven by growth in digitalization resulting from stay-at-home and movement control orders, work-from-home arrangements and social distancing measures implemented as a result of the COVID-19 pandemic in our markets."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E049",
+          "text": "The increased demand for deliveries was driven by stay-at-home and movement control orders, work-from-home arrangements and social distancing measures implemented as a result of the COVID-19 pandemic in our markets."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E050",
+          "text": "In particular, our business segments were impacted as follows: \u2022 Deliveries : Our deliveries segment experienced significant year-on-year GMV and revenue growth from 2019 to 2021 as consumer adoption of deliveries offerings increased in light of the stay-at-home and movement control orders, work-from-home arrangements and social distancing measures imposed as a result of the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2022Q3_P2_E051",
+          "text": "For our deliveries segment, the COVID-19 pandemic drove its GMV and revenue growth as consumer adoption of deliveries offerings increased in light of the stay-at-home and movement control orders, work-from-home arrangements and social distancing measures imposed as a result of the pandemic."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2022Q3_P2_E052",
+          "text": "As a result of the growth of ENTITY 's activities, with a higher volume of deposits and related investment in financial assets, in 2021 the Group began to hold financial assets in a held-to-collect-and-sell business model which resulted in their classification as FVTOCI."
+        }
+      ]
+    }
+  ]
+}

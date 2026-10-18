@@ -1,0 +1,271 @@
+{
+  "quarter": "2017Q2",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E001",
+          "text": "The overall increase in revenue was also attributable to growth in revenue from our Core solutions of $3.3 million , or 34% , driven by growth in the number of our customers, units under management and strong customer renewal rates."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E002",
+          "text": "The overall increase in revenue was also attributable to growth in revenue from our Core solutions of $3.3 million , or 32% , driven by growth in the number of our customers and units under management."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E003",
+          "text": "The increase was primarily due to increased third-party costs of $1.6 million driven by increased Value+ services and increased personnel-related costs of $0.7 million due to our headcount growth supporting our revenue growth."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E004",
+          "text": "The increase was primarily due to increased third-party costs of $1.7 million driven by increased Value+ services revenue and increased personnel-related costs of $0.5 million due to the continued growth of our business."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E005",
+          "text": "The four end markets we target are all driven by significant bandwidth demand fueled by the growth of network-connected devices, video traffic, cloud computing and online social networking."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E006",
+          "text": "The increase in revenues in the CATV market for the three and six month ended June 30, 2017 was a result of increased demand from customers who are supplying equipment for CATV network upgrades which began during the year."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E007",
+          "text": "The increase in revenues in the CATV market for the year was a result of increased demand from customers who are supplying equipment for CATV network upgrades which began during the year."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E008",
+          "text": "The increase in deferred revenue is primarily due to the higher revenue in the quarter and the timing of the acceptance of system sales."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E009",
+          "text": "The increase is primarily due to an investment in increased headcount to support revenue growth, traveling costs and incentive plan expense."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E010",
+          "text": "The increase was due to higher sales of our Purion systems sold in the six month period ended June 30, 2017."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E011",
+          "text": "The increase was due to higher sales of our Purion systems sold in the recent quarter."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E012",
+          "text": "Net revenues in our brand e-commerce segment increased primarily because service revenue increased from RMB656.2 million in 2015 to RMB1,205.1 million (US$173.5 million) in 2016, primarily resulting from growth in sales of apparel products sold by existing brand partners as they expanded their online presence and the addition of new brand partners in the same category."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E013",
+          "text": "Net revenues in our brand e-commerce segment increased also because service revenue increased from RMB397.3 million in 2014 to RMB656.2million (US$101.3 million) in 2015, resulting from growth in sales of apparel products sold by existing brand partners as they expanded their online presence and the addition of new brand partners in the same category."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E014",
+          "text": "Our accrued expenses and other current liabilities increased primarily due to i) an increase in amount received from end customers on behalf of and payable to merchants on Maikefeng marketplace after Maikefeng open to third party merchants; ii) increases in logistics, marketing and salary expenses payable as a result of business growth."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E015",
+          "text": "This increase was primarily due to an increase in product sales in our Maikefeng segment from RMB29.0 million in 2014 to RMB67.9 million (US$10.5 million) in 2015, resulting from growth in sales volume."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E016",
+          "text": "The increase in deferred revenue was primarily due to the growth in the number of paying customers, increased renewals and expansion of our existing customers as they broadened their deployment of our services and an enhanced developer access fee from one of our resellers."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E017",
+          "text": "The increase in deferred revenue was primarily due to the growth in the number of paying customers and increased renewals and expansion of our existing customers as they broadened their deployment of our services."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E018",
+          "text": "The increase in gross profit was attributable to higher revenue as a result of incremental retail store revenue generated during the three month period, growth in our e-commerce business and lower product costs in Canadian dollars, partially offset by the proportionate share of factors noted above that relate to DTC."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E019",
+          "text": "The increase in segment gross profit was attributable to the growth in e-commerce revenue in our DTC channel, including the impact of having the U.S. e-commerce store open beginning in September of 2015, as well as overall higher revenue in fiscal 2016 . - 66 - Selling, General and ENTITY SG&A expenses for fiscal 2016 increased by $40.8 million over fiscal 2015 , or 68.8%, representing 34.4% of revenue in fiscal 2016 , compared to 27.2% of revenue in fiscal 2015 ."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E020",
+          "text": "The increase in gross profit was attributable to the growth in e-commerce revenue in our DTC channel as well as overall higher revenue in fiscal 2016 ."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E021",
+          "text": "Over the past two fiscal years, our gross margin has improved as a result of an increase in sales in our DTC channel, execution on our geographic expansion strategy, and an increase in the average effective price of our products."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E022",
+          "text": "Additionally, our professional fees, technology costs, lease costs and other costs related to our growth increased $3.0 million, $1.7 million, $1.1 million and $3.0 million, respectively, period over period, as a result of the growing customer base and service offerings and the 2016 business combinations mentioned above."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E023",
+          "text": "The increase in Adjusted EBITDA was primarily due to cost saving initiatives and an increase in volume associated with the realignment of our customer and product portfolio aimed at driving profitable growth."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E024",
+          "text": "The increase in volume/mix was primarily the result of additional shipping days in the current period and increased demand for our products driven by our profitable growth initiatives compared to the same period in the prior year."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E025",
+          "text": "The increase s in new contracts and backlog were primarily due to an increase in our average number of communities during the period, along with a modest improvement in demand in our Florida markets as well as continued growth in our Texas operations in the first half of 2017 compared to the first half of 2016 ."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E026",
+          "text": "The increase s in new contracts and backlog were primarily due to improved demand in our Florida markets as well as continued growth in many of our Texas markets."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E027",
+          "text": "In addition, our new contracts benefited from the opening o 32 f 42 new communities during the first half of 2017 , although some of these new communities opened later in the quarter, and thus did not contribute a significant number of sales contracts in the quarter."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E028",
+          "text": "In addition, as a result of our rapid growth, a large percentage of our sales force is new to our company and our solutions and therefore less effective than our more seasoned employees."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E029",
+          "text": "Investment in Growth We plan to continue to invest in sales and marketing so that we can capitalize on our market opportunity, and as part of this, we intend to specifically expand our focus on opportunities with major accounts and large deals, which we define as transactions over $500,000."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E030",
+          "text": "The increase in net sales was primarily attributable to sales growth in Vistar, particularly their retail, theater, vending, and hospitality channels and case growth in ENTITY Foodservice, particularly in the Street channel."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E031",
+          "text": "Operating expenses increased as a result of an increase in case volume and the resulting impact on variable operational and selling expenses, as well as cost of living and other increases in compensation and benefits and increases in costs associated with insurance expense of $1.4 million and $4.4 million for the third quarter and nine month period of fiscal 2017, respectively."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E032",
+          "text": "Operating expenses increased as a result of an increase in case volume and the resulting impact on variable operational and selling expenses, as well as cost of living and other increases in compensation and benefits and increases in costs associated with insurance expense of $2.1 million and $3.0 million for the second quarter and first six months of fiscal 2017, respectively."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E033",
+          "text": "Our operating expenses, compared to the third quarter and nine month period of fiscal 2016, rose 7.1% and 8.1%, respectively, as a result of increases in case volume, strategic investments, compensation and other personnel benefits, and insurance expense."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E034",
+          "text": "ENTITY in the second quarter of 2017 benefited from a return to a normal spring weather pattern following the early spring in 2016 when we experienced unusually strong ENTITY growth in the first quarter and correspondingly weaker ENTITY growth in the second quarter."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E035",
+          "text": "Growth in High speed Internet access revenues was as a result of the increased ENTITY footprint in Charlottesville, VA and Westminster, MD and launch of services in ENTITY, NC."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E036",
+          "text": "Growth in High speed Internet access revenues was as a result of the increased ENTITY footprint in Charlottesville, VA, Westminster, MD and ENTITY, NC."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E037",
+          "text": "Total operating expenses increased $32 million, or 1.8%, to $1,843 million in the 26-weeks ended July 1, 2017, primarily due to increased wages and distribution costs from higher volume and wage inflation, higher self-insurance expenses, and the absence of certain gains on asset sales and insurance recoveries in 2016."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E038",
+          "text": "The increase in maintenance and services revenues was primarily due to an increase in the sale of maintenance agreements resulting from the growth of our installed customer base."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2017Q2_P2_E039",
+          "text": "Since 2014, access to the pipeline network has improved due to the commencement of the Bicentenario pipeline, which added transportation capacity of 100,000 bopd and opened up additional supply opportunities involving reduced trucking costs."
+        },
+        {
+          "evidence_id": "2017Q2_P2_E040",
+          "text": "Since 2014, access to the pipeline network has improved due to the commencement of the Bicentenario pipeline, which added transportation capacity and opened up additional supply opportunities involving reduced trucking costs."
+        }
+      ]
+    }
+  ]
+}

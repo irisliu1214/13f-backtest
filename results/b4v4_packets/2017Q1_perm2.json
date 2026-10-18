@@ -1,0 +1,335 @@
+{
+  "quarter": "2017Q1",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E001",
+          "text": "ENTITY revenues was driven by the growth of Ensure\u00ae sales and the decrease in 2015 reflected the effects of increased competition and market dynamics in retail and institutional categories."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E002",
+          "text": "The sales increase in 2016 was driven by double-digit growth in the Brazil, Russia, India and China (BRIC) geographies, which comprise approximately 45 percent of the sales in the ENTITY segment."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E003",
+          "text": "The increase in AWS operating income in absolute dollars in 2014 , 2015 , and 2016 , compared to the comparable prior year periods, is primarily due to increased customer usage and cost structure productivity, partially offset by pricing changes and increased spending on technology infrastructure, which was primarily driven by additional investments to support the business growth."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E004",
+          "text": "Cash capital expenditures were $4.9 billion , $ 4.6 billion , and $6.7 billion in 2014 , 2015 , and 2016 , which primarily reflect additional capacity to support our fulfillment operations and additional investments in support of continued business growth due to investments in technology infrastructure (the majority of which is to support AWS), during all three periods."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E005",
+          "text": "Cash capital expenditures were $1.2 billion and $1.9 billion during Q1 2016 and Q1 2017 , which primarily reflect additional capacity to support our fulfillment operations and additional investments in support of continued business growth due to investments in technology infrastructure (the majority of which is to support AWS)."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E006",
+          "text": "Consumer end market revenue increased in the three month period ended January 28, 2017, as compared to the same period of the prior fiscal year, primarily as a result of an increased demand for products used in portable consumer applications."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E007",
+          "text": "Communications end market revenue increased in the three-month period ended January 28, 2017, as compared to the same period of the prior fiscal year, primarily as a result of increased demand for optical networking products."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E008",
+          "text": "Automotive end market revenue increased year-over-year in fiscal 2016 primarily as a result of increased demand for our powertrain, advanced driver assistance systems, and infotainment products."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E009",
+          "text": "Consumer end market revenue increased in fiscal 2015 as compared to fiscal 2014 as a result of increased demand for products sold into the portable sector of this end market."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E010",
+          "text": "The net increase was primarily attributable to the benefit of passing through higher raw material input costs and our ability to execute our strategic pricing initiatives by meeting customer expectations."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E011",
+          "text": "We have historically benefited from both the RevPAR gains typically experienced in the early stages of recovery, as our revenues are based on our franchisees\u2019 gross room revenues, and the supply growth normally occurring in the later stages as we increase our portfolio size."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E012",
+          "text": "The increase in revenues was primarily due to improved system fees resulting from RevPAR increases and unit growth; increasing revenues from the ENTITY Privileges loyalty program resulting from the growth in membership and average daily rates attributable to member stays."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E013",
+          "text": "In addition, revenues increased due to improved system fees resulting from RevPAR increases and increasing revenues from the ENTITY Privileges loyalty program resulting from the growth in program membership and increases in the average daily rate."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E014",
+          "text": "The WCS Differential has varied depending on the extent of transportation capacity availability. 16 During the first quarter of 2016, global oil prices dropped to their lowest levels in over ten years due to concerns over global oil demand, global crude inventory levels, worldwide economic growth and price cutting by major oil producing countries, such as ENTITY."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E015",
+          "text": "During the first quarter of 2016, global oil prices dropped to their lowest level in over ten years due to concerns over global oil demand, global crude inventory levels, worldwide economic growth and price cutting by major oil producing countries, such as ENTITY."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E016",
+          "text": "The growth of Australian natural resource commodity exports over the last decade has been largely driven by strong Asian demand for coal, iron ore and LNG."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E017",
+          "text": "In addition, we are well positioned to capitalize on key industry trends such as increased demand for productivity, automation, personalization and innovation to capture growth."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E018",
+          "text": "Securities commissions of $13.6 million for 2015 increased $2.2 million or 19.1% from $11.5 million in 2014, primarily due to positive results from initiatives generating new customer relationships, combined with increased volume, geographic expansion and improved market conditions."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E019",
+          "text": "The increase in interest-earning assets was primarily driven by a $2.6 billion or 22.4% increase in average loans and leases, including $929.2 million or 8.0% of organic growth, which reflects the benefit of our expanded banking footprint and successful sales management."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E020",
+          "text": "The increase in interest-earning assets was primarily driven by a $1.3 billion or 12.4% increase in average loans, including $1.0 billion or 9.7% of organic growth, which reflects the benefit of our expanded banking footprint and successful sales management."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E021",
+          "text": "As global GDP per capita increases, the composition of daily caloric intake is expected to shift away from the direct consumption of primary crops toward animal-based proteins, which is expected to result in increased demand for primary crops as feed for livestock."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E022",
+          "text": "We also believe that growth in global GDP per capita, particularly in developing nations, will contribute significantly to increasing demand for primary crops."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E023",
+          "text": "We also continued to experience strong growth in our residential real estate portfolio as demand for new housing developments continued to remain strong. \u00b7 The allowance for loan and lease losses (the \u201cAllowance\u201d) was $135.8 million as of March 31, 2017, an increase of $0.4 million or less than 1% from December 31, 2016."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E024",
+          "text": "Changes in homeowners claim severity are driven by inflation in the construction industry, in building materials and home furnishings, and by other economic and environmental factors, including increased demand for services and supplies in areas affected by catastrophes."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E025",
+          "text": "The increase in net income of $1,940,000, or 27.9%, was due to the circumstances described above that caused the increase in our net premiums earned, net investment income, and a decrease in our net loss ratio, partially offset by a decrease in ceding commission revenue and other income, and by increases in other underwriting expenses related to premium growth and other operating expenses."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E026",
+          "text": "The increase of $1,179,000, or 20.1%, was due to hiring of additional staff to service our current level of business and anticipated growth in volume."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E027",
+          "text": "In addition, higher gross margins for CMC were driven by lower raw material costs in ENTITY and higher sales prices in Europe and Australasia."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E028",
+          "text": "Growth in our PSS business revenues was driven by security system and related communication equipment integration under a security system deployment for a mass transit authority in a large metropolitan area."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E029",
+          "text": "Selling expenses as a percentage of revenue typically increase in connection with a limited-time offer due to growth in the number of ENTITY qualifying for increased sales compensation and promotional incentives."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E030",
+          "text": "Our 2017 capital expenditures are primarily related to: \u2022 the expansion and upgrade of facilities in our various markets; and \u2022 purchases and expenditures for computer systems and equipment, software, and application development. -23- In June 2016, we issued $210.0 million principal amount of convertible 4.75% senior notes, due 2020 (the \"ENTITY\") to Ping An ZQ ENTITY (\"Ping An ZQ\") at face value."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E031",
+          "text": "The increase in subscription and services revenue was also in part due to an increase in our small business revenue driven by growth in ENTITY Office."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E032",
+          "text": "The increase in cost of subscription and services revenue of $0.7 million was primarily due to an increase in telecom costs of $0.3 million, an increase in credit card processing fees of $0.2 million driven by a growth in our core users and an increase in personnel and consultant costs of $0.1 million."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E033",
+          "text": "The most significant components of these increases are employment costs due to company growth and expansion, an increase in professional fees and other corporate costs, an increase in corporate occupancy costs associated with our corporate office expansion and upgraded technology systems, as well as an increase in credit card fees due to increased revenues."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E034",
+          "text": "ENTITY 2016 mailing will not be complete until mid-December and therefore was not a meaningful contributor to net revenues in the third quarter of fiscal 2016, whereas the third quarter of fiscal 2015 benefited from the sales build of the Spring 2015 ENTITY."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E035",
+          "text": "ENTITY 2016 mailing was not complete until mid-December and therefore was not as meaningful a contributor to net revenues in fiscal 2016 as in fiscal 2015 where sales benefited from a longer build of the Spring 2015 ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E036",
+          "text": "Demand growth for raw frac ENTITY and other proppants is primarily driven by advancements in oil and natural gas drilling and well completion technology and techniques, such as horizontal drilling and hydraulic fracturing."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E037",
+          "text": "Sales of our products are also seasonal, with peak shipments typically occurring in the fourth calendar quarter as a result of increased demand for products during the holiday season."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E038",
+          "text": "ENTITY primary investing activities have consisted of purchases of property and equipment in support of our expanding headcount as a result of our growth, and capital expenditures to develop our software in support of enhancing our technology platform."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E039",
+          "text": "CLIENT COHORT GROWTH\u2014ANNUAL GROWTH SPEND In order to analyze the contribution to the growth of our business driven by the increase in gross spend from pre-existing clients, we measure annual gross spend for the set of clients, or cohort, that commenced spending on our platform in a specific year relative to subsequent periods."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E040",
+          "text": "The growth in ENTITY loan origination volume is due to ENTITY\u2019s increased competitiveness with ENTITY for fixed-rate lending in 2016 compared to 2015."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E041",
+          "text": "Additionally, the single-family home ownership level continues to decline, resulting in increased demand for multifamily housing."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E042",
+          "text": "Net income increased in 2015 as compared to 2014 primarily as a result of an increase in net interest income driven by growth in earning assets, an increase in mortgage banking revenues and higher fees on covered call options and customer interest rate swaps, partially offset by increased salary and employee benefits, equipment and occupancy costs and advertising and marketing expense."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E043",
+          "text": "The increase in non-interest income in 2016 compared to 2015 was primarily attributable to an increase in mortgage banking revenues, higher operating lease income from growth in our leasing divisions, a gain on the extinguishment of junior subordinated debentures, higher gains realized on investment securities, higher fees from customer interest rate swap fees and an increase in service charges on deposits (see \u201cNon-ENTITY\u201d section later in this Item 7 for further detail)."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E044",
+          "text": "The most significant factors impacting net income for the first quarter of 2017 as compared to the same period in the prior year include an increase in net interest income as a result of growth in earning assets and an improvement in net interest margin, increased operating lease income, lower provision for credit losses and an increase in wealth management revenue."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q1_P2_E045",
+          "text": "Demand for ENTITY equipment and consumables is expanding due to the increasing acceptance of ENTITY textile printing processes among industry participants and in order to respond to the following trends: \u25cf Increased demand for variety and complexity of images and designs."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E046",
+          "text": "Due to the growth in our business, our inventory strategy has included increasing inventory levels to meet anticipated customer demand for our solutions."
+        },
+        {
+          "evidence_id": "2017Q1_P2_E047",
+          "text": "The $11.2 million growth in systems and services revenues was attributable to the initial sales of our Allegro system and a change in the mix of systems sold, specifically sales of more high throughput systems in this period, which sell for higher average selling prices than our entry level systems."
+        }
+      ]
+    }
+  ]
+}

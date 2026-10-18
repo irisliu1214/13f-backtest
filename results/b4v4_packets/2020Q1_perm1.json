@@ -1,0 +1,347 @@
+{
+  "quarter": "2020Q1",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E001",
+          "text": "The increase reflects professional services of $1.8 million in 2019 related to enhancements to our information technology and customer support infrastructure necessary to support our overall growth and commercialization plans, as well as $0.9 million of higher employee related expenses due to increased headcount, increased marketing expenses of $0.4 million resulting from new product launches and $0.3 million of increased insurance expense."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E002",
+          "text": "Cash capital expenditures were $2.7 billion and $5.4 billion during Q1 2019 and Q1 2020 , which primarily reflect additional capacity to support our fulfillment operations and additional investments in support of continued business growth in technology infrastructure (the majority of which is to support AWS)."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E003",
+          "text": "Cash capital expenditures were $11.3 billion , and $12.7 billion in 2018 and 2019 , which primarily reflect additional capacity to support our fulfillment operations and additional investments in support of continued business growth in technology infrastructure (the majority of which is to support AWS)."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E004",
+          "text": "ENTITY 1, 2020, due to the continued growth in customers and low churn rates, the Company updated its calculation of the estimated period of benefit for nonrefundable upfront fees from 3 years to 4 years."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E005",
+          "text": "Our continued growth is dependent on the adoption of our services by mainstream customers and their end users, so these differences are important."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E006",
+          "text": "Cost of revenues Our cost of revenues increased by 70.6% from RMB1,919.2 million in 2017 to RMB3,273.5 million in 2018 as all components of cost of revenues increased due to our business growth and the expansion of our user base."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E007",
+          "text": "Operating expenses Our total operating expenses increased by 69.5% from RMB1,584.4 million in 2018 to RMB2,685.4 million (US$385.7 million) in 2019, as sales and marketing expenses and research and development expenses increased due to our business growth and the expansion of our user base."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E008",
+          "text": "Operating expenses Our total operating expenses increased by 104.8% from RMB773.5 million in 2017 to RMB1,584.4 million in 2018, as sales and marketing expenses and research and development expenses increased due to our business growth and the expansion of our user base."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E009",
+          "text": "ENTITY our growth requires continued adoption of our platform by new customers."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E010",
+          "text": "The increase was also due to a $ 2.4 million increase in professional and consulting fees as we obtained additional external assistance in connection with operating our business as a public company and our overall growth , a $ 2.4 million increase in shared overhead costs due to the overall growth of our business, a $ 1.6 million increase in money transfer license fees , a $0.7 million increase in reserve for sales tax obligations , and a $ 0.4 million increase in recruiting fees and temporary staffing costs as we engaged external help to recruit employees or to temporarily fill certain roles within the organization ."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E011",
+          "text": "ENTITY SG&A expense ratio benefited from the addition of the WellCare business, which operates at a lower SG&A ratio, and the leveraging of expenses over higher revenues."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E012",
+          "text": "The demand for data center infrastructure is being driven by this ENTITY transformation which is contributing to the explosive growth of data, rapid growth of cloud adoption and greater demand for IT outsourcing."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E013",
+          "text": "The increase was primarily due to $3.0 million of higher personnel-related expenses as result of our efforts to improve customer experience by hiring additional employees to reduce the average wait time, as well as support our business growth in the U.S. and international expansion in Europe, and $1.2 million for a combination of higher professional services, training seminars, advertising and marketing expenditures to enable business growth."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E014",
+          "text": "Trust fee income increased from $7.1 million to $7.5 million, representing an increase of $349 thousand or 4.9%, resulting from growth in new customers and an increase in market value of trust assets."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E015",
+          "text": "Numerous factors can impact the usage growth of our platform, including: \u2022 the popularity of our customers\u2019 offerings as compared to those offered by companies that do not use our platform; \u2022 adoption of new technologies that allow end-users to access content from a core cloud without having to access our network; \u2022 customers, particularly large internet platform companies, utilizing their own data centers and implementing delivery approaches that limit or eliminate reliance on third-party providers like us; and \u2022 macro-economic market and industry pressures."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E016",
+          "text": "The increase in net sales internationally was due to sales expansion into our existing international markets, with such growth being somewhat dampened during the last two weeks of the quarter in particular due to the impact of COVID-19."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E017",
+          "text": "Comparable store sales increased 3.9% for fiscal 2018 compared to fiscal 2017, primarily driven by increases in both the average transaction size and number of customer transactions, strong opportunistic purchasing, the expansion of our digital marketing initiatives, and the continued growth of our Natural, Organic, Specialty and Healthy (\u201cNOSH\u201d) business."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E018",
+          "text": "Sales consist of sales from comparable stores and non-comparable stores, described below under \u201cENTITY.\u201d Growth of our sales is generally driven by expansion of our store base in existing and new markets as well as comparable store sales growth."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E019",
+          "text": "Sales consist of sales from comparable stores and non-comparable stores, described below under \u201cENTITY.\u201d Growth of our sales is primarily driven by expansion of our store base in existing and new markets as well as comparable store sales growth."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E020",
+          "text": "The improvements in net cash provided by operating activities for each fiscal year presented compared to prior fiscal years was primarily the result of i ncreased net sales driven by new store growth and comparable store sales growth, partially offset by increased cost of sales and operating expenses, particularly commissions."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E021",
+          "text": "The estimates and assumptions we use are dependent on many variables, such as loss adjustment expenses, insurance\u2011to\u2011value, storm or earthquake intensity, building code compliance and demand surge, which is the temporary inflation of costs for building materials and labor resulting from increased demand for rebuilding services in the aftermath of a catastrophe."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E022",
+          "text": "Premium growth was primarily due to an increased volume of policies written across our lines of business which was driven by new business generated with existing partners, strong premium retention rates for existing business, expansion of our products\u2019 geographic and distribution footprint, and new partnerships."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E023",
+          "text": "Premium growth in 2018 was due primarily to an increased volume of policies written across our lines of business which was driven by expansion of our product, geographic and distribution footprint as well as strong premium retention rates for our existing book of business."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E024",
+          "text": "This increase was primarily attributable to the significant growth in the number of ENTITY delivered during the period, which was the result of investments made in brand and product awareness, and a strong increase in demand in the last few weeks of the quarter driven by stay at home orders issued by governments around the world in response to the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E025",
+          "text": "The increase in net operating assets and liabilities was primarily due to a $124.0 million increase in customer deposits and deferred revenue driven by elevated sales volumes towards the end of the quarter and longer delivery windows, and a $64.0 million increase in 38 accounts payable and accrued expenses related to increased expenditures to support general business growth, as well as the timing of payments, partially offset by a $46.2 million increase in inventory levels as we ramped up supply to meet the current increased demand."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E026",
+          "text": "The increase in net operating assets and liabilities was primarily due to a $98.0 million increase in accounts payable and accrued expenses related to increased expenditures to support general business growth over holiday season, as well as the timing of payments, a $68.3 million increase in customer deposits and deferred revenue driven by increased sales and timing, partially offset by a $94.2 million increase in inventory levels as we ramp up supply over the holiday season, as well as support our expansion into Germany."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E027",
+          "text": "The increase was attributable to the growth of our branded apparel sales, driven by our growing Member base and expanded retail showroom footprint year over year."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E028",
+          "text": "These forward-looking statements include statements relating to: \u25cf our growth strategies; \u25cf our future business development, financial conditions and results of operations; \u25cf the trends in the e-commerce industry in China; \u25cf our expectations regarding demand for and market acceptance of our products and services; \u25cf our expectations regarding our relationships with buyers and merchants; \u25cf competition in our industry; and \u25cf relevant government policies and regulations relating to our industry."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E029",
+          "text": "Cost of Collaboration and ENTITY increase in Cost of collaboration and contract manufacturing in 2019 , compared to 2018 , was primarily due to the recognition of manufacturing costs associated with higher sales of Dupixent."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E030",
+          "text": "The increase in sales and marketing expenses in 2018 was mainly from the marketing efforts of our e-commerce business, which was aligned with our strategy to fully capture the market growth opportunity and was primarily attributable to the ramping up of offline and online digital marketing and other promotions on our platform that were designed to increase our user base and enhance user engagement."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E031",
+          "text": "The increase in our capital expenditure in 2019 was mainly attributable to the additional investment in servers due to the growth of our e-commerce business and digital entertainment business, as well as the leasehold improvements due to the expansion of our business."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E032",
+          "text": "The increase was primarily due to bank transaction fees driven by GMV growth from our e-commerce business, as well as higher staff compensation and benefit costs. 88 \u00b7 Cost of goods sold: Cost of goods sold was negligible in 2016 and increased to US$1.6 million in 2017 in line with the increase in the sales of goods revenue in 2017."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E033",
+          "text": "This increase was primarily due to significant marketing efforts that was aligned with our strategy to fully capture the market growth opportunity and was primarily driven by shipping and other promotions on our platform in order to increase our user base and enhance user engagement."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E034",
+          "text": "The increase was primarily due to an increase of $1.8 million as a result of growth in domestic case volumes."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E035",
+          "text": "Gross margin increased by 1.8% to 36.1% compared to 34.3% for the thirteen weeks ended March 29, 2020, primarily driven by more balanced promotions during the first two months of the quarter, in addition to sales mix and shrink benefits during March as a result of the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E036",
+          "text": "Sales growth was primarily driven by strong performance in new stores opened in the last twelve months and a 10.6% increase in comparable store sales, which was largely driven by increased traffic as a result of the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E037",
+          "text": "Our results of operations for the quarter ended March 29, 2020 have benefited from increased demand from our customers stockpiling groceries and consuming more food at home, and we in turn have made significant investments in compensation, benefits and personal protective equipment for our front-line store team members."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E038",
+          "text": "This overall demand for healthy products is driven by many factors, including increased awareness about the benefits of eating healthy, a greater focus on preventative health measures, and the rising costs of health care."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E039",
+          "text": "The annual recognition is not expected to vary significantly over the next 10 years as the vast majority of existing ENTITY have at least 10 years remaining, given that the average age of the Company's fleet of residential solar energy systems under ENTITY is less than three years due to the Company being formed in 2007 and having experienced significant growth in the last few years."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E040",
+          "text": "The annual recognition is not expected to vary significantly over the next 10 years as the vast majority of existing ENTITY have at least 10 years remaining, given that the average age of the Company's fleet of residential solar energy systems under ENTITY is less than four years due to the Company being formed in 2007 and having experienced significant growth in the last few years."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E041",
+          "text": "The increase in revenue sharing fees from 2016 to 2017 was primarily driven by increased sales of virtual gifts in live streaming services as a result of consolidation of the results of CMC which constitutes a majority of our current live streaming services, as well as organic growth in our online karaoke and live streaming businesses in line with revenue growth."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E042",
+          "text": "The primary increase in synthetic genes revenue is due to higher sales of 5.0KB genes and 3.0KB genes."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E043",
+          "text": "The primary reason for NGS tools revenue growth was the adoption of our product by a larger customer base."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E044",
+          "text": "The overall increase in ENTITY was driven by a 22% increase in MAPCs due to global expansion of our Eats product offerings combined with wider market adoption of our Rides product, and overall growth in our other offerings. 56 2018 Compared to 2017 Revenue increased $3.3 billion , or 42% , primarily attributable to an increase in ENTITY of 45% which was made up of a 32% increase in Rides, an 168% increase in Eats, as well as an increase in other offerings including Freight and ENTITY."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E045",
+          "text": "Eats adjusted net revenue increased primarily attributable to an increase in gross bookings of 83% , mainly due to changes to our service fees in U.S. and Canada and continued expansion into international markets."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q1_P1_E046",
+          "text": "As a result of the required changes to consumer behavior to largely off-premise dining, as well as promotional activities associated with delivery, we have seen an increase in domestic same store sales growth the last two weeks of March 2020 through the first four weeks of our fiscal second quarter."
+        },
+        {
+          "evidence_id": "2020Q1_P1_E047",
+          "text": "The increase as a percentage of company-owned restaurant sales was primarily due to an investment in labor as well as training associated with the three franchised restaurants that we acquired in the fiscal fourth quarter of 2018 as these acquired restaurants operate at lower AUVs than our other company-owned restaurants, as well as increases in the wage rate and labor hours to support the growth in the business."
+        }
+      ]
+    }
+  ]
+}

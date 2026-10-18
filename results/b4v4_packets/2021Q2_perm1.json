@@ -1,0 +1,471 @@
+{
+  "quarter": "2021Q2",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E001",
+          "text": "During the first half of 2021, the Company experienced negative impacts to its margins related to increased international freight demands, lack of shipping containers and general international freight congestion due to the continued increased demand of goods being sold on ecommerce marketplaces."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E002",
+          "text": "During the first half of 2021, we experienced negative impacts to our margins related to increased international freight demands, lack of shipping containers and general international freight congestion due to the continued increased demand of goods being sold on ecommerce marketplaces."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E003",
+          "text": "This has benefited the Company as historically over 90 % of its net revenue comes from the sale of products online in the 8 U.S. and it believes this shift to increased online consumer spending will continue even after the COVID-19 pandemic ends."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E004",
+          "text": "ENTITY has experienced, and expects to continue to experience, an increase in last-mile shipping costs as shipping providers\u2019 delivery networks continue be stressed due to increased demand from the increase of goods sold on ecommerce marketplaces."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E005",
+          "text": "The increase was primarily driven by higher incentive compensation attributable to improved operating performance and margin expansion from scaling our business, by headcount growth and by merit increases."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E006",
+          "text": "The increase was primarily driven by headcount and merit increases, by higher incentive compensation attributable to improved operating performance and margin expansion from scaling our business,, and by equity compensation increases for the comparative period."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E007",
+          "text": "Demand for our platform is affected by a number of factors, some of which are beyond our control, such as the rate of market adoption of work management solutions; the timing of development and release of competing new products; the development and acceptance of new features, integrations, and capabilities for our platform; price, product, and service changes by us or our competitors; technological changes and developments within the markets we serve; growth, contraction, and rapid evolution of our market; and general economic conditions and trends."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E008",
+          "text": "Summary of performance in the period NII sensitivity to a -25bp shock to rates has increased year on year due to additional margin compression exposure driven by central bank rate cuts and growth in customer deposit balances through the year."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E009",
+          "text": "NII sensitivity to a -25bp shock to rates has increased year on year due to additional margin compression exposure driven by central bank rate cuts and growth in customer deposit balances through the year."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E010",
+          "text": "ENTITY income decreased 3% to \u00a31,306m due to deposit margin compression from lower interest rates, lower transactional fee volumes as a result of COVID-19 and related customer support actions, partially offset by lending and deposit balance growth from continued support for SMEs through \u00a311.0bn of BBLS and CBILS loans."
+        }
+      ]
+    },
+    {
+      "alias": "C26",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E011",
+          "text": "The hotel properties in our current portfolio are predominantly located in U.S. urban markets and resort locations with favorable growth characteristics resulting from multiple demand generators."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E012",
+          "text": "ENTITY by ENTITY 31, 2021 February 2, 2020 $ Change % Change (In millions, except for percentages) Semiconductor solutions $ 2,561 $ 2,043 $ 518 25 % Infrastructure software 1,219 1,041 178 17 % Unallocated expenses (1,943) (2,370) 427 (18) % Total operating income $ 1,837 $ 714 $ 1,123 157 % Operating income from our semiconductor solutions segment increased primarily due to higher demand for our wireless content in mobile handsets, as well as a later than typical new mobile handset ramp with a major customer, which resulted in higher shipments in the quarter, compared to the prior year fiscal period."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E013",
+          "text": "Operating income from our semiconductor solutions segment increased primarily due to higher demand for our wireless content in mobile handsets, as well as a later than typical new mobile handset ramp with a major customer, which resulted in higher shipments in the current year period, compared to the prior year fiscal period."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E014",
+          "text": "Net revenue from our semiconductor solutions segment increased primarily due to higher demand for our wireless content in mobile handsets, as well as a later than typical new mobile handset ramp with a major customer, which resulted in higher shipments in the current year period, compared to the prior year fiscal period."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E015",
+          "text": "Operating income from our semiconductor solutions segment increased primarily due to higher demand for our wireless content in mobile handsets, as well as a later than typical new mobile handset ramp with a major customer, which resulted in higher shipments in the quarter, compared to the prior year fiscal period."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E016",
+          "text": "Total sales volume in our Mexico and ENTITY consolidated reporting segment increased by 2.3% to 2,065.0 million unit cases in 2018 as compared to 2017, as a result of volume growth in ENTITY. \u00b7 Sales volume of our sparkling beverage portfolio increased by 2.9% in 2018 as compared to 2017, mainly driven by a 3.6% increase in our colas portfolio, which was partially offset by a flat performance of our flavored sparkling beverage portfolio."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E017",
+          "text": "ENTITY for ENTITY is expected to fluctuate in future periods due to a number of factors, including the growth of our revenue base, the penetration within our ENTITY base, expansion of products and features, and our ability to retain our ENTITY."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E018",
+          "text": "The increase in sales and marketing expenses was primarily due to higher personnel-related expenses of $7.3 million, mainly driven by both additional headcount in our sales force to support increased demand for our platform and an increase in commissions resulting from our increase in revenue."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E019",
+          "text": "The main drivers of the changes in operating assets and liabilities were an $9.4 million increase in deferred revenue, resulting primarily from our Consumer business growth, a $2.1 million increase in educator partners and other accounts payable, partially offset by a $7.1 million decrease in accrued and other liabilities resulting from payments of indirect taxes and payout of accrued compensation, and a $3.4 million increase in accounts receivable due to our business growth."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E020",
+          "text": "These activities will require significant capital expenditures and allocation of valuable management and employee resources, and our growth will continue to place significant demands on our management and our operational and financial infrastructure."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E021",
+          "text": "The increase in our Asia-Pacific adjusted EBITDA was primarily due to higher revenues as a result of our IBX data center expansion activity and organic growth as described above, as well as lower cost of revenues and sales and marketing expenses as a percentage of revenues."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E022",
+          "text": "The increase in our Asia-Pacific income from operations was primarily due to higher revenues as a result of our IBX data center expansion activity and organic growth, as described above, as well as lower cost of revenues as a percentage of revenues."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E023",
+          "text": "The increase in our EMEA adjusted EBITDA was primarily due to higher revenues as a result of our IBX data center expansion activity and organic growth as described above, as well as lower sales and marketing expenses as a percentage of revenues."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E024",
+          "text": "The increase in our Americas adjusted EBITDA was primarily due to higher revenues as a result of our IBX data center expansion activity and organic growth as described above, as well as lower operating expenses as a percentage of revenues."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E025",
+          "text": "Gross profit percentage increased by 2.3% primarily due to favorable impact of productivity including higher volume leverage (7.4%) and the favorable impacts from foreign and exchange rates (0.6%), partially offset by unfavorable impacts from mix and price (3.1%), unfavorable impacts from inflation (0.9%), unfavorable impact from repositioning costs (0.3%), and other factors (1.4%), mainly driven by Brazil environmental expenses and prior year period cost savings actions to mitigate Covid-19 impact."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E026",
+          "text": "Gross profit percentage increased by 3.8% primarily due to favorable impact of productivity including higher volume leverage (10.0%) and the favorable impacts from foreign and exchange rates (0.7%), partially offset by unfavorable impacts from mix and price (3.3%), unfavorable impacts from inflation (1.4%), unfavorable impact from repositioning costs (0.2%), and other factors (2.0%), mainly driven by material scrap and prior year period cost savings actions to mitigate Covid-19 impact."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E027",
+          "text": "The high used vehicle prices were driven by continued low new vehicle inventory, compounded by the global semiconductor supply shortage impacting automotive production, and strong demand for new and used vehicles driven by economic recovery and government stimulus."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E028",
+          "text": "For the full year 2021, ENTITY Financial expects used vehicle prices to be higher than 2020 levels, primarily due to sustained low new vehicle inventory and an economic recovery driving continued strong demand for new and used vehicles."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E029",
+          "text": "In 2021, ENTITY Financial expects used vehicle prices to increase by an amount in the low to mid single digits on a percentage basis, as compared to 2020 levels, primarily due to sustained low new vehicle inventory and continued strong demand."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E030",
+          "text": "The increase in operating income was due to improvements in price and product mix of $ 43 million, which more than offset higher raw material cost s of $7 million , lower conversion costs of $26 million , lower SAG of $24 million primarily related to lower wages and benefits, advertising and travel-related expenses reflecting actions taken as a result of the COVID-19 pandemic , higher ENTITY volume of $20 million and approximately $10 million of pandemic-related work in process inventory write-offs in 2020 ."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E031",
+          "text": "Increased demand for consumer products and supply chain disruptions as a result of the pandemic and other global events, has led to higher costs for certain raw materials and shortages of certain automobile parts, such as semiconductors, which has affected OE manufacturers\u2019 ability to produce consumer and commercial vehicles consistently."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E032",
+          "text": "Increased demand for consumer products and supply chain disruptions as a result of the pandemic and other global events, has led to higher costs for certain raw materials and shortages of certain automobile parts, such as semiconductor chips, which has affected OE manufacturers\u2019 ability to produce automobiles consistently."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E033",
+          "text": "The favorable change in operating income (loss) was primarily due to lower conversion costs of $37 million, primarily due to favorable overhead absorption as a result of higher factory utilization, improvements in price and product mix of $32 million, higher volume of $24 million, lower raw material costs of $17 million, lower SAG of $15 million, primarily related to lower bad debt expense, and approximately $5 million of pandemic-related work in process inventory write-offs in 2020."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E034",
+          "text": "The marketplace is increasing utilization of the OLED display for smartphone and other consumer electronics due to expanded AMOLED capacity as well as increased demand for under-display fingerprint technology that is only available in the AMOLED display for the time being."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E035",
+          "text": "This is due to investments on expanded AMOLED capacity as well as increased demand for under-display fingerprint technology that is only available in the AMOLED display for the time being."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E036",
+          "text": "During 2016, our non-driver businesses experienced tremendous growth, primarily driven by the LCOS and WLO businesses due to shipments to one of our leading AR device customers."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E037",
+          "text": "This is due to expanded AMOLED capacity as well as increased demand for under-display fingerprint technology that is only available in the AMOLED display for the time being."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E038",
+          "text": "The increase in average total core deposits was primarily driven by consumer growth largely related to government stimulus, increased liquidity levels among our commercial customers, seasonality in government banking, and improved consumer and business banking account retention."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E039",
+          "text": "Trust and investment management services increased $16 million, or 17%, primarily reflecting higher sales production and overall market performance."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E040",
+          "text": "The increase in average total core deposits was primarily driven by increased liquidity levels in reaction to the economic downturn, business and commercial growth related to the PPP loans, consumer growth largely related to government stimulus, increased consumer and business banking account production, and reduced attrition."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E041",
+          "text": "The increase in systems shipments was primarily driven by decisions in the second quarter of 2020 by customers to defer purchases or leases of systems into future quarters as a result of the COVID-19 pandemic, as well as procedure growth, more customers trading in da Vinci Si ENTITY Systems for fourth generation da Vinci Xi and da Vinci X systems in order to access fourth generation instruments and capabilities as well as to standardize their system portfolio, and further customer validation that da Vinci surgery addresses their quadruple aim objectives."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E042",
+          "text": "Service revenue remained unchanged, driven by the growth of the installed base of da Vinci ENTITY Systems, offset by the effects of the ENTITY that was implemented as a result of the COVID-19 pandemic in the second quarter of 2020."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E043",
+          "text": "The increase in systems placed reflects the significant disruption experienced as a result of the COVID-19 pandemic in the second quarter of 2020, as well as procedure growth, more customers trading in da Vinci Si ENTITY Systems for fourth generation da Vinci systems in order to access fourth generation instruments and capabilities as well as to standardize their system portfolio, and further customer validation that da Vinci surgery addresses their quadruple aim objectives."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E044",
+          "text": "The unfavorable impact of these items on cash provided by operating activities was partially offset by a $38 million increase in accounts payable, primarily due to the timing of billings, a $19 million increase in accrued compensation and employee benefits, primarily due to higher headcount and variable compensation, and an $11 million increase in deferred revenue, primarily due to the increased volume of sales contracts."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E045",
+          "text": "In the fourth quarter of fiscal year 2021, our Gaming and ENTITY market platforms benefited from stronger demand as people continue to work, learn, and play from home."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E046",
+          "text": "In the first quarter of fiscal year 2022, our Gaming and ENTITY market platforms benefited from stronger demand as people continue to work, learn, and play from home."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E047",
+          "text": "ENTITY and ENTITY market platforms have benefited from stronger demand as people continue to work, learn, and play from home."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E048",
+          "text": "ENTITY market platform benefited from work-from-home trends in mobile workstations and desktop workstation demand has started to recover, although not back to pre-COVID levels."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E049",
+          "text": "The increase in ENTITY net revenue was primarily attributable to the expanded sales force, increased sales to existing and new customers and increased adoption of our amniotic product portfolio, including our Affinity product."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E050",
+          "text": "We generally expect our selling, general and administrative expenses to continue to increase due to increased investments in market development and the geographic expansion of our sales forces as we drive for continued revenue growth."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E051",
+          "text": "However, improvement of our contribution metric has also been driven by the expansion of existing customer accounts, improved sales efficiency, and the increasing deployment of centralized hosting and other software deployment infrastructure."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E052",
+          "text": "Gross margin increased primarily as a result of increased efficiencies in supporting revenue growth at our customer deployments, including investments in our platforms as well as reductions in hardware costs for customers."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E053",
+          "text": "Our sales growth period-over-period was driven by our strong execution and unique model across digital and in our pet care centers, coupled with an increase in pet ownership associated with the COVID-19 pandemic and benefits from government stimulus payments."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E054",
+          "text": "Given the long-term, recurring demand for pet care products and services, which is expected to continue to grow in response to the pet humanization trend, this step function increase in the pet population represents a meaningful acceleration in total industry growth from 5% historically to 7% through 2024, according to ENTITY and company internal estimates."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E055",
+          "text": "The remainder of the increase was predominately due to higher incentive compensation for corporate and field employees along with increased variable costs associated with our higher sales growth."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E056",
+          "text": "The increase in services was primarily due to growth in the hospital business due to the addition of 44 new hospitals period-over-period partially offset by the temporary suspension of our training, grooming and vaccination clinic services while stay-at-home orders were in place."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E057",
+          "text": "Int\u2019l. 203 122 67 56 Worldwide $ 530 $ 288 84 79 Hospital $2,343 Up 10% (operationally) U.S. $ 905 $ 890 2 Primarily driven by ENTITY CentreOne, our contract manufacturing operation, reflecting sales of legacy Upjohn products to Viatris under manufacturing and supply agreements and remdesivir to ENTITY., as well as growth from recent anti-infective product launches in international markets, partially offset by lower year-over-year volume for certain products globally due to a COVID-19-related surge in demand in the prior-year quarter."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E058",
+          "text": "Int\u2019l. 1,424 \u2014 * * Worldwide $ 3,462 $ \u2014 * * Eliquis $1,643 Up 25% (operationally) U.S. $ 981 $ 805 22 Primarily driven by continued increased adoption in non-valvular atrial fibrillation as well as oral anti-coagulant market share gains, as well as a favorable adjustment related to the Medicare \u201ccoverage gap\u201d provision resulting from lower than previously expected discounts in prior periods."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E059",
+          "text": "The operational increase in emerging markets was primarily driven by revenues from BNT162b2 and growth from Eliquis. 41 ENTITY of 2021 vs."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E060",
+          "text": "The operational increase in emerging markets was primarily driven by revenues from BNT162b2 and growth from Eliquis."
+        }
+      ]
+    },
+    {
+      "alias": "C25",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E061",
+          "text": "In both period comparisons above, the increases are primarily driven by the growth in our bookings over the same period and the associated growth in amounts earned by developers and creators due to the growth in bookings."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E062",
+          "text": "The increase is primarily due to an increase of $54.8 million in payment processing fees primarily driven by the growth in our bookings."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E063",
+          "text": "The increase is primarily due to an increase of $62.0 million in merchant fees primarily driven by the growth in our bookings."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E064",
+          "text": "An increase in sales usage-based royalties from the licensing of our proprietary market price data and price assessments to commodity exchanges mainly due to increased trading volumes in LNG and Petroleum also contributed to revenue growth."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E065",
+          "text": "Revenue growth at Ratings was mainly driven by an increase in transaction revenue due to higher bank loan ratings revenue and structured finance revenue, partially offset by lower corporate bond ratings revenue as well as an increase in non-transaction revenue."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E066",
+          "text": "Revenue growth at Ratings was mainly driven by an increase in transaction revenue due to higher corporate bond ratings revenue, an increase in bank loan ratings revenue and higher structured finance revenues."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E067",
+          "text": "The increase was primarily due to revenue growth at all of our reportable segments combined with a decrease in occupancy costs and travel and entertainment expenses from non-essential travel restrictions in response to the 2019 novel coronavirus (\"COVID-19\"), partially offset by higher incentive costs and an increase in compensation costs driven by additional headcount and annual merit increases."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E068",
+          "text": "Operating income in the second quarter of 2021 reflected the impact of higher sales and a lower cost structure due to actions taken in 2020, lower severance, facility consolidation and lower research and development costs."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E069",
+          "text": "The increase in operating income the first six months of 2021 reflected the impact of higher sales and improved margins across most product categories resulting from ongoing margin improvement initiatives."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E070",
+          "text": "The increase in operating income reflected the impact of higher sales and improved margins across most product categories resulting from ongoing margin improvement initiatives."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E071",
+          "text": "Organic revenues increased due to favorable timing as well as growth resulting from stronger back file and custom data sales and strength in our professional services business lines."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E072",
+          "text": "Subscription revenue growth reflects the benefit of net installations in prior year and the timing benefits due to more disciplined operating procedures."
+        },
+        {
+          "evidence_id": "2021Q2_P1_E073",
+          "text": "Organic subscription revenues increased primarily due to price increases, the benefit of net installations in prior year and the timing benefits due to more disciplined operating procedures."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E074",
+          "text": "We are seeing increased awareness of Zepzelca across academic and community cancer centers and continued growth in second-line share and overall demand, reflecting the significant unmet need and favorable Zepzelca product profile."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q2_P1_E075",
+          "text": "While the charter market remains at current levels, we intend to operate our vessels in the spot market under short-term time charter market or voyage charters in order to benefit from any future increases in charter rates and the increased attractiveness of our scrubber-equipped vessels."
+        }
+      ]
+    }
+  ]
+}

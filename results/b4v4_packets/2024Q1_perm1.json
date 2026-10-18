@@ -1,0 +1,525 @@
+{
+  "quarter": "2024Q1",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E001",
+          "text": "While we have experienced some increase in costs as a result of inflation, we have, for the most part, been able to offset the rising costs through price increases to our customers, as well as cost-saving opportunities."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E002",
+          "text": "Cost of ENTITY of revenue, as compared to the prior period, primarily reflects: \u2022 CSB: an increase in installation costs due to a higher volume of outright sales transactions partially offset by a decrease in monitoring and related service costs due to a lower volume of in-person service tickets as a result of our ENTITY. \u2022 Solar: a decrease in installation costs primarily due to fewer sales and installations as a result of the ENTITY ENTITY, including $21 million primarily associated with the write-down and disposition of inventory."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E003",
+          "text": "Cost of revenue, as compared to the prior period, primarily reflects: \u2022 CSB Security installation, product, and other: an increase in installation costs due to a higher volume of outright sales transactions, partially offset by a lower volume of in-person service tickets as a result of our ENTITY. \u2022 Solar installation, product, and other: a decrease in installation costs due to fewer sales and installations as discussed above."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E004",
+          "text": "Utilization and adoption of our ENTITY is typically higher for residential properties than community association or commercial properties because of the unique and complex needs of the residential rental lifecycle."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E005",
+          "text": "ENTITY product solutions allow customers to benefit from the following key features: \u2022 Impact through measurement: Drive results faster with accurate, timely measurement on marketing and ad spend across channels. \u2022 Insights through real-time data and reports: Easily share timely, actionable insights with stakeholders to drive their business forward. \u2022 Strategic growth with automated attribution solutions: Scale profits with automated solutions that attribute sources and help customers work smarter and accomplish more."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E006",
+          "text": "In 2022, we facilitated &pound;18.0bn versus &pound;22.6bn in 2021, reflecting continued strong demand for environmental financing and our strategy to work with our clients and customers to help facilitate their transitions towards a low-carbon economy."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E007",
+          "text": "Deposits at amortised cost to banks and customers decreased \u00a37.0bn to \u00a3538.8bn driven by a reduction in customer deposits reflecting broader market trends in ENTITY UK, partially offset by an increase in short-term money market deposits and growth in customer deposits in ENTITY International."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E008",
+          "text": "In particular, international expansion is an especially important initiative in our organic growth roadmap due to the significant market share opportunity and increasing investments in safety equipment in various key geographic markets."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E009",
+          "text": "The increase in ENTITY organic net sales was due primarily to increased sales in our live plant and grass seed businesses which were aided by favorable weather at the end of March and benefited from the current quarter ending on March 30 and excluding the last week of December, as compared to the prior year quarter."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E010",
+          "text": "The increase in gross margin was driven primarily by the Pet segment, although gross margin improved in both segments in the first quarter of fiscal 2024 as compared to the prior year quarter, as both segments benefited from cost management and moderating inflation."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E011",
+          "text": "The increase in ENTITY net sales was due primarily to increased sales in our control and fertilizer, grass seed and packet seed businesses which benefited from the current quarter ending December 30, as opposed to the prior year fiscal quarter which ended Christmas eve, and early season shipments by select retailers."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E012",
+          "text": "The increase in organic net sales was primarily in our branded controls business aided by strong retailer inventory load-in and grass seed and live plants, which benefited from improved weather versus the same period in the prior year."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E013",
+          "text": "Our premium income is driven by growth in new policies and contracts written and persistency of our in-force policies, both of which are influenced by a combination of factors including our efforts to attract and retain customers and market conditions that influence demand for our products; \u2022 Policy fees are principally derived from our individual retirement, group retirement, universal life insurance, ENTITY and SVW products."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E014",
+          "text": "Partially offset by: \u2022 higher general operating expenses of $12 million supporting the business growth; \u2022 lower other activity of $9 million primarily driven by lower stable value wrap net investment income; and \u2022 lower underwriting margin of $6 million primarily driven by lower variable investment income from private equity and call and tender income in the ENTITY business."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E015",
+          "text": "The increases were primarily attributable to growth within ISG services gross margin and, to a lesser extent, CSG services gross margin, that were driven by support and maintenance associated with products sold in prior periods."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E016",
+          "text": "The increases were primarily attributable to growth within ISG services gross margin and, to a lesser extent CSG services gross margin, that was driven by support and maintenance associated with products sold in prior periods."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E017",
+          "text": "The decrease from lower average prices was partially offset by an increase of $1.7 billion attributable to the 16% growth in our combined volumes."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E018",
+          "text": "The increase was primarily attributable to an increase of $766 million in order management costs and an increase of $67 million in platform costs, driven primarily by growth in ENTITY and Marketplace GOV."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E019",
+          "text": "In our ENTITY and Services segment, overall economic growth and industrial production, as well as secular trends, impact demand for our products."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E020",
+          "text": "Our fee margin progression indicates the profitability of our fee revenue growth and benefit of our asset-light business model (see page 10). 2023 status \u2022 Fee margin grew by 340bps to 59.3%, driven by continued strength in trading in EMEAA and ENTITY. 2024 priorities \u2022 Maintain our cost and efficiency focus. \u2022 Leverage technology applications and process enhancements to achieve operational efficiencies. \u2022 Continue to reinvest in the business to drive growth and further expand margin over the long term."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E021",
+          "text": "What we achieved in 2023 2023 AT A GLANCE With strong demand around the world pushing RevPAR 16% ahead of 2022 levels and almost 11% up on 2019, we are greeting Extended reach of New procurement guests with fresh experiences, enhanced ENTITY programmes service and the latest technology to meet campaign, lifting enabling owners evolving expectations. awareness and brand to benefit from Our ENTITY ENTITY programme plays favourability measures ENTITY \u2019s scale a key role in capturing guest demand."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E022",
+          "text": "Elsewhere in EMEAA, RevPAR in Australia increased 58.4%, Japan increased by 48.9% and Thailand increased by 219.9%, driven by demand growth following the easing of travel restrictions."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E023",
+          "text": "Fee margin a decreased to 82.2%, compared to 84.3% in 2022, reflecting cost investment in growth initiatives, including Garner."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E024",
+          "text": "Demand for electricity from the commercial sector increased to 130,844 gigawatt hours in 2023, representing a 2.9% increase from 2022, largely due to an increase in levels of private consumption, particularly in the hotel and restaurant industries as COVID-19 preventive measures have been lifted. \u2022 Demand for electricity from the residential sector is largely dependent on population growth and use of heaters, air conditioners and other electronic appliances."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E025",
+          "text": "Demand for electricity from the commercial sector increased to 127,193 gigawatt hours in 2022, representing a 6.4% increase from 2021, largely due to the effect of easing of COVID-19 quarantine measures on the growth of private consumption in the hotel and restaurant industries. \u2022 Demand for electricity from the residential sector is largely dependent on population growth and use of heaters, air conditioners and other electronic appliances."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E026",
+          "text": "Demand for electricity from the commercial sector increased to 127,193 gigawatt hours in 2022, representing a 6.4% increase from 2021, largely due to the effect of easing of COVID-19 quarantine measures on the growth of private consumption in the hotel and restaurant industries."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E027",
+          "text": "The increase in operating expense was mainly attributable to full-year consolidation of ENTITY as well as higher personnel cost and system investments commensurate with business volume growth."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E028",
+          "text": "In response to increasing customer needs related to their growth strategy or business succession in an unclear business environment, we offer multi-layered solutions in response to the various development stages of our customers\u2019 businesses through the combined strength of our entire ENTITY , including banking, trust banking and securities, based on a customer-focused approach."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E029",
+          "text": "In emerging countries, although economies have generally grown at high rates owing to the relaxation of restrictions on activities, the growth trend has recently slowed due to a pause in consumer demand recovery following the end of the spread of COVID-19 and the impact of inflation."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E030",
+          "text": "In addition, in order to realize the growth of each and every employee, flexible deployment of talent in line with our business strategies and development of business-leading talent, we decided to build a new human resources framework for all five core ENTITY companies, namely, ENTITY ENTITY ENTITY , Inc., ENTITY Bank, Ltd., ENTITY Trust & Banking Co., Ltd., ENTITY Securities Co., Ltd. and ENTITY Research & Technologies, Ltd., the transition to which is scheduled for completion in April 2024, and started to implement individual initiatives one by one."
+        }
+      ]
+    },
+    {
+      "alias": "C25",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E031",
+          "text": "Economic profit: From an economic profit perspective, our Group regulatory performance measure of ENTITY increased from &pound;3,833&nbsp;million to &pound;4,807&nbsp;million driven by continued delivery of performance across the Group, along with the benefit from higher RAV&nbsp;indexation which will generate higher revenues in future years."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E032",
+          "text": "Joint ventures and associates&nbsp; ENTITY&#8217;s share of net profits from joint ventures and associates increased&nbsp;by &pound;82 million compared with 2020/21, mainly as a result of&nbsp;higher&nbsp;interconnector revenues in both ENTITY up &pound;37 million and&nbsp;in&nbsp;BritNed up &pound;28&nbsp;million and higher sales in our St William property joint venture (prior&nbsp;to disposal of this investment in March 2022) and an improved contribution from our joint venture investment in NG Partners."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E033",
+          "text": "Capital investment and asset growth: Capital investment of &pound;7,740&nbsp;million was &pound;1,001 million (15%) higher than 2021/22, or &pound;552&nbsp;million (8%) higher at constant exchange rates, driven by a full- year&nbsp;ownership of UK ENTITY, increased capital expenditure in ENTITY, UK&nbsp;ENTITY and NGV, partly offset by lower investment in&nbsp;ENTITY (following the sale of NECO)."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E034",
+          "text": "Markets income(1) of \u00a3698 million, was \u00a3231 million, or 49.5%, higher than 2021 reflecting stronger performance across the product suite. - Net interest income increased by \u00a31,197 million to \u00a34,171 million benefiting from improved yield curve movements, due to interest rate increases, and net loan growth. - Non-interest income of \u00a32,242 million increased by \u00a3378 million primarily driven by increased card payment fees, higher payment services fees and increased income in our markets business. - Net interest margin was 85 basis points higher than 2021 reflecting higher deposits returns. - Operating expenses of \u00a33,744 were \u00a313 million, or 0.3%, lower compared with 2021."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E035",
+          "text": "Bank NIM of 3.04% was 19 basis points higher than 2022 primarily due to benefits from yield curve movements, net of changes in deposit mix as customers shifted to lower margin fixed term accounts, partially offset with lending margin pressure. - Interest receivable was materially above the prior year reflecting the higher rate environment."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E036",
+          "text": "Net loans to customers excluding central items increased by \u00a38.9 billion in the year largely reflecting a \u00a37.6 billion increase in ENTITY and \u00a32.0 billion of growth in Commercial & Institutional due to an increase in term loan facilities and private financing within Corporate & Institutions, net of \u00a32.7 billion of UK Government scheme repayments."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E037",
+          "text": "Bank NIM of 3.04% was 19 basis points higher than 2022 primarily due to benefits from yield curve movements, net of changes in deposit mix, partially offset by lending margin pressure."
+        }
+      ]
+    },
+    {
+      "alias": "C33",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E038",
+          "text": "Offsetting the cash inflows were increases in a ccounts receivable and contract assets in aggregate of approximately $82.3 million during six-month period ended September 29, 2023, resulting from shorter billing and collection periods and lower sequential revenue, and increases in inventories of approximately $58.2 million due to strong demand."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E039",
+          "text": "The increase was mainly driven by a 37% increase in gigawatts delivered due to increased demand, partially offset by slightly lower sales price from the decline in logistics costs."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E040",
+          "text": "The increase was mainly driven by a 30% increase in gigawatts delivered due to increased demand offset by slightly lower sales price due to the decline in logistics costs."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E041",
+          "text": "The increase was mainly driven by a 48% increase in gigawatts delivered, especially in the U.S. primarily due to increased demand and projects progressing on schedule."
+        }
+      ]
+    },
+    {
+      "alias": "C30",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E042",
+          "text": "The revenue growth of our ENTITY business segment in 2023 is attributed to the increased demand for our cloud platform CXone from new customers and ongoing expansion within our installed customer base, driven by further penetration into both large enterprises and the mid-market. 51 The revenue decrease in our ENTITY and Compliance business segment in 2023 is primarily attributed to a decrease in product revenue, which was partially offset by an increase in cloud revenue due to increased adoption of our cloud platforms X-Sight and Xceed."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E043",
+          "text": "The revenue growth of our ENTITY business segment in 2022 is attributed to the increased demand for our cloud platform CXone from new customers, ongoing expansion within our installed customer base and further penetration into both large enterprises and the mid-market."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E044",
+          "text": "ENTITY is at the forefront of several industry technological disruptions that have greatly accelerated in the last several years: the growing acceptance and adoption of specialized AI-powered solutions combining domain-specific use-cases, Generative AI and large language models (LLMs), the adoption of cloud platforms by organizations of all sizes and verticals, the shift of consumer and organizational preferences towards digital-centric services and experiences, an increase in consumer cross channel, self-service usage and the need to manage, optimize and engage a diverse workforce while retaining and attracting top talent."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E045",
+          "text": "ENTITY is at the forefront of several industry technological disruptions that have greatly accelerated in the last several years: the growing acceptance and adoption of specialized AI-powered solutions combining domain-specific use-cases, Generative AI and LLMs, the adoption of cloud platforms by organizations of all sizes and verticals, the shift of consumer and organizational preferences towards digital-centric services and experiences, an increase in consumer cross channel, self-service usage and the need to manage, optimize and engage a diverse workforce while retaining and attracting top talent."
+        }
+      ]
+    },
+    {
+      "alias": "C27",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E046",
+          "text": "China\u2019s economic growth slowed, in part due to curbs on production executed in the interest of stepping up the pace of decarbonization and tightening controls and regulations under China\u2019s \u201ccommon prosperity\u201d drive."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E047",
+          "text": "Following higher than expected volume growth in recent years, including GLP-1-based products such as Ozempic \u00ae and Wegovy \u00ae , combined with the expectation of continued volume growth and capacity limitations at some manufacturing sites, the 2024 outlook also reflects expected continued periodic supply constraints and related drug shortage notifications across a number of products and geographies ."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E048",
+          "text": "Following higher than expected volume growth in recent years, including GLP-1-based products such as Ozempic \u00ae , and temporary capacity limitations at some manufacturing sites, the outlook also reflects expected continued periodic supply constraints and related drug shortage notifications."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E049",
+          "text": "Sales growth in 2023 has resulted in periodic supply constraints and related drug shortage notifications across a number of products and geographies."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E050",
+          "text": "Sales growth in 2022 has resulted in periodic supply constraints and related drug shortage notifications in some countries."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E051",
+          "text": "Generally, increases in revenue from our existing customers are related to increased adoption of our products and services within their organizations."
+        }
+      ]
+    },
+    {
+      "alias": "C32",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E052",
+          "text": "On a same center basis, the increase in revenue was largely attributable to product mix as advanced radiology procedures of MRI, PET, and CT expanded at combined 7.2% to provide the major portion of the revenue growth."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E053",
+          "text": "We have continued to see strong demand for our deposits as a result of our competitive interest rate offering and access to expanded FDIC insurance coverage through a network of participating banks in our ENTITY."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E054",
+          "text": "Origination volume increased 22% year over year, primarily driven by continued strong demand for personal loans and stable growth in the student loan business, despite continued macroeconomic headwinds."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E055",
+          "text": "The increase was primarily attributable to growth in technology products and solutions fees driven by revenue contribution from Technisys for the full 2023 period compared to ten months of 2022."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E056",
+          "text": "Gross margin in 2023 benefited from a favorable product mix, as a number of our significant ENTITY contracts for 2023 compared to 2022 provided higher margin products to customers as well."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E057",
+          "text": "Gross margin in 2022 benefited from increased margins on the ENTITY solution delivered to a customer during the second half of 2022."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E058",
+          "text": "As a result of these factors, as well as our mix of revenue streams and billing frequencies, we do not believe that changes in our remaining performance obligations and deferred revenue in a given period are directly correlated with our revenue growth in that period."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E059",
+          "text": "We have experienced supply shortages of certain products as a result of strong demand or problems experienced by our OEM suppliers."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E060",
+          "text": "The decreases are primarily driven by our ENTITY portfolio due to market dynamics of the prior year which resulted in higher revenues from strong demand and backlog conversion, as well as a decline in our ENTITY portfolio."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E061",
+          "text": "ENTITY has historically experienced slightly higher sales in the first and fourth fiscal quarters due to patterns in capital budgeting, federal government spending and purchasing cycles of its customers and end-users."
+        }
+      ]
+    },
+    {
+      "alias": "C26",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E062",
+          "text": "IgAN market opportunity We estimate there will be approximately 157,000 biopsy-confirmed IgAN patients in the ENTITY, 136,000 in Europe, and 130,000 in Japan, at estimated peak year of sales, and that growth in the diagnosed prevalent population is due to overall population growth."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E063",
+          "text": "Revenue growth was 10% on an organic* basis, due to increasing demand for critical utility infrastructure and outdoor living solutions."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E064",
+          "text": "ENTITY experienced total revenues growth particularly as a result of increased demand in the telecommunications sector."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E065",
+          "text": "In ENTITY, total revenues increased by 5%, with growth across most regions, driven by strong sales into the retail channel, particularly in lawn and garden products, along with increased demand in the professional business channel."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E066",
+          "text": "ENTITY and ENTITY trends affecting the development of ENTITY 's business include: \u2022 Population growth and urbanization driving increasing demand for construction; \u2022 Economic development and further investment in infrastructure, commercial and residential projects; and \u2022 Recurring need to repair, maintain and upgrade the built environment as existing buildings and infrastructure age and wear."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E067",
+          "text": "Form 20-F | 2023 24 \u25cf ENTITY \u2013 ENTITY region is benefiting from several positive secular trends that align well with our business, including a strong technology adoption rate and high mobile app usage."
+        }
+      ]
+    },
+    {
+      "alias": "C31",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E068",
+          "text": "High-quality customer education and customer experience are key to the successful adoption of our platform, for the conversion of users and organizations on our trial version into paying customers, for the expansion of accounts, and for growth or maintenance of our retention rates."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E069",
+          "text": "High-quality customer education and customer experience have been key to the adoption of our platform, for the conversion of users and organizations on our trial version into paying customers, for the expansion of accounts, and for growth or maintenance of our retention rates."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E070",
+          "text": "The decrease in net service and field option sales is mainly driven by lower field upgrade sales due to lower lithography tool utilization levels and customers delaying productivity enhancement packages, partially offset by higher service sales, which has benefited from a growing installed base."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E071",
+          "text": "Memory systems sales benefited from continued strong end-market demand for servers, while for Logic system sales we saw strong demand in advanced and mature nodes to support the digital transformation (5G, AI, VR, intelligent cloud solutions and simulation and visualization applications)."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E072",
+          "text": "China saw the largest geographic sales growth in support of expanding capacity to meet worldwide demand and a catch-up in backlog of orders that were previously unfulfilled due to supply constraints."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E073",
+          "text": "We invest in our factories and facilities around the world so we can meet increasing customer demand for our products and services, driven by strong growth rates across both advanced and mature semiconductor markets, continued innovation, more foundry competition and technological sovereignty."
+        }
+      ]
+    },
+    {
+      "alias": "C28",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E074",
+          "text": "Economic conditions vary across regions and countries, and demand for our products and services generally increases in those regions and countries experiencing economic growth and investment."
+        }
+      ]
+    },
+    {
+      "alias": "C29",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q1_P1_E075",
+          "text": "However, world seaborne tanker trade grew slightly to 3,168 million tons in 2021 mainly due to the sharp recovery in global oil demand, which increased 5.4 million barrels per day (mbpd) in 2021 fueled by robust economic growth, rising vaccination rates, and higher mobility levels."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E076",
+          "text": "In addition to the uplift provided by the overall demand fundamentals in the market, LR2s also benefited from increased demand for longer-haul voyages, particularly as European countries began to shift their product imports (such as diesel) from further afield."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E077",
+          "text": "This increase was driven by the aforementioned shifts in global supply and demand, which benefited all vessel classes, but was limited due to the sale of the vessels during the first half of the year."
+        },
+        {
+          "evidence_id": "2024Q1_P1_E078",
+          "text": "Beginning in March 2022, the LR2 trade gradually benefited from increased demand for longer-haul voyages as European countries shifted the origins of their refined petroleum product imports (such as diesel) from further afield as a result of the conflict in Ukraine."
+        }
+      ]
+    }
+  ]
+}

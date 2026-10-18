@@ -1,0 +1,433 @@
+{
+  "quarter": "2023Q1",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E001",
+          "text": "Key developments in FY2022 ENTITY copper production increased by 29 per cent to 281 kt reflecting the ramp up of the ENTITY, partially offset by the impact of lower cathode production as a result of a 14 per cent decline in ENTITY stacking feed grade."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E002",
+          "text": "ENTITY copper production increased by 29 per cent to 281 kt reflecting the ramp up of the ENTITY (SGO), partially offset by the impact of lower cathode production as a result of a 14 per cent decline in ENTITY stacking feed grade."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E003",
+          "text": "Below target. \u2022 In ENTITY, in addition to unplanned maintenance and higher input prices at all assets, production volumes were impacted by lower than expected recoveries at ENTITY due to plant design issues related to the ENTITY and higher clay content, and lower than expected copper concentrator feed grade at Escondida. \u2022 In Petroleum, despite achieving planned production, sales volumes were lower than expected due to unfavourable timing, partly offset by better than expected cost performance."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E004",
+          "text": "One of the important drivers of growth in the strategy is the increasing secular tailwinds in the private markets (i.e., social or economic trends positively impacting private markets), including growing demand for private credit, which has created attractive opportunities for private capital providers like ENTITY Credit."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E005",
+          "text": "ENTITY demand for fertilizers is driven primarily by grain demand and prices, which, in turn, are driven by population growth, farmland per capita, dietary changes in the developing world and increased consumption of bio-fuels."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E006",
+          "text": "Due to higher input costs for corn planting and increased demand for soybeans, particularly for renewable diesel production, it was more favorable for farmers to plant soybeans compared to corn."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E007",
+          "text": "Our revenues have grown substantially as a result of the growth in digital advertising as well as the continued adoption of digital measurement solutions and analytics."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E008",
+          "text": "Activation (f/k/a Advertiser \u2013 programmatic) revenue increased $83.4 million, or 50%, driven by greater adoption of our ENTITY (ABS) solution as well as by new customers activating our core (non-ABS) programmatic solutions."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E009",
+          "text": "The increase was primarily due to growth in Activation (f/k/a Advertiser \u2013 programmatic) revenue which drove increases in partner costs from revenue-sharing arrangements, as well as accelerated investments in cloud services to provide scale and flexibility necessary to support future growth."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E010",
+          "text": "The increase was primarily due to growth in our Activation revenue which drove increases in partner costs from revenue-sharing arrangements, as well as accelerated investments in cloud services to provide scale and flexibility necessary to support future growth."
+        }
+      ]
+    },
+    {
+      "alias": "C25",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E011",
+          "text": "This increase was led by a $11.5 million, or 39.5%, increase in revenue for our Drilling ENTITY product line due to higher sales volumes of both consumable products and capital equipment driven by increased market activity and global rig count."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E012",
+          "text": "The overall increase in revenues is primarily related to higher sales volumes due to improving market conditions in 2022 compared to 2021 as a result of higher drilling and completions activity levels to support increasing global ENTITY demand."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E013",
+          "text": "This increase includes a $46.7 million, or 48.3%, increase in revenues for our Drilling ENTITY product line primarily due to higher sales volumes of consumable products and capital equipment from the 28.1% year-over-year increase in global rig count."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E014",
+          "text": "This significant improvement includes a revenue increase of $17.2 million, or 56.9%, for our Stimulation & Intervention product line primarily due to higher demand of power ends, radiators and wireline cable."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E015",
+          "text": "Our net sales growth is driven by the following key factors: \u2022 Increasing sales velocity from the average ENTITY Fridge due to increasing awareness, trial and adoption of ENTITY products and innovation."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E016",
+          "text": "Due to the continued growth of the Company\u2019s fresh pet food sales, the Company has plans to continue expanding its manufacturing capacity via operational efficiency improvements at our current facilities and via future expansion of our physical features."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E017",
+          "text": "The $35.4 million increase in net sales was driven by growth in the Grocery (including Online), Mass, and Club refrigerated channel of $31.3 million, with the remaining growth in ENTITY and Natural."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E018",
+          "text": "The increase was primarily a result of an increase of $59.9 million in cash and cash equivalents as a result of our April 2022 primary offering as we fund our capital expansion plan, an increase in accounts receivable of $22.8 million due to increased sales, an increase in inventory of $22.7 million, and an increase in prepaid expenses of $3.9 million."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E019",
+          "text": "We valued the majority of acquired property and equipment using a mix of cost, market and discounted cash flow approaches, which included estimates of future income growth, capitalization rates, discount rates, and capital expenditure needs of the resorts."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E020",
+          "text": "The growth in Customers was primarily driven by our increased demand for our lower-priced Starter products."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E021",
+          "text": "The growth in Customers was primarily driven by increased demand for our lower-priced Starter products."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E022",
+          "text": "During periods of expansion in construction activity, we generally have benefited from increased demand for our products."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E023",
+          "text": "ENTITY the COVID-19 pandemic, the marine industry benefited from changes in consumer preferences, which accelerated retail sales of our products during fiscal 2021 and fiscal 2022."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E024",
+          "text": "Net sales benefited from higher prices, partially offset by decreased sales volumes and increased dealer incentives."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E025",
+          "text": "Purchases of property, plant, and equipment increased 82.3 percent and 187.3 percent during the third quarter and first nine months of fiscal 2023, respectively, when compared to the same prior-year periods due to capital spending focused on capacity expansion."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E026",
+          "text": "In response to increasing customer needs related to their growth strategy or business succession in an unclear business environment, we offer multi-layered solutions in response to the various development stages of our customers\u2019 businesses through the combined strength of our entire ENTITY , including banking, trust banking and securities, based on a customer-focused approach."
+        }
+      ]
+    },
+    {
+      "alias": "C26",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E027",
+          "text": "ENTITY increased in fiscal 2021 compared to 2020, primarily due to growth in our overall business, driven by an increase in adoption of ADAS and a slight improvement in ENTITY vehicle production."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E028",
+          "text": "Demand for new homes is sensitive to economic changes driven by conditions such as employment levels, job growth, consumer confidence, inflation and interest rates."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E029",
+          "text": "The increase in the average settlement price was primarily attributable to a 3% higher average sales price of units in backlog entering 2023 compared to backlog entering 2022, coupled with a relative shift in settlements to higher priced markets quarter over quarter."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E030",
+          "text": "The increase in the average sales price of ENTITY was attributable to significant price appreciation resulting from strong demand through the first quarter of 2022."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E031",
+          "text": "Segment revenues decreased due to an 18% decrease in the number of units settled, primarily attributable to a 25% lower backlog unit balance entering 2023 compared to backlog entering 2022, offset partially by a higher backlog turnover rate quarter over quarter."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E032",
+          "text": "Joint ventures and associates&nbsp; ENTITY&#8217;s share of net profits from joint ventures and associates increased&nbsp;by &pound;82 million compared with 2020/21, mainly as a result of&nbsp;higher&nbsp;interconnector revenues in both ENTITY up &pound;37 million and&nbsp;in&nbsp;BritNed up &pound;28&nbsp;million and higher sales in our St William property joint venture (prior&nbsp;to disposal of this investment in March 2022) and an improved contribution from our joint venture investment in NG Partners."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E033",
+          "text": "The following sections discuss the Company\u2019s revenue recognition policies by significant product category: ENTITY revenue is largely attributable to the U.S. and is comprised of third-party payor transactions and wholesale revenue."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E034",
+          "text": "ENTITY revenue is largely attributable to the U.S. and is comprised of third-party payor transactions and wholesale revenue. 69 For revenue derived from third-party payors, including commercial insurance carriers, health maintenance organizations, preferred provider organizations, and governmental payors, such as Medicare, in connection with the sale of our stimulation products, we recognize revenue when the stimulation product is fitted to and accepted by the patient and all applicable documents that are required by the third-party payor have been obtained."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E035",
+          "text": "Commission revenue and expense growth will be driven by the businesses' continued expansion and diversification of its products across regions, products, and carriers."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E036",
+          "text": "In recent years, a slowdown in domestic demand for steel products in China resulting from slowed economic growth, combined with an expansion in steel production capacity, has led to production over-capacity in the Chinese steel industry, which in turn has led the Chinese government to pursue aggressive consolidation in the Chinese steel industry, such as the consolidation of ENTITY and ENTITY and Steel in 2016, that has resulted in fewer but larger steel manufacturers that are able to compete more effectively in the global steel industry."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E037",
+          "text": "In recent years, a slowdown in domestic demand for steel products in China resulting from slowed economic growth as well as the impact from the COVID-19 pandemic, combined with an expansion in steel production capacity, has led to production over-capacity in the Chinese steel industry, which in turn has led the Chinese government to pursue aggressive consolidation in the Chinese steel industry that has resulted in fewer but larger steel manufacturers that are able to compete more effectively in the global steel industry."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E038",
+          "text": "In recent years, a slowdown in domestic demand for steel products in China resulting from slowed economic growth as well as the impact from the COVID-19 pandemic, combined with an expansion in steel production capacity, led to production over-capacity in the Chinese steel industry, which in turn led the Chinese government to pursue aggressive consolidation in the Chinese steel industry that has resulted in fewer but larger steel manufacturers that are able to compete more effectively in the global steel industry."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E039",
+          "text": "In response to increasing demand from the energy industry, ENTITY E&C plans to continue to target opportunities in power plant construction, especially in Asia and Africa, which it believes offers significant growth potential."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E040",
+          "text": "We saw softer year-over-year performances as in the prior period, we benefited from increased inventory sales revenue from improved market conditions and the lifting of border restrictions post COVID-19, including the non-repeat of an event in Australia, offset by the inclusion of inventory revenue from IAA. \u200b GTV by Sector \u200b The following table illustrates the breakdown of total GTV by sector for the first quarter of 2023 compared to the first quarter of 2022. \u200b The automotive sector includes all consumer automotive vehicles."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E041",
+          "text": "With enhanced scale and an expanded addressable market, the Company believes it will be able to drive additional GTV growth through its platforms and auction sites, in turn generating more insights for its customers and expanding the adoption of our other high-margin tech-enabled services. \u200b Impact of Russia-ENTITY on ENTITY \u200b On February 24, 2022, the geopolitical situation in ENTITY intensified with Russia\u2019s invasion of Ukraine, sharply affecting economic and global financial markets."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E042",
+          "text": "We also saw slightly improved rate performances on both straight commission and guarantee contracts. \u200b Inventory sales revenue increased 75% primarily due to higher volume of inventory selling through our strategic accounts, primarily in the finance and rental sectors, and higher volumes sold at several of our auctions."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E043",
+          "text": "In Canada, GTV growth was driven by strong performances across several auction events, including agricultural events, strong execution by our Canadian strategic accounts teams, higher volume from RBFS from providing escrow services for private brokered transactions, and a higher number of inventory packages sold primarily in the commercial transportation sector."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E044",
+          "text": "We have also experienced significant growth in the number of customers, ENTITY devices and connected assets, and data supported by our solution and our associated infrastructure, which has placed additional demands on our resources, systems, and operations."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E045",
+          "text": "At constant exchange rates (CER, see definition below), net sales rose by 7.1%, mainly reflecting strong growth for our ENTITY global business unit (driven by a solid performance from Dupixent \u00ae ), and increased sales for our Vaccines business and our ENTITY global business unit."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E046",
+          "text": "Net sales of Multaq \u00ae totaled \u20ac329 million in 2021, up 8.3% CER, as growth in US sales stimulated by increased medical consultations and prescriptions for antiarrhythmic drugs with the recovery from the COVID-19 pandemic more than offset lower sales in Europe. 4/ Net sales \u2013 Vaccines segment/GBU In 2021, the Vaccines segment posted net sales of \u20ac6,323 million, up 5.9% on a reported basis and 6.8% CER, reflecting growth across all franchises; the main drivers were influenza vaccines (+5.9% CER at \u20ac2,628 million), Polio/Pertussis/Hib vaccines (+4.2% CER at \u20ac2,159 million), and a recovery of sales of meningitis vaccines (+21.1% CER at \u20ac658 million)."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E047",
+          "text": "Net sales of other vaccines were \u20ac167 million (+86.9% CER), and include sales of the recently approved monovalent recombinant-protein COVID-19 booster vaccine VidPrevtyn \u00ae Beta. 5/ Net sales \u2013 ENTITY segment/GBU In 2022, net sales for the ENTITY (CHC) segment increased by 13.7% on a reported basis and 8.6% at CER to \u20ac5,080 million, driven by double-digit growth in Europe and the Rest of the World region."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E048",
+          "text": "Cerezyme \u00ae sales were up 2.6% CER at \u20ac707 million, helped by a solid performance in the Rest of the World region (+9.0% CER at \u20ac274 million), driven by new patients on therapy and benefiting from favorable pricing."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E049",
+          "text": "The net increase in operating cash flows was primarily due to higher collections driven by revenue growth."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E050",
+          "text": "The net increase in operating cash flow was primarily due to higher collections driven by revenue growth."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E051",
+          "text": "A large portion of these capital expenditures will be devoted to support capacity additions and mix change in our manufacturing footprint, in particular for our wafer fabs: (i) digital 300mm in Crolles, France, optimizing existing infrastructures and extending the cleanroom to support production ramp up on our main runner technologies; (ii) certain selected programs of capacity growth and infrastructure preparation in some of our most advanced 200mm fabs, including the analog 200mm fab in Singapore and (iii) increase capacity for SiC power mosfet in our Catania and Singapore fabs."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E052",
+          "text": "Furthermore, during certain periods, we have also experienced increased demand in certain market segments and product technologies, which has led to a shortage of capacity, an increase in the lead times of our delivery to customers and, in certain instances, being required to enter into agreements with our suppliers with onerous terms, such as take-or-pay arrangements."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E053",
+          "text": "Due to changes in the energy policy of the government, the growth of manufacturers in the ENTITY, Southern ENTITY ENTITY and Central ENTITY ENTITY, and the droughts that ENTITY experiences from time to time, there is concern regarding future availability of sufficient electricity and water for our production in ENTITY ."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E054",
+          "text": "We are entering a period of higher growth as the multiyear megatrends of 5G and high performance computing are expected to fuel strong demand for our ENTITY technologies in the next several years, after the COVID-19 pandemic accelerated digitalization in every aspect."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E055",
+          "text": "We are entering a period of higher growth as the multiyear megatrends of 5G and high performance computing are expected to fuel strong demand for our ENTITY technologies in the next several years."
+        }
+      ]
+    },
+    {
+      "alias": "C27",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E056",
+          "text": "The increase in cash used was primarily attributable to increased research and development and sales, general and administrative expenses, driven largely by the advancement of our programs in development and operational growth, including increases in clinical trial expenses, chemistry and manufacturing control costs, employee-related costs, commercial support expenses, and various professional expenses."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E057",
+          "text": "A number of factors have historically affected, and will continue to affect, our same store sales, including, among other factors: \u2022 competition; \u2022 overall economic trends, particularly those related to consumer spending; \u2022 franchisees\u2019 ability to operate studios effectively and efficiently to meet consumer expectations; \u2022 changes in the prices franchisees charge for memberships or classes; \u2022 studio closures due to macro-economic conditions and industry-wide trends; and \u2022 marketing and promotional efforts. 44 Therefore, the increases in historical same store sales growth should not be considered indicative of our future performance."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E058",
+          "text": "This was due to customers continuing to see strong demand for both advanced and mature nodes in support of the ongoing digital transformation, which includes secular growth drivers, such as 5G, AI, virtual reality, gaming, simulation and visualization applications, and the intelligent cloud and edge that will be an integral part of the growing digital infrastructure."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E059",
+          "text": "Memory systems sales benefited from continued strong end-market demand for servers, while for Logic system sales we saw strong demand in advanced and mature nodes to support the digital transformation (5G, AI, VR, intelligent cloud solutions and simulation and visualization applications)."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E060",
+          "text": "ENTITY ANNUAL REPORT 2021 41 Message from the CFO ENTITY (ENTITY and ENTITY) ENTITY, Strong growth in semiconductor end markets, driven by the acceleration of the digital infrastructure, and increasing lithography intensity on future advanced nodes fuel demand for our products and services."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E061",
+          "text": "We invest in our factories and facilities around the world so we can meet increasing customer demand for our products and services, driven by strong growth rates across both advanced and mature semiconductor markets, continued innovation, more foundry competition and technological sovereignty."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2023Q1_P1_E062",
+          "text": "ENTITY \u2019 market share in ENTITY increased 380 basis points from 19.1 percent in 2020 to 22.9 percent in 2021, primarily reflecting market share growth in Brazil, driven by all ENTITY brands, mainly Fiat, which led the Brazilian market."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E063",
+          "text": "The increase in ENTITY shipments in 2021 compared to 2020 was primarily due to extended COVID interruptions in 2020 and strong demand for ENTITY and all-new ENTITY, as well as mid-cycle refreshes of ENTITY and ENTITY."
+        },
+        {
+          "evidence_id": "2023Q1_P1_E064",
+          "text": "ENTITY increase in China and India & ENTITY consolidated shipments on an IFRS basis in 2022 compared to the IFRS and ENTITY basis for the corresponding period in 2021 was primarily due to the increased demand for Peugeot 3008."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "quarter": "2017Q4",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E001",
+          "text": "Cash capital expenditures were $ 4.6 billion , $ 6.7 billion , and $10.1 billion in 2015 , 2016 , and 2017 , which primarily reflect additional capacity to support our fulfillment operations and additional investments in support of continued business growth in technology infrastructure (the majority of which is to support AWS), during all three periods."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E002",
+          "text": "The increase in deferred revenue is primarily due to the higher revenue in the quarter and the timing of the acceptance of system sales."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E003",
+          "text": "The increase was due to higher sales of our Purion systems sold in the nine month period ended September 30, 2017."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E004",
+          "text": "The increase was due to higher sales of our Purion systems sold in the six month period ended June 30, 2017."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E005",
+          "text": "Volume growth in the first quarter of fiscal year 2018 reflected the following: \u2022 Medical segment volume growth in the first quarter was driven by global sales in the Medication and ENTITY unit and international demand for products in the ENTITY unit."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E006",
+          "text": "ENTITY unit's revenues in the first quarter of 2018 were unfavorably impacted by a modification to dispensing equipment lease contracts with customers in the prior year which impacts the timing of revenue recognition. \u2022 ENTITY segment volume growth in the first quarter was driven by growth in all three of its organizational units, particularly in its ENTITY unit."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E007",
+          "text": "International first quarter revenues reflected increased sales in the Medical segment's Medication and ENTITY and ENTITY units, as well as growth attributable to sales in all three of the ENTITY segment's units, particularly the ENTITY and Biosciences units."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E008",
+          "text": "Medical segment revenue growth in 2017 was driven by the Medication and ENTITY unit's sales of infusion disposables products, particularly in international markets, and the ENTITY unit\u2019s sales of self-injection systems."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E009",
+          "text": "The increase was a result of higher interest income on loans and taxable securities due to higher volume of such interest-earning assets."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E010",
+          "text": "ENTITY Gathering increased firm reservation fee revenues primarily as a result of third parties and affiliates contracting for additional firm gathering capacity on the ENTITY (ENTITY) ENTITY project and various affiliate wellhead gathering expansion projects."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E011",
+          "text": "ENTITY Gathering increased firm reservation fee revenues primarily as a result of affiliates and third parties contracting for additional firm gathering capacity on various affiliate wellhead gathering expansion projects and the ENTITY (ENTITY) ENTITY project."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E012",
+          "text": "ENTITY Gathering increased firm reservation fee revenues primarily as a result of affiliates and third parties contracting for additional firm gathering capacity on various affiliate wellhead gathering expansion projects and the ENTITY project."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E013",
+          "text": "The increase was primarily attributable to the increase in RSDL deliveries to the DoD, BAT sales to the SNS, international sales for VIG and Trobigard, along with increased costs associated with the expansion of our contract manufacturing business."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E014",
+          "text": "The increase was attributable to increased costs associated with the increase in Other product sales and increased costs associated with the expansion of our contract manufacturing business, as well as costs for routine maintenance shutdown activities."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E015",
+          "text": "The growth in ENTITY revenue was primarily driven by an increase in revenue from ENTITY Payments, largely driven by overall GMS growth trends and increased seller adoption."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E016",
+          "text": "ENTITY revenue also benefited from the growth in revenue from ENTITY and, to a lesser extent, ENTITY and Pattern."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E017",
+          "text": "ENTITY revenue also benefited from the growth in revenue from ENTITY and, to a lesser extent, Pattern and ENTITY."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E018",
+          "text": "The growth in ENTITY revenue was primarily driven by an increase in re venue from ENTITY Payments, largely driven by overall GMS growth trends and increased seller adoption."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E019",
+          "text": "This increase was mainly attributable to revenue growth in most businesses and was furthermore supported by a EUR 32 million one-time gain from the reduction of ENTITY \u2019s stake in ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E020",
+          "text": "The internal growth rate for service revenue is inherently more volatile than the internal growth rate for storage rental revenues due to the more discretionary nature of certain services we offer, such as large special projects, and, as a commodity, the volatility of pricing for recycled paper."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E021",
+          "text": "The increase in our total net revenues was primarily due to the growth in our annual active customer accounts from our core business from 47.4 million in 2013 to 90.6 million in 2014 and the growth in the number of orders we fulfilled for our core business from approximately 323.3 million in 2013 to approximately 651.9 million in 2014."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E022",
+          "text": "The increase in our total net revenues was primarily due to the growth in our annual active customer accounts from core business from 90.6 million in 2014 to 155.0 million in 2015 and the growth in the number of orders we fulfilled for our core business from approximately 651.9 million in 2014 to approximately 1,263.1 million in 2015."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E023",
+          "text": "In addition, they are also affected by factors driving online retail in China, such as the growing number of online shoppers, the adoption of online sales strategies by manufacturers and service providers, the availability of improved delivery services and the increasing variety of payment options."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E024",
+          "text": "The increase in the number of deliveries was primarily driven by an increase in active communities over 2015 primarily in Florida and/or driven by higher demand as the number of deliveries per active community increased."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E025",
+          "text": "Margins in Retail improved, driven by further improvements in deposit mix, more than offsetting reduced lending rates however margins in ENTITY fell as a result of business growth being focused on higher quality, but lower margin, lending on the new vehicle market and credit card balances, more than offsetting favourable deposit repricing."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E026",
+          "text": "Net interest income increased by \u00a3367 million, or 17 per cent, to \u00a32,480 million in 2014 compared to \u00a32,113 million in 2013 driven by reduced funding costs and net interest margin expansion as a result of disciplined pricing of new business."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E027",
+          "text": "Lumber & ENTITY benefited from an increased demand for hurricane-related products such as plywood, pressure-treated lumber, fencing, shingles, drywall, and insulation, an increase in Pro customer demand, and inflation."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E028",
+          "text": "The increases in net premiums earned are primarily due to growth in our monthly policy production and IIF, partially offset by cessions under the 2016 QSR Transaction and 2017 ILN Transaction and, compared to the same periods in 2016, reductions in our single premium policy production and earnings 26 from cancellations."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E029",
+          "text": "The increase in both periods is primarily due to the continued growth in our monthly policy production and IIF, partially offset by the effects of the 2016 QSR Transaction and 2017 ILN Transaction and reductions in our single policy production and earnings from early policy cancellations."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E030",
+          "text": "The increase in net premiums earned is primarily due to growth in our monthly policy production and IIF, partially offset by the effects of the 2016 QSR Transaction and 2017 ILN Transaction. 26 ENTITY otherwise noted, the portfolio statistics tables presented below do not include the effects of our third-party reinsurance arrangements described above."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E031",
+          "text": "Investment in Growth We plan to continue to invest in sales and marketing so that we can capitalize on our market opportunity, and as part of this, we intend to specifically expand our focus on opportunities with major accounts and large deals, which we define as transactions over $500,000 in committed value."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E032",
+          "text": "Gross profit dollar growth of $19.4 million, or 19.3%, for the second quarter of fiscal 2018 and $32.6 million, or 16.8%, for the first six months of fiscal 2018 compared to the prior year periods, was driven by an increase in the number of cases sold, as well as a favorable change in sales mix."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E033",
+          "text": "Net sales growth was driven by case volume growth of 4.2% and 3.9% in the second quarter and first six months of fiscal 2017, respectively, as well as an increase in selling price per case in both the second quarter and first six months of fiscal 2018 compared to the prior year periods."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E034",
+          "text": "Gross profit dollar growth of $13.2 million, or 14.2%, for the first three months of fiscal 2018 compared to the first three months of fiscal 2017, was driven by an increase in the number of cases sold, as well as an increase in gross profit per case."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E035",
+          "text": "The increase in net sales was primarily attributable to case growth in ENTITY Foodservice, particularly in the independent channel, and sales growth in Vistar, particularly in the hospitality, retail, theater and vending channels."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2017Q4_P2_E036",
+          "text": "Significant assumptions include projected revenue growth, capital expenditures, utilization, gross margins, discount rates, terminal growth rates, and weight allocation between income and market approaches."
+        },
+        {
+          "evidence_id": "2017Q4_P2_E037",
+          "text": "In addition to increased activity levels in the ENTITY, several evolving industry trends, including increasingly longer horizontal wellbore laterals, a greater number of frac stages per lateral and increasing amounts of proppant employed per well, have significantly increased demand for our hydraulic fracturing and other completion services."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "quarter": "2018Q2",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E001",
+          "text": "The increase in costs as a percentage of net sales during the first quarter of 2018 compared to 2017 was principally due to higher wages and benefits. 21 ENTITY and administrative expenses during the first quarter of 2018 were $15,087 or 7.8% of total revenues compared to expenses in the first quarter of 2017, which were $13,952 or 7.1% of total revenues."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E002",
+          "text": "The increase as a percentage of net sales during the second quarter was principally due to higher repair expenses of 0.4% and higher wages and benefits of 0.3%."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E003",
+          "text": "Operating income from our wireless communications segment increased primarily due to higher revenue, largely resulting from an increase in our wireless content in handsets."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E004",
+          "text": "The U.S. housing market remains stable as a result of solid housing demand fueled by low mortgage interest rates, economic growth and job creation."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E005",
+          "text": "The most significant components of the change were as follows: \u2022 Gain on extinguishment of debt was $25.8 million for the ENTITY quarter of 2018, primarily due to a $25.7 million gain resulting from extinguishment of eight ENTITY debt obligations totaling $675.0 million. \u2022 Wealth management fees increased by $1.0 million primarily due to higher volume. \u2022 Gain related to the early termination of two forward-starting advances was $12.5 million in the fourth quarter of 2017."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E006",
+          "text": "Net interest income also benefited from a $2.2 million increase in investment securities interest income resulting from higher investment yields driven by the reinvestment of lower yielding cash flows from maturities, paydowns and sales into higher yielding mortgage-backed securities."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E007",
+          "text": "Key highlights in the ENTITY quarter of 2018 include: \u2022 ENTITY 31, 2017, originated loans increased $74.3 million, or by 1.32% on an annualized basis, primarily due to growth in the commercial mortgage portfolio. \u2022 Deposits increased $703.0 million, or by 9.7 percent on an annualized basis, from December 31, 2017, primarily due to organic growth in demand deposit and interest-bearing savings and checking account balances. \u2022 Net interest income increased $9.7 million , or by 3.5 percent , compared to the fourth quarter of 2017 ."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E008",
+          "text": "ARPU increased 5.8% from $130 for the period ended March 31, 2017 to $138 for the period ended March 31, 2018 , primarily due to broadened customer adoption of our products resulting in increased customer spend and revenue from acquired businesses."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E009",
+          "text": "ARPU increased 10.2% from $129 for the period ended June 30, 2017 to $142 for the period ended June 30, 2018 , primarily due to broadened customer adoption of our products resulting in increased customer spend and revenue from acquired businesses."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E010",
+          "text": "These increases were primarily driven by increased customer adoption of our email and productivity solutions as well as seasonal revenue from HEG sponsored events in the first quarter of 2018."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E011",
+          "text": "The increase was primarily driven by increased customer adoption of our email and productivity solutions as well as seasonal revenue from HEG sponsored events."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E012",
+          "text": "The increase in the first quarter of fiscal year 2018 is primarily attributable to higher volume of third-party grower fruit sold."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E013",
+          "text": "Datacenter revenue, including Tesla, GRID and DGX, increased 133%, reflecting strong demand from hyperscale and cloud customers for deep learning training and accelerated GPU computing as well as demand for HPC, DGX AI supercomputing and GRID virtualization platforms."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E014",
+          "text": "Datacenter revenue, including Tesla, GRID and DGX, increased 71%, reflecting strong sales of our Volta architecture, including ENTITY Tesla V100, new DGX systems, and strong demand for HPC."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E015",
+          "text": "Sales of high-end GeForce GPU products for gaming increased over 40%, reflecting a combination of continued strength in PC gaming and strong demand for our recent Pascal-based GPU products."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E016",
+          "text": "Revenue from sales of GeForce GPU products for gaming increased over 20%, reflecting continued strong demand for our Pascal-based GPU products."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E017",
+          "text": "Significant assumptions include projected revenue growth, capital expenditures, utilization, gross margins, discount rates, terminal growth rates, and weight allocation between income and market approaches."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E018",
+          "text": "In addition to increased activity levels in the ENTITY, several evolving industry trends, including increasingly longer horizontal wellbore laterals, a greater number of fractured stages per lateral and increasing amounts of proppant employed per well, have significantly increased demand for our hydraulic fracturing and other completion services."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E019",
+          "text": "The sales increase was driven by the APAC region, which grew 53% with unit growth of 60%, primarily due to sales and unit growth in China, Japan and Korea of greater than 50%."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E020",
+          "text": "The sales increase was driven by the APAC region, which grew 106% with unit growth of 102%, primarily due to sales growth in Japan up 130%, China up 134%, and India up 47%."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E021",
+          "text": "The sales increase was driven by the APAC region, which grew 81% with unit growth of 82%, primarily due to sales growth in China up 109%, Japan up 90%, and Korea up 35%."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E022",
+          "text": "The EMEA region grew 27% with unit growth of 12% primarily due to increased sales in Germany, ENTITY, ENTITY, ENTITY and Spain."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E023",
+          "text": "ENTITY primary investing activities have consisted of purchases of property and equipment in support of our expanding headcount as a result of our growth, and capital expenditures to develop our software in support of enhancing our technology platform."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E024",
+          "text": "Net income increased $884 million to $771 million primarily driven by unrealized net gains on hedging activities with affiliates in 2018 reflecting increases in forward prices principally driven by higher market heat rates and higher sales volumes."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E025",
+          "text": "Retail electricity sales were favorably impacted by 1,043 GWh in higher sales volumes in 2018 primarily driven by colder weather."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E026",
+          "text": "The increase in cash cost of sales per metric ton is primarily due to increased spending associated with the continued ramp up of mining activities and incremental costs associated with a scheduled week of maintenance in the second quarter of 2018."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E027",
+          "text": "Talent and Rewards experienced revenue growth in all regions as a result of greater demand for advisory work and software and product revenues."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E028",
+          "text": "The overall growth in Retirement was driven by an increase in demand for consulting and project work."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q2_P1_E029",
+          "text": "The increase in revenues from clients in this industry vertical was primarily attributable to growth in demand for services related to mobile applications, testing services, user experience and social practices, supported by the cross-selling capabilities of our Studios."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E030",
+          "text": "The increase in revenues from clients in this industry vertical was primarily attributable to higher demand for services related to gaming, mobile applications, user experience and social practices, supported by the cross-selling capabilities of our Studios."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E031",
+          "text": "The increase in revenues from clients in this industry vertical was primarily attributable to growth in demand for services related to enterprise consumerization, digital content and consumer experience solutions."
+        },
+        {
+          "evidence_id": "2018Q2_P1_E032",
+          "text": "The increase in revenues from clients in this industry vertical was primarily attributable to a higher demand for our gaming solutions, mobile applications, and consumer experience practices."
+        }
+      ]
+    }
+  ]
+}

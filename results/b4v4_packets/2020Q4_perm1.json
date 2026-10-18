@@ -1,0 +1,391 @@
+{
+  "quarter": "2020Q4",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E001",
+          "text": "A large portion of our Computing and Graphics revenue is focused on the consumer desktop PC and notebook segments, which have in the past experienced a decline driven by, among other factors, the adoption of smaller and other form factors, increased competition and changes in replacement cycles."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E002",
+          "text": "The increase in unit shipments was primarily due to higher demand for our Ryzen processors."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E003",
+          "text": "The increase in average selling price was primarily driven by a richer mix of client processors from higher sales of our Ryzen processors, which have a higher average selling price, partially offset by lower average selling price for our Radeon products due to product cycle timing."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E004",
+          "text": "Growth for ENTITY was primarily driven by sales of apps and in-app purchases, which benefited from elevated user engagement partially due to the impact of COVID-19, and growth for YouTube subscriptions was primarily driven by an increase in paid subscribers."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E005",
+          "text": "Growth for ENTITY was primarily driven by sales of apps and in-app purchases, which benefited from elevated user engagement partially due to the impact of COVID-19."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E006",
+          "text": "Paid clicks increased from 2018 to 2019 primarily due to an increase in clicks due to interrelated factors, including an increase in search queries resulting from ongoing growth in user adoption and usage, primarily on mobile devices; continued growth in advertiser activity; and improvements we have made in ad formats and delivery."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E007",
+          "text": "The overall growth was primarily driven by interrelated factors including increases in search queries resulting from ongoing growth in user adoption and usage, primarily on mobile devices, growth in advertiser spending primarily in the second half of the year, and improvements we have made in ad formats and delivery."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E008",
+          "text": "The long-term outlook for the industry remains positive due to the fundamental drivers of air travel demand: economic growth, increasing propensity to travel due to increased trade, globalization, and improved airline services driven by liberalization of air traffic rights between countries."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E009",
+          "text": "Based on long-term global economic growth projections of 2.5% average annual GDP growth, we project demand for approximately 43,000 new airplanes over the next 20 years."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E010",
+          "text": "ENTITY of ENTITY following are key factors that affect our financial condition and results of operations and are important to understand our business: \u00b7 demand for photovoltaic products, including government incentives to promote the usage of solar ENTITY ; \u00b7 product prices; \u00b7 our product mix; \u00b7 our production capacity and utilization; and \u00b7 our production costs, in particular the cost of electricity. 51 Demand for photovoltaic products Our business and revenue growth are, in part, dependent on the demand for photovoltaic products."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E011",
+          "text": "The growth in Services revenue was primarily driven by an increase of 91.4% in on-site advertising revenue (primarily through our renamed ENTITY Ads product), which represented a significant majority of the overall Services revenue increase, and, to a lesser extent, an increase in shipping label revenue of 179.8% from the prior year quarter."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E012",
+          "text": "The growth in Services revenue was primarily driven by an increase of 102.3% in on-site advertising revenue (through our renamed ENTITY Ads product), which represented a significant majority of the overall Services revenue increase , and, to a lesser extent, an increase in shipping label revenue of 206.9% from the prior year quarter."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E013",
+          "text": "The growth in Services revenue was primarily driven by an increase of 88.7% in on-site advertising revenue, which represented a significant majority of the overall Services revenue increase, and, to a lesser extent, an increase in shipping label revenue of 163.0% from the prior year."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E014",
+          "text": "We intend to focus our resources in those markets and energy applications in which ENTITY power can be a least-cost, best-fit energy solution, particularly in regions with significant current or projected electricity demand, relatively high existing electricity prices, strong demand for renewable energy generation, and high ENTITY resources."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E015",
+          "text": "As a result of such market opportunities, we are expanding our manufacturing capacity while also developing and operating multiple ENTITY projects around the world as we execute on our utility-scale project pipeline."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E016",
+          "text": "In addition, the operating margin in the third quarter of 2020 benefited from synergy related cost reductions."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E017",
+          "text": "Concerns about the global economy related to the COVID-19 pandemic, historically low U.S. interest rates and the anticipated effects of global stimulus efforts have driven increased demand for gold."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E018",
+          "text": "ENTITY global brand volume decreased 4.3% during the third quarter of 2020 versus 2019, primarily due to coronavirus related decreases in the U.S and Canada, partially offset by growth in ENTITY. \u2022 Staropramen global brand volume, including royalty volume, increased 3.2% during the third quarter of 2020 versus 2019, primarily driven by higher volumes in European markets outside ENTITY, the brand's primary market."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E019",
+          "text": "However, we estimate the two largest brewers lost share in 2020 due to volume growth in the import and flavored malt ENTITY (including hard seltzers) categories as consumer preferences continue to shift within the industry to above premium priced beers, flavored malt beverages, ready to drink alcoholic beverages and hard seltzers."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E020",
+          "text": "Currently, in Ontario and other provinces, provincial governments are reviewing and/or changing this historical foundation as a result of this market evolution and increased demand by some for government's intervention to remove distribution restrictions."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E021",
+          "text": "This compares to our 2019 estimate that approximately 16% and 17% of our volume and net sales, respectively, were from the on-premise channel which tends to be more profitable than the off-premise channel as a result of its higher above premium brand mix, higher net sales revenue per hectoliter and lower package costs due to the higher volume of kegs sold."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E022",
+          "text": "ENTITY market platform experienced stronger demand for mobile workstations due to work from home trends, but was negatively affected by lower corporate demand for desktop workstations."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E023",
+          "text": "In the third quarter of fiscal year 2021, our Gaming and ENTITY market platforms benefited from stronger demand as people continue to work, learn, and play from home."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E024",
+          "text": "In ENTITY, stronger demand for mobile workstations due to work from home trends was partially offset by lower demand for desktop workstations."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E025",
+          "text": "ENTITY and ENTITY market platforms have benefited from stronger demand as people continue to work, learn, and play from home."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E026",
+          "text": "California courts have imposed liability under the doctrine of inverse condemnation in legal actions brought by property holders against utilities on the grounds that losses borne by the person whose property was damaged through a public use undertaking should be spread across the community that benefited from such undertaking, and based on the assumption that utilities have the ability to recover these costs from their customers."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E027",
+          "text": "However, improvement of our contribution metric in the first nine months of this year has also been driven by the expansion of existing customer accounts, improved sales efficiency, and the increasing deployment of centralized hosting and other software deployment infrastructure."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E028",
+          "text": "Service revenues were $16.9 million for the quarter ended September 30, 2020, an increase of 21.5% or $3.0 million from $13.9 million recorded for the quarter ended September 30, 2019, primarily due to the addition of revenues derived from the ENTITY business and the growth in Brink recurring software revenues."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E029",
+          "text": "Service revenues were $15.3 million for the quarter ended June 30, 2020, an increase of 13.3% or $1.8 million from $13.5 million recorded for the quarter ended June 30, 2019, primarily due to the addition of the ENTITY business and the growth in Brink recurring software revenues."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E030",
+          "text": "The favorable increase in revenue was driven by ISR solutions, which was driven by a higher backlog at the beginning of this year, which has continued to grow and is now $30 million greater than the same nine month period ended September 30, 2019."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E031",
+          "text": "ENTITY backlog as of September 30, 2020 increased from the prior-year quarter primarily due to the addition of the Lord backlog and orders exceeding shipments in the International businesses, partially offset by shipments exceeding orders in the ENTITY businesses."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E032",
+          "text": "ENTITY backlog as of December 31, 2020 increased from the prior-year quarter primarily due to orders exceeding shipments in the International businesses, slightly offset by shipments exceeding orders in the ENTITY businesses."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E033",
+          "text": "As of September 30, 2020 , ENTITY backlog increased compared to the June 30, 2020 amount of $2,117 million due to orders exceeding shipments in both the International and ENTITY businesses."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E034",
+          "text": "The increase in 2020 was primarily attributable to an increase in employee-related expenses and contractors and consulting costs mainly in our operations function that support the growth of our active accounts and payment transactions, as well as customer onboarding and compliance costs."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E035",
+          "text": "STRATEGY Our ability to grow revenue is affected by, among other things, consumer spending patterns, merchant and consumer adoption of digital payment methods, the expansion of multiple commerce channels, the growth of mobile devices and merchant and consumer applications on those devices, the growth of consumers globally with internet and mobile access, the pace of transition from cash and checks to digital forms of payment, our share of the digital payments market, and our ability to innovate and introduce new products and services that merchants and consumers value."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E036",
+          "text": "The increase was primarily due to higher volume of hydrogen delivered to customer sites as a result of an increase in the number of hydrogen installations completed under GenKey agreements and higher fuel costs."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E037",
+          "text": "The increase in Air traffic liability was due to ticket sales in 2020 for future travel that have not been flown, as a result of the significant number of Customer trip cancellations associated with the COVID-19 pandemic, and growth in ENTITY points earned due to multiple loyalty credit card promotions throughout 2020."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E038",
+          "text": "The increase in Air traffic liability was due to ticket sales in January and February 2020 for future travel that have not been flown, as a result of the COVID-19 pandemic, and growth in ENTITY points earned due to multiple bonus point offers throughout the first nine months of 2020."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E039",
+          "text": "The annual recognition is not expected to vary significantly over the next 10 years as the vast majority of existing ENTITY have at least 10 years remaining, given that the average age of the Company's fleet of residential solar energy systems under ENTITY is less than four years due to the Company being formed in 2007 and having experienced significant growth in the last few years."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E040",
+          "text": "As a result, we have seen a diversification of client start dates, resulting from our ENTITY plan expansions, cross sales of new services, international growth, and mid-market employer growth, all of which are not constrained by a calendar year start. \u200b As a result of national seasonal cold and flu trends, we typically experience our highest level of visit fees during the first and fourth quarters of each year when compared to other quarters of the year."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E041",
+          "text": "This increase was driven primarily by an increase in employee-related expenses of approximately $7.4 million resulting from growth in total employee headcount to 3,276 at September 30, 2020 as compared to 2,386 employees at September 30, 2019 reflecting increased employee costs including to support the increase volume of activities due to COVID-19 and the impact from InTouch."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E042",
+          "text": "This increase was driven primarily by an increase in employee-related expenses of approximately $7.2 million resulting from growth in total employee headcount to 2,727 at June 30, 2020 as compared to 2,256 employees at June 30, 2019 reflecting increased employee costs including to support the increase volume of activities due to COVID-19."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E043",
+          "text": "This increase was driven primarily by an increase in employee-related expenses of approximately $19.2 million resulting from growth in total employee headcount including to support the increase volume of activities due to COVID-19 and the impact from InTouch."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E044",
+          "text": "Any sustained interruption in our or our business partners\u2019 operations, research and development, distribution network or supply chain or any significant continuous shortage of raw materials or other supplies as a result of these measures, restrictions or disruptions, including as a result of increased demand for certain products, can impair our ability to develop, make, manufacture, distribute or sell our products."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E045",
+          "text": "While we experienced higher demand for our products during the third quarter of 2020 due to partial reopening of our customer's businesses, until and unless demand for our solutions normalizes, our gross profits and gross margins will be negatively impacted."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E046",
+          "text": "The increase in consumables revenue was driven by the growth in the instrument installed base and was largely offset by decreased demand in the second quarter of 2020 due to closures of our customers' facilities arising from the continued impact of the global COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E047",
+          "text": "The increase in consumables revenue was primarily driven by growth in the instrument installed base partially offset by decreased demand due to closures of some of our customers' facilities arising from the continued impact of the COVID-19 pandemic."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E048",
+          "text": "The increase in international revenue was attributable to the growth in usage of our products, particularly our ENTITY products and ENTITY products, by our existing international ENTITY and a 21% increase in the number of international ENTITY driven in part by our focus on expanding our sales to customers outside of the ENTITY."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E049",
+          "text": "Also, due to costs from our international expansion efforts and network service provider fees outside of the ENTITY, which generally are higher than domestic rates, our gross margin for international customers is typically lower than our gross margin for domestic customers."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E050",
+          "text": "Overall, underlying sales growth was 3.1%, driven by skin care and skin cleansing, but partly offset by slower growth in deodorants and oral care due to market and competitive pressures."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E051",
+          "text": "Tea also had price-led growth with declining volume due to subdued consumer demand for black tea in developed markets."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E052",
+          "text": "ENTITY brands grew 46% faster than the rest of the business and delivered more than 70% of ENTITY \u2019s growth, driven by consumer demand for brands with purpose at their core."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E053",
+          "text": "Underlying volume growth Underlying volume growth (UVG) is part of USG and means, for the applicable period, the increase in turnover in such period calculated as the sum of (i) the increase in turnover attributable to the volume of products sold; and (ii) the increase in turnover attributable to the composition of products sold during such period."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E054",
+          "text": "Other IMT revenue increased $26.8 million, or 10%, primarily due to a 30% increase in revenue generated by our rentals marketplace attributable to increased advertising revenue and increased adoption of our rentals application product, partially offset by the impact of COVID-19 related discounts offered during the first half of 2020, as well as a 45% decrease in display revenue, as many display advertisers decreased discretionary marketing spend during the COVID-19 pandemic. \u2022 Mortgages segment revenue increased 42% to $113.2 million."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E055",
+          "text": "ENTITY revenue increased sequentially in all quarters during 2020, primarily driven by revenue generated by ENTITY ENTITY, due to higher sales volume reflective of market demand as low interest rates have resulted in strong refinance activity and expanded industry margins on selling mortgages into the secondary market."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E056",
+          "text": "For all other quarters, Homes revenue increased, which was primarily attributable to an increase in the number of homes sold in each period as customer adoption of ENTITY Offers increased in geographic areas in which it is currently operating and as ENTITY Offers expanded into new geographic markets."
+        },
+        {
+          "evidence_id": "2020Q4_P1_E057",
+          "text": "Other IMT revenue increased $50.3 million, or 14%, primarily due to a 35% increase in revenue generated by our rentals marketplace attributable to increased advertising revenue and increased adoption of our rentals application product, partially offset by the impact of COVID-19 related discounts offered during the first half of 2020."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q4_P1_E058",
+          "text": "As demand for qualified personnel in the industry grows, we must continue to effectively recruit, train, motivate and retain our employees, both shoreside and on our ships, in order to effectively compete in our industry, maintain our current business and support our projected global growth."
+        }
+      ]
+    }
+  ]
+}

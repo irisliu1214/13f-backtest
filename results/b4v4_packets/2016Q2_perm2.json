@@ -1,0 +1,291 @@
+{
+  "quarter": "2016Q2",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E001",
+          "text": "For example, a large portion of our Computing and Graphics revenue is focused on consumer desktop PC and notebook segments, which have experienced and continue to experience a decline driven by, among other factors, the adoption of smaller form factors, increased competition and changes in replacement cycles."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E002",
+          "text": "A large portion of our Computing and Graphics revenue is focused on the consumer desktop PC and notebook segments, which have experienced and continue to experience a decline driven by, among other factors, the adoption of smaller form factors, increased competition and changes in replacement cycles."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E003",
+          "text": "A large portion of our Computing and Graphics revenue is focused on consumer desktop PC and notebook segments, which have experienced and continue to experience a decline driven by, among other factors, the adoption of smaller form factors, increased competition and changes in replacement cycles."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E004",
+          "text": "The increase in unit shipments was primarily attributable to higher unit shipments of our notebook microprocessor products and GPU products due to higher demand."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E005",
+          "text": "The increase in net sales to the federal government was driven by growth in sales of netcomm products and software as we continued to benefit from strategic changes made to better align with federal government purchasing programs."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E006",
+          "text": "The increase in DIO was primarily due to a higher inventory balance as of March 31, 2016 as compared to March 31, 2015 as a result of the timing of inventory shipments to customers during the period and growth in the business."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E007",
+          "text": "This increase is driven by sales growth in both our medium/large and small business customer channels reflecting stronger performance in transactional product sales."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E008",
+          "text": "Meeting public safety needs continues to drive our sales growth from our state and local customers and we continue to benefit from the strategic changes made to better align with federal government purchasing programs for our federal customers."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E009",
+          "text": "Competition has been fuelled by ongoing weak trends in demand due to the downturn and macroeconomic uncertainties, oversupplies which have been supported by large availability of liquefied natural gas (\"LNG\") on global scale, and inter-fuel competition due to rising use of coal in firing power plants due to cost advantages and a dramatic growth in the adoption of renewable sources of energy (photovoltaic and solar) which have materially impacted the use of gas in the production of electricity and hence sales of gas to the thermoelectric industry."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E010",
+          "text": "Spot prices of electricity in the wholesale market across Europe decreased due to excess supplies driven by the growing production of electricity from renewable sources, which also benefited from governmental subsides, and a recovery in the production of coal-fired electricity generation which was helped by a substantial reduction in the price of this fuel on the back of a massive oversupply of coal which occurred on a global scale."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E011",
+          "text": "From 2016 onwards taking into account an expected improvement in the oil price scenario and the planned improvements in the Group cash flow due to the implementation of our value-generation strategy in Exploration & Production and the turnaround of our Gas & Power, Refining & Marketing and Chemical segments, management intends to assess its progressive dividend policy which contemplates an increasing dividend at a rate which is expected to be set taking into account Eni\u2019s underlying earnings and cash flow growth, as well as capital expenditure requirements and the targeted financial structure."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E012",
+          "text": "Sales to long-term buyers were up by 15% compared to the previous year, due to larger availability of Libyan output and higher sales to ENTITY markets (up 9.2%) driven by higher spot sales in the ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E013",
+          "text": "As global GDP per capita increases, the composition of daily caloric intake is expected to shift away from the direct consumption of primary crops toward animal-based proteins, which is expected to result in increased demand for primary crops as feed for livestock."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E014",
+          "text": "We also believe that growth in global GDP per capita, particularly in developing nations, will contribute significantly to increasing demand for primary crops."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E015",
+          "text": "U.S. revenue growth was driven by growth in our direct distribution channels, including our integrated solutions business, which reflects the addition of ENTITY, Inc. (\"PayPros\")."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E016",
+          "text": "Commissions and ENTITY and execution fees, for the current six month period , increased $12 million, or 4% , to $318 million, compared to the prior year six month period , driven by continued customer account growth, but moderated by lower average commission per customer order and mixed customer trading volume ."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E017",
+          "text": "Commissions and ENTITY and execution fees , for the current quarter, increased $17 million, or 11% , to $166 million, compared to the prior year quarter , driven by continued customer account growth and increased customer trading activity, but moderated by lower average commission per customer order."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E018",
+          "text": "Commissions and execution fees, for the current six month period, increased $13 million, or 4% , to $319 million, compared to the prior year six month period, driven by continued customer account growth , but moderated by lower average commission per customer order and mixed customer trading volume ."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E019",
+          "text": "Commissions and execution fees, for the current quarter, increased $17 million, or 11% , to $166 million, compared to the prior year quarter, driven by continued customer account growth and increased customer trading activity, but moderated by lower average commission per customer order."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E020",
+          "text": "The internal growth rate for service revenue is inherently more volatile than the internal growth rate for storage rental revenues due to the more discretionary nature of certain services we offer, such as large special projects, and, as a commodity, the volatility of pricing for recycled paper."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E021",
+          "text": "The internal growth rate for service revenue is inherently more volatile than the storage rental revenue internal growth rate due to the more discretionary nature of certain services we offer, such as large special projects, and, as a commodity, the volatility of pricing for recycled paper."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E022",
+          "text": "The increase in revenue is due to higher volume of product sales in the ENTITY and Mexico, increased sales associated with new products including the PhysIQ \u2122 smart weight management system, and an increase in active distributors and preferred customers in the ENTITY as compared to the prior year same period."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E023",
+          "text": "The increase in revenue is due to higher volume of product sales in the ENTITY and Mexico, increased sales associated with the launch of several new products, and an increase in active distributors in the ENTITY as compared to the prior year same periods."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E024",
+          "text": "The increase in net sales was due to continuing strong growth in the Rubbermaid food storage and beverageware businesses, partially offset by continued planned contraction of the lower margin ENTITY business."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E025",
+          "text": "Core sales increased 8.8% , reflecting double-digit growth in ENTITY and ENTITY attributable to increased advertising and promotion and robust merchandising efforts, overall innovation-led growth and volume and distribution gains."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E026",
+          "text": "In the ENTITY operating model, the Company has two core activity systems, Development and Delivery, supported by three business partnering functions, ENTITY, Finance/IT and Legal, and four winning capabilities in Design, Marketing & Insight, ENTITY and ENTITY, all in service to drive accelerated performance in the Company\u2019s five segments."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E027",
+          "text": "Core sales increased 9.3% , driven by high-single-digit growth in ENTITY and ENTITY due to new product launches and advertising and promotion investment."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E028",
+          "text": "The increased cash and cash equivalents since year-end 2015 was predominantly due to strong growth in customer deposits, somewhat counter to ENTITY \u2019s historical deposit behaviors for a first quarter period, followed by deployment of that cash partly into loans, while cash provided by investment maturities, calls or paydowns funded investment purchases."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E029",
+          "text": "Between the comparative three-month periods, average total deposits were up $26 million or 2%, fully attributable to noninterest-bearing demand deposits, with interest-bearing deposits costing 0.55%, down 8 bps from 0.63% for the same period in 2015, benefiting from deposit product rate changes implemented in December 2015. \u00b7 Asset quality measures remained steady and strong at March 31, 2016."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E030",
+          "text": "Net sales consist of sales from comparable stores and non-comparable stores, described below under \u201c-ENTITY.\u201d Growth of our net sales is primarily driven by expansion of our store base in existing and new markets."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E031",
+          "text": "Other than the transaction related expenses, the increase in SG&A expenses was primarily driven by increased selling expenses related to new store growth and increased sales volume."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E032",
+          "text": "Our revenue growth resulted from increased sales due to expansion of our salesforce headcount by 43%, further market penetration of our existing products and sales of new products or products with new indications."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E033",
+          "text": "Our peripheral embolization and peripheral thrombectomy products experienced strong volume growth in the period, primarily due to the focused efforts of our dedicated peripheral vascular salesforce, which was established in the second half of 2014, and further market penetration of our products."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E034",
+          "text": "The change in operating assets and liabilities include the increase in inventories of $9.1 million to support our revenue growth, an increase in prepaid expenses and other current and non-current assets of $3.2 million and an increase in accounts receivable of $1.3 million , partially offset by an increase in accrued expenses and other non-current liabilities of $4.0 million and accounts payable of $1.4 million , as a result of the growth in our business activities."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E035",
+          "text": "The change in operating assets and liabilities include the increase in inventories of $11.3 million to support our revenue growth, an increase in accounts receivable of $4.9 million , an increase in prepaid expenses and other current assets of $2.8 million , partially offset by an increase in accrued expenses and other non-current liabilities of $4.7 million and accounts payable of $0.5 million , respectively, as a result of the growth in our business activities."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E036",
+          "text": "Gross margin dollars rose 6.5% for the third quarter of fiscal 2016 and 6.7% for the nine month period of fiscal 2016 versus the comparable prior year period, which was faster than case growth, primarily as a result of shifting our channel mix toward higher gross margin customers and shifting our product mix toward sales of ENTITY Brands."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E037",
+          "text": "Gross margin dollars rose 6.5% for the second quarter of fiscal 2016 and 6.7% for the first six months of fiscal 2016 versus the comparable prior year period, which was faster than case growth, primarily as a result of shifting our channel mix toward higher gross margin customers and shifting our product mix toward sales of ENTITY Brands."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E038",
+          "text": "This increase in net sales was attributable primarily to growth in cases sold, which in turn was driven by securing new Street and Chain customers and further penetrating existing customers."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E039",
+          "text": "These increases in net sales were attributable primarily to growth in cases sold, which in turn was driven by securing new Street customers and further penetrating existing customers."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E040",
+          "text": "The increase in total noninterest income during this 2016 period resulted primarily from the following: \u25cf Loan and mortgage fee income increased $321,000, or 26.8%, resulting primarily from an increase in mortgage fee income which was driven by the continued expansion of our mortgage operations, resulting in a higher volume of loans held for sale."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E041",
+          "text": "The $9.7 million increase in sales a nd marketing expense was attributable to the expansion of our direct-to-consumer channel as well as costs associated with the growth of our business including entering new markets, which resulted in increasing hiring of sales and marketing personnel and in ternal lead generation costs."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E042",
+          "text": "The $28.0 million increase in sales and marketing expense was attributable to the expansion of our direct-to-consumer channel as well as costs associated with the growth of our business including entering new markets, which resulted in increasing hiring of sales and marketing personnel and internal lead generation costs."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E043",
+          "text": "We will continue to incur net losses as we increase our spending to finance the expansion of our operations, expand our installation, engineering, administrative, sales and marketing staffs, increase spending on our brand awareness and other 39 sales and marketi ng initiatives, and implement internal systems and infrastructure to support our growth."
+        },
+        {
+          "evidence_id": "2016Q2_P2_E044",
+          "text": "We will continue to incur net losses as we increase our spending to finance the expansion of our operations, expand our installation, engineering, administrative, sales and marketing staffs, increase spending on our brand awareness and other sales and marketing initiatives, and implement internal systems and infrastructure to support our growth."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q2_P2_E045",
+          "text": "The secular growth of ENTITY data has resulted in a more diversified mix of revenue from the CE, cloud computing, NAS, surveillance and enterprise markets."
+        }
+      ]
+    }
+  ]
+}

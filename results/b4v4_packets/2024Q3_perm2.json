@@ -1,0 +1,299 @@
+{
+  "quarter": "2024Q3",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E001",
+          "text": "Agency RMBS performance during the third quarter varied considerably by coupon and hedge composition, with lower coupon RMBS outperforming higher coupons, driven by favorable technical factors and strong demand from fixed income bond funds."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E002",
+          "text": "The strengthening of out of home consumption occasions throughout the year combined with a solid commercial strategy, and an improved distribution with BEES led to volume growth, while net revenue per hectoliter performance was driven by revenue management initiatives coupled with positive mix of single serve packages and premium brands."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E003",
+          "text": "Sales, marketing, distribution and administrative expenses for our Brazilian beer operations increased by 25.7% in 2021, to R$9,975.4 million from R$7,933.2 million in 2020, primarily due to an increase in variable compensation to R$721.5 million, volume growth and the cost of last mile delivery."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E004",
+          "text": "Sales, marketing, distribution and administrative expenses for the NAB segment in Brazil increased by 15.3% in 2021, to R$1,594.2 million from R$1,382.4 million in 2020 mainly due to an increase in variable compensation to R$127.3 million and volume growth."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E005",
+          "text": "Historically, our revenue has been strongest during the second and third quarters of our fiscal year as a result of higher demand for mortgages and other loans during the summer months."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E006",
+          "text": "In 2022, price mix was a negative drag of 20.2% due to discounting in ENTITY in response to a competitive pricing environment; and &#8211; ENTITY, as revenue grew 70.8% in 2023, led by higher volume (up 36.2%) and price/mix of 34.6%."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E007",
+          "text": "Volume grew in both years in Brazil (due to lower illicit trade) and Bangladesh (due to the strength of the local portfolio), with 2021 also benefiting from higher volume in ENTITY (which recovered from the impact of the COVID-19 lockdown and sales ban in 2020)."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E008",
+          "text": "An improvement in mix in 2022 was supported by marginally higher combustibles volume (up 0.7% in 2022 to 149 billion sticks), as volume benefited from a reduction in illicit trade in Brazil."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E009",
+          "text": "The growth in both years was driven by increased Hyper volume, while the growth in 2021 was also due to a &pound;50 million charge to revenue in 2020, that did not repeat in 2021, in respect of&nbsp;the withdrawal of glo Sens."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E010",
+          "text": "Complying with these statutes and regulations has not materially impacted our capital expenditures, earnings, or competitive position, and is not expected to have a material impact during fiscal 2025. 8 ENTITY and ENTITY more than 150 years, ENTITY - ENTITY and the ENTITY family have been committed to driving sustainable growth and preserving ENTITY - ENTITY as a thriving, family-controlled, independent company."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E011",
+          "text": "Due to our historical rapid growth and continuing growth in the current year, our overall sales patterns in the past have not always reflected the general seasonality of the used vehicle industry."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E012",
+          "text": "Due to our historical rapid growth, our overall sales patterns in the past have not always reflected the general seasonality of the used vehicle industry."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E013",
+          "text": "Investment in ENTITY we have historically aggressively invested in the growth of our business, for the past several quarters we have been and continue to be focused on driving fundamental gains in gross profit per unit and operational efficiency, flexibility, and scalability through process and technology improvements to increase profitability and provide a strong foundation for profitable growth."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E014",
+          "text": "Investment in ENTITY the past several quarters we have been and continue to be focused on driving fundamental gains in gross profit per unit and operational efficiency, flexibility, and scalability through process and technology improvements to increase profitability and provide a strong foundation for profitable growth."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E015",
+          "text": "Revenues from digital asset self-mining are impacted by volatility in bitcoin prices, as well as increases in the bitcoin blockchain\u2019s network hash rate resulting from the growth in the overall quantity and quality of miners working to solve blocks on the bitcoin blockchain and the difficulty index associated with the secure hashing algorithm employed in solving the blocks. \u2022 Digital asset hosted mining revenue from customers and related parties."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E016",
+          "text": "Index revenues increased in the third quarter and first nine months of 2024 compared with the same periods in 2023 primarily due to higher AUM in exchange traded products linked to ENTITY indices and growth in trading volume on futures contracts linked to the ENTITY -100 Index."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E017",
+          "text": "Index revenues increased in the second quarter and first six months of 2024 compared with the same periods in 2023 primarily due to higher AUM in exchange traded products linked to ENTITY indices and growth in trading volume on futures contracts linked to the ENTITY -100 Index."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E018",
+          "text": "The increase was primarily due to higher ENTITY sales and growth in our eVestment product offerings."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E019",
+          "text": "Economic profit: From an economic profit perspective, our Group regulatory performance measure of ENTITY increased from &pound;3,833&nbsp;million to &pound;4,807&nbsp;million driven by continued delivery of performance across the Group, along with the benefit from higher RAV&nbsp;indexation which will generate higher revenues in future years."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E020",
+          "text": "ENTITY ENTITY Ventures (NGV) Revenue in the NGV segment increased by &pound;317 million to &pound;1,341&nbsp;million, driven by higher interconnector revenues, which benefited from higher arbitrage from the high gas prices throughout the year."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E021",
+          "text": "Capital investment and asset growth: Capital investment of &pound;7,740&nbsp;million was &pound;1,001 million (15%) higher than 2021/22, or &pound;552&nbsp;million (8%) higher at constant exchange rates, driven by a full- year&nbsp;ownership of UK ENTITY, increased capital expenditure in ENTITY, UK&nbsp;ENTITY and NGV, partly offset by lower investment in&nbsp;ENTITY (following the sale of NECO)."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E022",
+          "text": "Markets income(1) of \u00a3698 million, was \u00a3231 million, or 49.5%, higher than 2021 reflecting stronger performance across the product suite. - Net interest income increased by \u00a31,197 million to \u00a34,171 million benefiting from improved yield curve movements, due to interest rate increases, and net loan growth. - Non-interest income of \u00a32,242 million increased by \u00a3378 million primarily driven by increased card payment fees, higher payment services fees and increased income in our markets business. - Net interest margin was 85 basis points higher than 2021 reflecting higher deposits returns. - Operating expenses of \u00a33,744 were \u00a313 million, or 0.3%, lower compared with 2021."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E023",
+          "text": "Bank NIM of 3.04% was 19 basis points higher than 2022 primarily due to benefits from yield curve movements, net of changes in deposit mix as customers shifted to lower margin fixed term accounts, partially offset with lending margin pressure. - Interest receivable was materially above the prior year reflecting the higher rate environment."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E024",
+          "text": "Net loans to customers excluding central items increased by \u00a38.9 billion in the year largely reflecting a \u00a37.6 billion increase in ENTITY and \u00a32.0 billion of growth in Commercial & Institutional due to an increase in term loan facilities and private financing within Corporate & Institutions, net of \u00a32.7 billion of UK Government scheme repayments."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E025",
+          "text": "Bank NIM of 3.04% was 19 basis points higher than 2022 primarily due to benefits from yield curve movements, net of changes in deposit mix, partially offset by lending margin pressure."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E026",
+          "text": "The timing of collections and impacts to net income are driven by growth in operating facilities period-over-period and an increase in days sales outstanding of 3.4, from 54.0 as of June 30, 2023 to 57.4 as of June 30, 2024."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E027",
+          "text": "This growth in days sales outstanding is primarily due to the increase of newly acquired facilities during the year which typically have a longer collection period during the facility ownership transition."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E028",
+          "text": "The increase was primarily driven by the growth of our business and timing of the receipt of payments from our customers and timing of payments to vendors."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E029",
+          "text": "During the second quarter of 2024, the U.S. chicken market experienced robust volume demand, supported by growth in both the retail and foodservice distribution channels throughout the quarter."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E030",
+          "text": "During the third quarter of 2024, the U.S. chicken market experienced firm volume demand, supported by growth in both the retail and foodservice distribution channels throughout the quarter."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E031",
+          "text": "The increase in cost of revenue was primarily attributable to increased hosting usage to support user growth on our platform and an increase in advertising measurement and other services, partially offset by hosting cost efficiencies and lower hosting prices."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E032",
+          "text": "The increase in cost of revenue was primarily attributable to increased hosting usage to support user growth on our platform and an increase in other advertising services, partially offset by hosting cost efficiencies and lower hosting prices."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E033",
+          "text": "Demand for our platform and data security products is affected by a number of factors, including increased market acceptance by new and existing customers, increased activity by or prevalence of cybersecurity bad actors, including the use of ransomware, effectiveness of our sales and marketing strategy, the extension of our platform to new applications and use cases, the timing of development and release of new capabilities by us and our competitors, technological change, and growth or contraction of the market in which we compete."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E034",
+          "text": "Growth in subscription revenue benefited from a moderate headwind from the transition to RSC relative to the year ago period."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E035",
+          "text": "Demand for building products is driven mainly by factors outside of our control, such as general economic and political conditions, interest rates, governmental subsidies and incentives, availability of mortgage financing, inflation, the construction, repair and remodeling markets, industrial markets, housing supply, weather conditions, commodity prices and population growth."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E036",
+          "text": "As a result of these factors, as well as our mix of revenue streams and billing frequencies, we do not believe that changes in our remaining performance obligations and deferred revenue in a given period are directly correlated with our revenue growth in that period."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E037",
+          "text": "Revenue is typically recognized upon delivery of the data to the customer, as the Company\u2019s obligations for an individual record is complete once the data has been delivered, and the customer is able to benefit from the provision of data as it is received. \u2022 Multi-year data subscriptions \u2013 Customer licenses an interchangeable maximum number of de-identified records, and the Company accounts for the service as a right to access license and one performance obligation."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E038",
+          "text": "Both measures were driven by: \u2022 A $3.1 million increase related to higher sales volumes, driven by higher retail sales. \u2022 A $0.6 million increase related to MGU's rate increase approved by the MPSC that was effective January 1, 2024."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q3_P2_E039",
+          "text": "This was driven by the continued expansion of our expected net revenue margin due to greater adoption of higher margin same game parlay bet types."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E040",
+          "text": "This was driven by the continued expansion of our expected net revenue margin due to greater same game parlay adoption, which is a higher margin bet type."
+        },
+        {
+          "evidence_id": "2024Q3_P2_E041",
+          "text": "This was mainly due to the stakes increase of 36% to $1,421 million driven by strong revenue growth in Italy including the benefit of the Euros."
+        }
+      ]
+    }
+  ]
+}

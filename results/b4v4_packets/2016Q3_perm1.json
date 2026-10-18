@@ -1,0 +1,279 @@
+{
+  "quarter": "2016Q3",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E001",
+          "text": "This increase was principally due to increased sales volume and corresponding gross profit dollars, somewhat tempered by increased expenditures in support of the growth of the business."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E002",
+          "text": "A large portion of our Computing and Graphics revenue is focused on the consumer desktop PC and notebook segments, which have experienced and continue to experience a decline driven by, among other factors, the adoption of smaller and other form factors, increased competition and changes in replacement cycles."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E003",
+          "text": "For example, a large portion of our Computing and Graphics revenue is focused on consumer desktop PC and notebook segments, which have experienced and continue to experience a decline driven by, among other factors, the adoption of smaller form factors, increased competition and changes in replacement cycles."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E004",
+          "text": "A large portion of our Computing and Graphics revenue is focused on the consumer desktop PC and notebook segments, which have experienced and continue to experience a decline driven by, among other factors, the adoption of smaller form factors, increased competition and changes in replacement cycles."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E005",
+          "text": "A large portion of our Computing and Graphics revenue is focused on consumer desktop PC and notebook segments, which have experienced and continue to experience a decline driven by, among other factors, the adoption of smaller form factors, increased competition and changes in replacement cycles."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E006",
+          "text": "The increase in online marketing services revenue during this period was primarily driven by a 35% increase in the number of clicks attributable to our P4P marketing services and a 15% increase in the cost-per-click paid by our merchants, reflecting increased demand from our merchants, which drove up pricing due to the bid-based nature of the mechanism used by merchants to purchase such services."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E007",
+          "text": "Due to promotional events and higher consumer spending in the quarters ended June 30 and December 31, merchants are inclined to allocate more of their marketing spending during these periods to compete for and attract this consumer spending, which therefore drives revenue growth during those periods disproportionately to GMV growth and because increased demand for such services also increases pricing."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E008",
+          "text": "The growth was primarily due to an increase in the number of paying customers and also to an increase in their usage of and spending on our cloud computing services including more complex offerings, such as our content delivery network and database services."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E009",
+          "text": "The modest increase in revenue was due to a slight increase in the number of paying members reflecting the slow growth of China exports."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E010",
+          "text": "Partially offsetting these decreases was a $20.4 million increase in the volume sold of the PVC electrical conduit and fittings products, metal electrical conduit and fittings products, armored cable and fittings products, international sales and construction services due to higher demand for those products and services."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E011",
+          "text": "The net increase was primarily attributable to the benefit of material costs declining in excess of the decline in sales prices, higher volume, and lower freight and warehouse costs, offset in part by the impact of our Fence and Sprinkler exit."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E012",
+          "text": "Partially offsetting these declines in cost of sales were increased costs of $16.8 million due to higher volume of certain products."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E013",
+          "text": "New vehicle demand is mostly driven by macro-economic factors, such as interest rates, manufacturer and dealer sales incentives, fuel prices, consumer confidence, employment levels, income growth trends and government and tax incentives."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E014",
+          "text": "Partially offsetting declines in the segment was net revenues growth in ENTITY primarily driven by ENTITY , reflecting an enhanced product offering as well as the expansion of ENTITY in international markets."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E015",
+          "text": "Partially offsetting the decrease in the segment were higher net revenues from philosophy primarily reflecting strong growth in ENTITY and higher net revenues in key distribution channels in the U.S., in part due to new launch philosophy renewed hope in a jar ."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E016",
+          "text": "Excluding this impact, adidas net revenues increased reflecting growth in EMEA driven by launches of adidas UEFA ENTITY, adidas toiletry products and the adidas ENTITY franchise as well as the positive result from our mass business reorganization in China."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E017",
+          "text": "Excluding this impact, however, net revenues in Australia increased primarily due to strong growth in ENTITY, driven by Rimmel , OPI and ENTITY , and an increase in Fragrances ."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E018",
+          "text": "Part of our success has been attributable to the growth in the high-end bike industry, including increases in average retail sales prices, as better-performing product designs and technologies have been incorporated into these products."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E019",
+          "text": "The sales increase reflects a 6.6% increase in powered vehicle products due to continued higher demand for our on and off road suspension products."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E020",
+          "text": "The increase in sales of powered vehicle products was primarily due to continued higher demand for on and off-road suspension products ."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E021",
+          "text": "Within operating expenses, our sales and marketing expenses increased approximately $2.0 million primarily due to a $1.1 million increase in wages and related expenses, $0.2 increase in promotional expenses to support the growth of our products and brands, and $0.2 million increase in professional fees for outside services."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E022",
+          "text": "Of the increase, $8 million was attributable to consumer deposit accounts, while $4 million was attributable to commercial deposit accounts. \u2022 $8 million , or 21% , increase in cards and payment processing income, due to higher credit and debit card related income and underlying customer growth. 2016 ENTITY versus 2016 ENTITY to the 2016 second quarter , total noninterest income increased $31 million , or 12% ."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E023",
+          "text": "Forward-looking statements include statements relating to: \u2022 future sales, expenses, and profitability; \u2022 future development and expected growth of our business and industry; \u2022 our ability to execute our business model and our business strategy; \u2022 our ability to identify trends within our industries and to offer products and services that meet the changing needs of those markets; \u2022 our ability to remain in compliance with the financial covenants contained in the agreement governing our ENTITY; and \u2022 projected capital expenditures."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E024",
+          "text": "Forward-looking statements include statements relating to: \u2022 future sales, expenses and profitability; \u2022 future development and expected growth of our business and industry; \u2022 our ability to execute our business model and our business strategy; \u2022 our ability to identify trends within our industries and to offer products and services that meet the changing needs of those markets; \u2022 our ability to remain in compliance with our debt covenants; and \u2022 projected capital expenditures."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E025",
+          "text": "As we look to 2017, we see slight revenue growth opportunities driven by new product launches and acceleration in targeted areas."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E026",
+          "text": "The revenue growth was primarily attributable to revenues from our new U.K.-based logistics program, partially offset by reduced revenue due to completion of certain contracts."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E027",
+          "text": "This decrease was almost entirely offset by $ 39.9 million of net revenue increases driven by increased sales of new products for the Datacom market and higher demand for our Telecom products."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E028",
+          "text": "International company-operated house profit margins increased by 20 basis points, and HP-PAR at those properties increased by 3.3 percent reflecting increased demand, higher RevPAR in most locations, and improved productivity."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E029",
+          "text": "ENTITY region experienced higher demand for our Legacy- ENTITY brands in the 2016 first three quarters across most countries, primarily due to increased group and transient business, partially constrained by weaker demand in France, Belgium, and Turkey following terrorism events in those countries."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E030",
+          "text": "HP-PAR at International company-operated properties increased by 1.3 percent primarily reflecting increased demand and higher RevPAR in most locations, improved productivity, and solid cost controls."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E031",
+          "text": "We provisionally estimated the value of the properties using a combination of the income, cost, and market approaches, which are primarily based on significant Level 2 and Level 3 assumptions, such as estimates of future income growth, capitalization rates, discount rates, and capital expenditure needs of the hotels."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E032",
+          "text": "Net sales consist of sales from comparable stores and non-comparable stores, described below under \u201cENTITY.\u201d Growth of our net sales is primarily driven by expansion of our store base in existing and new markets."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E033",
+          "text": "Other than the transaction related expenses, the increase in SG&A expenses was primarily driven by increased selling expenses related to new store growth and increased sales volume."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E034",
+          "text": "Our new stores often open with higher sales levels as a result of greater advertising and promotional spend in connection with grand opening events, but decline shortly thereafter to our new store model levels."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E035",
+          "text": "Our revenue growth resulted from increased sales due to expansion of our salesforce headcount by 43%, further market penetration of our existing products and sales of new products or products with new indications."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E036",
+          "text": "Our peripheral embolization and peripheral thrombectomy products experienced strong volume growth in the period due to increases in the number of procedures, primarily due to the focused efforts of our dedicated peripheral vascular salesforce, which was established in the second half of 2014, and further market penetration of our products."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E037",
+          "text": "The change in operating assets and liabilities include the increase in inventories of $18.0 million to support our revenue growth, an increase in accounts receivable of $7.4 million , an increase in prepaid expenses and other current assets and non-current assets of $1.7 million , partially offset by an increase in accrued expenses and other non-current liabilities of $5.9 million and accounts payable of $1.5 million , as a result of the growth in our business activities."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E038",
+          "text": "The change in operating assets and liabilities include the increase in inventories of $14.0 million to support our revenue growth, an increase in prepaid expenses and other current and non-current assets of $5.5 million and an increase in accounts receivable of $7.1 million , partially offset by an increase in accrued expenses and other non-current liabilities of $8.8 million and accounts payable of $0.9 million , as a result of the growth in our business activities."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E039",
+          "text": "Our ability to increase revenues in the future is dependent on increased demand for our established products and our ability to ship larger volumes of those products in response to such demand, as well as our ability to develop or acquire new products and subsequently achieve customer acceptance of newly introduced products."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E040",
+          "text": "Once a new IC achieves market acceptance, demand for the new IC can quickly accelerate to a point and then level off such that rapid historical growth in sales of a product should not be viewed as indicative of continued future growth."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q3_P1_E041",
+          "text": "Gross margin for the PCB operating segment increased from 14.3% for the third quarter of 2015 to 17.7% for the third quarter of 2016, and from 14.8% for the first three quarters of 2015 to 16.9% for the first three quarters of 2016, primarily due to the improved operating performance at certain acquired manufacturing facilities and the benefits resulting from our synergy initiatives, partially offset by reduced volumes at our facilities supporting the Networking/Communications end market."
+        },
+        {
+          "evidence_id": "2016Q3_P1_E042",
+          "text": "Gross margin for the PCB operating segment increased from 14.6% for the second quarter of 2015 to 17.1% for the second quarter of 2016, and from 15.3% for the first two quarters of 2015 to 16.4% for the first two quarters of 2016, primarily due to the improved operating performance at certain acquired manufacturing facilities and the benefits resulting from our synergy initiatives, partially offset by reduced volumes at our facilities supporting the cellular phone end market."
+        }
+      ]
+    }
+  ]
+}

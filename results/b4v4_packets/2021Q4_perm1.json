@@ -1,0 +1,485 @@
+{
+  "quarter": "2021Q4",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E001",
+          "text": "ENTITY sales increased 8.9 percent primarily due to increased demand for Pedialyte \u00ae , ENTITY \u2019s oral rehydration brand, and Similac \u00ae , ENTITY \u2019s infant brand."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E002",
+          "text": "ENTITY sales increased 3.4 percent primarily due to increased demand for Pedialyte \u00ae , ENTITY \u2019s oral rehydration brand, and Pediasure \u00ae ."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E003",
+          "text": "Growth in ENTITY sales was driven by continued growth of FreeStyle Libre \u00ae , ENTITY \u2019s continuous glucose monitoring system, internationally and in the U.S."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E004",
+          "text": "While we have benefited as a result of such consumer spending trends, there can be no assurance that such trends will continue or that the levels of total revenue and merchant network revenue that we generate from merchants in fitness equipment, home office products, and home furnishings industries will continue; in fact, we have begun to see these trends begin to reverse as access to COVID-19 vaccinations has increased."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E005",
+          "text": "Volume growth was driven by new assets, higher demand for hydrogen and merchant products, and higher activity in our sale of equipment businesses."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E006",
+          "text": "Approximately 20,875 passionate, talented, and committed employees from diverse backgrounds are driven by our higher purpose to create innovative solutions that benefit the environment, enhance sustainability, and address the challenges facing customers, communities, and the world."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E007",
+          "text": "ENTITY operating loss in 2021, as compared to the operating income in the prior year, is primarily due to increased shipping and fulfillment costs, due in part to increased investments in our fulfillment network, increased wage rates and incentives, and increased carrier rates, and growth in certain operating expenses, including marketing, partially offset by increased unit sales, including sales by third-party sellers, and advertising sales."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E008",
+          "text": "Operating income from our semiconductor solutions segment increased primarily due to higher demand for our wireless content in mobile handsets, as well as the delayed production ramp of a new mobile handset by a major customer, which resulted in lower shipments in the prior year fiscal period."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E009",
+          "text": "Net revenue from our semiconductor solutions segment increased primarily due to higher demand for our wireless content in mobile handsets, as well as the delayed production ramp of a new mobile handset by a major customer, which resulted in lower shipments in the prior year fiscal period."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E010",
+          "text": "Operating income from our infrastructure software segment increased primarily due to higher demand for our FC SAN products, mainframe and cyber security solutions."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E011",
+          "text": "Net revenue from our semiconductor solutions segment also increased due to higher demand for our networking products driven by service providers\u2019 continued investments, as well as higher demand for our wireless connectivity products."
+        }
+      ]
+    },
+    {
+      "alias": "C26",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E012",
+          "text": "The increase for both comparative periods was due to the company's increased refinery runs in response to higher demand and the improved refining margin environment."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E013",
+          "text": "The increase was mainly due to higher margins on refined product sales of $800 million, higher earnings from the 50 percent-owned ENTITY ENTITY of $480 million, higher sales volumes of $280 million, and lower operating expenses of $140 million, including the absence of second quarter 2020 severance accruals of $80 million."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E014",
+          "text": "Downstream reported earnings of $839 million in second quarter 2021 compared with a loss of $1.01 billion in the corresponding 2020 period primarily due to higher margins on refined product sales, higher equity earnings from 50 percent-owned ENTITY ENTITY LLC (CPChem), and higher sales volumes."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E015",
+          "text": "The increase was primarily due to higher earnings from 50 percent-owned CPChem of $490 million, higher margins on refined product sales of $250 million, higher sales volumes of $250 million, and lower operating expenses of $150 million, including the absence of second quarter severance accruals of $80 million."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E016",
+          "text": "Similarly, increased demand for online purchases of products has impacted our fulfillment operations, resulting in delays in deliveries and lost sales from being out of stock for certain SKUs."
+        }
+      ]
+    },
+    {
+      "alias": "C28",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E017",
+          "text": "Approximately 70% of the increase in revenue was attributable to the growth from existing customers, and the remaining 30% was attributable to growth from new customers."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E018",
+          "text": "Approximately 70% of the increase in revenue was attributable to growth from existing customers, and the remaining 30% was attributable to growth from new customers."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E019",
+          "text": "Total net sales increased primarily as a result of strong growth across all three segments, as we benefited from robust industry conditions and record demand for our products and solutions."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E020",
+          "text": "From a demand perspective, during the third quarter of 2021 we continued to see strong demand for our leading-edge products, largely driven by accelerated digitalization, 5G applications and high-performance computing."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E021",
+          "text": "Additionally, although we have been increasing inventory levels to support strong demand in a challenging supply chain environment, historically we have operated our business on a just-in-time shipment basis with a modest level of inventory, ordering supplies and planning production based on internal demand forecasts."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E022",
+          "text": "As global GDP per capita increases, the composition of daily caloric intake is expected to shift away from the direct consumption of primary crops toward animal-based proteins, which is expected to result in increased demand for primary crops as feed for livestock."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E023",
+          "text": "We also believe that growth in global GDP per capita, particularly in developing nations, will contribute significantly to increasing demand for primary crops."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E024",
+          "text": "A combination of these factors, including increased demand for consumer electronics, automotive shutdowns due to COVID-19, the rapid recovery of demand for vehicles, and long lead times for wafer production, is contributing to the ongoing shortage of semiconductors."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E025",
+          "text": "ENTITY Credit\u2019s U.S. 36-month auction values for off-lease vehicles were up 25% from a year ago, reflecting strong demand for used vehicles, including the impact of lower new vehicle production due to the semiconductor shortage."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E026",
+          "text": "Third quarter 2021 revenue decreased 5%, driven by lower wholesales, partially offset by higher net pricing (primarily reflecting strong demand for the new product portfolio and lower incentives) and favorable mix."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E027",
+          "text": "U.S. auction values in the third quarter of 2021 were 27% higher than a year ago, reflecting continued strong demand for used vehicles."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E028",
+          "text": "Americas RAC revenues increased due primarily to increased pricing resulting from growth in travel demand and constraints on vehicles due to the ENTITY affecting new vehicle production."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E029",
+          "text": "Excluding a $6 million fx impact, revenues increased $80 million due primarily to higher pricing across the industry due to growth in travel demand as government-imposed travel restrictions continued to be eased and industry-wide constraints on vehicle supply due to the ENTITY affecting new vehicle production."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E030",
+          "text": "Excluding a $4 million fx impact, DOE in our International RAC segment increased $15 million due primarily to higher volume driven by the increased travel demand discussed above and higher personnel costs due in part to reductions in employee furloughs and associated government support across Europe."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E031",
+          "text": "Excluding a $4 million fx impact, DOE increased $278 million due primarily to higher volume driven by the increased travel demand discussed above, partially offset by lower fleet costs due to a reduced fleet size and lower facility costs resulting from cost-reduction initiatives."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E032",
+          "text": "As a result of PPP loan funding, government stimulus programs, and a customer focus on retaining liquidity, the Company has experienced significant deposit growth and a buildup of liquidity throughout the first three quarters of 2021."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E033",
+          "text": "As a result of PPP loan funding, government stimulus programs, and a customer focus on retaining liquidity, the Company has experienced significant deposit growth and a buildup of liquidity through the second quarter of 2021."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E034",
+          "text": "With significant growth in deposits over this time period, along with over $400 million of PPP loans being forgiven and repaid during the first three quarters of 2021, securities and interest earning cash balances have increased significantly, while loan growth has been challenging due to elevated payoffs and lower line utilization."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E035",
+          "text": "The expansion of high technology companies worldwide and the elevated demand for talent from the growth in the demand for semiconductors following the onset of the COVID-19 pandemic has increased demand and competition for qualified personnel."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E036",
+          "text": "These growth drivers were partially offset by inflation, increased costs due to higher volumes, driven by an expansion of our route to market network, expenses associated with productivity projects, higher marketing expense and increases in other operating costs."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E037",
+          "text": "These growth drivers were partially offset by inflation, increased costs due to higher volumes, driven by an expansion of our route to market network, higher marketing expense and increases in other operating costs."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E038",
+          "text": "Adjusted income from operations increased 48.0% to $37 million for the third quarter of 2021 compared to $25 million in the prior year period, driven by favorable volume/mix, favorable FX effects, including both transaction and translation, higher net pricing, and the benefits of productivity, partially offset by inflation, higher marketing investments and increased operating costs due to higher volumes."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E039",
+          "text": "Income from operations increased 48.0% to $37 million for the third quarter of 2021 compared to $25 million in the prior year period, driven by favorable volume/mix, favorable FX effects, including both transaction and translation, higher net pricing, and the benefits of productivity, partially offset by inflation, higher marketing investments and increased operating costs due to higher volumes."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E040",
+          "text": "Historically, economic indicators such as GDP growth, consumer confidence and employment are correlated with demand for certain of our tenants\u2019 products and services."
+        }
+      ]
+    },
+    {
+      "alias": "C29",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E041",
+          "text": "ENTITY commercialization and growth for each generation of electric vehicles requires us to make significant capital expenditures to scale our production capacity and improve our supply chain processes in the ENTITY and internationally."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E042",
+          "text": "The increase was also attributable to personnel-related expenses of $26.6 million due to growth in headcount and other compensation related charges as we grew our sales force and expanded general and administrative functions needed to scale our business."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E043",
+          "text": "Many of these service providers are our Customers and they are experiencing accelerated adoption of technologies that enable such payment experiences."
+        }
+      ]
+    },
+    {
+      "alias": "C27",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E044",
+          "text": "The 13% increase in PPIF revenue reflected growth both in the U.S. (1%) and internationally (33%) and was driven by: \u2013 growth in project and infrastructure finance revenue in EMEA mainly reflecting favorable changes in product mix and pricing increases; and \u2013 growth in sovereign issuance reflecting funding to support economic recovery."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E045",
+          "text": "The 17% increase in FIG revenue is mainly due to higher banking revenue in the U.S. and EMEA reflecting both the benefit of favorable changes in product mix and pricing increases coupled with opportunistic issuer activity in light of favorable market conditions."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E046",
+          "text": "The growth was driven by: \u2013 higher project and infrastructure finance revenue in EMEA mainly reflecting ongoing favorable conditions; partially offset by: \u2013 a decline in U.S. public finance revenue, as issuance volumes fell given high liquidity following strong issuance in the prior year and from the current infusion of federal funding related to the COVID-19 crisis."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E047",
+          "text": "The most notable driver of the increase was higher banking revenue in the U.S. and EMEA reflecting both the benefit of favorable changes in product mix and pricing increases coupled with opportunistic issuer activity in light of favorable market conditions."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E048",
+          "text": "Index growth was driven by increased demand for both licensed ETPs and licensed index futures contracts, with 15 new licensed ETPs introduced in the quarter, including 12 ETPs that were launched outside the U.S., marking continued international growth. \u2022 The ENTITY ENTITY led U.S. exchanges with a 78% total IPO win rate."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E049",
+          "text": "ENTITY revenues increased in the third quarter and first nine months of 2021 compared with the same periods in 2020 primarily due to the growth in our eVestment platform driven by new sales, strong retention, and higher average revenue per client from expanded offerings."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E050",
+          "text": "Our growth in the period ended September 30, 2021 and 2020 was primarily attributable to an increase in the number of ad impressions processed from our publishers, upselling additional products, penetration of header bidding for mobile app and digital video, and increased demand from the growth of our buyer relationships primarily through SPO agreements."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E051",
+          "text": "Our growth in the period ended June 30, 2021 and 2020 was primarily attributable to an increase in the number of ad impressions processed from our publishers, upselling additional products, penetration of header bidding for mobile app and digital video, and increased demand from the growth of our buyer relationships primarily through SPO agreements."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E052",
+          "text": "The increase was primarily driven by strength in the data center market, demand for industrial motors in ENTITY and resurgent economic growth in the China market."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E053",
+          "text": "The increase was primarily due to continued strong demand in ENTITY residential HVAC and combustion markets, recovering demand in EMEA and ENTITY."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E054",
+          "text": "The increase was primarily due to continued strong demand in ENTITY residential HVAC market and recovering demand in EMEA and ENTITY."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E055",
+          "text": "The increase was primarily driven by strength in the generator business, strong growth in China and in India markets, and improving demand in the ENTITY industrial motors business."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E056",
+          "text": "In both period comparisons above, the increases are primarily driven by the growth in our bookings over the same period and the associated growth in amounts earned by developers and creators due to the growth in bookings."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E057",
+          "text": "The increase is primarily due to an increase of $61.0 million in merchant fees primarily driven by the growth in our bookings."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E058",
+          "text": "We plan to increase general and administrative expenses, both in absolute dollars as well as a percentage of bookings, for the foreseeable future to support the growth of the business and due to costs associated with being a public company, such as increased headcount, enhanced systems, processes, and controls as well as increased expenses in the areas of insurance, compliance, investor relations, and professional services."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E059",
+          "text": "The increase in sales volume was driven by higher demand for our products from new and existing customers, including new design wins at new and existing customers."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E060",
+          "text": "Operating assets and liabilities increased primarily due to higher accounts payable due to timing of payments, higher accounts receivables due to timing of shipments partially offset by an increase in inventories as we managed our inventory levels for increased demand, and higher accrued expenses increased primarily due to recording advanced payments received for NRE services as deferred liabilities."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E061",
+          "text": "Operating assets and liabilities increased primarily due to higher accounts payable due to timing of payments and higher accounts receivables due to timing of shipments partially offset by an increase in inventories as we managed our inventory levels for increased demand."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E062",
+          "text": "The personal loan origination volume increase was primarily due to an increase in the percentage of loan application approvals and higher demand for our products as a result of improved economic conditions in the 2021 period relative to the 2020 period in which the COVID-19 pandemic had a more acute impact."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E063",
+          "text": "Personal loan origination volume increased 55% period over period, primarily due to an increase in the loan application approval rate and higher demand for personal loan financing in the second quarter of 2021 amid the improved economic conditions relative to 2020."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E064",
+          "text": "ENTITY fees benefited from year-over-year growth in revenues from existing clients, as well as the addition of new clients."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E065",
+          "text": "Lastly, the increase in referral fees was primarily attributable to growth in our partner relationships and related activity, as we continue to onboard new partners and help drive volume to our partners, as well as an increase associated with a referral fulfillment arrangement we entered into in the third quarter of 2021."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E066",
+          "text": "We will continue to optimize our ENTITY offerings to help customers capture market growth driven by data explosion and application innovation."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E067",
+          "text": "General and Administrative and ENTITY and administrative and marketing expenses in 2020 increased by NT$7,484 million, or 27%, from 2019, mainly reflecting one-time expenses to facilitate the expansion of our production base in Hsinchu, donation for COVID-19, and higher employee profit sharing expenses due to higher net income."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E068",
+          "text": "Additionally, forest product shipments increased due to higher demand for cardboard boxes and lumber. 2021 ENTITY \u2013 Premium includes shipments of finished automobiles, automotive parts, and merchandise in intermodal containers, both domestic and international."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E069",
+          "text": "Despite weather disruptions in the first quarter of 2021, volume increased with strong demand for grain in the first half of the year and coal in the second half, due to higher natural gas prices."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E070",
+          "text": "Additionally, forest product shipments increased due to higher demand for cardboard boxes and lumber."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E071",
+          "text": "Year-to-date, expenses increased 1% due to higher volume-related costs associated with our intermodal business and higher cost due to weather-related events, partially offset by lower locomotive and freight car maintenance expenses due to a smaller active fleet in the first quarter."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E072",
+          "text": "Demand for titanium pigment rebounded strongly during the first half of 2021 due to global economic growth, while the supply of titanium dioxide feedstock was impacted due to difficulties encountered by some producers which had a direct effect on prices."
+        }
+      ]
+    },
+    {
+      "alias": "C25",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2021Q4_P1_E073",
+          "text": "These capital expenditures mainly include expenditures related to the upgrade and development of our IT systems, software and infrastructure, and the expansion of our office spaces due to accelerated growth in employee headcount and the launch of new operations such as our institutional broker dealer in UK."
+        },
+        {
+          "evidence_id": "2021Q4_P1_E074",
+          "text": "These capital expenditures mainly include expenditures related to the upgrade and development of our IT systems, software and infrastructure, and the expansion of our office spaces due to accelerated growth in employee headcount."
+        }
+      ]
+    }
+  ]
+}

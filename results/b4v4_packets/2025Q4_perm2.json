@@ -1,0 +1,375 @@
+{
+  "quarter": "2025Q4",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E001",
+          "text": "Net sales to the mobile devices market increased approximately $64.3, driven by growth in sales in handsets, wearable devices, laptops and tablets. \u200b Net sales in the ENTITY segment (approximately 52% of net sales) increased 91% in both U.S. dollars and constant currencies, as well as 71% organically, in 2025, compared to 2024."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E002",
+          "text": "Net sales to the IT datacom market increased approximately $1,334.2, as we experienced strong growth across a broad array of applications, in particular the continued acceleration in and strong demand for products used in next-generation AI-related applications, along with growth in servers, networking equipment, cloud storage, and consumer electronics."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E003",
+          "text": "The continued growth of this market will be dependent upon many factors, including our go-forward market share for such products, the demand for our customers\u2019 products and services, the amount and mix of capital spending by our customers, changing technology priorities and changes in government regulations and policies related to AI."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E004",
+          "text": "The elevated capital expenditures for the first nine months of 2025 were driven by investments primarily in support of the growth in our IT datacom and defense markets."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E005",
+          "text": "Our net revenues from the use of main distribution and transmission grid increased by 24.3%, or R$1,173.4 million, mainly due to the 1.9% growth in Copel Distribui\u00e7\u00e3o\u2019s billed grid market, which considers offset energy from Mini and ENTITY \u2013 MMGD and the June 2023 tariff adjustment of Copel Distribui\u00e7\u00e3o, with an average effect of an increase of 6.32% in tariffs for the use of the distribution system (TUSD)."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E006",
+          "text": "ENTITY financial result showed a positive variation of R$ 48.0 million, primarily due to the increase in income from financial investments, resulting from a higher volume of invested amounts, an increase in arrears charges on bills, and a reduction in monetary and exchange variation and debt charges, which was partially offset by an increase in monetary variation and adjustment to present value of accounts payable related to the concession, which refers to the balances resulting from the payments of the concessions for the HPPs."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E007",
+          "text": "Services revenues increased at Power, driven by ENTITY higher volume and favorable price; at Electrification, primarily due to growth at ENTITY; and at Wind due to higher transactional services ."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E008",
+          "text": "Services revenues increased at Power, driven by ENTITY higher parts volume and favorable price; at Electrification, primarily due to growth at ENTITY; and at Wind due to higher transactional services."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E009",
+          "text": "Cash used for investing activities increased by $0.5 billion in 2025 compared to 2024 primarily driven by: the nonrecurrence of the ENTITY business sale of part of its nuclear activities to EDF in our Power segment of $0.6 billion; partially offset by higher sales of and distributions from equity method investments of $0.2 billion , driven by the sale of an approximately 5% equity interest in China XD Electric Co., Ltd. during 2025."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E010",
+          "text": "Cash used for investing activities increased by $0.7 billion in 2025 compared to 2024 primarily driven by: the nonrecurrence of the ENTITY business sale of part of its nuclear activities to EDF in our Power segment of $0.6 billion in 2024 ; and an increase in additions to PP&E and internal-use software of $0.4 billion ; partially offset by higher sales of and distributions from equity method investments of $0.2 billion ."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E011",
+          "text": "Profit increased primarily due to higher volume in Defense and Avio, aircraft systems product growth, customer mix and price, partially offset by incremental investments to support next-generation products and inflation."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E012",
+          "text": "Profit increased primarily due to higher volume in Defense and Avio, aircraft systems product growth, customer mix, price, productivity and lower losses in our ENTITY business."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E013",
+          "text": "Profit increased primarily due to higher volume in Defense and Avio, customer mix, price and lower losses in our ENTITY business, partially offset by incremental investments to support next-generation projects and inflation in our supply chain."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E014",
+          "text": "Demand for our equipment and services is demonstrated by our backlog of engine orders and services and growth in our installed base, and tends to follow commercial air travel and freight demand and government funding for defense budgets."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E015",
+          "text": "In particular: \u2022 Biktarvy sales increased 6% primarily due to higher demand, including patients switching from Genvoya and other ENTITY HIV products, and favorable inventory dynamics, partially offset by lower average realized price; and \u2022 Descovy sales increased 20% primarily due to higher demand."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E016",
+          "text": "In particular: \u2022 Biktarvy sales increased 9% primarily due to higher demand, including patients switching from Genvoya and other ENTITY HIV products; and \u2022 Descovy sales increased 35% primarily due to higher average realized price and higher demand."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E017",
+          "text": "This was driven by a $93.2 million increase from higher sales volume (200 MMcf/d, or 45%) and higher natural gas prices that resulted in an increase of $187.7 million (an increase of 62% per Mcf)."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E018",
+          "text": "This was driven by higher natural gas prices that resulted in an increase of $54.7 million (an increase of 61% per Mcf) and a $11.0 million increase from higher sales volume (77 MMcf/d, or 14%)."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E019",
+          "text": "This was driven by a $105.7 million increase from higher sales volume (17 MBbls/d, or 20%), partially offset by lower realized oil prices that resulted in a decrease of $57.8 million (a decrease of 9% per Bbl)."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E020",
+          "text": "Throughout 2025, we remained committed to creating value through effective capital deployment, which included the following: \u2022 Capital expenditures over $120 for the second year in a row, reflecting our continued commitment to fund future growth through capacity expansion, productivity and innovation. \u2022 Executed repurchases of 3.8 shares of common stock on the open market for $521.0. \u2022 $111.0 in dividend payments to our shareholders."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E021",
+          "text": "The increases in gross profit and margin were primarily driven by benefits from higher volume and net savings from productivity and sourcing initiatives, partially offset by unfavorable sales mix and freight costs."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E022",
+          "text": "Organic revenue for the three- and nine-month periods increased by $12.6 and $23.7, respectively, primarily driven by growth in aerospace and defense, inclusive of pricing actions."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E023",
+          "text": "This increase was a result of $28.1 million of US commercial sales of BRINSUPRI following FDA approval in August 2025 and a 22.3% growth in sales of ARIKAYCE globally, driven primarily by a 51.8% growth in international sales."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E024",
+          "text": "Our fee margin progression indicates the profitability of our fee revenue growth and benefit of our asset-light business model (see page 10). 2023 status \u2022 Fee margin grew by 340bps to 59.3%, driven by continued strength in trading in EMEAA and ENTITY. 2024 priorities \u2022 Maintain our cost and efficiency focus. \u2022 Leverage technology applications and process enhancements to achieve operational efficiencies. \u2022 Continue to reinvest in the business to drive growth and further expand margin over the long term."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E025",
+          "text": "What we achieved in 2023 2023 AT A GLANCE With strong demand around the world pushing RevPAR 16% ahead of 2022 levels and almost 11% up on 2019, we are greeting Extended reach of New procurement guests with fresh experiences, enhanced ENTITY programmes service and the latest technology to meet campaign, lifting enabling owners evolving expectations. awareness and brand to benefit from Our ENTITY ENTITY programme plays favourability measures ENTITY \u2019s scale a key role in capturing guest demand."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E026",
+          "text": "Trading then improved in the rest of the year, with RevPAR growth in the fourth quarter exceeding the first three quarters, as the region benefited from strong demand."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E027",
+          "text": "Demand for branded ENTITY is creating fresh opportunities for expansion in high-growth markets, as guests seek new experiences and owners look to use the advantages of our scale and systems."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E028",
+          "text": "The increase in system placements was primarily driven by continued demand for additional capacity by our customers as a result of procedure growth as well as increased demand for our next-generation da Vinci 5 system, including the impact from customers beginning to trade in fourth-generation da Vinci systems."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E029",
+          "text": "The increase in system placements reflects continued demand for additional capacity by our customers as a result of procedure growth as well as increased demand for our next-generation da Vinci 5 system, including the impact from customers beginning to trade in fourth-generation da Vinci systems."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E030",
+          "text": "The increase in total units placed during 2025 compared to 2024, reflected incremental demand for our next-generation da Vinci 5 ENTITY system, an increase in trade-ins of our fourth-generation da Vinci ENTITY systems, and continued demand for additional capacity by our customers as a result of procedure growth, partially offset by a smaller number of third-generation da Vinci ENTITY systems available for trade-in."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E031",
+          "text": "In addition, our growth and future demand for our products is highly dependent upon the adoption of quantum computers and networks and commercially useful quantum algorithms to run on quantum computers by developers and customers, as well as on our ability to demonstrate the value of quantum computing to our customers."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E032",
+          "text": "In response to increasing customer needs related to their growth strategy or business succession in an unclear business environment, we offer multi-layered solutions in response to the various development stages of our customers\u2019 businesses through the combined strength of our entire ENTITY , including banking, trust banking and securities, based on a customer-focused approach."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E033",
+          "text": "This was somewhat offset by strong growth in ENTITY Technologies which benefited from the signing of smartphone license agreements throughout the year and related catch-up net sales."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E034",
+          "text": "Strong growth in India was driven by the continuation of 5G deployments and market share expansion in the region."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E035",
+          "text": "The increase reflected a proactive investment of $28 million in inventory to support customer demand, coupled with $45 million growth in accounts receivable due to revenue growth."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E036",
+          "text": "Worldwide organic revenue growth increased revenue $102.4 million, or 2.6%, primarily driven by our Media & Advertising, ENTITY and Execution & Support disciplines, partially offset by negative performance in our Branding & ENTITY, ENTITY, Experiential and Healthcare disciplines."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E037",
+          "text": "Worldwide organic revenue growth increased revenue $238.7 million, or 3.2%, compared to the prior year period, primarily driven by Media & Advertising, led by our media business, ENTITY, Experiential and Execution & Support disciplines."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E038",
+          "text": "Worldwide organic revenue growth increased revenue $102.4 million, or 2.6%, compared to the prior year period, primarily driven by Media & Advertising, led by our media business, ENTITY and Execution & Support disciplines."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E039",
+          "text": "Worldwide organic revenue growth increased revenue $116.8 million, or 3.0%, compared to the prior year period, primarily driven by Media & Advertising, led by our media business, ENTITY and Experiential disciplines."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E040",
+          "text": "Long-term trends, including the growth of e-commerce and modernization of supply chains, continue to drive demand for additional space to enhance resiliency and distribution capabilities."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E041",
+          "text": "Interest income, net in 2025 benefited from higher mortgage loan origination volume, partially offset by higher interest expense from increased utilization of funding facilities."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E042",
+          "text": "Interest income, net in 2025 benefited from higher mortgage loan origination volume, but was offset by higher interest expense from increased utilization of funding facilities."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E043",
+          "text": "The increase in Managed ENTITY Platform revenues of approximately $0.9 million is attributable to increased recurring revenues derived from the Managed REITs, generally commensurate with their growth, as compared to the same period in the prior year."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E044",
+          "text": "Overall increases in origination volume were primarily due to increased demand for debt consolidation products in an elevated interest rate environment, as well as increased demand driven by expanded advertising and marketing efforts."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E045",
+          "text": "The increase in segment income was attributable to growth in volume and mix and benefits from customer pricing."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E046",
+          "text": "The increase in segment income and segment income margin were primarily attributable to higher volumes and mix of Co-60 and benefits from customer pricing."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E047",
+          "text": "ENTITY of generic medicines have benefited from increasing awareness and acceptance on the part of healthcare insurers and institutions, consumers, physicians and pharmacists around the world."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E048",
+          "text": "For more information on AJOVY, see \u201cItem 1\u2014Business\u2014ENTITY and ENTITY\u2014ENTITY\u2014AJOVY.\u201d AUSTEDO revenues (which include AUSTEDO XR) in our ENTITY segment in 2025 increased by 35% to $2,217 million, compared to 2024, mainly due to growth in volume."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E049",
+          "text": "UZEDY (risperidone) extended-release injectable suspension revenues in our ENTITY segment in the third quarter of 2025 were $43 million, an increase of 24% compared to the third quarter of 2024, mainly due to growth in volume."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E050",
+          "text": "The increase in our SHOP segment NOI in 2025 over the prior year was primarily driven by revenue growth due to an increase in average occupancy, revenue per occupied room, additional properties acquired and conversions of senior housing communities from our NNN segment to our SHOP segment."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E051",
+          "text": "Net interest income increased by CHF 2,640m, or 126%, to CHF 4,727m, largely attributable to the consolidation of ENTITY net interest income, and included CHF 811m of accretion of PPA adjustments on financial instruments and other effects, with the remaining increase mainly driven by higher deposit margins, which resulted from higher interest rates, and higher loan revenues, partly offset by lower deposit fees. 2022 included a benefit from the ENTITY deposit exemption."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E052",
+          "text": "The remaining increase was mainly driven by higher deposit margins, which resulted from higher interest rates, and higher loan revenues, partly offset by lower deposit fees. 2022 included a benefit from the ENTITY deposit exemption."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2025Q4_P2_E053",
+          "text": "ENTITY EBITDA increased to EUR 0 million in 2023 from a loss of EUR 5 million in 2022 , which was primarily driven by the positive evolution of the energy solutions business line. 5.A.8.3 Comparable or \u201cLike-for-like\u201d (\u201cLfL\u201d) ENTITY, also referred to as \u201cLike-for-like\u201d Growth (\u201cLfL\u201d), corresponds to the relative year-on- year variation in comparable terms of the figures for revenues, Adjusted EBIT and Adjusted EBITDA."
+        },
+        {
+          "evidence_id": "2025Q4_P2_E054",
+          "text": "Other operating expenses Other operating expenses increased by 1.1% to EUR 4,931 million in 2024 from EUR 4,878 million in 2023 , primarily due to higher costs in the ENTITY in line with the US ENTITY increase on traffi c and higher revenue share in toll roads NTE 35W and I-77."
+        }
+      ]
+    }
+  ]
+}

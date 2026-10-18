@@ -1,0 +1,381 @@
+{
+  "quarter": "2024Q2",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E001",
+          "text": "Variables impacting future cash flows include, but are not limited to, the level of customer demand for and response to manufactured solutions we offer to the construction, industrial, consumer, transportation, electrical, and utility markets, changes in economic conditions of these various markets, changes in costs of raw material and natural gas, and the availability of experienced labor and management to implement our growth strategies."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E002",
+          "text": "These increases to operating income were partially offset by an increase in cost of sales, primarily driven by higher cost of labor and materials (primarily due to higher volume), higher employee related costs, travel, other indirect costs and the change in classification of certain compensation costs to the ENTITY ENTITY segment, from the Corporate segment."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E003",
+          "text": "The increase in sales was primarily due to an increase in selling price, which contributed $13.3 million and a higher volume of steel processed, which contributed $9.5 million."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E004",
+          "text": "The increase is due to a higher volume of coil coated in the current quarter, while the average price remained flat."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E005",
+          "text": "Calquence sales in ENTITY were $98 million (2022: $45 million; 2021: $20 million). 29 Enhertu sales in ENTITY increased to $169 million (2022: $51 million; 2021: $12 million), as a result of continued uptake driven by approvals and launches, including strong demand growth in China following HER2-positive (DESTINY-Breast03) and HER2-low (DESTINY-Breast04) metastatic breast cancer launches."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E006",
+          "text": "Lynparza sales in the Established ROW region increased by 5% (CER: 12%) to $281 million (2022: $269 million; 2021: $259 million) as a result of growth driven by increased uptake in testing and use in 1 st -line HRD-positive ovarian cancer, partially offset by market expansion re-pricing in Japan from November 2023."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E007",
+          "text": "Saphnelo sales in Europe increased to $8 million (2022: $2 million; 2021: $nil) as a result of additional growth driven by ongoing launches in Europe. 32 Tezspire sales in Europe increased to $48 million (2022: $2 million; 2021: $nil) as a result of achieving and maintaining new-to-brand leadership in key markets as well as pre-filled pen approved in January 2023."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E008",
+          "text": "Imfinzi sales in ENTITY increased by 25% (CER: 39%) to $360 million (2022: $287 million; 2021: $277 million) as a result of increased demand for new launches including BTC as well as continued demand for legacy indications Stage III unresectable NSCLC (PACIFIC), SCLC (CASPIAN)."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E009",
+          "text": "In 2022, we facilitated &pound;18.0bn versus &pound;22.6bn in 2021, reflecting continued strong demand for environmental financing and our strategy to work with our clients and customers to help facilitate their transitions towards a low-carbon economy."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E010",
+          "text": "Deposits at amortised cost to banks and customers decreased \u00a37.0bn to \u00a3538.8bn driven by a reduction in customer deposits reflecting broader market trends in ENTITY UK, partially offset by an increase in short-term money market deposits and growth in customer deposits in ENTITY International."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E011",
+          "text": "The decrease in net interest income was primarily driven by both higher interest rates and higher volume of interest-bearing liabilities."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E012",
+          "text": "Cost of sales as a percentage of revenue also benefited from the inclusion of Farfetch, which operates with a higher gross profit margin and generated gross profit of $122 million."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E013",
+          "text": "While the demand environment improved, the pricing environment became increasingly competitive, which affected our ISG and CSG gross margin performance. \u2022 Advancements in artificial intelligence: Our ISG business continued to benefit from increased demand for AI-optimized solutions due to the impact of AI advancements on customer spending behavior, as organizations look to integrate AI into their operations."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E014",
+          "text": "The increases were primarily attributable to growth within ISG services gross margin and, to a lesser extent, CSG services gross margin, that were driven by support and maintenance associated with products sold in prior periods."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E015",
+          "text": "The increases were primarily attributable to growth within CSG services gross margin that was driven by hardware and third-party software support and maintenance as well as support and maintenance associated with products sold in prior periods."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E016",
+          "text": "ENTITY continues to drive higher availability of its devices deployed worldwide through continuously improved processes and the increasing customer adoption of DN AllConnect SM ENTITY (ACDE), which enables a more data-driven and predictive approach to services."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E017",
+          "text": "Growth in Subscribers was driven by increased traffic to our platform (through our websites and mobile applications) as a result of our marketing activities, newer offerings, and improved onsite and customer onboarding experiences."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E018",
+          "text": "Average time deposits increased $47.6 million primarily due to organic growth and customer funds migrating from other deposit categories due to higher rates offered , which resulted in a $2.7 million increase in interest expense compared to the same period in 2023 ."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E019",
+          "text": "The increase in interest-bearing demand deposits at March 31, 2024 compared to December 31, 2023 is primarily due to organic growth."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E020",
+          "text": "Gross margin decreased from 77% in the first quarter of 2023 to 75% in the first quarter of 2024, primarily driven by a decrease in transaction revenue as a percent of GTV as transaction revenue in the first quarter of 2023 benefited from significant fulfillment efficiencies and lower customer incentives."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E021",
+          "text": "In particular, we experienced substantial growth stemming from the increased demand for online grocery driven primarily by the COVID-19 pandemic and have also made significant changes to our business, including through scaling our operations to meet the increased demand and implementing new business and product initiatives, which have impacted our expenses and margin."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E022",
+          "text": "GTV growth was driven by seasonality, including increased demand for our offerings in times of inclement weather, and an extra day in the first quarter of 2024 due to leap day."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E023",
+          "text": "Demand for our offerings is also affected by a number of factors beyond our control, including macroeconomic conditions, initiatives by retailers to influence shopping behavior, continued market acceptance of our offerings, the timing of development and release of new offerings and features by us, the timing or manner of the adoption of our offerings by retailers and our competitors, technological change, brand recognition, and growth or contraction in our markets."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E024",
+          "text": "Markets income(1) of \u00a3698 million, was \u00a3231 million, or 49.5%, higher than 2021 reflecting stronger performance across the product suite. - Net interest income increased by \u00a31,197 million to \u00a34,171 million benefiting from improved yield curve movements, due to interest rate increases, and net loan growth. - Non-interest income of \u00a32,242 million increased by \u00a3378 million primarily driven by increased card payment fees, higher payment services fees and increased income in our markets business. - Net interest margin was 85 basis points higher than 2021 reflecting higher deposits returns. - Operating expenses of \u00a33,744 were \u00a313 million, or 0.3%, lower compared with 2021."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E025",
+          "text": "Bank NIM of 3.04% was 19 basis points higher than 2022 primarily due to benefits from yield curve movements, net of changes in deposit mix as customers shifted to lower margin fixed term accounts, partially offset with lending margin pressure. - Interest receivable was materially above the prior year reflecting the higher rate environment."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E026",
+          "text": "Net loans to customers excluding central items increased by \u00a38.9 billion in the year largely reflecting a \u00a37.6 billion increase in ENTITY and \u00a32.0 billion of growth in Commercial & Institutional due to an increase in term loan facilities and private financing within Corporate & Institutions, net of \u00a32.7 billion of UK Government scheme repayments."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E027",
+          "text": "Bank NIM of 3.04% was 19 basis points higher than 2022 primarily due to benefits from yield curve movements, net of changes in deposit mix, partially offset by lending margin pressure."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E028",
+          "text": "We regard the following trends as growth opportunities: Japan\u2019s abundant individual financial assets and the tailwind of the government\u2019s plan for promoting Japan as a leading asset management center, the growth of investment in private assets, high levels of funding demand for and investor awareness of sustainability-related investments."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E029",
+          "text": "Average transaction services revenues per active merchant increased from RMB1,230 in 2021 to RMB2,125 in 2022, as a result of the growth of our merchants\u2019 businesses and the increase in merchant demand for more value-added services driven by the increased diversity of transactions placed under different consumption scenarios and product categories on our platforms."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E030",
+          "text": "Average transaction services revenues per active merchant increased from RMB1,230 in 2021 to RMB2,125 in 2022, as a result of the growth of our merchants\u2019 businesses and the increase in merchant demand for more value-added services driven by the increased diversity of transactions under different consumption scenarios and product categories on our platforms."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E031",
+          "text": "These forward-looking statements include statements relating to: \u25cf our growth strategies; \u25cf our future business development, financial conditions and results of operations; \u25cf the trends in the e-commerce industry in the countries or regions where we have operations; \u25cf our expectations regarding demand for and market acceptance of our products and services; \u25cf our expectations regarding our relationships with buyers and merchants; \u25cf competition in our industry; and \u25cf relevant government policies and regulations relating to us, and their future development."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E032",
+          "text": "These forward-looking statements include statements relating to: \u25cf our growth strategies; \u25cf our future business development, financial conditions and results of operations; \u25cf the trends in the e-commerce industry in the countries or regions where we have operations; \u25cf our expectations regarding demand for and market acceptance of our products and services; \u25cf our expectations regarding our relationships with buyers and merchants; \u25cf competition in our industry; and \u25cf government policies and regulations relating to us, and their future development."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E033",
+          "text": "The increase in services revenues was principally due to an increase in our install base that generates service revenue, with revenue growth concentrated in ENTITY where a positive market response to our Unity SaaS product offering has been a significant contributing factor."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E034",
+          "text": "The increase in cost of revenue was primarily attributable to increased hosting usage to support user growth on our platform and an increase in advertising measurement and other services, partially offset by hosting cost efficiencies and lower hosting prices."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E035",
+          "text": "All statements other than statements of historical fact contained in this ENTITY, including, without limitation, statements relating to our position as a leader within our industry, our future results of operations and financial position, business strategy and plans, and objectives of management for future operations, including, among others, statements regarding expected growth, international expansion, future capital expenditures, debt covenant compliance, financing activities, and debt service obligations, are forward-looking statements."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E036",
+          "text": "The increase was primarily due to higher order volume from larger customers driven by increased demand for our products, as well as increased pricing."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E037",
+          "text": "The increase was primarily attributable to sales growth from expanding services to existing customers."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E038",
+          "text": "The rate decrease was primarily due to increased employee related costs of our agents including agent training resulting in an increase in non-billable hours during the current year period, partially offset by sales growth from existing customers."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E039",
+          "text": "The rate decrease was primarily due to increased employee related costs of our agents, partially offset by sales growth from existing customers."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E040",
+          "text": "The decreases are primarily driven by our ENTITY portfolio due to market dynamics of the prior year which resulted in higher revenues from strong demand and backlog conversion, as well as a decline in our ENTITY portfolio."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E041",
+          "text": "The decrease from the prior year period was primarily driven by the market dynamics of the prior year which resulted in higher revenue from strong demand and backlog conversion in our ENTITY portfolio."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E042",
+          "text": "ENTITY has historically experienced slightly higher sales in the first and fourth fiscal quarters due to patterns in capital budgeting, federal government spending and purchasing cycles of its customers and end-users."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E043",
+          "text": "In addition to the distribution center transition, sales of pump-related supplies outside the ENTITY increased due to growth in our installed base of customers."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E044",
+          "text": "Gross margin benefited from pricing improvement and lower materials cost, offset by higher labor and overhead costs on a per-unit basis as we scale volumes of ENTITY Mobi in our initial launch phase."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E045",
+          "text": "Gross margin benefited from pricing improvement and lower materials cost, offset by higher labor and overhead on a per-unit basis as we scale volumes of ENTITY Mobi in this initial launch phase."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E046",
+          "text": "Gross margin benefited from pricing improvement and lower materials cost, offset by higher overhead on a per-unit basis as we scale volumes of ENTITY Mobi in this initial launch phase."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E047",
+          "text": "The increase in cost of software subscriptions revenues was primarily driven by a $1.9 million increase in costs of personnel supporting period-over-period growth of sales and customers, ongoing infrastructure investments and support costs to enable the continued expansion of customer transaction volumes for our cloud-based subscription customers."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E048",
+          "text": "The change in operating assets and liabilities was primarily driven by a decrease in accounts receivable and an increase in deferred revenue, primarily due to cash collections and customer growth during the period."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E049",
+          "text": "The increase in AARPC was primarily due to expansion of usage by existing customers and adding new customers through organic growth."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E050",
+          "text": "This increase was primarily driven by an increase in net cash provided by operating activities of $62.1 million, primarily attributable to customer growth and cash collections during the period."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E051",
+          "text": "These actions have enabled us to scale back on capital expenditures, consolidate production lines and reduce production bit growth since the beginning of 2023 in order to better align with market demand."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E052",
+          "text": "As noted previously, we have been scaling back on capital expenditures, consolidating production lines and reducing bit growth to align with market demand."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E053",
+          "text": "In addition, since the implementation of the ENTITY\u2019s regulations limiting sulfur emissions (\u201cIMO 2020 ENTITY\u201d) effective January 1, 2020, our vessels have been and continue to be operated using compliant low sulfur fuels, the price of which has increased as a result of increased demand."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E054",
+          "text": "The limited supply of and increased demand for well-qualified crew, due to the increase in the size of the ENTITY shipping fleet, has from time-to-time created upward pressure on crewing costs, which we generally bear under our time charters."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E055",
+          "text": "Other than costs for drydockings and compliance with environmental regulations, there are no other current material commitments for capital expenditures or other known and reasonably likely material cash requirements other than in respect of our growth strategy."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2024Q2_P2_E056",
+          "text": "ENTITY, or the \u201cBDI\u201d, an index published by ENTITY of shipping rates for key dry ENTITY routes, softened from the decade highs of 2021, but averaged 43% above the decade average, principally as a result of strong global growth and increased infrastructure spending which has led to an elevated demand for commodities combined with a historically low orderbook and port delays and congestion."
+        },
+        {
+          "evidence_id": "2024Q2_P2_E057",
+          "text": "While the charter market remains at current levels, we intend to operate our vessels in the spot market under short-term time charters or voyage charters in order to benefit from the increased freight rates and the attractiveness of our scrubber-equipped vessels."
+        }
+      ]
+    }
+  ]
+}

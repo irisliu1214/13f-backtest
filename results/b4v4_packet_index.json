@@ -1,0 +1,422 @@
+[
+  {
+    "quarter": "2016Q1",
+    "permutation": 1,
+    "n_companies": 24
+  },
+  {
+    "quarter": "2016Q1",
+    "permutation": 2,
+    "n_companies": 24
+  },
+  {
+    "quarter": "2016Q2",
+    "permutation": 1,
+    "n_companies": 16
+  },
+  {
+    "quarter": "2016Q2",
+    "permutation": 2,
+    "n_companies": 16
+  },
+  {
+    "quarter": "2016Q3",
+    "permutation": 1,
+    "n_companies": 16
+  },
+  {
+    "quarter": "2016Q3",
+    "permutation": 2,
+    "n_companies": 16
+  },
+  {
+    "quarter": "2016Q4",
+    "permutation": 1,
+    "n_companies": 18
+  },
+  {
+    "quarter": "2016Q4",
+    "permutation": 2,
+    "n_companies": 18
+  },
+  {
+    "quarter": "2017Q1",
+    "permutation": 1,
+    "n_companies": 22
+  },
+  {
+    "quarter": "2017Q1",
+    "permutation": 2,
+    "n_companies": 22
+  },
+  {
+    "quarter": "2017Q2",
+    "permutation": 1,
+    "n_companies": 16
+  },
+  {
+    "quarter": "2017Q2",
+    "permutation": 2,
+    "n_companies": 16
+  },
+  {
+    "quarter": "2017Q3",
+    "permutation": 1,
+    "n_companies": 21
+  },
+  {
+    "quarter": "2017Q3",
+    "permutation": 2,
+    "n_companies": 21
+  },
+  {
+    "quarter": "2017Q4",
+    "permutation": 1,
+    "n_companies": 17
+  },
+  {
+    "quarter": "2017Q4",
+    "permutation": 2,
+    "n_companies": 17
+  },
+  {
+    "quarter": "2018Q1",
+    "permutation": 1,
+    "n_companies": 22
+  },
+  {
+    "quarter": "2018Q1",
+    "permutation": 2,
+    "n_companies": 22
+  },
+  {
+    "quarter": "2018Q2",
+    "permutation": 1,
+    "n_companies": 13
+  },
+  {
+    "quarter": "2018Q2",
+    "permutation": 2,
+    "n_companies": 13
+  },
+  {
+    "quarter": "2018Q3",
+    "permutation": 1,
+    "n_companies": 17
+  },
+  {
+    "quarter": "2018Q3",
+    "permutation": 2,
+    "n_companies": 17
+  },
+  {
+    "quarter": "2018Q4",
+    "permutation": 1,
+    "n_companies": 15
+  },
+  {
+    "quarter": "2018Q4",
+    "permutation": 2,
+    "n_companies": 15
+  },
+  {
+    "quarter": "2019Q1",
+    "permutation": 1,
+    "n_companies": 25
+  },
+  {
+    "quarter": "2019Q1",
+    "permutation": 2,
+    "n_companies": 25
+  },
+  {
+    "quarter": "2019Q2",
+    "permutation": 1,
+    "n_companies": 21
+  },
+  {
+    "quarter": "2019Q2",
+    "permutation": 2,
+    "n_companies": 21
+  },
+  {
+    "quarter": "2019Q3",
+    "permutation": 1,
+    "n_companies": 23
+  },
+  {
+    "quarter": "2019Q3",
+    "permutation": 2,
+    "n_companies": 23
+  },
+  {
+    "quarter": "2019Q4",
+    "permutation": 1,
+    "n_companies": 18
+  },
+  {
+    "quarter": "2019Q4",
+    "permutation": 2,
+    "n_companies": 18
+  },
+  {
+    "quarter": "2020Q1",
+    "permutation": 1,
+    "n_companies": 24
+  },
+  {
+    "quarter": "2020Q1",
+    "permutation": 2,
+    "n_companies": 24
+  },
+  {
+    "quarter": "2020Q2",
+    "permutation": 1,
+    "n_companies": 25
+  },
+  {
+    "quarter": "2020Q2",
+    "permutation": 2,
+    "n_companies": 25
+  },
+  {
+    "quarter": "2020Q3",
+    "permutation": 1,
+    "n_companies": 24
+  },
+  {
+    "quarter": "2020Q3",
+    "permutation": 2,
+    "n_companies": 24
+  },
+  {
+    "quarter": "2020Q4",
+    "permutation": 1,
+    "n_companies": 24
+  },
+  {
+    "quarter": "2020Q4",
+    "permutation": 2,
+    "n_companies": 24
+  },
+  {
+    "quarter": "2021Q1",
+    "permutation": 1,
+    "n_companies": 19
+  },
+  {
+    "quarter": "2021Q1",
+    "permutation": 2,
+    "n_companies": 19
+  },
+  {
+    "quarter": "2021Q2",
+    "permutation": 1,
+    "n_companies": 26
+  },
+  {
+    "quarter": "2021Q2",
+    "permutation": 2,
+    "n_companies": 26
+  },
+  {
+    "quarter": "2021Q3",
+    "permutation": 1,
+    "n_companies": 21
+  },
+  {
+    "quarter": "2021Q3",
+    "permutation": 2,
+    "n_companies": 21
+  },
+  {
+    "quarter": "2021Q4",
+    "permutation": 1,
+    "n_companies": 29
+  },
+  {
+    "quarter": "2021Q4",
+    "permutation": 2,
+    "n_companies": 29
+  },
+  {
+    "quarter": "2022Q1",
+    "permutation": 1,
+    "n_companies": 33
+  },
+  {
+    "quarter": "2022Q1",
+    "permutation": 2,
+    "n_companies": 33
+  },
+  {
+    "quarter": "2022Q2",
+    "permutation": 1,
+    "n_companies": 20
+  },
+  {
+    "quarter": "2022Q2",
+    "permutation": 2,
+    "n_companies": 20
+  },
+  {
+    "quarter": "2022Q3",
+    "permutation": 1,
+    "n_companies": 25
+  },
+  {
+    "quarter": "2022Q3",
+    "permutation": 2,
+    "n_companies": 25
+  },
+  {
+    "quarter": "2022Q4",
+    "permutation": 1,
+    "n_companies": 19
+  },
+  {
+    "quarter": "2022Q4",
+    "permutation": 2,
+    "n_companies": 19
+  },
+  {
+    "quarter": "2023Q1",
+    "permutation": 1,
+    "n_companies": 27
+  },
+  {
+    "quarter": "2023Q1",
+    "permutation": 2,
+    "n_companies": 27
+  },
+  {
+    "quarter": "2023Q2",
+    "permutation": 1,
+    "n_companies": 33
+  },
+  {
+    "quarter": "2023Q2",
+    "permutation": 2,
+    "n_companies": 33
+  },
+  {
+    "quarter": "2023Q3",
+    "permutation": 1,
+    "n_companies": 20
+  },
+  {
+    "quarter": "2023Q3",
+    "permutation": 2,
+    "n_companies": 20
+  },
+  {
+    "quarter": "2023Q4",
+    "permutation": 1,
+    "n_companies": 25
+  },
+  {
+    "quarter": "2023Q4",
+    "permutation": 2,
+    "n_companies": 25
+  },
+  {
+    "quarter": "2024Q1",
+    "permutation": 1,
+    "n_companies": 33
+  },
+  {
+    "quarter": "2024Q1",
+    "permutation": 2,
+    "n_companies": 33
+  },
+  {
+    "quarter": "2024Q2",
+    "permutation": 1,
+    "n_companies": 23
+  },
+  {
+    "quarter": "2024Q2",
+    "permutation": 2,
+    "n_companies": 23
+  },
+  {
+    "quarter": "2024Q3",
+    "permutation": 1,
+    "n_companies": 20
+  },
+  {
+    "quarter": "2024Q3",
+    "permutation": 2,
+    "n_companies": 20
+  },
+  {
+    "quarter": "2024Q4",
+    "permutation": 1,
+    "n_companies": 25
+  },
+  {
+    "quarter": "2024Q4",
+    "permutation": 2,
+    "n_companies": 25
+  },
+  {
+    "quarter": "2025Q1",
+    "permutation": 1,
+    "n_companies": 26
+  },
+  {
+    "quarter": "2025Q1",
+    "permutation": 2,
+    "n_companies": 26
+  },
+  {
+    "quarter": "2025Q2",
+    "permutation": 1,
+    "n_companies": 22
+  },
+  {
+    "quarter": "2025Q2",
+    "permutation": 2,
+    "n_companies": 22
+  },
+  {
+    "quarter": "2025Q3",
+    "permutation": 1,
+    "n_companies": 24
+  },
+  {
+    "quarter": "2025Q3",
+    "permutation": 2,
+    "n_companies": 24
+  },
+  {
+    "quarter": "2025Q4",
+    "permutation": 1,
+    "n_companies": 24
+  },
+  {
+    "quarter": "2025Q4",
+    "permutation": 2,
+    "n_companies": 24
+  },
+  {
+    "quarter": "2026Q1",
+    "permutation": 1,
+    "n_companies": 28
+  },
+  {
+    "quarter": "2026Q1",
+    "permutation": 2,
+    "n_companies": 28
+  },
+  {
+    "quarter": "2026Q2",
+    "permutation": 1,
+    "n_companies": 29
+  },
+  {
+    "quarter": "2026Q2",
+    "permutation": 2,
+    "n_companies": 29
+  }
+]

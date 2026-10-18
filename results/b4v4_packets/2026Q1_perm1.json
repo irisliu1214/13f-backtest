@@ -1,0 +1,431 @@
+{
+  "quarter": "2026Q1",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E001",
+          "text": "The increase was primarily due to stronger demand for our products driven by the time to power needs of the growing market, partially offset by $15.9 million related to share-based consideration payable to a key hyperscaler customer."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E002",
+          "text": "Our AI customer mix is increasing due to the continued adoption of AI tools, and the resulting growth in AI data centers and their resulting power needs to support our business expansion."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E003",
+          "text": "The increase was primarily due to stronger demand for our ENTITY Server systems to meet the time\u2011to\u2011power needs of a growing market, driven largely by multiple projects executed through the joint venture with Brookfield, including a major hyperscaler project."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E004",
+          "text": "Product costs increased primarily due to higher sales volumes driven by increased demand for our ENTITY Server systems, and an increase in product warranty."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E005",
+          "text": "This was led by combustibles price/mix ( +7.2% ) and the growth of ENTITY (up 18.3% to \u00a3800 million , an increase of 17.3% at constant rates of exchange ), which drove ENTITY up 4.8% to \u00a31,813 million (up 4.3% at constant rates of exchange) despite a decline in Vapour of 11.2% to \u00a3543 million (down 11.4% at constant rates of exchange) ; and \u2013 APMEA, which was down 10.9% to \u00a34,767 million (down 7.2% at constant rates of exchange) due to regulatory and fiscal challenges in Australia and Bangladesh, partially offset by higher revenue in Pakistan, Nigeria and Indonesia."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E006",
+          "text": "However, these were partly offset by an increase in Pakistan (led by the growth of ENTITY and pricing in combustibles), Nigeria (driven by higher combustibles volume and improved combustibles pricing) and Indonesia (driven by higher combustibles volume and pricing)."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E007",
+          "text": "The increase is mainly attributable to a higher STI out turn in 2024 reflecting full-year salary and STI opportunity as the ENTITY, and 2022 LTIP vesting which was granted to the ENTITY in his capacity as ENTITY at the time."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E008",
+          "text": "In 2026 , the Group expects to invest around \u00a3750 million of gross capital expenditure to enhance our growth opportunities and deliver operational efficiencies, representing the ongoing investment in the Group\u2019s operational infrastructure (as described above) , including the continued investment in ENTITY across the Group ."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E009",
+          "text": "Our ocean volumes and pricing declined compared to the elevated levels experienced in the first quarter of 2025, which benefited from accelerated shipping activity ahead of anticipated tariff implementations."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E010",
+          "text": "Ocean volumes and pricing declined from the elevated levels experienced in the first quarter of 2025, which benefited from accelerated shipping activity ahead of anticipated tariff implementations."
+        }
+      ]
+    },
+    {
+      "alias": "C27",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E011",
+          "text": "Revenue increased by $99 million, or 120%, of which $93 million was due to higher average realized gold and silver prices and $6 million was attributable to a higher volume of gold and silver production."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E012",
+          "text": "Revenue increased by $136 million, or 234%, of which $70 million was due to higher gold and silver prices, and $66 million was attributable to higher volume of gold and silver production."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E013",
+          "text": "Revenue increased by $62.7 million, or 39%, of which $37.5 million was due to higher average realized gold prices and $25.2 million resulting from a higher volume of gold production."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E014",
+          "text": "The transaction, which remains on track to close in the first half of 2026, is expected to create a new, sector-leading, all-ENTITY senior precious metals mining company \u2022 2026 guidance highlights portfolio strength \u2013 ENTITY expects 2026 gold and silver production from ENTITY \u2019s current portfolio of assets of 390,000 - 460,000 ounces and 18.2 - 21.3 million ounces, respectively, driven by strong contributions across the portfolio, including expected continued growth at Rochester and a full year of production at ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E015",
+          "text": "The increase in SCE's core earnings in 2025 was primarily due to higher revenue from the 2025 GRC final decision and a benefit to interest expense related to cost recoveries authorized under the TKM and ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E016",
+          "text": "Revenue growth was driven by a $66.4 million increase in revenue related to further adoption of our modern edge platform and products."
+        }
+      ]
+    },
+    {
+      "alias": "C25",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E017",
+          "text": "This estimate incorporates a $3 billion reduction in previously expected capital expenditures associated with the processing of higher pyrite ore resulting from mine plan changes related to the expansion of the ENTITY to 130,000 metric tons of ore per day."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E018",
+          "text": "The increase in net loss is primarily due to the related increase in cost of sales, along with anticipated expansion in additional markets, continued growth in sales of Proleukin \u00ae , and ongoing and newly initiated clinical trials."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E019",
+          "text": "The decrease in our net loss was due to generating product revenue from product sales of Proleukin \u00ae and Amtagvi \u00ae in 2024, partially offset by an increase in cost of sales and the overall growth in our workforce and corporate infrastructure to support the ongoing launch of Amtagvi \u00ae in the U.S. and anticipated expansion in additional markets, as well as continued sales of Proleukin \u00ae , and ongoing and newly initiated clinical trials."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E020",
+          "text": "From 2022 to 2024, the demand for automotive panels experienced gradual growth, driven by the recovery of the automobile market and increasing adoption of ENTITY panels, partly due to a recovery in demand for automobiles following the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E021",
+          "text": "However, in 2024, the IT market experienced a rebound, mainly driven by increased demand for low-cost IT products and growth in emerging markets, and our revenue from this segment was further boosted by the commencement of mass production of medium-sized OLED panels at our new AP5 facility."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E022",
+          "text": "However, in 2024, the IT market experienced a rebound, mainly driven by increased demand for low-cost IT products and growth in emerging markets, and our revenue from this segment was further boosted by the commencement of mass production of medium-sized OLED panels at our AP5 facility."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E023",
+          "text": "This is in part due to trends in consumer electronics and other markets, such as IT products, televisions, mobile devices and auto products where the growth in demand is led by end products employing newer technologies with specifications tailored to deliver enhanced performance, convenience and user experience in a cost-efficient and timely manner."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E024",
+          "text": "Passenger services costs increased by 22.1%, mainly as a result of increased catering and onboard service costs driven by growth in demand, which resulted in an 11.0% increase in the number of passengers transported during 2024, primarily in the international segment."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E025",
+          "text": "These services are supported by a strong demand for air travel within the region and in the international markets where ENTITY ENTITY operates. 26 ENTITY ENTITY \u2019s global reach is further strengthened by key strategic partnerships, code-sharing agreements, commercial alliances and its joint venture agreement with ENTITY, Inc. (\u201cDelta\u201d)."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E026",
+          "text": "In the Brazilian passenger air transportation market, there is generally higher demand for air transportation services in the second half of the year, making the second quarter the weakest for the ENTITY However, seasonality is partially mitigated by ENTITY ENTITY \u2019s focus on business passengers (which are less sensitive to seasonality)."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E027",
+          "text": "This expectation is due to a range of factors including: competitor behaviour, new entrants to the market (including a number of new retail banks as well as non-traditional financial services providers), changes in customer needs, technological developments such as the growth of digital ENTITY , new business models such as buy now pay later and the impact of regulatory actions."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E028",
+          "text": "Improvements to the macroeconomic outlook result in a reduction in Stage 3 ECL coverage Credit cards \u2022 Credit card balances increased to \u00a3 16.2 billion (2023: \u00a3 15.8 billion), due to higher demand for new cards and increased spend \u2022 The credit card portfolio is a prime book."
+        }
+      ]
+    },
+    {
+      "alias": "C26",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E029",
+          "text": "Domestic ENTITY ENTITY for energy in the ENTITY is currently being driven by the significant growth in the data center industry, particularly as artificial intelligence (\u201cAI\u201d) deployment, cloud computing adoption, and digital transformation initiatives accelerate across sectors."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E030",
+          "text": "ENTITY ENTITY ENTITY for energy in foreign markets is currently being driven by population growth, industrialization and urbanization with countries in Asia contributing the most to international growth."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E031",
+          "text": "Foreign ENTITY ENTITY for energy in foreign markets is currently being driven by population growth, industrialization and urbanization with countries in Asia contributing the most to international growth."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E032",
+          "text": "This spike in demand is driven by several factors, including electricity use by data centers, reflecting the large power consumption requirements of AI, cloud computing and crypto-mining operations; the re-shoring of manufacturing in the U.S. in key sectors such as semiconductors, fueled in part by the CHIPS and ENTITY; electric vehicle growth; and electrification of household goods and appliances."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E033",
+          "text": "To support our growth, we collaborate with leading technology and industrial companies, many of whom are also our customers, to help accelerate the adoption of our wireless technology."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E034",
+          "text": "In recent years, a slowdown in domestic demand for steel products in China, resulting from slowed economic growth as well as the impact from the COVID-19 pandemic, combined with an expansion in steel production capacity, has led to production over-capacity in the Chinese steel industry, which in turn has led the Chinese government to pursue aggressive consolidation in the Chinese steel industry that has resulted in fewer but larger steel manufacturers that are able to compete more effectively in the global steel industry."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E035",
+          "text": "In recent years, a slowdown in domestic demand for steel products in China, resulting from slowed economic growth as well as the impact from the COVID-19 pandemic, combined with an expansion in steel production capacity, led to production over-capacity in the Chinese steel industry, which in turn led the Chinese government to pursue aggressive consolidation in the Chinese steel industry that has resulted in fewer but larger steel manufacturers that are able to compete more effectively in the global steel industry."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E036",
+          "text": "In recent years, a slowdown in domestic demand for steel products in China resulting from slowed economic growth, combined with an expansion in steel production capacity, has led to production over-capacity in the Chinese steel industry, which in turn has led the Chinese government to pursue aggressive consolidation in the Chinese steel industry that has resulted in fewer but larger steel manufacturers that are able to compete more effectively in the global steel industry."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E037",
+          "text": "In response to increasing demand from the energy industry, ENTITY E&C plans to continue to target opportunities in power plant construction, especially in Asia and Africa, which it believes offers significant growth potential."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E038",
+          "text": "ENTITY and Form 20-F 2024 | 107 With respect to oil products, we produced 1,783 mbbl/d of oil products in 2024, as shown in the following graphic: OIL PRODUCTS PRODUCTION (mbbl/d) In 2024, compared to 2023, there was an increase in the production of gasoline (4.2%), jet fuel (3.6%) and asphalt (4.4%), due to the domestic demand growth and supported by high results in refineries availability, reliability and performance."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E039",
+          "text": "The program currently reaches several municipalities and as of 2025, 2,791 participants completed training, and approximately 300 had secured employment. \u00a7 Through this initiative, we contribute to local socioeconomic development in areas surrounding its operations by addressing both community demand for employment opportunities and suppliers\u2019 needs for qualified labor. \u00a7 In this set of the socioenvironmental investments mentioned, we also expanded our efforts in nature-based solutions through a strategic partnership with ENTITY for Economic and ENTITY (BNDES)."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E040",
+          "text": "We have experienced rapid growth and demand for our services since inception as a result of our focus on growth."
+        }
+      ]
+    },
+    {
+      "alias": "C28",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E041",
+          "text": "Harvest volumes increased marginally to 6.84 million tons versus 6.81 million tons in the prior year, primarily attributable to improved production from drier weather in the second half of the year and increased demand for green logs as salvage operations in the Atlantic region subsided."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E042",
+          "text": "Recent restrictions on the importation of drones and related components from China and other countries have contributed to our growth in the industry, as these restrictions have increased demand for domestically produced products and services."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E043",
+          "text": "High growth product categories have experienced chronic shortages of components during periods of exceptionally high demand."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E044",
+          "text": "For example, the travel restrictions imposed by governments in response to the COVID-19 pandemic resulted in a significant decrease in revenue from roaming services in 2021 before it significantly increased in 2022 and 2023 in light of the substantial lifting of such travel restrictions in most countries, and further increased in 2024 mainly due to continued growth in demand for international travel by Korean residents."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E045",
+          "text": "In response to these trends, we focus on strengthening our core telecommunications business and enhancing customer trust and value, while selectively expanding our AI-related capabilities to support our long-term growth."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E046",
+          "text": "The decrease in these costs between 2024 and 2025 was mainly due to lower crude oil prices because of weaker global demand growth, resulting from slower economic growth and cost saving initiatives implemented as well as R3 889 million related to compensation by Transnet for historical costs."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E047",
+          "text": "Excluding remeasurement items, LBIT also decreased by more than 100% compared to the prior period due to lower gross margin driven by lower sales prices and higher cost partially negated by higher sales volumes."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E048",
+          "text": "ENTITY revenue of $2.4 billion increased 20% year on year driven by the accelerated adoption of digital technologies and higher sales of exploration data."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E049",
+          "text": "We experienced sequential organic revenue growth both in ENTITY and in the international markets, driven by higher offshore activity and strong year-end product and digital sales in ENTITY, the ENTITY and Asia, across Sub-ENTITY and in ENTITY."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E050",
+          "text": "The organic sequential revenue growth both in the international markets and ENTITY was driven by higher offshore activity and strong year-end product and digital sales, most notably in ENTITY, the ENTITY and Asia, across Sub-ENTITY and Gulf of America."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E051",
+          "text": "Digital revenue increased 9% on a full-year basis driven by significant uptake in ENTITY as well as steady growth in Platforms & Applications as customers continued to invest in automated solutions to improve performance and efficiency."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E052",
+          "text": "Excluding the impact of SV, and $28 million of sales in the prior year period from the Company\u2019s tower and rough terrain cranes businesses that were sold on October 31, 2025, net sales increased 8.1% year over year driven by higher sales in all the Company\u2019s other segments."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E053",
+          "text": "Our overall backlog at December 31, 2025 increased $61 million from backlog amounts at December 31, 2024, due to increased order activity in Aerials and MP, partially offset by a return to historical pre-covid ordering patterns in ES."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E054",
+          "text": "Evaluation of ENTITY We are evaluating opportunities to expand our ENTITY ENTITY magnet manufacturing capacity to support anticipated growth in demand across key sectors, including aerospace, defense, semiconductors, data centers, physical AI, energy, mobility, healthcare, and numerous industrial sectors."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E055",
+          "text": "This decrease was primarily driven by the dilution of fixed costs due to production growth and partially offset by inflation in U.S."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E056",
+          "text": "ENTITY consumables\u2019 double-digit revenue growth was due to the continued demand across all major geographies driven by the uptake in columns and application-specific testing kits to pharmaceutical customers."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E057",
+          "text": "This revenue growth was primarily driven by higher customer demand for our LC & MS instrument systems across most major regions."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E058",
+          "text": "The growth outside of China was primarily driven by strong customer demand for our thermal analysis instruments and services."
+        },
+        {
+          "evidence_id": "2026Q1_P1_E059",
+          "text": "In 2025, double-digit sales growth in Asia, which was offset by weakness in the U.S., was primarily driven by strong customer demand for our thermal analysis and rheology instrument systems and services."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E060",
+          "text": "These conflicts have resulted in increased demand for and worldwide shortages in some of the materials and components we use (including, for example, in electronic components and raw materials required to produce explosives) and supply chain disruption due in part to limitations on export to Israel as well as more limited transportation by air and sea to the region (exacerbated by attacks by the Houthi movement in Yemen on shipping in the ENTITY)."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E061",
+          "text": "According to industry sources, there is also an increased demand for vessels that are not on the OFAC list, but willing to engage in the trade of Russian crude, further pulling capacity out of the compliant tanker market."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2026Q1_P1_E062",
+          "text": "This increase was primarily due to an increase in employee benefits as a result of increased headcount, as well as continued capacity expansion."
+        }
+      ]
+    }
+  ]
+}

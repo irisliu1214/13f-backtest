@@ -1,0 +1,303 @@
+{
+  "quarter": "2019Q4",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E001",
+          "text": "As a percentage of net sales, SG&A decreased by 30 basis points primarily as a result of expense leverage on higher sales. \u200b Income from operations."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E002",
+          "text": "The higher merchandise margin was driven by better full-price selling and growth in exclusive brand penetration. \u200b Selling, general and administrative expenses."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E003",
+          "text": "The higher merchandise margin was driven by growth in exclusive brand penetration. \u200b Selling, general and administrative expenses."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E004",
+          "text": "U.S. revenues increased year-to-date due to higher demand in the first and second quarters of 2019 resulting from the second quarter 2018 approval of the Opdivo + Yervoy combination for kidney cancer and increased use in adjuvant melanoma. \u2022 International revenues increased due to higher demand as a result of approvals for additional indications and launches in new countries."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E005",
+          "text": "Yervoy (ipilimumab) \u2014 a monoclonal antibody for the treatment of patients with unresectable or metastatic melanoma. \u2022 U.S. revenues increased due to higher demand resulting from the second quarter 2018 approval of the Opdivo + Yervoy combination for kidney cancer. \u2022 International revenues increased due to higher demand and from the approval of the Opdivo + Yervoy combination for melanoma and kidney cancer in Japan."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E006",
+          "text": "Eliquis (apixaban) \u2014 an oral Factor Xa inhibitor targeted at stroke prevention in adult patients with NVAF and the prevention and treatment of VTE disorders. \u2022 U.S. revenues increased due to market share gains within the oral anticoagulants market. \u2022 International revenues increased due to higher demand attributed to both oral anticoagulant market growth and market share gains."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E007",
+          "text": "U.S revenues increased year-to-date due to higher demand in the first and second quarters of 2019 primarily due to the approval of the Opdivo + Yervoy combination for kidney cancer. \u2022 International revenues increased due to higher demand and from the approval of the Opdivo + Yervoy combination for melanoma and kidney cancer in Japan and certain European countries."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E008",
+          "text": "This increase was primarily due to growth in our customer base, with the number of active customers increasing by 3.1 million , or 32.8% , and increased spending among our active customers with net sales per active customer increasing $37 , or 11.4% , in the thirteen weeks ended November 3, 2019 compared to the thirteen weeks ended October 28, 2018 , driven by catalog expansion and growth in our healthcare and private brand businesses."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E009",
+          "text": "This increase was primarily due to an increase of $67.2 million in fulfillment costs largely attributable to increased investments to support overall growth of our business, including the opening of a new fulfillment center and the expansion of customer service headcount and launch of a new customer service center in the second quarter of 2018."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E010",
+          "text": "This increase was primarily due to growth in our customer base, with the number of active customers increasing by 3.4 million , or 39.0% , and increased spending among our active customers with net sales per active customer increasing $32, or 10.0%, in the twenty-six weeks ended August 4, 2019 compared to the twenty-six weeks ended July 29, 2018 . 20 Cost of ENTITY and ENTITY of goods sold for the thirteen weeks ended August 4, 2019 increased by $241.6 million , or 37.8% , to $881.3 million compared to $639.7 million in the thirteen weeks ended July 29, 2018 ."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E011",
+          "text": "This increase was primarily due to growth in our customer base, with the number of active customers increasing by 3.4 million , or 39.0% , and increased spending among our active customers with net sales per active customer increasing $32, or 10.0%, in the thirteen weeks ended August 4, 2019 compared to the thirteen weeks ended July 29, 2018 ."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E012",
+          "text": "The world market price that is most commonly utilized in our iron ore sales contracts is the Platts 62% Price, which can fluctuate widely due to numerous factors, such as global economic growth or contraction, change in demand for steel or changes in availability of supply."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E013",
+          "text": "This was predominantly due to higher sales volume of 0.3 million long tons, which resulted in increased revenue of $30 million , due to the timing of customer demand."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E014",
+          "text": "Projected future cash flows reflect management's best estimate of economic and market conditions over the projected period, including growth rates in revenues and costs, and estimates of future expected changes in operating margins and capital expenditures."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E015",
+          "text": "Projected future cash flows reflect management's best estimates of economic and market conditions over the projected period, including growth rates in revenues and costs, estimates of future expected changes in operating margins and capital expenditures."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E016",
+          "text": "We intend to reinvest some of those savings in marketing and our e-commerce business, to further strengthen our brand and drive incremental sales growth, as well as to enhance our distribution infrastructure. \u2022 As a result of the repurchase and conversion of our Series A ENTITY on December 5, 2018, we are no longer required to pay $12 million annually in preferred stock dividends. \u2022 Non-recurring charges relating to the Company\u2019s new distribution center in Dayton, Ohio are expected to reduce gross margin by approximately 100 basis points in 2019."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E017",
+          "text": "We intend to reinvest some of those savings in marketing and our e-commerce business, to further strengthen our brand and drive incremental sales growth. \u2022 As a result of the repurchase and conversion of our Series A ENTITY on December 5, 2018, we are no longer required to pay $12 million annually in preferred stock dividends. \u2022 Non-recurring charges relating to the Company\u2019s new distribution center in Dayton, Ohio are expected to reduce gross margin by approximately 100 basis points in 2019."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E018",
+          "text": "Retail revenues increased by 19.8% , despite operating 4 fewer retail stores compared to the same period last year due to comparable store sales growth of 19.1% ."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E019",
+          "text": "Core sales of traditional consumables increased in the three-month period due to increased demand in ENTITY."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E020",
+          "text": "Core sales of traditional consumables decreased in the nine -month period due to decreased demand in ENTITY and ENTITY, partially offset by growth in China."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E021",
+          "text": "Increased demand for orthodontic products during the three and nine -month periods was partially due to recent product launches."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E022",
+          "text": "Core sales growth was led by high-growth markets, primarily China, partially offset by declines in ENTITY, for both the three and nine-month periods and decline in ENTITY for the three-month period."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E023",
+          "text": "The second and third calendar quarters are typically the strongest quarters in terms of revenue, primarily due to a higher volume of residential transactions in the spring and summer months."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E024",
+          "text": "The increase in cost of revenues in 2017 was primarily due to a combination of the following factors: \u00b7 Information sourcing costs increased by RMB32.9 million to RMB139.5 million in 2017 from RMB106.6 million in 2016, mainly due to the increase in content costs incurred in relation to an expansion of the advertising business. \u00b7 Revenue sharing costs related to our performance-based advertising business increased by RMB18.6 million to RMB122.0 million in 2017 from RMB103.4 million in 2016, also primarily due to an expansion of the business."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E025",
+          "text": "These amounts were partially offset by a $10.9 million increase in deferred contract costs due to commissions paid on new bookings in line with revenue growth, and a $4.9 million increase in prepaid expenses and other assets related to timing of payments made in advance for future services."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E026",
+          "text": "Increasing awareness of our platform and its broad range of capabilities, coupled with the mainstream adoption of cloud-based, \u201calways on\u201d technology, has expanded the diversity of our customer base to include organizations of all sizes across virtually all industries."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E027",
+          "text": "The increase in net operating assets and liabilities was primarily due to a $98.0 million increase in accounts payable and accrued expenses related to increased expenditures to support general business growth over holiday season, as well as the timing of payments, a $68.3 million increase in customer deposits and deferred revenue driven by increased sales and timing, partially offset by a $94.2 million increase in inventory levels as we ramp up supply over the holiday season, as well as support our expansion into Germany."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E028",
+          "text": "The decrease in net operating assets and liabilities was primarily due to a $69.1 million increase in inventory levels as we ramp up supply to support demand ahead of the holiday season; partially offset by a $17.5 million increase in accounts payable and accrued expenses related to increased expenditures to support general business growth as well as the timing of payments, and an $8.5 million increase in customer deposits and deferred revenue driven by increased sales and timing."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E029",
+          "text": "The increase was attributable to the growth of our branded apparel sales, driven by our growing member base and expanded retail showroom footprint year over year."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E030",
+          "text": "MAUs, and international revenue growth was driven by 127% and 105% respective increases in international ARPU supported by a 38% increase in international MAUs."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E031",
+          "text": "MAUs, and international revenue growth was driven by a 115% increase in international ARPU supported by a 35% increase in international MAUs."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E032",
+          "text": "ARPU growth in the U.S. and internationally was driven by higher monetization of both of those user bases largely due to an increase in advertising demand from new and existing advertisers on our platform, which resulted in an increase in the number of advertisements served."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E033",
+          "text": "Net revenue from PC product applications increased due to a growth in units sold (which increased 13.9%) for PC product applications as well as higher average selling prices (which increased 12.1%)."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E034",
+          "text": "The operating income expansion is primarily attributable to the revenue growth, improved utilization of technology and people assets as the business scales its cloud and system integration revenue."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E035",
+          "text": "The operating income expansion is primarily attributable to the increased revenue and improved utilization of technology and people assets as the business scales its cloud and system integration revenue."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E036",
+          "text": "Maintenance revenue increased mainly due to annual maintenance rate increases and growth in our installed customer base from new software license sales partially offset by clients converting from on-premises license arrangements to SaaS."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E037",
+          "text": "The overall increase in ENTITY was driven by a 26% increase in MAPCs due to global expansion of our Eats product offerings combined with wider market adoption of our Rides product, and overall growth in our other offerings."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E038",
+          "text": "Eats adjusted net revenues increased primarily attributable to an increase in ENTITY of 73% , mainly due to changes to our service fees in U.S. and Canada markets, continued expansion into international markets, as well as lower courier incentive spend."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E039",
+          "text": "Eats adjusted net revenue increased primarily attributable to an increase in ENTITY of 89% , mainly due to changes to our service fees in U.S. and Canada and continued expansion into international markets."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E040",
+          "text": "The increase was largely due to loan growth from new and refinanced residential mortgage loan originations, including a higher level of non-conforming jumbo mortgages held for investment over the last 12 month period, as well as solid demand for both automobile loans and collateralized personal lines of credit."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E041",
+          "text": "The number of our total orders increased from 335.0 million in 2017 to 437.4 million in 2018, primarily due to an increase in the number of active customers and increased shopping frequency during the period, which in turn was primarily due to overall growth in the industry, our further optimized product selection, and enhancement of our warehousing capabilities, merchandising, and IT infrastructures."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E042",
+          "text": "These forward-looking statements include, but are not limited to, statements relating to: \u2022 our goals and strategies; \u2022 our future business development, results of operations and financial condition; \u2022 the expected growth of the online discount retail market in China; \u2022 our ability to attract customers and brand partners and further enhance our brand recognition; \u2022 our expectations regarding demand for and market acceptance of flash sales products and services; \u2022 competition in our industry; \u2022 fluctuations in general economic and business conditions in China; and \u2022 assumptions underlying or related to any of the foregoing."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E043",
+          "text": "Historically, we have benefited from viral marketing resulting from word-of-mouth referrals from our customers who often expressed their excitement on social media platforms regarding their purchases on our platform."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q4_P1_E044",
+          "text": "The growth in non-interest bearing demand deposits and savings deposits is primarily attributable to marketing, customer incentives, focused retail and business strategies to obtain more account relationships and customers\u2019 preferences for shorter-term maturities."
+        },
+        {
+          "evidence_id": "2019Q4_P1_E045",
+          "text": "The margin benefited from increases in the ENTITY\u2019s target federal funds rate during 2018 and higher margins on the acquired FFKT assets, partially offset by higher funding costs and a flattening of the yield curve in 2019."
+        }
+      ]
+    }
+  ]
+}

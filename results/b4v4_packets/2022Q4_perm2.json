@@ -1,0 +1,293 @@
+{
+  "quarter": "2022Q4",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E001",
+          "text": "The volume improvement was primarily driven by higher demand for merchant products as well as our on-site business, partially offset by lower sale of equipment project activity."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E002",
+          "text": "Our passionate, talented, and committed employees are from diverse backgrounds, but are driven by our higher purpose to create innovative solutions that benefit the environment, enhance sustainability, and address the challenges facing customers, communities, and the world."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E003",
+          "text": "ENTITY and ENTITY experienced sales growth of $16.6 million and $5.6 million, respectively, primarily due to higher demand for our data center, internal combustion engine (\u201cICE\u201d), safety, comfort and convenience, ADAS, xEV, consumer appliances and computing offerings."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E004",
+          "text": "Automotive net sales increased in the nine-month period ended December 23, 2022 compared to the nine-month period ended December 24, 2021, as we continued to experience higher demand for our ADAS, xEV, safety, comfort and convenience and ICE applications. 34 Industrial net sales increased in the nine-month period ended December 23, 2022 compared to the nine-month period ended December 24, 2021, primarily due to increases in demand for our data center, personal mobility and grid infrastructure applications."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E005",
+          "text": "Automotive net sales increased in the six-month period ended September 23, 2022 compared to the six-month period ended September 24, 2021, as we continued to experience higher demand for our ADAS, xEV, and safety, comfort and convenience applications. 33 Industrial n et s ales increased in the six-month period ended September 23, 2022 compared to the six-month period ended September 24, 2021, primarily due to increases in demand for our data center and Industry 4.0 applications."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E006",
+          "text": "Automotive ne t sales increased in the three-month period ended December 23, 2022 compared to the three-month period ended December 24, 2021, primarily due to higher demand for our ADAS, safety, comfort and convenience and xEV applications. 30 Industrial n et sales improved in the three-month period ended December 23, 2022 compared to the three-month period ended December 24, 2021, primarily due to increases in demand mainly for our broad-based and Industry 4.0 applications."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E007",
+          "text": "Net income for the second quarter of 2022 benefited from higher revenues attributable to a new merged concession agreement in Egypt and higher commodity prices."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E008",
+          "text": "Net income for the third quarter of 2022 benefited from higher revenues attributable to a new merged concession agreement in Egypt and higher commodity prices."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E009",
+          "text": "The increases were primarily driven by a combination of headcount growth, salary increases, and strong demand for our solutions, as well as higher staff utilization compared to the prior year perio ds."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E010",
+          "text": "The increases were primarily driven by a combination of headcount growth, salary increases, and strong demand for our solutions, as well as higher staff utilization compared to the prior year period."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E011",
+          "text": "The increases were primarily driven by headcount growth, salary increases, and strong demand for our solutions, as well as higher staff utilization compared to the prior year periods ."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E012",
+          "text": "Direct client staff labor growth is driven by client staff headcount growth, after attrition, and total backlog growth."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E013",
+          "text": "We benefited from the strong demand for specialty eggs as we placed more of our cage-free facilities into production and better utilized our existing cage-free production capacity."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E014",
+          "text": "Our sales volume benefited as we produced 11% more specialty eggs in the second quarter of fiscal 2023 versus the prior-year period, through use of our higher cage- free production capacity and better utilization of that capacity. - Cage-free egg sales for the second quarter of fiscal 2023 represented 18.2% of our total net shell egg sales versus 22.4% for the same prior year period due to the higher conventional egg prices."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E015",
+          "text": "The increase in gross profit was driven by the net sales growth discussed above, partially offset by the impacts of input cost inflation, unfavorable fixed cost leverage, and elevated supply chain operating costs."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E016",
+          "text": "The higher gross profit was driven by the net sales growth discussed above, partially offset by the impacts of input cost inflation, unfavorable fixed cost leverage, and elevated supply chain operating costs."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E017",
+          "text": "The increase was driven by the net sales growth discussed above, partially offset by the impacts of input cost inflation, unfavorable fixed cost leverage, and elevated supply chain operating costs."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E018",
+          "text": "The increase in gross profit was driven by the net sales growth discussed above, partially offset by the impacts of input cost inflation and unfavorable fixed cost leverage."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E019",
+          "text": "Dividends from subsidiaries and excess cash flows are projected to be lower in 2022 than in 2021 primarily due to higher COVID ENTITY losses and the growth in our exclusive agency sales, both of which resulted in lower cash flows generated by the affiliates to the Parent."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E020",
+          "text": "The ENTITY insurance segment underwriting margin increased $79 million compared with the prior year nine month period due to growth in premiums and lower ENTITY claims."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E021",
+          "text": "The ENTITY insurance segment underwriting margin increased $33 million compared with the prior year six month period due to growth in premiums."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E022",
+          "text": "We continue to expect that oil and gas demand will grow over the next several years, despite the actions taken by central banks in an attempt to control inflation and the resulting concern about a potential economic slowdown, with the demand driven by economic expansion, energy security concerns, and population growth."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E023",
+          "text": "The increase in S&A expense and adjusted S&A expense as a percentage of Net sales is primarily due to the impact of higher personnel cost and other cost inflation that was partially offset by a benefit from an increase in Net sales volume."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E024",
+          "text": "Following higher than expected volume growth in recent years, including GLP-1-based products such as Ozempic \u00ae , and temporary capacity limitations at some manufacturing sites, the outlook also reflects expected continued periodic supply constraints and related drug shortage notifications."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E025",
+          "text": "Sales growth in 2022 has resulted in periodic supply constraints and related drug shortage notifications in some countries."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E026",
+          "text": "The increase in both periods was primarily due to improved used truck results and higher finance and lease margins driven by portfolio growth, partially offset by the translation of weaker foreign currencies ."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E027",
+          "text": "The increase was driven by an increase of $6.2 million in employee compensation, benefits and other employee-related expenses mainly as a result of an increase in the employee headcount in our sales and marketing groups, an increase of $2.4 million in higher spending on marketing programs, and an increase of $1.8 million in third-party contractor and consultant expenses, and information technology expenses incurred by sales and marketing team to support our growing volume and business requirements."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E028",
+          "text": "The increase was driven by an increase of $10.1 million in employee compensation, benefits and other employee-related expenses mainly as a result of an increase in the employee headcount in our sales and marketing groups, an increase of $4.6 million in higher spending on marketing programs, an increase of $1.8 million in third-party commissions which corresponds to our revenue growth, and an increase of $1.0 million in third-party contractor expenses incurred by sales and marketing to support our growing volume and business requirements."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E029",
+          "text": "The increase was driven by an increase of $3.9 million in employee compensation, benefits and other employee-related expenses mainly as a result of an increase in the employee headcount in our sales and marketing groups, an increase of $2.3 million in higher spending on marketing programs, and an increase of $1.0 million in third-party commissions which corresponds to our revenue growth."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E030",
+          "text": "Transaction costs grew at a lower rate than volume due to improved commercial terms, internal platform optimizations, and cost structure benefits from increased transaction volumes."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E031",
+          "text": "ENTITY revenue increased in our Fee business primarily due to a $79.1 million impact associated with actuarial assumption updates and model refinements, which were favorable in 2022 as compared to unfavorable in 2021, and a $12.9 million increase primarily stemming from revenue associated with our ENTITY ENTITY program resulting from continued growth in the business."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E032",
+          "text": "As a result of our low leverage, available liquidity and investment capacity in the co-investment ventures, we have significant capacity to capitalize on value-added investment opportunities as they arise. \u2022 Economies of Scale from Growth."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E033",
+          "text": "As a result of our low leverage, available liquidity and investment capacity in the co-investment ventures, we have significant capacity to capitalize on opportunistic value-added investments as they arise. \u2022 Economies of Scale from Growth."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E034",
+          "text": "The higher commercial aerospace operating profit was principally driven by the higher commercial aerospace aftermarket sales discussed above, the benefit of cost reduction initiatives, the absence of $157 million of prior year significant unfavorable adjustments, and a $52 million favorable impact from a contract-related matter in 2021."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E035",
+          "text": "Total segment operating earnings increased 11 percent year over year from $1,257.9 million in 2020 to $1,391.3 million in 2021, primarily due to higher sales, partially offset by the reinstatement of incentive compensation and the reversal of temporary pay actions taken in fiscal 2020."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E036",
+          "text": "Total segment operating earnings increased to $1,542.6 million from $1,391.3 million in 2021, primarily due to higher sales, including price increases, and lower incentive compensation, partially offset by higher input costs and higher investment spend."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E037",
+          "text": "Excluding the impact of the items noted below, gross profit increased to 65.9% from 63.8% in 2020 primarily due to leverage from higher sales volumes and favorable product mix, partially offset by lower selling prices."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E038",
+          "text": "Excluding the impact of the items noted below, operating income increased to 25.6% in 2021 from 24.4% in 2020 primarily due to leverage from higher sales volumes partially offset by disciplined spending."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E039",
+          "text": "In particular, increased demand for semiconductor chips in recent years, due in part to the COVID-19 pandemic and an increased use of laptop computers, 5G phones, gaming systems, and other IT equipment that use these chips, has resulted in an ongoing severe global shortage of chips."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2022Q4_P2_E040",
+          "text": "The operating margin increased from 21.7% in the third quarter of 2021 to 23.5% in the third quarter of 2022 and from 21.2% in the first nine months of 2021 to 22.1% in the first nine months of 2022 primarily due to higher sales volumes including favorable pricing recovery, while headwinds from commodity and logistics inflation and operating inefficiencies due to supply chain constraints were offset by gains from the sale of certain office and distribution facilities."
+        },
+        {
+          "evidence_id": "2022Q4_P2_E041",
+          "text": "The operating margin increased from 21.3% in the second quarter of 2021 to 23.2% in the second quarter of 2022 and from 20.9% in the first six months of 2021 to 21.3% in the first six months of 2022 primarily due to higher sales volumes including favorable pricing recovery, while headwinds from commodity and logistics inflation and supply chain disruptions were offset by gains from the sale of certain office facilities."
+        }
+      ]
+    }
+  ]
+}

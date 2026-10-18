@@ -1,0 +1,421 @@
+{
+  "quarter": "2020Q2",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E001",
+          "text": "ENTITY revenue in the second quarter of fiscal 2020 was $360 million , up from $296 million in the second quarter of fiscal 2019 , representing 22% year-over-year growth and reflecting an increase in demand driven by the shift to remote work as well as our continued efforts to transition ENTITY to a subscription-based model."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E002",
+          "text": "We have observed the following trends related to our profitability in recent years: \u2022 Our profitability improved in the first half of 2020 as compared to the same period in 2019 due to higher revenue as well as the effects of cost savings and efficiency initiatives we have undertaken and lower travel and marketing expenses resulting from pandemic-related shutdowns."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E003",
+          "text": "A significant portion of our revenue growth in recent quarters has been attributable to revenue gains outside the ENTITY."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E004",
+          "text": "We have observed the following trends related to our profitability in recent years: \u2022 Our profitability improved in the first quarter of 2020 as compared to the same period in 2019 due to higher revenue as well as the effects of cost savings and efficiency initiatives we have undertaken."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E005",
+          "text": "In particular, we typically experience higher revenue in the fourth quarter of each year for some of our solutions as a result of holiday season activity."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E006",
+          "text": "Additional information by end market is as follows: \u2022 Biopharma \u2014 Despite strong demand in biopharma production, we experienced high single digit contraction driven by logistics constraints in India relating to COVID-19. \u2022 Advanced technologies & applied materials \u2014 We experienced low single-digit growth driven by semiconductor growth, partially offset by lower production chemicals and equipment & instrumentation sales."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E007",
+          "text": "Production and research and development accounts experienced double digit growth driven by sales of chemicals and personal protective equipment, partially offset by a decline in equipment & instrumentation due to impacts from COVID-19. \u2022 Healthcare \u2014 Sales were flat year over year."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E008",
+          "text": "Additional information by end market is as follows: \u2022 Biopharma \u2014 Sales grew in the double digits driven by strong growth in biopharma production and lab supplies. \u2022 Advanced technologies & applied materials \u2014 Sales grew in the double digits primarily driven by sales of chemicals and consumables used to produce COVID-19 testing kits."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E009",
+          "text": "This was partially offset by mid single-digit growth from government customers. \u2022 Advanced technologies & applied materials \u2014We experienced low-single digit contraction driven by softness in our industrial sector partially offset by growth in our semiconductor and microelectronics platforms."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E010",
+          "text": "Growth in volume sold was driven mainly by increased retail channel sales, resulting from distribution gains both domestically and abroad, higher sales velocities at existing retail customers, and contribution from new product introductions, partially offset by lower net price per pound."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E011",
+          "text": "The primary reason for net cash used in operating activities of $17.2 million was $28.1 million in net cash outflows from changes in our operating assets and liabilities, primarily due to the increase in inventory to meet growth in anticipated sales and to accommodate longer lead times for international shipments and prepayments to one of our pea protein 37 suppliers, partially offset by the increase in accounts payable."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E012",
+          "text": "Our net revenues in the retail channel increased significantly during the quarter primarily driven by our expansion in total retail outlets, higher sales velocity at existing retail outlets and new product introductions."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E013",
+          "text": "Cost of revenues Our cost of revenues increased by 70.6% from RMB1,919.2 million in 2017 to RMB3,273.5 million in 2018 as all components of cost of revenues increased due to our business growth and the expansion of our user base."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E014",
+          "text": "Operating expenses Our total operating expenses increased by 69.5% from RMB1,584.4 million in 2018 to RMB2,685.4 million (US$385.7 million) in 2019, as sales and marketing expenses and research and development expenses increased due to our business growth and the expansion of our user base."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E015",
+          "text": "Operating expenses Our total operating expenses increased by 104.8% from RMB773.5 million in 2017 to RMB1,584.4 million in 2018, as sales and marketing expenses and research and development expenses increased due to our business growth and the expansion of our user base."
+        }
+      ]
+    },
+    {
+      "alias": "C25",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E016",
+          "text": "ENTITY our growth requires continued adoption of our platform by new customers."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E017",
+          "text": "The increase was also due to a $ 2.4 million increase in professional and consulting fees as we obtained additional external assistance in connection with operating our business as a public company and our overall growth , a $ 2.4 million increase in shared overhead costs due to the overall growth of our business, a $ 1.6 million increase in money transfer license fees , a $0.7 million increase in reserve for sales tax obligations , and a $ 0.4 million increase in recruiting fees and temporary staffing costs as we engaged external help to recruit employees or to temporarily fill certain roles within the organization ."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E018",
+          "text": "The increases were primarily driven by expanded use of our cloud platform by existing and new customers, which resulted in increased data center costs, and due to an expansion in our customer support and cloud operations organizations to support our growth."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E019",
+          "text": "This growth was the result of a $57 million increase in ARR from new customer additions, a $98 million increase in ARR from the expansion of existing customers on the ENTITY \u00ae platform, and an $14 million increase in ARR as a result of expansion at the time of conversion from our Classic customers, net of churn ."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E020",
+          "text": "Our specified pools increased in price primarily as a result of the increased demand for prepayment protection that specified pools provide, relative to generic pools, amidst record-low mortgage rates and increasing actual and projected prepayment rates during the period ended June 30, 2020 ."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E021",
+          "text": "Our results also benefited from the appreciation of our reverse mortgage pools, driven by strong investor demand and a recovery in yield spreads after the distress in March."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E022",
+          "text": "The increase in prices on our Agency RMBS holdings, mainly relating to our specified pools, was a result of the decrease in interest rates coupled with increased demand for the prepayment protection that specified pools provide, relative to generic pools, amidst record-low mortgage rates and increasing actual and projected prepayment rates during the six-month period ended June 30, 2020 ."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E023",
+          "text": "Sales consist of sales from comparable stores and non-comparable stores, described below under \u201cENTITY.\u201d Growth of our sales is generally driven by expansion of our store base in existing and new markets as well as comparable store sales growth."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E024",
+          "text": "Comparable store sales growth was driven by increases in average transaction size partially offset by traffic declines, as customer shopping behaviors changed in response to COVID-19."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E025",
+          "text": "The increase in net cash provided by operating activities for the 26 weeks ended June 27, 2020 compared to the same period in fiscal 2019 was primarily the result of increased net sales driven by comparable store sales and new store growth, partially offset by increased cost of sales and operating expenses, particularly IO commissions."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E026",
+          "text": "The increase was primarily attributable to higher net sales of approximately $90 million for government satellite programs due to higher volume (primarily ENTITY (ENTITY OPIR)); and about $85 million for strategic and missile defense programs due to higher volume (primarily hypersonic development programs)."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E027",
+          "text": "The increase was primarily attributable to higher net sales of approximately $180 million for strategic and missile defense programs due to higher volume (primarily hypersonic development programs and fleet ballistic missile programs); and about $100 million for government satellite programs due to higher volume (primarily ENTITY OPIR)."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E028",
+          "text": "The increase was primarily attributable to higher net sales of approximately $265 million for strategic and missile defense programs due to higher volume (primarily hypersonic development programs); and about $190 million for government satellite programs due to higher volume (primarily ENTITY OPIR)."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E029",
+          "text": "The increase was primarily attributable to higher net sales of approximately $700 million for the F-35 program due to increased volume on production, development, and sustainment contracts; and about $125 million for higher volume on classified development contracts."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E030",
+          "text": "Early in the second quarter of 2020 switched transactions and cross-border volume growth rates started to stabilize around new lower activity levels as a result of compliance with social distancing and mobility limitations."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E031",
+          "text": "We have further benefited from cost savings, driven by reduced growth in employee compensation costs due to slower hiring, reductions in employee-related expenses as our sales and marketing activities shift to an online only sales format and a shift to work-from-home procedures."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E032",
+          "text": "We will require significant capital expenditures and the allocation of valuable management resources to grow and change in these areas without undermining our culture of rapid innovation, teamwork and attention to customer success, which has been central to our growth so far."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E033",
+          "text": "This increase was primarily attributable to the significant growth in the number of ENTITY delivered during the period, which was the result of investments made in brand and product awareness, and a strong increase in demand in the last few weeks of the quarter driven by stay at home orders issued by governments around the world in response to the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E034",
+          "text": "The increase in net operating assets and liabilities was primarily due to a $124.0 million increase in customer deposits and deferred revenue driven by elevated sales volumes towards the end of the quarter and longer delivery windows, and a $64.0 million increase in 38 accounts payable and accrued expenses related to increased expenditures to support general business growth, as well as the timing of payments, partially offset by a $46.2 million increase in inventory levels as we ramped up supply to meet the current increased demand."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E035",
+          "text": "The increase in net operating assets and liabilities was primarily due to a $98.0 million increase in accounts payable and accrued expenses related to increased expenditures to support general business growth over holiday season, as well as the timing of payments, a $68.3 million increase in customer deposits and deferred revenue driven by increased sales and timing, partially offset by a $94.2 million increase in inventory levels as we ramp up supply over the holiday season, as well as support our expansion into Germany."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E036",
+          "text": "The increase was attributable to the growth of our branded apparel sales, driven by our growing Member base and expanded retail showroom footprint year over year."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E037",
+          "text": "The increase was primarily due to higher volume of hydrogen 49 \u200b \u200b delivered to customer sites as a result of an increase in the number of hydrogen installations completed under GenKey agreements and higher fuel costs."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E038",
+          "text": "The increase was due primarily to higher volume of hydrogen delivered to customer sites as a result of an increase in the number of hydrogen installations completed under GenKey agreements and higher fuel costs."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E039",
+          "text": "Since the low point during the last week of the quarter, we have experienced steady increases in domestic sales driven by growth in our own digital channels and the expansion of our integrated delivery partnerships."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E040",
+          "text": "ENTITY (dollar amounts in thousands) March 25 2020 March 27 2019 General and administrative expenses $ 16,191 $ 13,937 Percentage of total revenue 11.3 % 10.5 % Dollar change compared to prior year $ 2,254 Percentage change compared to prior year 16.2 % The increase in general and administrative expenses for the thirteen weeks ended March 25, 2020 was primarily due to our investment across the business, particularly an increase in headcount to support our strategic growth plan, and increased investments in technology and marketing."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E041",
+          "text": "Legacy capital markets income increased approximately $0.9 million due to a reduction in the CVA loss recorded in the current quarter; \u25cf Securities gains, net of $1.7 million during the second quarter of 2019 while there were no sales of securities in the second quarter of 2020, and therefore, no gains or losses; \u25cf There were no recoveries on acquired loans recorded in the income statement in the second quarter of 2020, due to the adoption of CECL at the beginning of 2020."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E042",
+          "text": "Legacy capital markets income increased approximately $1.4 million due to an increase in fee income from swap transactions of $3.5 million offset by a higher CVA loss of $2.1 million; \u25cf Securities gains, net of $2.3 million during 2019 while there were no sales of securities in 2020, and therefore, no gains or losses; \u25cf There were no recoveries on acquired loans recorded in the income statement in 2020, due to the adoption of CECL at the beginning of 2020."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E043",
+          "text": "The increase in interest income on acquired loans was due to an increase in yield of 86 basis points due to higher accretion income of $3.5 million resulting from the adoption of CECL as discussed above. \u200b Compared to the first quarter of 2019, non-taxable equivalent net interest income increased $4.7 million, or 15.5% annualized, and the non-taxable equivalent net interest margin decreased to 3.67% from 3.90%."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E044",
+          "text": "Licensed stores revenue growth also contributed to the increase in total net revenues ($67 million), driven by increased product and royalty revenues from our licensees ($44 million), primarily resulting from the opening of 952 net new ENTITY \u00ae licensed stores, or a 7% increase, over the past 12 months, and the conversions of our retail businesses in Thailand, France and the Netherlands to fully licensed markets ($31 million)."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E045",
+          "text": "ENTITY ENTITY comparable store sales for the third quarter of fiscal 2020: ENTITY 28, 2020 ENTITY 28, 2020 ENTITY in ENTITY in ENTITY in ENTITY in ENTITY (40)% (51)% 23% (15)% (21)% 8% Americas (41)% (53)% 27% (13)% (20)% 9% International (37)% (44)% 13% (23)% (26)% 4% The above comparable store sales for the quarter and three quarters ended June 28, 2020 decreased due to temporary store closures and stores with modified operations and business hours as a result of COVID-19."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E046",
+          "text": "ENTITY ENTITY comparable store sales for the second quarter of fiscal 2020: ENTITY 29, 2020 ENTITY 29, 2020 ENTITY in ENTITY in ENTITY in ENTITY in ENTITY (10)% (13)% 4% (2)% (5)% 3% Americas (3)% (7)% 5% 2% (2)% 4% International (31)% (32)% 1% (15)% (16)% 2% The above comparable store sales for the quarter and two quarters ended March 29, 2020 decreased due to temporary store closures and stores with modified hours as a result of COVID-19."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E047",
+          "text": "Other revenues increased $71 million, primarily due to the expansion of the ENTITY including additional product sales to Nestl\u00e9 to transition Foodservice order fulfillment as well as a benefit related to the transfer of certain single-serve product activities to Nestl\u00e9 on a go-forward basis."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E048",
+          "text": "As a result of completing the Transactions, we acquired additional spectrum from Sprint, including 2.5 GHz spectrum, that we need in order to continue our customer growth, expand and deepen our coverage, maintain our quality of service, meet increasing customer demands, and deploy new technologies."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E049",
+          "text": "In addition, the ENTITY entertainment industry is highly seasonal, with sales typically higher during the fourth calendar quarter, due primarily to increased demand for games during the holiday season."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E050",
+          "text": "This decrease reflected: \u2022 The net impact of merchandising actions, including purchase order cancellation fees and inventory impairments related to a rapid slowdown in Apparel and Accessories sales, partially offset by favorability in clearance and promotional markdowns; \u2022 Unfavorable category sales mix, as sales growth was strongest in lower-margin categories; and \u2022 Digital fulfillment and supply chain costs, driven by unusually strong growth in digital volume combined with the impact of higher pay and benefit costs classified within Cost of Sales, including incremental team member pay and benefits investments due to COVID-19."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E051",
+          "text": "During 2019, over 70% of our comparable digital sales growth was driven by same-day fulfillment options: ENTITY, Drive Up, and delivery via our wholly owned subsidiary, Shipt."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E052",
+          "text": "From a rate perspective, these increased costs were more than offset by leverage resulting from strong revenue growth."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E053",
+          "text": "ENTITY primary investing activities consist of investing in short-term investments in marketable securities, purchases of property and equipment in support of our expanding headcount as a result of our growth, and capital expenditures to develop our software in support of enhancing our technology platform."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E054",
+          "text": "For the nine-month comparable period, data processing revenues also benefited from select pricing modifications effective in 2019. \u2022 International transaction revenues driven by nominal cross-border volumes, excluding transactions within Europe, declined 48% and 16% during the three-month and nine-month comparable periods, respectively, as COVID-19 spread globally starting in the latter part of March 2020."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E055",
+          "text": "The growth of our data processing revenues was negatively impacted in the latter part of March 2020 by the decrease in processed transactions as COVID-19 spread throughout the world. \u2022 International transaction revenues increased primarily due to select pricing modifications effective in 2019 ."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E056",
+          "text": "Percentage changes are calculated based on unrounded numbers. \u2022 Service revenues increased primarily due to 8% growth in nominal payments volume during the three and six month comparable periods as well as select pricing modifications effective in 2019, partially offset by unfavorable business mix."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E057",
+          "text": "Service revenues grew 6% during the nine-month comparable period, in line with nominal payments volume growth of 6%. \u2022 Data processing revenues were impacted by a decline in processed transactions of 13% and growth of 1% during the three-month and nine-month comparable periods, respectively, as a result of the spread of COVID-19 globally starting in the latter part of March 2020."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E058",
+          "text": "Our consulting revenue growth continues to be driven by strong demand for digital-, cloud- and security-related services and assisting clients with the adoption of new technologies."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E059",
+          "text": "We also experienced increased demand in the ENTITY, Software & Platforms and ENTITY industries and from clients across all of our industry groups in connection with their digital transformations, the adoption of cloud technologies and security-related services."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E060",
+          "text": "The contraction in our consulting revenue in the third quarter of fiscal 2020 was led by a decline in Europe and a slight decline in ENTITY, partially offset by strong growth in ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q2_P1_E061",
+          "text": "The business benefited from increased demand for acids from existing customers as well as new customers that used to import previously from Asia, especially in Europe."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E062",
+          "text": "In addition, there was a moderate increase in demand for additional bromine\u2011based products as a result of improving demand in the agrochemicals markets. 133 Phosphorous-based industrial compounds : overall stable demand correlated to GDP growth."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E063",
+          "text": "According to CRU, demand for water soluble fertilizers, of which purified phosphoric acid is a major raw material, has been growing sharply, driven by rapid growth in fruit & vegetable consumption and changing agricultural production systems."
+        },
+        {
+          "evidence_id": "2020Q2_P1_E064",
+          "text": "ENTITY prices increased throughout 2018 supported by record potash demand of 66.8 million tonnes, growth of 0.3% compared to 2017 (according to CRU August 2018 and ENTITY 2018), as well as low availability of potash due to, among other things, slower than expected ramp-up of new capacity."
+        }
+      ]
+    }
+  ]
+}

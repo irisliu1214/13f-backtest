@@ -1,0 +1,297 @@
+{
+  "quarter": "2018Q4",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E001",
+          "text": "Ablation-related open-heart sales increased $2,597, or 16.9%, primarily due to volume growth in both RF and cryoablation product lines."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E002",
+          "text": "A blation-related open-heart sales increased $1,283, or 7.6%, primarily due to volume growth in our cryo products line ."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E003",
+          "text": "Ablation-related minimally invasive (MIS) sales increased $389, or 4.5%, reflecting volume growth in our EPi-Sense product line which was partially offset by a decline in legacy MIS products."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E004",
+          "text": "Ablation-related minimally invasive (MIS) sales increased $720, or 4.2%, reflecting volume growth in our Epi-Sense product line which was offset partially by a decline in legacy MIS products."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E005",
+          "text": "Expense growth outpaced revenue growth primarily due to an increase in incentive compensation as a result of continued loan growth as well as a $1.7 million write down of a repossessed property in the third quarter."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E006",
+          "text": "Growth in net interest revenue was primarily due to an $810 million or 6 percent increase in average loan balances and yields on commercial loans rising in excess of funding costs."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E007",
+          "text": "Growth in net interest revenue was primarily due to yields on commercial loans rising in excess of funding costs and a $510 million or 4 percent increase in average loan balances."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E008",
+          "text": "Excluding the impact of interest recoveries, growth in net interest revenue was driven by strong growth in loan balances and improved loan yields."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E009",
+          "text": "The increase in the ENTITY was driven by growth in pharmacy network claim volume, attributable to net new business, and mail choice claim volume, driven by the continued adoption of our ENTITY offerings and increased specialty pharmacy claims, as well as brand inflation."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E010",
+          "text": "The increase was driven by the increase in pharmacy same store prescription volumes, which increased 9.5% and 9.0%, respectively, on a 30-day equivalent basis, due to continued adoption of our ENTITY, partnerships with PBMs and ENTITY plans, and our inclusion in a number of additional ENTITY D networks this year, as well as the impact of year over year brand inflation. \u00b7 Pharmacy revenues continue to be negatively impacted by the conversion of brand name drugs to equivalent generic drugs, which typically have a lower selling price."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E011",
+          "text": "The increase is due to growth in pharmacy network claim volume in the ENTITY and increased prescription volume in the Retail/LTC Segment, as well as brand inflation."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E012",
+          "text": "The increase is primarily due to growth in pharmacy network and mail choice claim volume as well as brand inflation, partially offset by continued price compression and increased generic dispensing."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E013",
+          "text": "The increase was primarily due to higher sales related costs primarily due to increased headcount and higher marketing costs to support revenue growth and the continued commercialization of our products in both the ENTITY and Europe."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E014",
+          "text": "The increase was primarily due to higher sales related costs primarily due to increased headcount and marketing costs to support revenue growth and the continued commercialization of our products in both the ENTITY and Europe."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E015",
+          "text": "The growth in company-operated restaurant sales was due to $7.5 million of non-comparable restaurant sales on restaurants that had not been open the fifteen months required to be included in comparable restaurant sales and the positive net impact of temporary remodel closures in the first half of 2018 and the first half of 2017."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E016",
+          "text": "The growth in company-operated restaurant sales was due to $11.8 million of non-comparable restaurant sales on restaurants that had not been open the fifteen months required to be included in comparable restaurant sales partially offset by restaurant closures impacting restaurant revenue in the comparable periods."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E017",
+          "text": "The growth in company-operated restaurant sales was primarily due to $4.4 million of non-comparable restaurant sales on restaurants that had not been open the fifteen months required to be included in comparable restaurant sales and $1.9 million from a 2.0% increase in company-operated comparable sales."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E018",
+          "text": "The growth in company-operated restaurant sales was due to $4.0 million of non-comparable restaurant sales on restaurants that had not been open the fifteen months required to be included in comparable restaurant sales."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E019",
+          "text": "After taking into consideration the factors above, the remaining $165 million increase is primarily explained by the following significant business factors: \u2022 increased earnings of $45 million period-over-period resulting from colder weather experienced in our franchise service areas when compared to the corresponding period in 2017; and \u2022 higher earnings from expansion projects, and higher distribution charges primarily resulting from increases in rate base and customer base."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E020",
+          "text": "After taking into consideration the factors above, the remaining $144 million increase is primarily explained by the following significant business factors: \u2022 increased earnings of $45 million period-over-period resulting from colder weather experienced in our franchise service areas; and \u2022 higher earnings from expansion projects, and higher distribution charges primarily resulting from increase in rate base and customer base."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E021",
+          "text": "After taking into consideration the factor above, the remaining $65 million increase is primarily explained by the following significant business factor: \u2022 increased earnings from ENTITY' Canadian and ENTITY crude operations due to the widening of certain location and quality differentials in 2018, which increased opportunities to generate profitable margins."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E022",
+          "text": "After taking into consideration the factor above, the remaining $34 million increase is primarily due to increased earnings from ENTITY' Canadian and ENTITY crude operations due to the widening of certain location differentials in 2018, which increased opportunities to generate profitable margins."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E023",
+          "text": "Our light vehicles OEM product growth was primarily driven by increased gasoline volumes in China, Europe, ENTITY, and ENTITY, as a result of increased turbocharger penetration in gasoline engines and new product launches, partially offset by lower diesel volumes to our OEM customers in Europe and Korea."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E024",
+          "text": "In particular, the commercial vehicle OEM market and light vehicle gasoline markets in China and other high-growth regions have increased due to favorable economic conditions and rising income levels which have led to an increase in automotive and vehicle content demand."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E025",
+          "text": "Additionally, diesel vehicles OEM product sales growth increased slightly as a result of increased volumes in Asia partially offset by lower diesel volumes to our OEM customers in Europe."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E026",
+          "text": "The increase in sales volume, net of contractual price reductions, was primarily driven by light vehicles OEM products growth of approximately $225 million, commercial vehicles OEM products growth of approximately $60 million and slight aftermarket and other products growth of approximately $1 million."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E027",
+          "text": "These increases in weighted average realized price and sales volume were driven by increased demand for graphite electrodes due to growth in ENTITY steel manufacturing, combined with a constrained graphite electrode supply due to reductions in graphite elect r ode manufacturing capacity over the past several years and a limited supply of our key raw material, petroleum needle coke."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E028",
+          "text": "This increase in weighted average realized price was driven by increased demand for graphite electrodes due to growth in ENTITY steel manufacturing, combined with a constrained graphite electrode supply due to reductions in graphite elect r ode manufacturing capacity over the past several years and a limited supply of our key raw material, petroleum needle coke."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E029",
+          "text": "This increase in weighted average realized price was driven by increased demand for graphite electrodes due to growth in ENTITY steel manufacturing, combined with a constrained graphite electrode supply due to reductions in graphite electrode manufacturing capacity over the past several years and a limited supply of our key raw material, petroleum needle coke."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E030",
+          "text": "Reflecting the reduction in steel production capacity, as a result, the historical growth trend of ENTITY steelmaking relative to the overall steel market resumed and has led to increased demand for our graphite electrodes."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E031",
+          "text": "Revenues were up 6% for the first half of 2018 , while operating results decreased 4% due to increased spending on sales and technology."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E032",
+          "text": "SocialCode revenue increased 2% for the first six months of 2018 , due to modest growth in digital advertising service revenues."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E033",
+          "text": "ENTITY (U.S) operating results declined 7% and 5% for the third quarter and first nine months of 2018 , respectively, due mostly to a delay in the CFA exam release and registration dates and increased spending on sales and technology, offset in part by income from PPI and CFFP."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E034",
+          "text": "Demand for commercial real estate is expected to reflect the steady expansion of the greater macro economy, which is benefiting from high levels of consumer spending and the prospect of larger corporate profits."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E035",
+          "text": "The combination of moderate economic growth and low interest rates that has been in place since the recession ended has been a powerful stimulus for commercial real estate, delivering steady absorption of space and strong investor demand for the yields available through both direct ownership of assets and publicly traded funds."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E036",
+          "text": "The $14.5 million increase in cash used in investing activities was primarily due to higher capital expenditures primarily related to system reinforcement and customer growth."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E037",
+          "text": "ENTITY - ENTITY margin results are primarily affected by customer growth, revenues from rate-base additions, and, to a certain extent, by changes in delivered volumes due to weather and customers\u2019 gas usage patterns because a significant portion of utility margin is derived from natural gas sales to residential and commercial customers."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E038",
+          "text": "The estimated capital expenditures in this range include, but are not limited to, the following items: \u2022 $650 to $700 million of core utility capital expenditures that will support continued customer growth, distribution system maintenance and improvements, technology investments, and utility gas storage facility maintenance; \u2022 $60 to $70 million related to planned upgrades and refurbishments to utility storage facilities and resource centers; and \u2022 $20 to $30 million of additional investments in 2018 for the ENTITY gas storage facility expansion, with a total estimated cost of $144 million for the project and a target in-service date of March 31, 2019."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E039",
+          "text": "The increase was primarily due to increased net income as a result of continued revenue growth and reduction in operating expenses, primarily from personnel-related expenses."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E040",
+          "text": "We occasionally experience a supply shortage of certain products as a result of strong demand or problems experienced by our OEM suppliers."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E041",
+          "text": "Operating income in our ENTITY segment in fiscal year 2017 increased compared to the prior year primarily due to higher revenue from our system design and integration solutions, our specialty services and commercial products, partially offset by lower operating income in Japan."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E042",
+          "text": "We focus on developing long-term, strategic relationships with large companies in these customer-intensive industry verticals to benefit from the complexity of services required, the anticipated growth of their market segments and their increasing need for more cost-effective customer engagement services."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E043",
+          "text": "System components and integration solutions revenue increased by 50% in fiscal year 2017 as compared to fiscal year 2016 due to strong demand for our systems design and integration solutions."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E044",
+          "text": "These decreases were partially offset by the impact of the growth in assets under management due to investment volume since January 1, 2017 for the ongoing ENTITY, as a result of which asset management revenue increased by $0.4 million and $1.6 million , respectively, from CWI 2, $0.2 million and $0.8 million , respectively, from CPA:18 \u2013 Global, $0.2 million and $0.8 million , respectively, from CESH I, and $0.2 million and $0.5 million , respectively, from CPA:17 \u2013 Global."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E045",
+          "text": "These decreases were partially offset by the impact of the growth in assets under management due to investment volume after June 30, 2017 for the ongoing ENTITY, as a result of which asset management revenue increased by $0.6 million and $1.2 million , respectively, from CWI 2, $0.4 million and $0.5 million , respectively, from CPA:18 \u2013 Global, $0.2 million and $0.6 million , respectively, from CESH I, and $0.2 million and $0.3 million , respectively, from CPA:17 \u2013 Global."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2018Q4_P1_E046",
+          "text": "The increase in cost of goods sold is primarily driven by growth in orders delivered, the mix of the product available for sale on our sites and transportation costs related to delivering orders to our customers."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E047",
+          "text": "Increases in our customer service and merchant fees are driven by the growth in our revenue and are expected to remain relatively consistent as a percentage of revenue."
+        },
+        {
+          "evidence_id": "2018Q4_P1_E048",
+          "text": "Net revenue is primarily driven by growth of new and active customers and the frequency with which customers purchase."
+        }
+      ]
+    }
+  ]
+}

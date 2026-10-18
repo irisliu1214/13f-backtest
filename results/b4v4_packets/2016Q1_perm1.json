@@ -1,0 +1,363 @@
+{
+  "quarter": "2016Q1",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E001",
+          "text": "The increases were mainly due to a higher volume of transactions related to loan and deposit growth."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E002",
+          "text": "The increase in regulated natural gas revenues was driven by higher per-unit natural gas costs, which are recovered from customers via adjustment clauses, and higher volume."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E003",
+          "text": "Shaw\u2019s revenues in 2014 were relatively unchanged from 2013, reflecting the impact of the closure of the rugs division in early 2014 and lower carpet sales, offset by higher sales of hard surface flooring products."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E004",
+          "text": "Operating cash flows in 2014 significantly benefited from the 49% premium and service revenue growth, which resulted in increased medical claims liabilities."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E005",
+          "text": "New vehicle demand is driven by macro-economic and other factors, such as interest rates, manufacturer and dealer sales incentives, fuel prices, consumer confidence, employment levels, income growth trends and government and tax incentives."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E006",
+          "text": "New vehicle demand is mostly driven by macro-economic factors, such as interest rates, manufacturer and dealer sales incentives, fuel prices, consumer confidence, employment levels, income growth trends and government and tax incentives."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E007",
+          "text": "Several factors will present significant opportunities for automotive suppliers who are positioned for the changing environment, such as: \u2022 continued shift to global platforms; \u2022 consolidation of suppliers; 21 \u2022 increased government regulation; and \u2022 intensified consumer demand for advanced technological features in vehicles."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E008",
+          "text": "This growth in wireless consumption is driven by the increased usage of wireless applications, including (1) mobile entertainment (such as mobile video, mobile applications, and social networking), (2) mobile internet usage (such as email and web browsing) and (3) machine-to-machine applications (also known as \"the Internet of Things\")."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E009",
+          "text": "Revenues \u2014 Total revenues increased $38 million principally due to higher revenue at ATSI and TrAIL, reflecting recovery of incremental operating expenses and a higher rate base as included in their annual rate filings effective June 2013 and June 2014."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E010",
+          "text": "Consistent with the boys\u2019 category, preschool category net revenues from ENTITY benefited from the strong theatrical line-up discussed above. 2014 versus 2013 Net revenue growth in the boys and girls categories in 2014 compared to 2013 more than offset lower net revenues from the games and preschool categories."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E011",
+          "text": "Net revenues from ENTITY TRANSFORMERS products benefited from higher net revenues, including higher product sales and royalty income, related to products based on the 2014 major motion picture release of TRANSFORMERS: AGE OF EXTINCTION, as well as animated television programming in 2014 and 2013."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E012",
+          "text": "Higher net revenues from ENTITY STAR WARS, which benefited from the December 2015 theatrical release STAR WARS: THE FORCE AWAKENS, were partially offset by lower first quarter 2016 net revenues from MARVEL products."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E013",
+          "text": "The boys category benefited from higher net revenues from STAR WARS, NERF and YOKAI WATCH products which were partially offset by lower net revenues from MARVEL, JURASSIC WORLD and TRANSFORMERS products."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E014",
+          "text": "Taxable-equivalent net interest income increased by $41 million, or 11.5%, from the first quarter of 2015 due to favorable deposit rates and volume with increases in average deposits of $2.4 billion, or 4.7%, from one year ago, as well as growth in average loans and leases of $127 million, or .4%."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E015",
+          "text": "This increase was primarily due to higher revenue volume and cost reductions, partially offset by an inventory write-off related to our 3-D sensing product."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E016",
+          "text": "This increase was primarily due to improved manufacturing cost absorption from higher volume and cost reductions."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E017",
+          "text": "This increase was primarily due to cost reductions and higher volume leading to better absorption."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E018",
+          "text": "Presenting the data in a highly visual, accessible, and interactive format to collate, view, and explore information with agility and ease of use improves the overall comprehension of the business and speeds up the decision-making process. \u2022 Increased demand for personalized, one-to-one customer and/or supplier experience."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E019",
+          "text": "In addition, demand for analytics on mobile devices is being driven by the growth of the mobile Internet and by the accelerating proliferation of mobile devices. \u2022 Increased data scalability."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E020",
+          "text": "This was primarily attributable to new customers for digital publishing and content management services of $1.4 million, incremental revenue from our newly acquired stations and entities of $0.7 million and organic growth in our markets of $0.6 million."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E021",
+          "text": "This increase was due primarily to higher revenue from GeForce GPU products and associated memory for gaming, which increased over 30% reflecting a combination of continued strength in PC gaming and increased sales of our Maxwell-based GPU products."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E022",
+          "text": "This increase was driven by higher sales of Tegra products serving automotive infotainment systems, OEM smartphones and tablet devices, and the onset of SHIELD tablet sales in fiscal year 2015."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E023",
+          "text": "Revenue from Tesla GPUs for Datacenter increased, driven by strong demand from cloud service providers."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E024",
+          "text": "Cash provided by operating activities increased in fiscal year 2015 compared to fiscal year 2014 primarily due to higher net income from revenue growth and contained operating expenses, partially offset by an increase in inventories resulting from the introduction of newly launched Maxwell-based GPUs and certain Tegra SOCs and SHIELD devices, and an increase in accounts receivable."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E025",
+          "text": "Net sales consist of sales from comparable stores and non-comparable stores, described below under \u201cENTITY.\u201d Growth of our net sales is primarily driven by expansion of our store base in existing and new markets."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E026",
+          "text": "Peripheral vascular product sales volume growth benefited from the focused efforts of our dedicated peripheral vascular salesforce, which was established in the second half of 2014, further market penetration and sales from our recently launched Indigo product."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E027",
+          "text": "Our revenue growth resulted from increased sales due to expansion of our salesforce headcount by 53.3%, further market penetration of our existing products and sales of new products or products with new indications."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E028",
+          "text": "Our revenue growth was primarily due to expansion of our salesforce headcount by 55.8%, further market penetration of our existing products and sales of new products."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E029",
+          "text": "The change in operating assets and liabilities includes the increase in inventories of $25.1 million to support our revenue growth, an increase in accounts receivable of $11.1 million , an increase in prepaid expenses and other current and non-current assets of $4.0 million , partially offset by an increase in accrued expenses and other non-current liabilities of $7.8 million and accounts payable of $0.1 million , as a result of the growth in our business activities."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E030",
+          "text": "This increase was primarily the result of growth in our franchise segment revenue of $1.8 million due to higher royalties received from additional franchisee-owned stores not included in the same store sales base, $1.2 million attributable to a same store sales increase of 7.0% in franchisee-owned stores, $0.6 million attributable to higher royalties on annual fees, $1.4 million of higher vendor commissions, $0.9 million of higher franchise and other fees, as well as lower expenses of $0.9 million associated with our previous point-of-sale system."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E031",
+          "text": "This increase was primarily the result of growth in our franchise segment revenue of $7.7 million due to higher royalties received from additional franchisee-owned stores not included in the same store sales base, $4.1 million attributable to a same store sales increase of 8.3% from franchisee-owned stores, and $1.8 million attributable to higher royalties on annual fees and higher vendor commissions, partially offset by higher operating expenses."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E032",
+          "text": "Also includes lease exit charges of $2.3 million and $8.7 million in 2015 and 2014 , respectively, resulting from the relocation of our corporate headquarters (see Note 2 ), a charge of $20.0 million in 2015 resulting from the Applecross matter (see Note 12 ), and charges totaling $41.2 million in 2013 resulting from a contractual dispute related to a previously completed luxury community (see Note 12 ). (d) Net new order dollars represent a composite of new order dollars combined with other movements of the dollars in backlog related to cancellations and change orders. 22 Home sale revenues Home sale revenues for 2015 were higher than 2014 by $130.5 million , or 2% ."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E033",
+          "text": "Ending backlog units and dollars, which represent orders for homes that have not yet closed, increased 15% and 31% , respectively, at March 31, 2016 compared with March 31, 2015 , as a result of the higher net new order volume."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E034",
+          "text": "Ending backlog units increased 1% at December 31, 2014 compared with December 31, 2013 and increased 2% as measured in dollars due to the increase in our average selling price."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E035",
+          "text": "Purchased transportation expense increased $26.6 million primarily due to increased demand, customer service needs and industry driver shortages causing increased rates for such services."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E036",
+          "text": "Net income Fiscal 2014 Fiscal 2013 Change % Change (dollars in thousands) Net income $ 107,692 $ 51,326 $ 56,366 110 % Percentage of sales 3.6 % 2.1 % 1.5 % Net income growth was attributable to strong business performance driven by comparable store sales and resulting operating leverage, strong performance of new stores opened, change in loss on extinguishment of debt and reduced interest expense."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E037",
+          "text": "This overall demand for healthy products is driven by many factors, including increased awareness about the benefits of eating healthy, a greater focus on preventative health measures, and the rising costs of health care."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E038",
+          "text": "As the credit environment stabilizes, we do not believe this benefit will repeat in the near term and expect that our provision for loan losses will increase at a higher rate than we experienced in 2015, primarily driven by our receivables growth. 73 \u2022 Growth in interchange revenues and loyalty program costs."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E039",
+          "text": "Over the longer term, the Partnership expects its growth will continue to be driven by the strong position of the Partnership\u2019s quality assets which will benefit from production from shale plays and by the deployment of shale exploration and production technologies in both liquids-rich natural gas and crude oil resource plays that will also provide additional opportunities for its ENTITY."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E040",
+          "text": "The increases in plant inlet volumes at SAOU, ENTITY (see footnote (5) above) and Versado were driven by system expansions and by increased producer activity which increased available supply across our areas of operation partially offset by reduced producer activity and volumes in ENTITY. 2015 benefited from a full year operations of the Longhorn plant in ENTITY, the ENTITY plant in SAOU and the ENTITY 3 plant in Badlands."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E041",
+          "text": "Construction of the expansion has proceeded without disruption to existing operations, and we estimate that total growth capital expenditures net to our 88% interest for the expansion and the related infrastructure enhancements at ENTITY should approximate $340 million."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E042",
+          "text": "ENTITY in ENTITY activities consist primarily of capital expenditures for growth related to new store openings, buildings, operational equipment, and information technology investments."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E043",
+          "text": "Excluding $72 million of net sales attributable to acquired ENTITY timberlands operations, net sales to unaffiliated customers decreased $8 million \u2013 2 percent \u2013 primarily due to: \u2022 lower realizations on delivered logs in the West and the South; \u2022 lower sales volumes in the South; and \u2022 lower sales in our Uruguay operations. 35 These decreases were partially offset by: \u2022 higher sales volumes in the West; and \u2022 higher stumpage and pay-as-cut timber sales."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E044",
+          "text": "Net contribution to earnings Net contribution to earnings increased $143 million \u2014 30 percent \u2014 primarily due to: \u2022 an $87 million increase as a result of owning ENTITY for a full year; \u2022 a $59 million increase due to higher log prices in our legacy Western timberlands and Southern timberlands; \u2022 a $20 million increase due to higher sales volumes in our legacy Western timberlands; and \u2022 a $12 million decrease in selling, general and administrative expenses, excluding ENTITY."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E045",
+          "text": "COMPARING 2014 WITH 2013 ENTITY sales increased $149 million \u2014 2 percent \u2014 primarily due to: \u2022 Timberlands segment sales increased $154 million, primarily due to higher log prices and increased sales volumes in the West, including our acquired ENTITY holdings. \u2022 ENTITY segment sales increased $34 million primarily due to higher sales realizations for pulp."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E046",
+          "text": "ENTITY sales increased $68 million \u2014 9 percent \u2014 primarily due to: \u2022 higher sales volume in the ENTITY including the increase related to acquired ENTITY holdings, and higher log prices in our legacy Western and Southern timberlands \u2014 $58 million; and \u2022 higher log and chip sales volumes in Canada \u2014 $10 million."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E047",
+          "text": "Royalty revenue increased by $7.2 million primarily due to an increase in the number of franchised stores from 693 in fiscal year 2014 to 826 in fiscal year 2015 and domestic same store sales growth of 7.9% ."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E048",
+          "text": "During the thirteen weeks ended March 26, 2016 , franchise segment profit was $6.4 million , an increase of $1.3 million , or 26.2% , compared to $5.0 million in the comparable period in 2015 due to the growth in revenue."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E049",
+          "text": "Franchise segment profit was $19.7 million in fiscal year 2015 , an increase of $4.5 million , or 29.5% , from $15.2 million in the prior fiscal year due to the growth in revenue offset by increases in SG&A."
+        },
+        {
+          "evidence_id": "2016Q1_P1_E050",
+          "text": "The increase was due to 128 franchise restaurant openings since March 28, 2015 , and domestic same store sales growth of 4.6% ."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2016Q1_P1_E051",
+          "text": "The increase in capital expenditure was primarily due to the additional purchases of equipment and assets to improve our technology and support our new product introductions to fuel business growth."
+        }
+      ]
+    }
+  ]
+}

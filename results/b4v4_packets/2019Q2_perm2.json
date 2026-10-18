@@ -1,0 +1,297 @@
+{
+  "quarter": "2019Q2",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E001",
+          "text": "Also contributing to the increase, but to a lesser extent, was growth in subscription revenue driven by the continued adoption of our ENTITY ENTITY offerings which are part of our ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E002",
+          "text": "The increase in ENTITY operating income in absolute dollars in Q1 2019 , compared to the comparable prior year period, is primarily due to increased unit sales, including sales by third-party sellers, advertising sales, and slower growth in certain operating expenses, partially offset by increased marketing expense."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E003",
+          "text": "Examples of growth and expansion capital expenditures to enhance our information technology platform include expenditures related to the delivery of new systems and software and customer interface functionality."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E004",
+          "text": "The increase was driven by growth in general merchandise sales of approximatel y 3.0%, increases in sales of edible and non-edible groceries of approximately 2% and an increase in sales of perishables of approximately 1%."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E005",
+          "text": "Because of their higher sales volumes and rapid inventory turnover, warehouse clubs generate cash from the sale of a large portion of their inventory before they are required to pay merchandise vendors."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E006",
+          "text": "Our period costs of manufacturing related expenses decrease d primarily as a result of higher absorption of fixed manufacturing costs into product costs due to a larger volume of builds through our factory tied to our acceptance growth, which resulted in higher factory utilization."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E007",
+          "text": "The $7 million increase was comprised of a $3 million increase in pet coke costs at our Coffeyville plant, a $1 million increase in freight costs associated with increased sales volumes, and a $3 million due to a draw in inventory due to increased demand."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E008",
+          "text": "Prices fell from their highs in June amid growing concern about future oil demand growth due to trade war tensions and policy uncertainties as well as rising U.S. crude production and inventories."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E009",
+          "text": "In particular, our advertising revenue increases due to increased demand for advertising time and our distribution revenue increases in the period of these broadcasts."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E010",
+          "text": "This was primarily due to a nine basis point increase across most core merchandise categories, partially offset by the ENTITY 2% reward program, which negatively impacted gross margin by three basis points, due to increased spending by ENTITY."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E011",
+          "text": "ENTITY 2% reward program negatively impacted gross margin by three basis points, due to increased spending by ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E012",
+          "text": "The improvement primarily was due to a higher proportion of DynaEnergetics sales relative to NobelClad sales, favorable product mix and productivity improvements in DynaEnergetics, improved project mix in NobelClad and the favorable impact of higher volume on fixed manufacturing overhead expenses. \u2022 Consolidated selling, general and administrative expenses were $16,699 in the second quarter of 2019 compared with $15,538 in the second quarter of 2018 ."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E013",
+          "text": "The improvement primarily was due to a higher proportion of DynaEnergetics sales relative to NobelClad sales, improved project mix in NobelClad and the favorable impact of higher volume on fixed manufacturing overhead expenses. \u2022 Consolidated selling, general and administrative expenses were $15,477 in the first quarter of 2019 compared with $13,389 in the first quarter of 2018 ."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E014",
+          "text": "Gross profit percentage increased compared with 2018 primarily due to a higher proportion of net sales in DynaEnergetics relative to NobelClad, favorable product mix and manufacturing efficiencies in DynaEnergetics, improved project mix in NobelClad and the favorable impact of higher volume on fixed manufacturing overhead expenses."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E015",
+          "text": "Gross profit percentage increased compared with 2018 primarily due to a higher proportion of DynaEnergetics sales relative to NobelClad sales, favorable product mix and manufacturing efficiencies in DynaEnergetics, improved project mix in NobelClad and the favorable impact of higher volume on fixed manufacturing overhead expenses."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E016",
+          "text": "Equity in the Income of ENTITY from equity investees increased $20 million , from $341 million to $361 million , due to higher income from A+E driven by higher program sales revenue, lower marketing costs and affiliate revenue growth."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E017",
+          "text": "Merchandise licensing and retail revenue growth was driven by an increase of 2% from our games business due to the sale of rights to a video game and royalties from the licensed title, ENTITY III."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E018",
+          "text": "The increase was primarily attributable to higher net sales of approximately $485 million for IWSS programs due to higher volume (primarily ENTITY, ENTITY, LCS and Aegis); about $155 million for various TLS programs due to higher volume; and about $55 million for Sikorsky helicopter programs due to higher volume (primarily military aircraft services and international military aircraft production programs) partially offset by lower volume (primarily ENTITY production and commercial aircraft services)."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E019",
+          "text": "The increase was primarily attributable to higher net sales of approximately $430 million for government satellite programs due to higher volume (primarily ENTITY OPIR; GPS III; and government satellite services); about $75 million for strategic and missile defense programs due to higher volume (primarily hypersonic programs); and about $60 million due to higher volume on the Orion program."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E020",
+          "text": "The increase was primarily attributable to higher net sales of $260 million for government satellite programs due to higher volume (primarily ENTITY (ENTITY OPIR); ENTITY (GPS) III; government satellite services; and ENTITY (AEHF)); and about $50 million for the Orion program due to higher volume."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E021",
+          "text": "The increase was primarily attributable to higher net sales of approximately $170 million for government satellite programs due to higher volume (primarily ENTITY OPIR; GPS III; and government satellite services) and about $70 million for strategic and missile defense programs due to higher volume (primarily hypersonic programs)."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E022",
+          "text": "In addition, our accounts receivable decreased $14.0 million due to cash collections and our deferred revenue increased $2.9 million resulting from the overall growth of our sales and our expanding customer base."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E023",
+          "text": "ENTITY revenues from our data services, which include mobile internet, mobile broadband and other data services, increased by Php12,069 million, or 46%, to Php38,350 million in 2018 from Php26,281 million in 2017 due to increased mobile internet usage driven mainly by enhanced data offers with video access, supported by continuous network improvement and LTE migration, as well as the impact of the revised revenue split allocation, partially offset by lower revenues from mobile broadband and the impact of adoption of IFRS 15."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E024",
+          "text": "This growth is driven by increasing demand for broadband services which the company is providing through its existing copper network and a nationwide roll-out of its fiber-to-the-home, or FTTH, network, and the transfer of Ultera and WiMAX businesses from SBI, as well as the impact of the revised revenue split allocation."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E025",
+          "text": "This growth is driven by increasing demand for broadband services which the company is providing through its existing copper network and a nationwide roll-out of its FTTH network."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E026",
+          "text": "We have experienced, and expect to continue to experience, slowing growth in the premium-tier device segment due to, among other factors, lengthening replacement cycles in developed regions, where premium-tier smartphones are common; increasing consumer demand in emerging regions, particularly China and India, where premium-tier smartphones are less common and replacement cycles are on average longer than in developed regions and are continuing to lengthen; and a maturing premium-tier smartphone industry in which demand is increasingly driven by new product launches and innovation cycles."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E027",
+          "text": "We have experienced, and expect to continue to experience, slowing growth in the premium-tier device segment due to, among other factors, lengthening replacement cycles in developed regions, where premium-tier smartphones are common; increasing consumer demand in emerging regions where premium-tier smartphones are less common and replacement cycles are on average longer than in developed regions and are continuing to lengthen; and a maturing premium-tier smartphone industry in which demand is increasingly driven by new product launches and innovation cycles."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E028",
+          "text": "ARPU increased due to the growth in revenue as a result of the number of advertisements delivered."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E029",
+          "text": "In addition to the need to scale our testing capacity, future growth, including our transition to a multi-product company with international operations, will impose significant added responsibilities on management, including the need to identify, recruit, train and integrate additional employees with the necessary skills to support the growing complexities of our business."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E030",
+          "text": "The increases in net sales were primarily due to increases in comparable store sales of 3.7% and 2.1% for fiscal 2019 and 2018 , respectively, driven by ticket and traffic growth."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E031",
+          "text": "The increase in net sales was due to comparable sales of 3.3% driven by growth in ticket and transactions ."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E032",
+          "text": "Growth in subscription and support revenue in the second quarter was attributable to strong demand for a broad range of solutions and the continued conversion of existing customer accounts to a solution-based licensing model."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E033",
+          "text": "ENTITY's net sales growth for fiscal year 2018 was primarily attributable to increased sales in the U.S. due to continued growth in our customer base through the adoption of the MiniMed 670G hybrid closed loop system."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E034",
+          "text": "ENTITY's net sales growth for fiscal year 2019 was primarily attributable to the continued demand for the MiniMed 670G hybrid closed loop system, which offers the latest in SmartGuard technology, as well as the higher sensor attachment and utilization we are seeing with our integrated CGM users."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E035",
+          "text": "ENTITY net sales growth was driven by new products in ENTITY and ENTITY, led by the LigaSure vessel sealing instruments with nano-coating, Exact and L-Hook, and both the Tri-Staple 2.0 endo stapling specialty reloads and Signia powered stapler."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E036",
+          "text": "ENTITY net sales growth also benefited from strong adoption of the TYRX absorbable antibacterial envelope through further expansion of value-based health-care arrangements."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q2_P2_E037",
+          "text": "These inflows were partially offset by a $21.6 million increase in accounts receivable due to higher billings and timing of collections from our customers, an increase in deferred contract acqui sition costs of $20.5 million as our sales commissions increased due to the addition of new customers and expansion of our existing customer subscriptions, and a $ 15.4 million increase in prepaid expenses and other assets primarily related to an increase i n prepaid hosting costs and prepaid software subscription costs driven by the growth in our business."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E038",
+          "text": "Our cost of revenue increased sequentially in each of the quarters presented, primarily driven by expanded adoption of ENTITY Cloud by existing and new customers, which resulted in increased hosting costs, as well as growth in personnel costs as we grew our support team."
+        },
+        {
+          "evidence_id": "2019Q2_P2_E039",
+          "text": "The increase in professional services revenue was attributable to increased adoption of our professional services offerings."
+        }
+      ]
+    }
+  ]
+}

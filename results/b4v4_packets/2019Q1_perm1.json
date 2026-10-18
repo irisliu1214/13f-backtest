@@ -1,0 +1,425 @@
+{
+  "quarter": "2019Q1",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E001",
+          "text": "The growth was primarily driven by our ability to deliver more relevant content to consumers through our improved data technology, which resulted in higher spending on our customer management services by an increasing number of brands and merchants, leading to a 47% increase in the number of clicks attributable to our P4P marketing services, and a 1% increase in the cost-per-click paid by merchants."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E002",
+          "text": "The growth was primarily due to an increase in the number of paying customers and also to an increase in their usage of and spending on our cloud computing services including more complex offerings, such as our content delivery network and database services."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E003",
+          "text": "The increase was primarily due to an increase in revenue generated from Lazada and AliExpress, primarily driven by robust GMV growth on these two marketplaces."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E004",
+          "text": "The increase is primarily attributable to higher sales and marketing related expenses to support sales growth in the ENTITY segment."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E005",
+          "text": "The increase was primarily driven by a continued focus of our selling into the cosmetic surgery market and sales growth in international markets."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E006",
+          "text": "AMST acquired the entire minting operations (referred to as SilverTowne Mint) of SilverTowne, L.P., with the goal of providing greater product selection to our customers and greater pricing stability within the supply chain, as well as to gain increased access to silver during volatile market environments, which have historically resulted in higher demand for precious metals products."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E007",
+          "text": "In periods of higher volatility, there is generally increased trading in the commodity markets, and increased demand for our products, which translates into higher business volume."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E008",
+          "text": "The increase in Beer net sales is primarily due to (i) volume growth within our Mexican beer portfolio of $366.4 million, which benefited from continued consumer demand, increased marketing spend and new product introductions, and (ii) a favorable impact from pricing in select markets within our Mexican beer portfolio of $77.1 million."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E009",
+          "text": "The increase in Beer net sales is primarily due to (i) $446.5 million of volume growth within our Mexican beer portfolio, which benefited from continued consumer demand, increased marketing spend and new product introductions, and (ii) a $102.8 million favorable impact from pricing in select markets within our Mexican beer portfolio."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E010",
+          "text": "The increase in Beer net sales is primarily due to (i) the volume growth within our Mexican beer portfolio of $371.4 million, which benefited from continued consumer demand and increased marketing spend, and (ii) a favorable impact from pricing in select markets within our Mexican beer portfolio of $78.1 million."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E011",
+          "text": "Operating income growth was tempered by planned increases in marketing spend and higher cost of product sold across both the Beer and Wine and Spirits segments. \u2022 Net income attributable to CBI and diluted net income per common share attributable to CBI increased significantly primarily due to the factors discussed above."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E012",
+          "text": "Equity in the Income of ENTITY from equity investees increased $20 million , from $341 million to $361 million , due to higher income from A+E driven by higher program sales revenue, lower marketing costs and affiliate revenue growth."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E013",
+          "text": "Operating expenses also include cost of goods sold and distribution costs, which decreased $14 million , from $291 million to $277 million due to lower home entertainment volumes and fewer projects at Lucasfilm \u2019 s special effects business, partially offset by higher music distribution costs driven by higher sales."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E014",
+          "text": "Marketplace transaction take rate was higher in 2018 compared to 2017, primarily due to growth in promoted listing fees, which along with final value fees are calculated as a percentage of an items sale price, and a decrease in seller incentives, partially offset by a decrease in revenues from final value fees attributable to pricing and category mix."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E015",
+          "text": "Marketing expenses were higher in the fourth quarter for both of the years ended December 31, 2017 and 2016 due to the seasonality of enrollments. 64 ENTITY and ENTITY care and enrollment expenses primarily consist of compensation and benefits costs for personnel engaged in assistance to applicants who call our customer care center and for enrollment personnel who assist applicants during the enrollment process."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E016",
+          "text": "The increase in Medicare commission revenue was primarily attributable to the increase in lifetime value of commissions per ENTITY and ENTITY approved members and an 8% increase in Medicare approved members as of December 31, 2017 compared to December 31, 2016, in part due to growth in our sale of ENTITY and ENTITY plans."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E017",
+          "text": "As a result of the approvals of CABOMETYX for RCC indications in more than ten territories outside of the U.S., including the EU, Canada, Brazil, Taiwan, ENTITY and Australia, CABOMETYX has continued to grow both in sales revenue and the number of RCC patients benefiting from its clinical effect."
+        }
+      ]
+    },
+    {
+      "alias": "C25",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E018",
+          "text": "The growth in our international revenue was driven by favorable pricing as a result of our commencement of direct sales of our ENTITY across Europe following the expiration of our distribution agreement with our former ENTITY on June 30, 2018."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E019",
+          "text": "ENTITY revenue increased to $120.0 million, up $48.1 million, or 67%, primarily due to growth in distributor sales from continued adoption in existing and newer markets within Europe."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E020",
+          "text": "The growth in our drug delivery revenue is due to higher volume during the period."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E021",
+          "text": "Our online advertising services revenue grew by 44.4% from RMB5,650.4 million in 2016 to RMB8,158.9 million in 2017, as a result of the increase of brand advertising, which is primarily due to the increase in average brand advertising revenue per brand advertiser, driven mainly by the increased attractiveness and efficiency of our advertising services, as well as the growth of our in-feed advertising service launched in the fourth quarter of 2016."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E022",
+          "text": "Our online advertising services revenue grew by 21.2% from RMB7,697.1 million (net of VAT) in 2017 to RMB9,328.1 million (US$1,356.7 million) in 2018, as a result of our improved efficiency in the monetization of brand advertising business, driven by our strong and expanding library of self-produced and licensed content, as well as the growth of our in-feed advertising business, partially offset by tightening advertising budget of advertisers."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E023",
+          "text": "The RMB5,075.9 million increase was primarily due to the increased purchase of third-party PPC or PGC, which increased by RMB3,633.9 million as we procured more high-quality and popular licensed content; and to a lesser extent, to the increase of RMB1,002.9 million in revenue sharing with content partners as more content was uploaded onto our platform, and to our rapid expansion of original content production, which resulted in an increase of RMB429.4 million in content cost."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E024",
+          "text": "Gold sales increased 10% in 2017 compared to 2016 primarily due to higher sales volumes from a full year of production and sales at Merian and ENTITY and the CC&V expansion completed in the first quarter of 2016 as well as higher average realized prices, partially offset by adverse weather conditions impacting production at Tanami and Yanacocha during the first quarter of 2017."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E025",
+          "text": "Gold production decreased 9% primarily due to lower ore grade mined, partially offset by higher mill throughput as a result of the ENTITY project achieving commercial production during the third quarter of 2017."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E026",
+          "text": "Costs applicable to sales increased in 2017 compared to 2016, primarily due to a full year of commercial production at Merian and ENTITY, the CC&V expansion completed in the first quarter of 2016, and higher direct operating costs, partially offset by lower leach pad inventory adjustments."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E027",
+          "text": "Advanced projects, research and development expense increased in 2017, compared to 2016, primarily due to costs associated with full potential opportunities in ENTITY and advanced studies on the ENTITY project, partially offset by prior-year Merian pre-production expenses."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E028",
+          "text": "The net sales performance of ENTITY Software continued to benefit from the investments to build a dedicated software sales force and increasingly strong demand for our market leading software portfolio built on a 5G ready and cloud-native ENTITY."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E029",
+          "text": "Demand for our portfolio is driven by exponentially increasing growth in data traffic as people\u2019s lives and enterprises become ever more digitalized."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E030",
+          "text": "The increase in bandwidths and server costs from RMB117.5 million in 2017 to RMB578.9 million (US$84.2 million) in 2018 was due to the increase in server capacity to keep pace with the growth of our online marketplace services."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E031",
+          "text": "These forward-looking statements include statements relating to: \u00b7 our growth strategies; \u00b7 our future business development, financial conditions and results of operations; \u00b7 the trends in the e-commerce industry in China; \u00b7 our expectations regarding demand for and market acceptance of our products and services; \u00b7 our expectations regarding our relationships with buyers and merchants; \u00b7 competition in our industry; and \u00b7 relevant government policies and regulations relating to our industry."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E032",
+          "text": "Cost of revenues increased $ 40 million from fiscal 2017 to fiscal 2018 and as a percentage of revenues increased from 90.1% in fiscal 2017 to 90.8% in fiscal 2018 , primarily due to lower net favorable changes in estimates on contracts related to performance obligations satisfied over time ($25 million), and lower profit from a higher material cost mix and higher volume of cost reimbursable contracts ($8 million)."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E033",
+          "text": "The increase in sales and marketing expenses in 2018 was mainly from the marketing efforts of our e-commerce business, which was aligned with our strategy to fully capture the market growth opportunity and was primarily attributable to the ramping up of offline and online digital marketing and other promotions on our platform that were designed to increase our user base and enhance user engagement."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E034",
+          "text": "The increase in our capital expenditure in 2018 was mainly attributable to the additional investment in servers due to the growth of our e-commerce business and digital entertainment business, as well as the leasehold improvements due to the expansion of our business."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E035",
+          "text": "The increase was primarily due to bank transaction fees driven by GMV growth from our e-commerce business, as well as higher staff compensation and benefit costs. 88 \u00b7 Cost of goods sold: Cost of goods sold was negligible in 2016 and increased to US$1.6 million in 2017 in line with the increase in the sales of goods revenue in 2017."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E036",
+          "text": "This increase was primarily due to significant marketing efforts that was aligned with our strategy to fully capture the market growth opportunity and was primarily driven by shipping and other promotions on our platform in order to increase our user base and enhance user engagement."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E037",
+          "text": "ENTITY and self-pay subscription revenue due to a higher music royalty rate, a 4% increase in the daily weighted average number of subscribers and an increase in subscriber revenue generated from our connected vehicle services, and Pandora subscriber revenue growth from increase in the number of subscribers and an increase in the average price per paid subscriber due to the growth of Plus and Pandora subscribers; partially offset by higher revenue share and royalty costs driven by growth in our revenue and royalty rates."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E038",
+          "text": "The increase was due to: a growth in revenues resulting from an increase in our subscriber base; an increase in certain of our subscription prices; an increase in Other revenue from higher revenue from ENTITY XM Canada under the new ENTITY and ENTITY; additional amounts produced by the U.S."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E039",
+          "text": "The increase was primarily driven by higher revenue from ENTITY XM Canada due to the new ENTITY and ENTITY entered into in the second quarter of 2017, additional revenues from the U.S."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E040",
+          "text": "These favorable variances were partially offset by higher revenue share and royalty costs due to growth in our revenues and royalty rates, programming and content, sales and marketing and engineering, design and development costs."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E041",
+          "text": "More than in any year prior, we have seen a diversification of client start dates, resulting from our ENTITY plan expansions, cross sales of new services, international growth, and mid-market employer growth, all of which are not constrained by a calendar year start."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E042",
+          "text": "As a result, we have seen a diversification of client start dates, resulting from our ENTITY plan expansions, cross sales of new services, international growth, and mid-market employer growth, all of which are not constrained by a calendar year start."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E043",
+          "text": "The increase in revenue sharing fees from 2016 to 2017 was primarily driven by increased sales of virtual gifts in live streaming services as a result of consolidation of the results of CMC which constitutes a majority of our current live streaming services, as well as organic growth in our online karaoke and live streaming businesses in line with revenue growth."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E044",
+          "text": "The increased revenues from sales of digital singles and albums and from user subscriptions were primarily driven by the continuous growth of the user base of our online ENTITY services and their increased paying ratio."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E045",
+          "text": "This increase was mainly driven by the increased revenues as our businesses continued to grow, partially offset by increased cost of revenues and operating expenses which was generally consistent with our business growth during the same period."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E046",
+          "text": "Revenue from Uber, our largest ENTITY, decreased in 2017, due to a combination of product usage decreases and certain price adjustments that were made by us as a result of Uber's high volume growth."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E047",
+          "text": "The increase in international revenue was attributable to the growth in usage of our products, particularly our ENTITY products and ENTITY products, by our existing international ENTITY, and a 57% increase in the number of international ENTITY driven in part by our focus on expanding our sales to customers outside of the ENTITY. 2017 Compared to 2016 In 2017, ENTITY increased by $120.0 million, or 49%, compared to 2016, and represented 92% and 89% of total revenue in 2017 and 2016, respectively."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E048",
+          "text": "Also, due to costs from our international expansion efforts and network service provider fees outside of the ENTITY, which generally are higher than domestic rates, our gross margin for international customers is typically lower than our gross margin for domestic customers."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E049",
+          "text": "The trends continued in the second half of 2017, and further gross margin declines were driven by certain price adjustments that were made by us as a result of Uber's high volume growth."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E050",
+          "text": "This growth was primarily driven by increase in demand from our Anti-Counterfeiting products due to bank not redesign and higher revenue from our Consumer and Industrial products, due to higher demand for our 3D Sensing optical filters and the newly acquired ENTITY TM products."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E051",
+          "text": "This increase was primarily driven by strong demand for our Anti-Counterfeiting products and strength in our Consumer and Industrial products from 3D Sensing optical filter demand."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E052",
+          "text": "This decrease was primarily due to unfavorable product mix driven by higher revenue from Consumer and Industrial products coupled with incremental revenue from Government products."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E053",
+          "text": "The decline was primarily due to unfavorable product mix driven by higher revenue from Consumer and Industrial products coupled with incremental revenue from Government products."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E054",
+          "text": "ENTITY capital expenditures and nuclear fuel purchases for 2019 are expected to total approximately $629 million and include: \u2022 $432 million for investments in generation and mining facilities; \u2022 $74 million for nuclear fuel purchases; \u2022 $80 million for information technology and other corporate investments, and \u2022 $43 million for growth and development."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E055",
+          "text": "Interest income attributable to yield from commercial loans, commercial real estate loans, residential real estate loans, consumer loans, mortgage-backed securities, increased due to the rising rate environment in 2018. 2017 compared with 2016: Interest income attributable to volume for commercial loans, commercial real estate loans, and consumer loans increased in 2017 when compared to 2016, reflecting continued portfolio growth."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E056",
+          "text": "Interest income on mortgage-backed securities attributable to volume and yield increased due to portfolio growth and the higher interest rate environment in 2017."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E057",
+          "text": "Excluding securities gains, net, and gains on our equity investment in ENTITY B shares, as shown in the table below, fee income increase d $15.4 million , or 12.5% , to $138.0 million in 2018 from $122.7 million in 2017 , primarily due to increased investment management and fiduciary revenue and growth in credit/debit card and ATM income."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E058",
+          "text": "Noninterest, or fee income, increase d $37.9 million primarily due to unrealized and realized gains on our investment in ENTITY B shares, as well as growth in credit/debit card and ATM income and higher investment management and fiduciary revenue."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E059",
+          "text": "The increase is primarily due to an organic increase of $158.9 million for ENTITY and Electronics from higher demand for freight and transit original equipment rail products and train control and signaling products and services and a $126.2 million increase for ENTITY due to increased demand for original equipment brakes from freight and transit customers."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E060",
+          "text": "Additionally, ENTITY sales increased $45.5 million from increased demand in original train doors, air conditioning systems, and other transit electronics, Overhaul & Build sales increased $10.5 million due to an increase in transit overhaul demand, and ENTITY & Electronics sales increased $8.5 million due to increased demand for transit train control and signaling products and services."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E061",
+          "text": "The increase in other costs as a percentage of revenues was mainly due to the growth of dispatching cost as a result of the expansion of direct ENTITY delivery services to enterprise customers."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E062",
+          "text": "The increase was mainly driven by growth in parcel volume to 8,524 million in 2018 from 6,219 million in 2017 as a result of growth in China\u2019s e-commerce market and an increase in our market share."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E063",
+          "text": "The increase in other costs as a percentage of revenues was mainly due to the growth of dispatching cost as a result of the increase indirect ENTITY delivery services to enterprise customers."
+        },
+        {
+          "evidence_id": "2019Q1_P1_E064",
+          "text": "These forward-looking statements include statements relating to: \u00b7 our goals and strategies; \u00b7 our future business development, financial conditions and results of operations; \u00b7 the expected growth of the ENTITY delivery industry in China; \u00b7 our expectations regarding demand for and market acceptance of our services; \u00b7 our expectations regarding our relationships with network partners, direct and end customers, suppliers and our other stakeholders; \u00b7 competition in our industry; and \u00b7 relevant government policies and regulations relating to our industry."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2019Q1_P1_E065",
+          "text": "However, wage levels for comparably skilled employees in most of the countries in which we operate have increased and further increases are expected at a faster rate than in the ENTITY and ENTITY because of, among other reasons, faster economic growth, increased competition for skilled employees and increased demand for business process services."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "quarter": "2023Q3",
+  "permutation": 1,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E001",
+          "text": "The market for our first-fit products remained strong in the third quarter of 2023, primarily as a result of strong demand for vehicles due to ongoing strong order books at most of our OEM customers."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E002",
+          "text": "The market for our first-fit products remained strong in the first half of 2023, primarily as a result of strong demand for vehicles due to ongoing strong order books at most of our OEM customers."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E003",
+          "text": "Approximately 51.7% of this increase in subscription revenue was attributable to the growth from existing customers due to an increase in monthly active users, expansion across channels and committed entitlements and features, and the remaining 48.3% was attributable to new customers."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E004",
+          "text": "Approximately 55.9% of the increase in subscription revenue was attributable to the growth from existing customers due to an increase in monthly active users, expansion across channels and committed entitlements and features, and the remaining 44.1% was attributable to new customers."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E005",
+          "text": "Approximately 49.0% of the increase in subscription revenue was attributable to the growth from existing customers due to customer expansion of committed entitlements and features, and the remaining 51.0% was attributable to new customers."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E006",
+          "text": "The increase in total ENTITY sales during the thirty-nine weeks ended September 24, 2023 as compared to the same period in the prior year was primarily due to (i) same ENTITY sales growth of 8.5%, driven by same- ENTITY traffic growth of 0.7% and menu price increases and (ii) $57.0 million from restaurants not in the Comparable ENTITY Base, which included $32.6 million from our 31 NROs between September 25, 2022 and September 24, 2023 and $8.9 million from restaurants we had acquired from our franchisees."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E007",
+          "text": "The increase in total ENTITY sales during the twenty-six weeks ended June 25, 2023 as compared to the same period in the prior year was primarily due to (i) same ENTITY sales growth of 10.4%, driven by same- ENTITY traffic growth of 1.9% and menu price increases, in addition to (ii) $52.5 million from restaurants not in the Comparable ENTITY Base, which included $26.8 million from our 28 NROs between June 26, 2022 and June 25, 2023."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E008",
+          "text": "ENTITY level operating profit during the thirteen and thirty-nine weeks ended September 24, 2023 increased as compared to the same periods in the prior year primarily due to (i) same- ENTITY sales growth, driven by menu price increases, (ii) 31 NROs between September 25, 2022 and September 24, 2023, (iii) restaurants we had acquired from our franchisees and (iv) lower costs for commodities and to-go supplies."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E009",
+          "text": "ENTITY level operating profit during the thirteen and twenty-six weeks ended June 25, 2023 increased as compared to the same periods in the prior year primarily due to (i) same- ENTITY sales growth, driven by menu price increases, (ii) 28 NROs between June 26, 2022 and June 25, 2023 and (iii) lower costs for commodities and to-go supplies."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E010",
+          "text": "Growth in ENTITY was primarily driven by ENTITY of 88% at June 30, 2023, and rising premium rates."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E011",
+          "text": "Gross margin increased due to the net price increase discussed above and the reduction in spending, specifically in freight and overhead, coupled with benefits realized from tariff refunds, partially offset by lower operating leverage."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E012",
+          "text": "Our accounts receivable balance increases from October to April as a result of the early buy extended terms and increases through June due to higher sales in the second quarter."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E013",
+          "text": "The markets for the commodities produced by our industry strengthened in 2021 and remained strong in 2022 and continuing somewhat in 2023, although decreased from 2022 levels, as a result of increased demand outpacing increased supply for each of the commodities we produce."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E014",
+          "text": "The markets for the commodities produced by our industry strengthened in 2021 and remained strong in 2022 and continuing in 2023, although decreased from 2022 levels overall, as a result of increased demand outpacing increased supply for each of the commodities we produce."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E015",
+          "text": "The R3 sales decrease for the three month period ended September 30, 2023 is due to the three month period ended October 1, 2022 benefiting from favorable 2022 market gains due to pent up demand."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E016",
+          "text": "The increase in Adjusted EBITDA margins is a result of increased revenue primarily due to commercial actions taken in 2022, product mix and the benefit of decreases in raw material costs, which was partially offset by increases in labor costs as the business scales for continued growth."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E017",
+          "text": "The $15.4 and $48.2 or 6.0% and 6.7% revenue growth increase is primarily attributable to ENTITY sales channel growth due to new capacity additions and the positive impact from commercial actions."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E018",
+          "text": "The $17.6 and $62.8 revenue increase for the three and nine month periods ended September 30, 2023 compared to the three and nine month periods ended October 1, 2022 is primarily attributable to the positive impact from commercial actions taken in 2022 as well as the growth in the ENTITY sales channel."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E019",
+          "text": "The increase was driven by strong demand for sun care products and improved supply and strong e-commerce and club channel performance primarily in the ENTITY as well as new product innovations in ENTITY, partially offset by product discontinuation."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E020",
+          "text": "Following higher than expected volume growth in recent years, including GLP-1-based products such as Ozempic \u00ae , and temporary capacity limitations at some manufacturing sites, the outlook also reflects expected continued periodic supply constraints and related drug shortage notifications."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E021",
+          "text": "Sales growth in 2022 has resulted in periodic supply constraints and related drug shortage notifications in some countries."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E022",
+          "text": "NGLs - In our ENTITY segment, we benefited from increased volumes in the second quarter 2023, compared with the second quarter 2022, due primarily to increased production in the ENTITY and ENTITY region."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E023",
+          "text": "NGLs - In our ENTITY segment, we benefited from increased volumes in the third quarter 2023, compared with the third quarter 2022, due primarily to increased production across our integrated system."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E024",
+          "text": "Our growth strategy is focused around connecting diversified supply basins from the ENTITY region through the Mid-Continent region and the ENTITY with demand for Purity NGLs from the petrochemical and refining industries and NGL exports in the ENTITY."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E025",
+          "text": "ENTITY - We classify expenditures that are expected to generate additional revenue, return on investment or significant operating or environmental efficiencies as growth capital expenditures."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E026",
+          "text": "Revenues from monetization partners in sports related businesses were temporarily down when sporting events were suspended, only to later recover and with even stronger demand as people follow sporting events digitally, with such digital adoption presumably accelerated due to pandemic related restrictions on attending live sporting events."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E027",
+          "text": "The 32% increase in revenue from 2021 to 2022, corresponding to an increase of US$80.0 million in absolute amount, was driven by increased monetization on a per-user basis, a result of both underlying advertising demand and pricing factors as well as the growth of our browser and news user bases in higher revenue-per-user Western markets."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E028",
+          "text": "The 52% revenue increase from 2020 to 2021, corresponding to an increase of US$85.9 million in absolute amount, was driven by increased monetization on a per-user basis, a result of both underlying demand and pricing factors as well as the growth of our browser and news user bases in western markets."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E029",
+          "text": "This growth was fueled by the same factors that led to our search revenue growth, however the impact of growth in western markets was even more pronounced as the ENTITY News platform scaled significantly in western markets, and additionally our ad tech platform allowed us to leverage third party inventories as well to meet the demand we sourced from our advertisers."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E030",
+          "text": "Our average revenue per total job increased primarily as a result of a shift in the mix of total jobs toward higher revenue fracturing jobs, fracturing job design, and improved pricing."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E031",
+          "text": "Revenues increased primarily due to an increase in the number of higher revenue fracturing jobs, improved pricing and continued improvement in asset utilization and efficiency."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E032",
+          "text": "The increase in sales and marketing expenses was also attributable to a $8.6 million increase in marketing events and expenses to drive customer growth and partially due to our Groundbreak event, which was held in September 2023 and in October 2022, and a $1.0 million increase in computer software expenses."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E033",
+          "text": "The $20.2 million of net cash inflows provided as a result of changes in our operating assets and liabilities primarily reflected the following: \u2022 a $24.4 million decrease in accounts receivable primarily due to timing of billings and cash receipts from customers; \u2022 a $15.7 million increase in deferred revenue primarily due to the growth of our business and timing of billings; and \u2022 a $5.9 million increase in accounts payable primarily due to timing of cash payments to our vendors."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E034",
+          "text": "The $17.4 million of net cash inflows provided as a result of changes in our operating assets and liabilities primarily reflected the following: \u2022 a $29.1 million increase in deferred revenue primarily due to the growth of our business and timing of billings; \u2022 a $3.1 million decrease in accounts receivable primarily due to timing of billings and cash receipts from customers; and \u2022 a $2.3 million increase in accounts payable primarily due to timing of cash payments to our vendors."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E035",
+          "text": "We seek to mitigate these potential impacts through maintaining a high quality portfolio, diversifying our tenant mix, replacing less successful tenants with stronger operators, anchoring our centers with market leading grocery stores that drive customer traffic, and maintaining a presence in suburban trade areas with compelling demographic populations benefiting from high levels of disposal income."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E036",
+          "text": "Demand for our Unified- ENTITY platform is affected by a number of factors, many of which are beyond our control, including the extension of our Unified- ENTITY platform for new use cases, the timing of development and release of new products, features and functionality introduced by us or our competitors, technological change and the growth or contraction of the market in which we compete."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E037",
+          "text": "While there were negative factors in fiscal 2022, such as tight global semiconductor supply relative to demand, supply constraints on new cars due to the impact of COVID-19, and increased competition with other financial institutions, ENTITY \u2019s business saw steady growth mainly due to the accumulated balance of earning assets resulting from enhanced used-vehicle financing, higher used-vehicle prices in the ENTITY and other regions, lower interest rates worldwide and other measures."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E038",
+          "text": "With a view to surviving tough competition and transitioning to a mobility company, ENTITY will aim to utilize its internal funds mainly for investment in growth for the next generation, such as environmental technologies to achieve a carbon-neutral society and safety technologies for the safety and security of its customers, and also for the stakeholders such as employees, business partners and local communities."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E039",
+          "text": "Due to increased demand for hyper personalized products and services, next generation technologies such as data and AI, mixed reality, digital engineering, blockchain, multi-cloud, cybersecurity, edge computing and 5G is expected to continue to grow exponentially."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E040",
+          "text": "The pandemic has rapidly accelerated digital transformation for many organizations and has led to the adoption of digital business models driven by online customer service, remote working, supply chain reinventions and automation for operational excellence."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E041",
+          "text": "The growth is driven by demand for, digital transformation, cloudification, engineering, data analytics and AI, and associated consulting services."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E042",
+          "text": "The demand for digital transformation and infrastructure modernization will continue to drive growth for the industry with accelerated adoption of digital and emerging technologies, such as next generation AI, augmented reality (\u201c AR \u201d), virtual reality (\u201c VR\u201d) , extended reality, web3 and metaverse, 5G and edge, cyber and bio convergence."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E043",
+          "text": "We continue to expect overall 2023 growth over 2022, led by increased demand in customer activity levels, driven mostly by international customers looking to increase production capacity."
+        },
+        {
+          "evidence_id": "2023Q3_P1_E044",
+          "text": "We continue to expect overall 2023 growth over 2022, led by increased demand in customer activity levels."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E045",
+          "text": "As a result of the growth of ENTITY 's activities, with a higher volume of deposits and related investment in financial assets, in 2021 the Group began to hold financial assets in a held-to-collect-and-sell business model which resulted in their classification as FVTOCI."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2023Q3_P1_E046",
+          "text": "The growth in revenue from our ENTITY subscription demonstrates the increased demand for our end-to-end solutions for customers\u2019 entire software supply chain management."
+        }
+      ]
+    }
+  ]
+}

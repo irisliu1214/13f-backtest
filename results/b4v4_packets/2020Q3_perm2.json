@@ -1,0 +1,367 @@
+{
+  "quarter": "2020Q3",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E001",
+          "text": "Growth in net revenues was primarily due to increased retail channel sales, resulting from distribution gains both domestically and abroad, higher sales velocities at existing retail customers, and contribution from new product introductions."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E002",
+          "text": "Growth in volume sold was driven mainly by increased retail channel sales, resulting from distribution gains both domestically and abroad, higher sales velocities at existing retail customers, and contribution from new product introductions, partially offset by lower net price per pound."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E003",
+          "text": "Our net revenues in the retail channel during the third quarter of 2020, as compared to the prior-year period, were primarily driven by our expansion in total retail outlets, higher sales velocity at existing retail outlets and new product introductions."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E004",
+          "text": "Our net revenues in the retail channel increased significantly during the quarter primarily driven by our expansion in total retail outlets, higher sales velocity at existing retail outlets and new product introductions."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E005",
+          "text": "Sales were lower across the region, partially offset by higher sales in China driven by higher demand."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E006",
+          "text": "SG&A/R&D expenses and period manufacturing costs both benefited from cost reductions related to lower sales volumes."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E007",
+          "text": "This increase was primarily due to an increase of $24.8 million in personnel costs for our sales and marketing organization as a result of increased headcount and increased variable compensation for our sales personnel, an increase of $2.7 million in marketing and promotional activities, and an increase of $2.8 million in allocated overhead costs as a result of an increase in overall costs necessary to support the growth of the business and related infrastructure."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E008",
+          "text": "Capital expenditures in 2020 are anticipated to support our store growth as well as our remodel and relocation initiatives, including capital outlays for leasehold improvements, fixtures and equipment; the construction of new stores; costs to support and enhance our supply chain initiatives including new and existing distribution center facilities and our private fleet; technology and other strategic initiatives; as well as routine and ongoing capital requirements. \u200b 23 Cash flows from financing activities ."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E009",
+          "text": "The decrease in sales was driven by the ENTITY SAPIEN 3 valve, particularly in the ENTITY and Europe, partially offset by higher sales of the ENTITY SAPIEN 3 ENTITY following its regulatory approval in the ENTITY (December 2018) and in Europe (November 2018)."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E010",
+          "text": "Despite the challenges associated with COVID-19, our net sales for the first nine months of 2020 were $3.2 billion , representing an increase of $20.7 million over the first nine months of 2019, driven by sales growth of our TAVR products."
+        }
+      ]
+    },
+    {
+      "alias": "C23",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E011",
+          "text": "The sales increase was due to sales growth in ENTITY and in Europe and ENTITY, driven by telecom operator investments in 5G readiness and LTE networks."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E012",
+          "text": "The sales increase in Networks was mainly driven by higher demand for radio access network equipment."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E013",
+          "text": "Europe and ENTITY strong growth in Networks sales in ENTITY and parts of Europe was partly offset by lower sales in ENTITY due to exit of non-strategic contracts."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E014",
+          "text": "The sales increase in segment ENTITY and Other was driven by growth in iconectiv business due to the multi-year number portability contract in the ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E015",
+          "text": "We intend to focus our resources in those markets and energy applications in which ENTITY power can be a least-cost, best-fit energy solution, particularly in regions with significant current or projected electricity demand, relatively high existing electricity prices, strong demand for renewable energy generation, and high ENTITY resources."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E016",
+          "text": "As a result of such market opportunities, we are expanding our manufacturing capacity while also developing and operating multiple ENTITY projects around the world as we execute on our utility-scale project pipeline."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E017",
+          "text": "Concerns about the global economy related to the COVID-19 pandemic, historically low U.S. interest rates and the anticipated effects of global stimulus efforts have driven increased demand for gold."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E018",
+          "text": "The 69.0% increase in the number of homes in backlog was due to a 58.2% increase in the absorption rate per average active selling community and a 18.8% increase in the number of average active selling communities, as well as the record level of backlog entering the quarter."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E019",
+          "text": "The increase is a result of increased demand in response to lower interest rates and a 19.5% increase in average selling communities."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E020",
+          "text": "Backlog is defined as unfilled firm orders for products and services for which funding has been both authorized and appropriated by the customer or Congress, in the case of U.S. government agencies. 2019 Compared to 2018 DE revenue in 2019 increased $8,704, or 3%, compared to 2018, primarily due to increased volume of ground and airborne maritime surveillance radars, partially offset by Multi-Mode airborne maritime surveillance systems."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E021",
+          "text": "The $23.9 million and $20.0 million increases in gross profit in the third quarter and first nine months of 2020, respectively, compared to the same periods in 2019, are due to higher realized prices for silver and gold and higher sales volumes, partially offset by higher treatment costs and lower average realized lead prices."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E022",
+          "text": "Sales in the e-commerce channel were again very strong, as consumers continue to shift purchases to the on-line channel, including at the ENTITY .com retail site. \u2022 ENTITY experienced a net benefit from strong in-market execution, driven by net sales and market share growth in the majority of the segment's beverage portfolio."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E023",
+          "text": "Sales volume growth in the first nine months of 2020 compared to the prior year period for the ENTITY segment included strong K-Cup pod volume growth of 5.8% , reflecting strength in at-home consumption which was significantly offset by softness in the away-from-home business due to the pandemic."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E024",
+          "text": "Volume growth for the ENTITY segment included K-Cup pod volume growth of 2.4% , reflecting continued strength in at-home consumption, which was significantly offset by ongoing softness in the away-from-home business as return to offices and hospitality remained depressed, despite increased consumer mobility."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E025",
+          "text": "Net sales increased 3.0% to $1,097 million for the third quarter of 2020 compared to net sales of $1,065 million in the prior year period, driven by strong volume/mix growth of 6.0% , which was partially offset by lower net price realization of 2.8% , resulting from strategic price investments."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E026",
+          "text": "The net sales performance of ENTITY Software continued to benefit from the investments to build a dedicated software sales force and increasingly strong demand for our market leading software portfolio built on a 5G ready and cloud-native ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E027",
+          "text": "California courts have imposed liability under the doctrine of inverse condemnation in legal actions brought by property holders against utilities on the grounds that losses borne by the person whose property was damaged through a public use undertaking should be spread across the community that benefited from such undertaking, and based on the assumption that utilities have the ability to recover these costs from their customers."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E028",
+          "text": "ENTITY Interactive experienced (i) growth in operating live sports betting at retail sportsbooks within the Company\u2019s properties; (ii) the launch of the ENTITY online sports betting app in September 2020, which currently operates in Pennsylvania; and (iii) increases in online social and real-money- ENTITY revenue due to the temporary closures of our properties."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E029",
+          "text": "The increase was primarily due to higher volume of hydrogen delivered to customer sites as a result of an increase in the number of hydrogen installations completed under GenKey agreements and higher fuel costs."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E030",
+          "text": "ENTITY Rx revenue growth outpaces the fertility benefits revenue due to the fact that ENTITY Rx went live with only a select number of clients on January 1, 2018 and has continued to add both new and existing fertility benefit solution clients since its initial launch."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E031",
+          "text": "ENTITY\u2019s gross profit as a percent of sales increased in the third quarter compared to the same period last year due to higher sales volume, moderating raw material costs and actions taken over the past year to improve international operating margins."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E032",
+          "text": "ENTITY\u2019s gross profit increased $31.2 in the third quarter compared to the same period last year, when stated in U.S. dollars, primarily due to moderating raw material costs and higher sales volume."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E033",
+          "text": "ENTITY\u2019s gross profit as a percent of sales increased in the second quarter compared to the same period last year due to higher sales volume and moderating raw material costs."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E034",
+          "text": "Net sales in the ENTITY stated in U.S. dollars increased in the third quarter primarily due to higher sales volume and improving demand in most businesses and regions, led by our Packaging and ENTITY divisions."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E035",
+          "text": "As a result, we have seen a diversification of client start dates, resulting from our ENTITY plan expansions, cross sales of new services, international growth, and mid-market employer growth, all of which are not constrained by a calendar year start. \u200b As a result of national seasonal cold and flu trends, we typically experience our highest level of visit fees during the first and fourth quarters of each year when compared to other quarters of the year."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E036",
+          "text": "This increase was driven primarily by an increase in employee-related expenses of approximately $7.4 million resulting from growth in total employee headcount to 3,276 at September 30, 2020 as compared to 2,386 employees at September 30, 2019 reflecting increased employee costs including to support the increase volume of activities due to COVID-19 and the impact from InTouch."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E037",
+          "text": "This increase was driven primarily by an increase in employee-related expenses of approximately $7.2 million resulting from growth in total employee headcount to 2,727 at June 30, 2020 as compared to 2,256 employees at June 30, 2019 reflecting increased employee costs including to support the increase volume of activities due to COVID-19."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E038",
+          "text": "This increase was driven primarily by an increase in employee-related expenses of approximately $19.2 million resulting from growth in total employee headcount including to support the increase volume of activities due to COVID-19 and the impact from InTouch."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G5",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E039",
+          "text": "The increase in international revenue was attributable to the growth in usage of our products, particularly our ENTITY products and ENTITY products, by our existing international ENTITY and a 21% increase in the number of international ENTITY driven in part by our focus on expanding our sales to customers outside of the ENTITY."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E040",
+          "text": "Also, due to costs from our international expansion efforts and network service provider fees outside of the ENTITY, which generally are higher than domestic rates, our gross margin for international customers is typically lower than our gross margin for domestic customers."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E041",
+          "text": "ENTITY and ENTITY our ENTITY financial condition and results of operations have been, and will continue to be, affected by a number of factors and trends, including the following: Ability to drive revenue growth by cost effectively increasing the volume and selection of vehicles in our inventory Our growth is primarily driven by vehicle sales."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E042",
+          "text": "Vehicle sales growth, in turn, is largely driven by the volume of inventory and the selection of vehicles listed on our platform."
+        }
+      ]
+    },
+    {
+      "alias": "C24",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E043",
+          "text": "These increases in revenue were due to increases in net sales, which were primarily due to strong positive comparable sales for the ENTITY U.S. and Sam's Club segments resulting from strong demand due to the COVID-19 pandemic, along with positive comparable sales in majority of our international markets, despite operating limitations in several markets due to government regulations and precautionary measures taken as a result of the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E044",
+          "text": "The increase was primarily due to positive comparable sales growth in the majority of our markets driven by a change in consumer behavior in response to the COVID-19 pandemic."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E045",
+          "text": "ENTITY's Club segment's comparable sales benefited from growth in transactions and average ticket resulting from the COVID-19 pandemic, partially offset by lower fuel sales and our decision to remove tobacco from certain club locations."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E046",
+          "text": "ENTITY's Club segment's comparable sales benefited from growth in transactions resulting from the COVID-19 pandemic, partially offset by our decision to remove tobacco from certain club locations and lower fuel sales."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E047",
+          "text": "Increases in our customer service and merchant fees are driven by the growth in our net revenue and are expected to remain relatively consistent as a percentage of net revenue."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E048",
+          "text": "Some of the increased demand is likely due to customers being required or encouraged to stay at home, school closures and employers requiring employees to work remotely."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2020Q3_P2_E049",
+          "text": "Other IMT revenue increased $26.8 million, or 10%, primarily due to a 30% increase in revenue generated by our rentals marketplace attributable to increased advertising revenue and increased adoption of our rentals application product, partially offset by the impact of COVID-19 related discounts offered during the first half of 2020, as well as a 45% decrease in display revenue, as many display advertisers decreased discretionary marketing spend during the COVID-19 pandemic. \u2022 Mortgages segment revenue increased 42% to $113.2 million."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E050",
+          "text": "The increase in ENTITY Offers revenue was due to an increase in the number of homes sold in the period as customer adoption of ENTITY Offers increased in geographic areas in which it is currently operating and as ENTITY Offers expanded into new geographic markets."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E051",
+          "text": "The growth in mortgages revenue was primarily driven by increases in marketplace and Mortech revenue driven by increased demand for our Connect and Mortech services, primarily due to the low interest-rate environment."
+        },
+        {
+          "evidence_id": "2020Q3_P2_E052",
+          "text": "These changes were partially offset by an $88.8 million increase in mortgage loans held for sale, a $31.8 million increase in contract cost assets due primarily to the capitalization of sales commissions, a $16.4 million increase in prepaid expenses and other current assets due primarily to timing of payments and growth in our contract assets, a $14.5 million increase in accounts receivable due to an increase in revenue from products and services billed in arrears, and a $2.3 million decrease in accrued compensation and benefits."
+        }
+      ]
+    }
+  ]
+}

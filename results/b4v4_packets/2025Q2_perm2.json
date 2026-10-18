@@ -1,0 +1,339 @@
+{
+  "quarter": "2025Q2",
+  "permutation": 2,
+  "cutoff_rule": "quarter end +45 days, contemporaneous SEC filings only",
+  "instructions": {
+    "task": "Identify zero or more shared upstream external economic drivers. Different wording may belong to the same causal chain. Do not require lexical similarity.",
+    "no_outside_knowledge": "Use only the supplied evidence. Do not infer company identity. Do not recommend securities.",
+    "edge_requirement": "Every accepted company-driver edge must cite evidence_id(s).",
+    "driver_requirement": "Driver must be external to company bookkeeping/internal administration and must transmit into demand/orders/usage/pricing/revenue/volume/capacity/capex/customer activity.",
+    "minimums": "A passed driver needs >=4 companies, >=2 B2 cluster aliases, >=2 companies outside its dominant cluster, and mean edge confidence >=0.70.",
+    "output": "Return structured driver objects with driver_name, causal_chain, member_aliases, per_member evidence_ids/edge_confidence/evidence_directness, counterevidence, pass."
+  },
+  "companies": [
+    {
+      "alias": "C06",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E001",
+          "text": "Refer to \u201cDeposits\u201d within this Item 2 for additional information on this topic. \u200b Total borrowings at March 31, 2025 were $475.7 million, a decrease of $58.9 million or 44.7% (annualized) from December 31, 2024, primarily due to repayment of short-term FHLB advances using funds from customer deposit growth."
+        }
+      ]
+    },
+    {
+      "alias": "C22",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E002",
+          "text": "ENTITY experienced another year of significant growth, both in terms of activity, with a greater number of clients and operations, and in terms of liability income, due to higher volumes and the benefits from high interest rates in the markets where we operate."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E003",
+          "text": "In constant euros, profit fell 47%, as follows: \u2022 Total income increased 3%, due to higher net interest income (+4%), supported by active loan repricing and customer deposit growth, and net fee income (+13%) driven by greater penetration in direct insurance, especially in Germany and due to higher fees from our agreements. \u2022 Administrative expenses and amortizations fell slightly, even as we invest in business growth."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E004",
+          "text": "Administrative expenses and amortizations rose due to strategic transformation investments and business growth, as already mentioned. \u2022 In the ENTITY , net operating income improved EUR 1,029 million, driven by the improvement of net interest income (higher liquidity buffer remuneration) and gains on financial transactions higher (FX hedge costs in 2022)."
+        }
+      ]
+    },
+    {
+      "alias": "C12",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E005",
+          "text": "In 2022, price mix was a negative drag of 20.2% due to discounting in ENTITY in response to a competitive pricing environment; and &#8211; ENTITY, as revenue grew 70.8% in 2023, led by higher volume (up 36.2%) and price/mix of 34.6%."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E006",
+          "text": "Pricing was therefore a negative drag on the regional HP performance by 12.2% in 2023, having also negatively impacted 2022 by 5.3%. glo's volume share in Japan started to stabilise in the second half of 2023, driven by the activation of our commercial plans and positive uptake post successful launch of glo Hyper&nbsp;Air in the second half of the year. 2022 growth was driven by higher volume and consumable pricing."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E007",
+          "text": "The increase is mainly attributable to a higher STI out turn in 2024 reflecting full-year salary and STI opportunity as the ENTITY, and 2022 LTIP vesting which was granted to the ENTITY in his capacity as ENTITY at the time."
+        }
+      ]
+    },
+    {
+      "alias": "C09",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E008",
+          "text": "ENTITY for Investment: \u2022 Period-end loans held for investment decreased by $5.3 billion to $157.2 billion as of March 31, 2025 from December 31, 2024 primarily driven by seasonal paydowns. \u2022 Average loans held for investment increased by $6.8 billion to $156.4 billion in the first quarter of 2025 compared to the first quarter of 2024 driven by growth in purchase volume."
+        }
+      ]
+    },
+    {
+      "alias": "C15",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E009",
+          "text": "In response to the macroeconomic environment, our focus in past years was on driving profitability through initiatives to better conform our expense structure to unit volume levels and create a strong operational foundation, allowing us to shift focus beginning in 2024 to the long-term phase of driving profitable growth."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E010",
+          "text": "Due to our historical and current rapid growth, our overall sales patterns in the past have not always reflected the general seasonality of the used vehicle industry."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E011",
+          "text": "Investment in ENTITY the past several years we have been and continue to be focused on driving fundamental gains in gross profit per unit and operational efficiency, flexibility, and scalability through process and technology improvements to increase profitability and provide a strong foundation for profitable growth."
+        }
+      ]
+    },
+    {
+      "alias": "C08",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E012",
+          "text": "Account verification fees also rose with more new users verified; \u2022 higher transaction rebates and commissions, primarily reflecting an increase in rebates earned by institutional customers providing liquidity on our international exchange, driven by growth in volume; and \u2022 an increase in transaction reversal losses primarily driven by higher transaction volume; offset in part by \u2022 a decrease in blockchain transaction fees primarily due to lower average gas and asset prices for Ethereum."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E013",
+          "text": "This increase was offset in part by a decrease of $206.2 million attributed to a lower average blended fee rate, primarily due to changes in the mix of ENTITY from Simple to Advanced trading, as well as growth in ENTITY from ENTITY One users. \u2022 an increase in institutional transaction revenue primarily driven by growth in derivatives trading volume on our international exchange."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E014",
+          "text": "These two macro inputs have historically been highly correlated with ENTITY and are typically influenced by overall crypto market sentiment, activity in the crypto market, and changes in average crypto asset prices; and \u2022 Market share \u2014 ENTITY growth outpaced the 17% growth in overall U.S. spot market trading volume, as we were able to capture a larger portion of the trading activity due to our competitive position and product strategy. 1 ENTITY represents our internal measure of crypto asset volatility in the market relative to prior periods."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E015",
+          "text": "We also generate a large portion of total revenue from our subscription and services, and such revenue has grown over time, primarily due to growth in stablecoin revenue in connection with USDC."
+        }
+      ]
+    },
+    {
+      "alias": "C07",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E016",
+          "text": "Same-store year-over-year backlog growth was primarily attributable to increased project bookings in the technology sector at one of our ENTITY operations ($867.8 million), our Texas electrical operation ($686.1 million) and one of our Texas operations ($590.5 million)."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E017",
+          "text": "The same-store revenue growth was largely driven by strong market conditions, including the increase in our backlog."
+        }
+      ]
+    },
+    {
+      "alias": "C21",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E018",
+          "text": "This was mainly due to lower subscription gross margin as a result of increased generative AI costs year over year related to expansion of the ENTITY Max subscription tier."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E019",
+          "text": "The decrease in both periods was primarily due to lower subscription gross margin, driven by increased generative AI costs year over year related to the expansion of the ENTITY Max subscription tier."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E020",
+          "text": "Adjusted EBITDA increased as compared to the comparative periods as a result of higher revenue, and was partially offset by an increase in operating expenses driven primarily by headcount growth."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E021",
+          "text": "The increase in net income as compared to the comparative periods was primarily due to our growth in revenue, offset by an increase in operating expenses driven primarily by headcount growth."
+        }
+      ]
+    },
+    {
+      "alias": "C05",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E022",
+          "text": "ENTITY offers an innovative Znyth\u2122 technology battery ENTITY storage system (\"BESS\") designed to provide the operating flexibility to manage increased grid complexity and price volatility resulting from an overall increase in renewable ENTITY generation and a congested grid coming from an increase in electricity demand growth."
+        }
+      ]
+    },
+    {
+      "alias": "C14",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E023",
+          "text": "Our revenue in regions such as ENTITY & Canada and Europe is relatively higher primarily due to the size and maturity of those online and mobile advertising markets, and ad impression growth is mainly in geographies that monetize at lower rates, such as Asia-Pacific."
+        }
+      ]
+    },
+    {
+      "alias": "C01",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E024",
+          "text": "In addition, our growth and future demand for our products is highly dependent upon the adoption of quantum computers and networks and commercially useful quantum algorithms to run on quantum computers by developers and customers, as well as on our ability to demonstrate the value of quantum computing to our customers."
+        }
+      ]
+    },
+    {
+      "alias": "C13",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E025",
+          "text": "ENTITY revenue and profitability depend substantially on the demand for battery systems and battery components, which is driven by the growth of the commercial and passenger electric vehicle and energy storage markets."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E026",
+          "text": "These policies expand our total addressable market, creating opportunities for increased sales and broader adoption of our battery technologies."
+        }
+      ]
+    },
+    {
+      "alias": "C11",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E027",
+          "text": "Capital investment and asset growth: Capital investment of \u00a39,847 million was \u00a31,612 million (20%) higher than 2023/24, driven by increased ASTI and customer connections investment in UK ENTITY, increased capital expenditure in ENTITY, ENTITY and UK ENTITY, partly offset by lower investment in ENTITY ENTITY Ventures."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E028",
+          "text": "ENTITY ENTITY Ventures (NGV) Revenue in the NGV segment incre ased by \u00a348 million to \u00a31,389 million , driven by improved availabilities in our ENTITY interconnector (which benefited from an increase in the revenue cap following Ofgem review)."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E029",
+          "text": "ENTITY ENTITY Ventures (NGV) Revenue in the NGV segment increased by &pound;317 million to &pound;1,341&nbsp;million, driven by higher interconnector revenues, which benefited from higher arbitrage from the high gas prices throughout the year."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E030",
+          "text": "Capital investment for the period 2023/24 was \u00a31,247 million, an increase of \u00a327 million from 2022/23 due to additional asset health funding in ED-2 including overhead line clearance, growth in connections partly offset by lower reinforcement capital expenditure."
+        }
+      ]
+    },
+    {
+      "alias": "C02",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E031",
+          "text": "Revenue from ENTITY networking grew 56% year-on-year compared to the first quarter of fiscal year 2025 driven by the growth of NVLink compute fabric in our GB200 systems and continued adoption of Ethernet for AI solutions at cloud service providers and consumer internet companies."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E032",
+          "text": "Networking revenue was $5.0 billion, up 56% from a year ago and up 64% sequentially, driven by the growth of NVLink compute fabric in our GB200 systems and continued adoption of Ethernet for AI solutions at cloud service providers and consumer internet companies."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E033",
+          "text": "The strong year-on-year and sequential growth was driven by demand for our accelerated computing platform used for large language models, recommendation engines, and generative and agentic AI applications."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E034",
+          "text": "The strong year-on-year growth was driven by demand for our Hopper architecture accelerated computing platform used for large language models, recommendation engines, and generative AI applications."
+        }
+      ]
+    },
+    {
+      "alias": "C18",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E035",
+          "text": "Higher ENTITY systems end market sales were primarily due to increased demand for products across various applications, with the largest increases attributable to products used within the packaging market such as enclosures serving the fast-growing data center market, and oil and gas products."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E036",
+          "text": "The decrease in gross margin is primarily due to strong sales growth in comparatively lower-margin products and temporary inefficiencies related to our accelerated production ramp-up."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E037",
+          "text": "The increase is primarily due to a favorable non-recurring legal reserve reduction in 2024, and higher costs associated with employee incentive programs, increased sales and administrative expenses to support ongoing business growth in 2025."
+        }
+      ]
+    },
+    {
+      "alias": "C16",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E038",
+          "text": "Core branch deposits (comprised of demand, savings, interest checking accounts and certificates of deposit, excluding wholesale-brokered deposits, trust account deposits, ENTITY (\u201cIOLTA\u201d), public funds, and internet-based deposits) at March 31, 2025 increased $2.2 million since March 31, 2024 reflecting the Company\u2019s commitment to increasing core deposits through organic growth in client relationship."
+        }
+      ]
+    },
+    {
+      "alias": "C04",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E039",
+          "text": "Interest income, net in 2025 benefited from higher mortgage loan origination volume, partially offset by higher interest expense from increased utilization of funding facilities."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E040",
+          "text": "Interest income, net in 2025 benefited from higher mortgage loan origination volume, but was offset by higher interest expense from increased utilization of funding facilities."
+        }
+      ]
+    },
+    {
+      "alias": "C10",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E041",
+          "text": "The increase in subscription revenue was primarily driven by the overall growth in our ENTITY."
+        }
+      ]
+    },
+    {
+      "alias": "C19",
+      "b2_cluster_alias": "G3",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E042",
+          "text": "Increased customer adoption of our platform leads to further data and insights, allowing us to build more differentiated features and address opportunities in new trades, use cases and customer subsegments."
+        }
+      ]
+    },
+    {
+      "alias": "C20",
+      "b2_cluster_alias": "G2",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E043",
+          "text": "ENTITY has experienced growth and movement in both money market accounts and non-interest-bearing deposits as a result of seasonal customer behaviors, relationship pricing, and the current interest rate environment, as opposed to time deposit specials or interest rate adjustments."
+        }
+      ]
+    },
+    {
+      "alias": "C03",
+      "b2_cluster_alias": "G4",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E044",
+          "text": "Conversely within Credit, an increase year on year was driven by a more favorable environment for secondary trading with the general trend of tightening spreads, while in Financing client demand remained stable and broadly aligned to prior year. 7 ENTITY ENTITY ENTITY 2023 on Form 20-F ENTITY ENTITY performance ENTITY ENTITY reported a net profit of \u20ac 6.5 billion, up 16% year on year, due to higher interest income as well as noninterest revenues as the ENTITY delivered revenue growth in 2023."
+        }
+      ]
+    },
+    {
+      "alias": "C17",
+      "b2_cluster_alias": "G1",
+      "evidence": [
+        {
+          "evidence_id": "2025Q2_P2_E045",
+          "text": "The increase was primarily due to: \u2022 an increase of $274 million driven by yield growth as a result of higher load factors and higher pricing on both existing ships as well as the benefit of new ships, compared to the same period in 2024; and \u2022 an increase of $239 million driven by 4.4% capacity growth as a result of the additions of Utopia of the Seas and ENTITY compared to the same period in 2024."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E046",
+          "text": "The increase was primarily due to: \u2022 a $106 million increase driven by an 4.4% capacity growth as a result of the additions of new ships noted above compared to the same period in 2024; and \u2022 a $79 million increase driven by yield growth as a result of higher load factors and higher pricing on both existing ships and new ships in 2025 compared to the same period in 2024."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E047",
+          "text": "The increase was primarily due to: \u2022 $167 million driven by 5.8% capacity growth as a result of the additions of Utopia of the Seas and ENTITY compared to same period in 2024, and \u2022 $144 million driven by yield growth as a result of higher load factors and higher pricing on both existing ships and new hardware in 2025 compared to the same period in 2024."
+        },
+        {
+          "evidence_id": "2025Q2_P2_E048",
+          "text": "The increase was primarily due to: \u2022 $125 million driven by yield growth as a result of higher load factors and higher pricing on both existing ships and new hardware in 2025 compared to the same period in 2024; and \u2022 $77 million driven by 3.0% capacity growth as a result of the additions of Utopia of the Seas and ENTITY compared to same period in 2024."
+        }
+      ]
+    }
+  ]
+}
