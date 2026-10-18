@@ -1,0 +1,59 @@
+name: Evaluate frozen B4 v4 returns
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "b4v4_returns.py"
+      - ".github/workflows/b4v4-returns.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Confirm frozen picks and chronology
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          p=pd.read_csv("results/b4v4_picks_frozen.csv")
+          assert len(p)==42
+          inv=p[p.decision.eq("INVEST")]
+          assert len(inv)>0
+          print("Frozen INVEST quarters",len(inv))
+          print(inv[["quarter","driver_name","selected_tickers"]].to_string(index=False))
+          PY
+      - name: Evaluate frozen selections
+        run: python b4v4_returns.py
+      - name: Validate outputs
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          s=pd.read_csv("results/b4v4_summary.csv")
+          q=pd.read_csv("results/b4v4_quarterly.csv")
+          c=pd.read_csv("results/b4v4_constituents.csv")
+          assert set(s.horizon_days)=={90,180,365}
+          assert len(q)>0 and len(c)>0
+          print(s.to_string(index=False))
+          print(q.to_string(index=False))
+          PY
+      - name: Commit B4 v4 return outputs
+        run: |
+          git config user.name "13f-b4-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add results/b4v4_forward_returns.csv results/b4v4_constituents.csv results/b4v4_quarterly.csv results/b4v4_summary.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Evaluate frozen B4 v4 selections"
+            git push
+          fi
