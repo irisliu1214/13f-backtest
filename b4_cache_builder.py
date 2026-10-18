@@ -7,7 +7,7 @@ import numpy as np
 import b4_causal as core
 
 YEAR=int(os.environ["B4_YEAR"])
-OUT=Path("results/b4_cache")
+OUT=Path("results/b4_cache_v2")
 OUT.mkdir(parents=True,exist_ok=True)
 
 members=pd.read_csv(core.MEMBERS)
