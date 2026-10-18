@@ -119,21 +119,21 @@ CAUSAL_PATTERNS = [
     r"supply constraints?", r"shortage(?:s)? of", r"secular (?:growth|trend)",
 ]
 POSITIVE_PATTERNS = [
-    r"strong(?:er)? demand", r"higher demand", r"increased demand",
-    r"demand (?:growth|increased|rose|grew)", r"growth",
-    r"benefit(?:ed|ing|s)?", r"expansion", r"adoption",
-    r"opportunit(?:y|ies)", r"tailwind", r"increased spending",
-    r"higher (?:sales|revenue|volume|orders)", r"backlog",
+    r"\bstrong(?:er)? demand\b", r"\bhigher demand\b", r"\bincreased demand\b",
+    r"\bdemand (?:growth|increased|rose|grew)\b", r"\bgrowth\b",
+    r"\bbenefit(?:ed|ing|s)?\b", r"\bexpansion\b", r"\badoption\b",
+    r"\bopportunit(?:y|ies)\b", r"\btailwind\b", r"\bincreased spending\b",
+    r"\bhigher (?:sales|revenue|volume|orders)\b", r"\bbacklog\b",
 ]
 NEGATIVE_PATTERNS = [
-    r"declin", r"decreas", r"lower demand", r"weak(?:er|ness)?",
-    r"headwind", r"adverse", r"pressure", r"reduced", r"slowdown",
-    r"could adversely", r"may adversely", r"materially adverse",
+    r"\bdeclin", r"\bdecreas", r"\blower demand\b", r"\bweak(?:er|ness)?\b",
+    r"\bheadwind", r"\badverse", r"\bpressure", r"\breduced", r"\bslowdown",
+    r"\bcould adversely\b", r"\bmay adversely\b", r"\bmaterially adverse\b",
 ]
 MECHANICAL_PATTERNS = [
-    r"acquisition", r"merger", r"divest", r"restructur", r"spin[- ]?off",
-    r"foreign exchange", r"currency", r"tax rate", r"share repurchase",
-    r"debt refinancing", r"accounting", r"litigation",
+    r"\bacquisition", r"\bmerger", r"\bdivest", r"\brestructur", r"\bspin[- ]?off",
+    r"\bforeign exchange\b", r"\bcurrency", r"\btax rate\b", r"\bshare repurchase",
+    r"\bdebt refinancing\b", r"\baccounting", r"\blitigation",
 ]
 
 def sec_get(url, timeout=35):
