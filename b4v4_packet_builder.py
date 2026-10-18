@@ -25,7 +25,7 @@ members=members[
 members["cusip"]=members.cusip.astype(str)
 
 sents=pd.concat(
-    [pd.read_csv(x,dtype={"cusip":str}) for x in sorted(CACHE.glob("b4_sentences_*.csv"))],
+    [pd.read_csv(x,dtype={"cusip":str})[["quarter","cusip","sentence"]] for x in sorted(CACHE.glob("b4_sentences_*.csv"))],
     ignore_index=True
 )
 
