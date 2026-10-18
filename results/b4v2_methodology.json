@@ -1,0 +1,34 @@
+{
+  "experiment": "B4-v2 cached point-in-time causal-theme engine",
+  "forward_returns_used": false,
+  "prices_read": false,
+  "implementation_fix": "B4-v1 positive/negative/mechanical regex word-boundaries were accidentally stored as backspace characters. Fixed before any B4 forward returns were viewed.",
+  "persistent_cache": "yearly point-in-time SEC causal-sentence cache under results/b4_cache_v2",
+  "input": "B2 corporate-action-filtered co-buy clusters/members",
+  "candidate_pool": "top 5 B2 clusters x top 12 members, deduped by CUSIP",
+  "causal_evidence_gate": "same B4 gate: contemporaneous causal/demand mechanism + positive business-direction marker; mechanical corporate-action/hypothetical adverse-risk evidence excluded",
+  "driver_minimums": {
+    "companies": 5,
+    "B2_clusters": 2,
+    "seed_sentence_companies": 3
+  },
+  "out_of_seed_falsification": "at least one supporter outside the dominant B2 cluster",
+  "theme_score_weights": {
+    "breadth": 0.3,
+    "direction": 0.2,
+    "abnormal": 0.2,
+    "external": 0.2,
+    "novelty": 0.1
+  },
+  "minimum_theme_score": 0.55,
+  "beneficiary_score_weights": {
+    "abnormal": 0.35,
+    "driver_exposure": 0.3,
+    "holders": 0.15,
+    "buyer_ratio": 0.1,
+    "evidence_count": 0.1
+  },
+  "portfolio_size": 5,
+  "manual_theme_selection": false,
+  "manual_stock_replacement": false
+}
