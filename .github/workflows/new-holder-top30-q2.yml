@@ -6,7 +6,7 @@ on:
     branches: [main]
     paths:
       - "new_holder_top30_q2.py"
-      - ".github/workflows/new-holder-top30.yml"
+      - ".github/workflows/new-holder-top30-q2.yml"
 
 permissions:
   contents: write
