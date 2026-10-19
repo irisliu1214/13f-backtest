@@ -1,0 +1,53 @@
+name: Run 2026Q2 new-holder Top 30 only
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "new_holder_2026q2_only.py"
+      - ".github/workflows/new-holder-2026q2-only.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      START_YEAR: "2016"
+      END_YEAR: "2026"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore 13F data cache
+        uses: actions/cache@v4
+        with:
+          path: data_cache
+          key: 13f-data-2015-2026-v2
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run 2026Q2 new-holder screen
+        run: python new_holder_2026q2_only.py
+      - name: Validate output
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          d=pd.read_csv("results/new_holder_top30_2026Q2_only.csv")
+          assert len(d)==30, len(d)
+          assert d.new_holders.is_monotonic_decreasing
+          print(d[["rank","ticker","issuer","new_holders","current_holders","prior_holders"]].to_string(index=False))
+          PY
+      - name: Commit output
+        run: |
+          git config user.name "13f-new-holder-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add results/new_holder_top30_2026Q2_only.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate 2026Q2 new-holder Top 30"
+            git pull --rebase origin main
+            git push
+          fi
