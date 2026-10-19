@@ -1,0 +1,58 @@
+name: Run pure new-holder Top 30 through 2026Q2
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "new_holder_top30_q2.py"
+      - ".github/workflows/new-holder-top30.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      START_YEAR: "2016"
+      END_YEAR: "2026"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore 13F data cache
+        uses: actions/cache@v4
+        with:
+          path: data_cache
+          key: 13f-data-2015-2026-v2
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run new-holder screen
+        run: python new_holder_top30_q2.py
+      - name: Validate outputs
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          p="results/new_holder_top30_2016Q1_2026Q2.csv"
+          d=pd.read_csv(p)
+          assert d.quarter.nunique()==42, d.quarter.unique()
+          assert len(d)==42*30, len(d)
+          assert d.groupby("quarter").size().eq(30).all()
+          assert d.new_holders.gt(0).all()
+          assert d.groupby("quarter").apply(lambda g: g.new_holders.is_monotonic_decreasing).all()
+          print("rows",len(d),"quarters",d.quarter.nunique())
+          print(d[d.ticker.isin(["MU","SNDK"])][["quarter","rank","ticker","issuer","new_holders","current_holders","prior_holders"]].to_string(index=False))
+          PY
+      - name: Commit outputs
+        run: |
+          git config user.name "13f-new-holder-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add results/new_holder_top30_2016Q1_2026Q2.csv results/new_holder_top30_2016Q1_2026Q2.md results/new_holder_top30_data_quality.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate 2016Q1-2026Q2 new-holder Top 30"
+            git pull --rebase origin main
+            git push
+          fi
